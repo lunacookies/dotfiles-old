@@ -1,0 +1,161 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[$fontsize$, a4paper]{article}
+
+\usepackage{mathspec}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{hyperref}
+\usepackage{pgfplots}
+\usepackage{tikz}
+
+% LANGUAGE
+%--------------------------------
+$if(lang)$
+\usepackage{polyglossia}
+\setmainlanguage{$lang$}
+$endif$
+
+% TYPOGRAPHY
+%--------------------------------
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage[protrusion=true,final]{microtype}
+
+% converts LaTeX specials (quotes, dashes etc.) to Unicode
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont[Ligatures={Common}, Numbers={Lining, Proportional}]{$mainfont$}
+\setsansfont[Scale=0.9]{$altfont$}
+\setmonofont[Scale=0.8]{$monofont$}
+\setmathfont (Digits,Latin,Greek)[Ligatures={Common}, Numbers={Lining,Proportional}]{$mainfont$}
+
+% \newfontfamily{\bowldd}{$mainfont$ Bold}
+\newfontfamily{\foott}[Letters={SmallCaps}, LetterSpace={5}]{$altfont$}
+
+% Set line spacing
+\usepackage{leading}
+$if(doublespacing)$
+\leading{20pt}
+$else$
+\leading{13.5pt}
+$endif$
+
+% Set paragraph before-and-after
+\setlength{\parskip}{11pt}
+
+% Set paragraph indent
+\setlength{\parindent}{0pt}
+
+% Custom ampersand
+\newcommand{\amper}{{\fontspec[Scale=.95]{$mainfont$}\selectfont\itshape\&}}
+
+$if(mainfont)$
+    \setmainfont{$mainfont$}
+$endif$
+$if(altfont)$
+    \setsansfont{$altfont$}
+$endif$
+
+% Command required by how Pandoc handles the list conversion
+\providecommand{\tightlist}{%
+\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% LAYOUT
+%--------------------------------
+
+% Left align
+$if(raggedright)$
+\usepackage{ragged2e}
+$endif$
+
+% Set margins
+\usepackage[lmargin=1.9in, rmargin=1.9in, tmargin=1.5in, bmargin=1.7in]{geometry}
+
+% Change heading formatting
+\usepackage{titlesec}
+
+\titleformat{\section}
+  {\large\bfseries}
+  {}
+  {0pt}
+  {}
+
+\titleformat{\subsection}
+  {\normalsize\bfseries}
+  {}
+  {0pt}
+  {}
+
+\titlespacing*{\section}
+  {0pt}
+  {8pt}
+  {-5pt}
+
+\titlespacing*{\subsection}
+  {0pt}
+  {6pt}
+  {-5pt}
+
+% Title formatting
+\usepackage{titling}
+
+\renewcommand{\maketitle}{
+  \begin{flushleft}
+    { \theauthor}\\
+    { $teacher$}\\
+    { $lesson$}\\
+    { \thedate}\\
+    \vspace{12pt}
+    { \Large \bfseries \thetitle}
+    \vspace{-2pt}
+  \end{flushleft}
+}
+
+% Trim excessive whitespace around lists
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=*}
+\setlist[enumerate]{leftmargin=*}
+%\setlist{nolistsep}
+
+
+%\tableofcontents
+% Footer
+$if(footer)$
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyfoot[R] {\foott{\lowercase{Page {\thepage}}}}
+\fancyfoot[L] {\foott{\lowercase{$title$}}}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\headrulewidth}{0pt}
+$endif$
+
+% Nice tables
+\usepackage{booktabs}
+\usepackage{longtable}
+
+% DOCUMENT
+%--------------------------------
+\begin{document}
+
+\title{$title$}
+\author{$author$}
+\date{$date$}
+
+\maketitle
+
+$if(raggedright)$
+\begin{FlushLeft}
+$endif$
+  $body$
+  $if(footer)$
+  \label{LastPage}
+  $endif$
+$if(raggedright)$
+\end{FlushLeft}
+$endif$
+
+\end{document}
