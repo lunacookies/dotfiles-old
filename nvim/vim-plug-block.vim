@@ -10,7 +10,6 @@ Plug 'junegunn/rainbow_parentheses.vim' " Simpler Rainbow Parentheses
 Plug 'junegunn/limelight.vim'           " Hyper-focus writing
 Plug 'Yggdroot/indentLine'              " Indent guides
 Plug 'tpope/vim-fugitive'               " Git wrapper for vim
-Plug 'w0rp/ale'                         " Asynchronous lint engine
 Plug 'junegunn/vim-emoji'               " Emoji in vim
 Plug 'junegunn/vim-easy-align'          " A Vim alignment plugin
 Plug 'tpope/vim-commentary'             " Comment stuff out
