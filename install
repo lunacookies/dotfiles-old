@@ -10,6 +10,7 @@ brew install python
 brew install python3
 brew install tmux
 brew install zsh
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
 brew install cmus
 
 pip3 install gtop
@@ -25,8 +26,9 @@ curl -o ~/Desktop/iterm.zip https://iterm2.com/downloads/beta/iTerm2-3_1_5_beta_
 curl -o ~/Desktop/launchbar.dmg https://www.obdev.at/downloads/launchbar/LaunchBar-6.9.3.dmg
 
 git clone https://github.com/aramisgithub/dotfiles.git ~/dotfiles
+
 cd ~/dotfiles
-./install
+./link
 
 cd ~
 

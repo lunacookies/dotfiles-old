@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+cd ~/dotfiles
+
+ln -s tmux.conf ~/.tmux.conf
+ln -s nvim ~/.config/nvim
+ln -s fish ~/.config/fish
+ln -s chunkwmrc ~/.chunkwmrc
+ln -s khdrc ~/.khdrc
+ln -s zshrc ~/.zshrc
