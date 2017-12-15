@@ -11,6 +11,7 @@ Plug 'junegunn/limelight.vim'           " Hyper-focus writing
 Plug 'Yggdroot/indentLine'              " Indent guides
 Plug 'tpope/vim-fugitive'               " Git wrapper for vim
 Plug 'junegunn/vim-emoji'               " Emoji in vim
-Plug 'junegunn/vim-easy-align'          " A Vim alignment plugin
+Plug 'junegunn/vim-easy-align'          " A vim alignment plugin
 Plug 'tpope/vim-commentary'             " Comment stuff out
+Plug 'rhysd/vim-grammarous'             " A powerful grammar checker using LanguageTool
 
