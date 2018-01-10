@@ -11,5 +11,6 @@
 	"scroll_speed": 1.5,
 	"tab_size": 2,
 	"theme": "Monokai Pro.sublime-theme",
-	"translate_tabs_to_spaces": true
+	"translate_tabs_to_spaces": true,
+	"auto_complete_selector": "source, text"
 }
