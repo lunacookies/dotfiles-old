@@ -30,7 +30,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 " ---------------------------------------------------------------------------
 
 Plug 'reedes/vim-litecorrect'           " Lightweight auto-correction
-" Plug 'junegunn/seoul256.vim'            " Low-contrast colour scheme based on Seoul Colors
+Plug 'junegunn/seoul256.vim'            " Low-contrast colour scheme based on Seoul Colors
 Plug 'junegunn/goyo.vim'                " Distraction-free writing
 Plug 'junegunn/vim-slash'               " Better searching
 Plug 'junegunn/rainbow_parentheses.vim' " Simpler Rainbow Parentheses
@@ -87,7 +87,7 @@ set expandtab smarttab " Insert spaces when tab is pressed
 " ---------------------------------------------------------------------------
 
 set laststatus=2                " Always show status line
-set background=dark            " Light background
+set background=light            " Light background
 set completeopt=menuone,preview " Show possible completions with preview
 set conceallevel=0              " Never conceal
 set shortmess=aIT               " Abbreviate error messages
@@ -115,7 +115,7 @@ set number                      " Line numbers
 set lazyredraw                  " Prevent unnecessary redrawing
 set noimd                       " Fix Input Methods
 syntax enable                   " Enable syntax highlighting
-colorscheme monokaipro          " Set colourscheme
+colorscheme seoul256-light      " Set colourscheme
 if exists('&colorcolumn')       " Highlight 79th column
   set colorcolumn=79
 endif
@@ -426,13 +426,13 @@ augroup vimrc
 
   " }}}
   " --------------------------------------------------------------------------
-  " Markdown options {{{
+  " Pandoc options {{{
   " --------------------------------------------------------------------------
 
-  autocmd FileType markdown set formatoptions=tacwq
-  " autocmd FileType markdown set spell
-  autocmd FileType markdown set scrolloff=15
-  autocmd FileType markdown call litecorrect#init()
+  autocmd FileType pandoc set formatoptions=tacwq
+  autocmd FileType pandoc set spell
+  autocmd FileType pandoc set scrolloff=15
+  autocmd FileType pandoc call litecorrect#init()
 
   " }}}
   " --------------------------------------------------------------------------
