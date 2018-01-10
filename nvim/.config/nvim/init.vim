@@ -433,6 +433,7 @@ augroup vimrc
   autocmd FileType pandoc set spell
   autocmd FileType pandoc set scrolloff=15
   autocmd FileType pandoc call litecorrect#init()
+  autocmd FileType pandoc set nowrap
 
   " }}}
   " --------------------------------------------------------------------------
