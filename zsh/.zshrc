@@ -262,7 +262,7 @@ alias nhd="brew services stop khd"        # No hotkey daemon
 # Git {{{
 # ---------------------------------------------------------------------------
 
-alias gc="git commit -am"                                                            # Git commit
+alias gc="git add -A && git commit -am"                                              # Git commit
 alias gcl="git clone"                                                                # Git clone
 alias gi="git init && git add -A"                                                    # Git initialise new repo
 alias gpl="git pull"                                                                 # Git pull
