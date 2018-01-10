@@ -1,0 +1,20 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+		"0_package_control_loader"
+	],
+	"installed_packages":
+	[
+		"AlignTab",
+		"DictionaryAutoComplete",
+		"Git",
+		"GitGutter",
+		"NeoVintageous",
+		"Package Control",
+		"ScrollOffset",
+		"Theme - Monokai Pro",
+		"VimL",
+		"WordCount"
+	]
+}

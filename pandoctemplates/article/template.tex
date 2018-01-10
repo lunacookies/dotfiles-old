@@ -1,0 +1,462 @@
+
+% vim: set foldmethod=marker foldlevel=0 nomodeline:
+
+% ============================================================================
+% DOCUMENT CLASS {{{
+% ============================================================================
+
+% ----------------------------------------------------------------------------
+% School {{{
+% ----------------------------------------------------------------------------
+
+$if(schoolspecific)$
+  \documentclass[12pt, a4paper]{article}
+$else$
+
+% }}}
+% ----------------------------------------------------------------------------
+% Default {{{
+% ----------------------------------------------------------------------------
+
+  \documentclass[10pt, a4paper]{report}
+$endif$
+
+% }}}
+% ----------------------------------------------------------------------------
+
+% }}}
+% ============================================================================
+% PACKAGES {{{
+% ============================================================================
+
+% ----------------------------------------------------------------------------
+% Graphics {{{
+% ----------------------------------------------------------------------------
+
+\usepackage{graphicx} % Include images
+
+% }}}
+% ----------------------------------------------------------------------------
+% Vector drawing {{{
+% ----------------------------------------------------------------------------
+
+\usepackage{pgfplots} % Charts and graphs
+\usepackage{tikz}     % Draw vector shapes in LaTeX
+\usepackage{mhchem}   % Typeset chemical formulae
+
+% }}}
+% ----------------------------------------------------------------------------
+% Text {{{
+% ----------------------------------------------------------------------------
+
+\usepackage{xcolor}   % Custom colours
+\usepackage{hyperref} % Enable hyperlinks around documents
+
+% }}}
+% ----------------------------------------------------------------------------
+% Margins {{{
+% ----------------------------------------------------------------------------
+
+\usepackage{geometry} % Custom margins
+
+% }}}
+% ----------------------------------------------------------------------------
+% Bibliography {{{
+% ----------------------------------------------------------------------------
+
+\usepackage[              % Bibliography management
+  backend=biber,          % Ue biber as backend
+  style=numeric-comp      % Enumerate, sort and compress citations
+]{biblatex}
+\addbibresource{refs.bib} % Set bibliography source file
+\let\cite=\autocite       % Use specified citation type
+
+% }}}
+% ----------------------------------------------------------------------------
+
+% }}}
+% ============================================================================
+% LANGUAGE {{{
+% ============================================================================
+
+% ----------------------------------------------------------------------------
+% British {{{
+% ----------------------------------------------------------------------------
+
+\usepackage[british]{babel}
+
+% }}}
+% ----------------------------------------------------------------------------
+
+% }}}
+% ============================================================================
+% TYPOGRAPHY {{{
+% ============================================================================
+
+% ----------------------------------------------------------------------------
+% Alignment {{{
+% ----------------------------------------------------------------------------
+
+\usepackage{ragged2e}
+
+% }}}
+% ----------------------------------------------------------------------------
+% Microtype {{{
+% ----------------------------------------------------------------------------
+
+\usepackage
+  [activate={true,nocompatibility},  % Disable compatibility mode
+  final,                             % Enable microtype
+  tracking=true,                     % Enable tracking for small caps
+  kerning=true,                      % Enable margin kerning
+  spacing=true,                      % Enable interword spacing
+  factor=1100,                       % Increase margin kerning by 10%
+  stretch=10,                        % Set amount that microtype can distort glyphs
+  shrink=10]
+{microtype}
+
+% }}}
+% ----------------------------------------------------------------------------
+% Typeface {{{
+% ----------------------------------------------------------------------------
+
+$if(schoolspecific)$
+  \usepackage{times}                                          % Use Times font when document has school-specific formatting
+$else$
+  % \usepackage[osf, p]{CormorantGaramond}                    % Cormorant Garanmond for serif, main font
+  \usepackage[p,osf]{fbb}                                     % osf in text, tabular lining figures in math
+  \usepackage[scaled=.95,type1]{cabin}                        % Gill Sans look-alike for sans serif font
+  \usepackage[varqu,varl]{zi4}                                % Inconsolata for typewriter font
+  \usepackage[T1]{fontenc}                                    % Output characters as UTF-8
+  \usepackage[libertine]{newtxmath}                           % Linux Libertine for math
+  \usepackage[cal=boondoxo,bb=boondox,frak=boondox]{mathalfa} % ISO math
+$endif$
+
+\usepackage[utf8]{inputenc}                                   % Input characters in UTF-8
+
+% }}}
+% ----------------------------------------------------------------------------
+% Line spacing {{{
+% ----------------------------------------------------------------------------
+
+$if(schoolspecific)$
+  \usepackage[doublespacing]{setspace} % Use double spacing when document has school-specific formatting
+% $else$
+%   \usepackage{leading}
+%   \leading{12.5pt}
+$endif$
+
+% }}}
+% ----------------------------------------------------------------------------
+% Paragraph separation {{{
+% ----------------------------------------------------------------------------
+
+% \setlength{\parskip}{100pt}    % Set paragraph before-and-after
+\setlength{\RaggedRightParindent}{14pt} % Set paragraph indent
+
+% }}}
+% ----------------------------------------------------------------------------
+% Pandoc list conversion requirement {{{
+% ----------------------------------------------------------------------------
+
+\providecommand{\tightlist}{
+\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% }}}
+% ----------------------------------------------------------------------------
+% Point sizes {{{
+% ----------------------------------------------------------------------------
+
+\makeatletter
+\renewcommand\Huge{\@setfontsize\Huge{24pt}{36pt}}
+\renewcommand\huge{\@setfontsize\huge{20pt}{30pt}}
+\renewcommand\LARGE{\@setfontsize\LARGE{14pt}{18pt}}
+\renewcommand\Large{\@setfontsize\Large{12pt}{16pt}}
+\renewcommand\large{\@setfontsize\large{11pt}{15pt}}
+\renewcommand\normalsize{\@setfontsize\normalsize{10pt}{14pt}}
+\renewcommand\footnotesize{\@setfontsize\footnotesize{8pt}{10pt}}
+\makeatother
+
+% }}}
+% ----------------------------------------------------------------------------
+
+% }}}
+% ============================================================================
+% LAYOUT {{{
+% ============================================================================
+
+% ----------------------------------------------------------------------------
+% Table of contents {{{
+% ----------------------------------------------------------------------------
+
+\usepackage{tocloft}
+
+\setlength\cftbeforesecskip{-5pt}              % Section spacing
+\setlength\cftparskip{-5pt}                    % Subsection spacing
+\renewcommand{\cfttoctitlefont}{\huge\itshape} % Make TOC heading italic
+\renewcommand{\cftdot}{}                       % Hide dots
+% \renewcommand{\cftpnumalign}{l}
+
+\usepackage{titletoc}
+\usepackage{fullwidth}
+
+\titlecontents{part}                                                   % FIXME
+[0em]                                                                  % distance from left margin
+{\vspace{1.5\baselineskip}\begin{fullwidth}\LARGE\rmfamily\itshape}    % above (global formatting of entry)
+{\contentslabel{2em}}                                                  % before w/label (label = ``II'')
+{}                                                                     % before w/o label
+{\rmfamily\upshape\qquad\thecontentspage}                              % filler + page (leaders and page num)
+[\end{fullwidth}]                                                      % after
+\titlecontents{chapter}                                                %
+[0em]                                                                  % distance from left margin
+{\vspace{1.5\baselineskip}\begin{fullwidth}\LARGE\rmfamily\itshape}    % above (global formatting of entry)
+{\hspace*{0em}\contentslabel{2em}}                                     % before w/label (label = ``2'')
+{\hspace*{0em}}                                                        % before w/o label
+{\rmfamily\upshape\qquad\thecontentspage}                              % filler + page (leaders and page num)
+[\end{fullwidth}]                                                      % after
+\titlecontents{section}                                                % FIXME
+[0em]                                                                  % distance from left margin
+{\vspace{0\baselineskip}\begin{fullwidth}\Large\rmfamily\itshape}      % above (global formatting of entry)
+{\hspace*{2em}\contentslabel{2em}}                                     % before w/label (label = ``2.6'')
+{\hspace*{2em}}                                                        % before w/o label
+{\rmfamily\upshape\qquad\thecontentspage}                              % filler + page (leaders and page num)
+[\end{fullwidth}]                                                      % after
+\titlecontents{subsection}                                             % FIXME
+[0em]                                                                  % distance from left margin
+{\vspace{0\baselineskip}\begin{fullwidth}\large\rmfamily\itshape}      % above (global formatting of entry)
+{\hspace*{4em}\contentslabel{4em}}                                     % before w/label (label = ``2.6.1'')
+{\hspace*{4em}}                                                        % before w/o label
+{\rmfamily\upshape\qquad\thecontentspage}                              % filler + page (leaders and page num)
+[\end{fullwidth}]                                                      % after
+\titlecontents{paragraph}                                              % FIXME
+[0em]                                                                  % distance from left margin
+{\vspace{0\baselineskip}\begin{fullwidth}\normalsize\rmfamily\itshape} % above (global formatting of entry)
+{\hspace*{6em}\contentslabel{2em}}                                     % before w/label (label = ``2.6.0.0.1'')
+{\hspace*{6em}}                                                        % before w/o label
+{\rmfamily\upshape\qquad\thecontentspage}                              % filler + page (leaders and page num)
+[\end{fullwidth}]                                                      % after
+
+% }}}
+% ----------------------------------------------------------------------------
+% Margins {{{
+% ----------------------------------------------------------------------------
+
+\geometry{
+  a4paper,
+  left=24.8mm,
+  top=27.4mm,
+  headsep=2\baselineskip,
+  textwidth=107mm,
+  marginparsep=8.2mm,
+  marginparwidth=49.4mm,
+  textheight=65\baselineskip,
+  headheight=\baselineskip
+}
+
+% }}}
+% ----------------------------------------------------------------------------
+% Heading formatting and spacing {{{
+% ----------------------------------------------------------------------------
+
+\usepackage{titlesec}
+
+\setcounter{secnumdepth}{-1}
+
+\renewcommand\subsubsection{}
+
+\titleformat{\chapter}
+  {\huge\itshape}
+  {}
+  {0pt}
+  {}
+
+\titleformat{\section}
+  {\Large\itshape}
+  {}
+  {0pt}
+  {}
+
+\titleformat{\subsection}
+  {\large\itshape}
+  {}
+  {0pt}
+  {}
+
+\titlespacing*{\chapter}
+  {0pt}
+  {50pt}
+  {40pt}
+
+\titlespacing*{\section}
+  {0pt}
+  {3.5ex plus 1ex minus 0.2ex}
+  {2.3ex plus 0.2ex}
+
+\titlespacing*{\subsection}
+  {0pt}
+  {3.25ex plus 1ex minus 0.2ex}
+  {1.5ex plus 0.2ex}
+
+% }}}
+% ----------------------------------------------------------------------------
+% Title formatting {{{
+% ----------------------------------------------------------------------------
+
+\usepackage{titling}
+
+$if(toc)$
+  \renewcommand{\maketitle}{
+    \clearpage
+    \thispagestyle{empty}
+    \begin{flushleft}
+      { \itshape \Large \theauthor}\\
+      \vspace{200pt}
+      { \itshape \Huge \thetitle}\\
+      \vfill
+      { \itshape \Large \thedate \hspace{5pt} \textbullet \hspace{5pt} Manly Selective Campus}\\
+    \end{flushleft}
+    \clearpage
+  }
+$else$
+  \renewcommand{\maketitle}{
+    \begin{flushleft}
+      { \large \bfseries \thetitle}\\
+      \vspace{7pt}
+      { \itshape \theauthor}\\
+      { \itshape \thedate}
+      \vspace{-2pt}
+    \end{flushleft}
+  }
+$endif$
+
+% }}}
+% ----------------------------------------------------------------------------
+% Trim excessive whitespace around lists {{{
+% ----------------------------------------------------------------------------
+
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=*}
+\setlist[enumerate]{leftmargin=*}
+
+% }}}
+% ----------------------------------------------------------------------------
+% Header and footer {{{
+% ----------------------------------------------------------------------------
+
+% \usepackage{fancyhdr}
+% \usepackage{textcase}
+% % \setlength{\headheight}{14pt}
+% \pagestyle{fancy}
+% \renewcommand{\sectionmark}[1]{\markright{#1}}
+% \fancyhead{}
+% \fancyfoot{}
+% % \fancyfoot[C] {{\vspace{-5pt}\thepage}}
+% \fancyhead[R]{\textsc{\MakeTextLowercase{$title$}}\quad\thepage}
+% % \fancyhead[C]{\scshape{\MakeTextLowercase\rightmark}}
+% \renewcommand{\footrulewidth}{0pt}
+% \renewcommand{\headrulewidth}{0pt}
+
+% \fancypagestyle{nohead}{
+%   \fancyfoot[C] {{\vspace{-5pt}\thepage}}
+%   \fancyhead{}
+%   \renewcommand{\footrulewidth}{0pt}
+%   \renewcommand{\headrulewidth}{0pt}
+% }
+
+% }}}
+% ----------------------------------------------------------------------------
+% Nice tables {{{
+% ----------------------------------------------------------------------------
+
+\usepackage{booktabs}
+\usepackage{longtable}
+
+% }}}
+% ----------------------------------------------------------------------------
+% Margin notes {{{2
+% ----------------------------------------------------------------------------
+
+\usepackage{sidenotes}                                                  % Backend for margin notes
+\usepackage{marginfix}                                                  % Fix overlapping margin notes which are in close proximity
+\let\footnote=\myside                                                   % Show footnotes as margin notes
+%{{{
+\newcommand{\mycap}[1]{\caption{\itshape\footnotesize\RaggedRight{#1}}} % Italic and small captions
+\newcommand{\myside}[1]{\sidenote{\footnotesize\RaggedRight{#1}}}       % Smaller margin notes
+
+% }}}2
+% ----------------------------------------------------------------------------
+
+% }}}
+% ============================================================================
+% DOCUMENT {{{
+% ============================================================================
+
+% ----------------------------------------------------------------------------
+% Begin document {{{
+% ----------------------------------------------------------------------------
+
+\begin{document}
+
+% }}}
+% ----------------------------------------------------------------------------
+% Document info {{{
+% ----------------------------------------------------------------------------
+
+\title{$title$}
+\author{$author$}
+\date{\today}
+
+% }}}
+% ----------------------------------------------------------------------------
+% Make title {{{
+% ----------------------------------------------------------------------------
+
+\maketitle
+
+% }}}
+% ----------------------------------------------------------------------------
+% Table of contents {{{
+% ----------------------------------------------------------------------------
+
+$if(toc)$
+  \vspace*{50pt}
+  \tableofcontents
+  \thispagestyle{empty}
+  \cleardoublepage
+$endif$
+
+% }}}
+% ----------------------------------------------------------------------------
+% Body {{{
+% ----------------------------------------------------------------------------
+
+$if(toc)$
+  \setcounter{page}{1}
+$else$
+  % \thispagestyle{nohead}
+$endif$
+\begin{FlushLeft}
+  $body$
+\end{FlushLeft}
+
+% }}}
+% ----------------------------------------------------------------------------
+% Print bibliography {{{
+% ----------------------------------------------------------------------------
+
+\clearpage
+\chapter*{Bibliography}
+\printbibliography[heading=none]
+
+% }}}
+% ----------------------------------------------------------------------------
+% End document {{{
+% ----------------------------------------------------------------------------
+
+\end{document}
+
+% }}}
+% ----------------------------------------------------------------------------
+
+% }}}
+% ============================================================================

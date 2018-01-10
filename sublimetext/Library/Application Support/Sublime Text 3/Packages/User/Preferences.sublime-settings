@@ -1,0 +1,15 @@
+{
+	"bold_folder_labels": true,
+	"color_scheme": "Packages/Theme - Monokai Pro/Monokai Pro.tmTheme",
+	"font_face": "Fira Code",
+	"font_size": 11,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"move_to_limit_on_up_down": true,
+	"scroll_speed": 1.5,
+	"tab_size": 2,
+	"theme": "Monokai Pro.sublime-theme",
+	"translate_tabs_to_spaces": true
+}

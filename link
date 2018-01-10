@@ -2,9 +2,11 @@
 
 cd ~/dotfiles
 
-ln -s tmux.conf ~/.tmux.conf
-ln -s nvim ~/.config/nvim
-ln -s fish ~/.config/fish
-ln -s chunkwmrc ~/.chunkwmrc
-ln -s khdrc ~/.khdrc
-ln -s zshrc ~/.zshrc
+stow bin
+stow chunkwm
+stow khd
+stow nvim
+stow sublimetext
+stow tmux
+stow zsh
+

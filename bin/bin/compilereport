@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+pandoc -f markdown -t latex -o document.tex document.md --template=$HOME/dotfiles/pandoctemplates/article/template.tex --top-level-division=section
+
+pdflatex document.tex
+biber document
+pdflatex document.tex
+pdflatex document.tex
+
+mv document.md mdtmp
+mv refs.bib bibtmp
+mv document.pdf output.pdf
+
+rm document*
+
+mv mdtmp document.md
+mv bibtmp refs.bib
+
