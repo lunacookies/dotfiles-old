@@ -156,7 +156,7 @@ set mouse=a            " Use mouse
 set clipboard=unnamed  " Use macOS clipboard
 set timeoutlen=500     " Time in milliseconds to complete a shortcut
 set textwidth=79       " 79 chars/line
-set modelines=2        " Set how many lines are checked for set commands
+set modelines=3        " Set how many lines are checked for set commands
 set nojoinspaces       " Insert only one space after punctuation
 set nostartofline      " Keep cursor on same column
 set spell              " Spell check comments and text
