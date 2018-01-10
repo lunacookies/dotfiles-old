@@ -50,7 +50,7 @@ zplug load
 # Prompt symbol {{{
 # ---------------------------------------------------------------------------
 
-SPACESHIP_PROMPT_SYMBOL=">" # 
+SPACESHIP_PROMPT_SYMBOL=" >" # 
 
 # }}}
 # ---------------------------------------------------------------------------
@@ -102,9 +102,9 @@ SPACESHIP_PROMPT_ORDER=(
 # No padding {{{
 # ---------------------------------------------------------------------------
 
-# SPACESHIP_TIME_SHOW="true" # Add padding in front of dir
-# SPACESHIP_TIME_FORMAT=" "
-# SPACESHIP_DIR_PREFIX=""
+SPACESHIP_TIME_SHOW="true" # Add padding in front of dir
+SPACESHIP_TIME_FORMAT=""
+SPACESHIP_DIR_PREFIX=""
 
 
 # }}}
