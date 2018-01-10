@@ -2,6 +2,19 @@
 # vim: set foldmethod=marker foldlevel=0 nomodeline:
 
 # ===========================================================================
+# aramis' init.vim {{{
+# ===========================================================================
+
+# /u/aramisreddit
+# github.com/aramisgithub
+
+# Inspired by
+# github.com/junegunn
+# github.com/Geospace
+# gihub.com/herrbischoff
+
+# }}}
+# ===========================================================================
 # Z-PLUG BLOCK {{{
 # ===========================================================================
 
