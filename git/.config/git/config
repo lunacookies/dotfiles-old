@@ -1,0 +1,6 @@
+[user]
+	name = Aramis Razzaghipour
+	email = aramisnoah@gmail.com
+[core]
+	editor = nvim
+	pager = less

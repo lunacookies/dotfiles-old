@@ -9,4 +9,5 @@ stow nvim
 stow sublimetext
 stow tmux
 stow zsh
+stow git
 
