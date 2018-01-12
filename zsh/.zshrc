@@ -178,6 +178,28 @@ export FZF_DEFAULT_OPTS="
 
 # }}}
 # ---------------------------------------------------------------------------
+# Window titles {{{
+# ---------------------------------------------------------------------------
+
+case "$TERM" in                         # If in tmux
+  screen*)
+    precmd () {                         # Do this at every prompt
+      COLLAPSEPWD=$(print -rD $PWD)     # Set $COLLAPEPWD to condensed PWD
+      tmux rename-window ${COLLAPSEPWD} # Set tmux window name to $COLLAPSEPWD
+    }
+      ;;
+esac
+
+case "$TERM" in             # If in regular terminal
+  xterm*)
+    precmd () {             # Do this at every prompt
+      print -Pn "\e]0;%~\a" # Set window title to  condensed PWD
+    }
+      ;;
+esac
+
+# }}}
+# ---------------------------------------------------------------------------
 
 # }}}
 # ===========================================================================
@@ -285,18 +307,4 @@ alias gl="git log --color --graph --pretty=format:'%Cgreen%s%Creset%nby %an%n%ar
 # }}}
 # ===========================================================================
 
-case "$TERM" in
-  screen*)
-    precmd () {
-      COLLAPSEPWD=$(print -rD $PWD)
-      tmux rename-window ${COLLAPSEPWD}
-    }
-      ;;
-esac
-
-case "$TERM" in
-  xterm*)
-    precmd () {print -Pn "\e]0;%~\a"}
-      ;;
-esac
 
