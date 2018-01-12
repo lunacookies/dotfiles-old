@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+cd ~
+/usr/local/bin/rmtrash ~/.vim*
+/usr/local/bin/rmtrash ~/.less*
+/usr/local/bin/rmtrash ~/.cache
+/usr/local/bin/rmtrash ~/.bash*
+/usr/local/bin/rmtrash ~/.hyper*
+/usr/local/bin/rmtrash ~/.config/nvim/.netrwhist
+
+sudo rm -rf ~/Downloads
+sudo rm -rf ~/downloads
+sudo rm -rf ~/Documents
+sudo rm -rf ~/documents
+sudo rm -rf ~/Pictures
+sudo rm -rf ~/pictures
+sudo rm -rf ~/Music
+sudo rm -rf ~/music
+
