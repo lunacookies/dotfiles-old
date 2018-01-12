@@ -1,6 +1,6 @@
 ---
 title: An Exploration of Model Checking with TOP
-author: Aramis Razzaghipour
+author: Me
 
 toc: true
 ---
