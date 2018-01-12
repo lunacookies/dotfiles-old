@@ -1,19 +1,50 @@
 #!/usr/bin/env bash
 
 cd ~
-/usr/local/bin/rmtrash ~/.vim*
-/usr/local/bin/rmtrash ~/.less*
-/usr/local/bin/rmtrash ~/.cache
-/usr/local/bin/rmtrash ~/.bash*
-/usr/local/bin/rmtrash ~/.hyper*
-/usr/local/bin/rmtrash ~/.config/nvim/.netrwhist
 
-sudo rm -rf ~/Downloads
-sudo rm -rf ~/downloads
-sudo rm -rf ~/Documents
-sudo rm -rf ~/documents
-sudo rm -rf ~/Pictures
-sudo rm -rf ~/pictures
-sudo rm -rf ~/Music
-sudo rm -rf ~/music
+read -p "
+ Are you sure? This script will delete all files and folders that the creator
+ thought of as unnecessary junk.
+
+ This includes: caches, bash configs, hyper configs, less histories, netrw
+ histories, terminfo folder, Downloads folder, Documents folder, Pictures
+ folder, Music folder and more.
+
+ [Y/n]" -n 1 -r
+
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  /usr/local/bin/rmtrash ~/.vim*
+  /usr/local/bin/rmtrash ~/.less*
+  /usr/local/bin/rmtrash ~/.cache
+  /usr/local/bin/rmtrash ~/.bash*
+  /usr/local/bin/rmtrash ~/.hyper*
+  /usr/local/bin/rmtrash ~/.config/nvim/.netrwhist
+  /usr/local/bin/rmtrash ~/.terminfo
+
+  sudo rm -rf ~/Downloads
+  sudo rm -rf ~/downloads
+  sudo rm -rf ~/Documents
+  sudo rm -rf ~/documents
+  sudo rm -rf ~/Pictures
+  sudo rm -rf ~/pictures
+  sudo rm -rf ~/Music
+  sudo rm -rf ~/music
+
+  sudo mv ~/Desktop ~/desktop
+  sudo mv ~/Movies ~/movies
+
+  find / -name '.DS_Store' -type f -delete
+  find ~/box -name 'Icon*' -type f -delete
+
+  echo "
+   Here! Take a look at that *clean* home folder:"
+  sleep 2
+  cd ~
+  ls -lGH
+
+else
+  echo " Quitting script."
+fi
 
