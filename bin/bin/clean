@@ -42,7 +42,7 @@ then
    Here! Take a look at that *clean* home folder:"
   sleep 2
   cd ~
-  ls -lGH
+  ls -aGHl
 
 else
   echo " Quitting script."
