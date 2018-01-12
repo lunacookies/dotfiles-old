@@ -115,7 +115,10 @@ set number                      " Line numbers
 set lazyredraw                  " Prevent unnecessary redrawing
 set noimd                       " Fix Input Methods
 syntax enable                   " Enable syntax highlighting
-colorscheme seoul256-light      " Set colourscheme
+colorscheme seoul256-light      " Set colour scheme
+set titlestring=                " Reset what shows in window title
+set titlestring+=%t             " Show filename in window title
+set title                       " Show the window title
 if exists('&colorcolumn')       " Highlight 79th column
   set colorcolumn=79
 endif
@@ -150,18 +153,18 @@ set autoread           " Automatically read a file when it has been changed outs
 " Editing {{{
 " ---------------------------------------------------------------------------
 
-set virtualedit=block  " Allow cursor placement where characters are not in Visual Block
-set formatoptions=1cj  " Auto-format comments
-set mouse=a            " Use mouse
-set clipboard=unnamed  " Use macOS clipboard
-set timeoutlen=500     " Time in milliseconds to complete a shortcut
-set textwidth=79       " 79 chars/line
-set modelines=3        " Set how many lines are checked for set commands
-set nojoinspaces       " Insert only one space after punctuation
-set nostartofline      " Keep cursor on same column
-set spell              " Spell check comments and text
-set spelllang=en_gb    " Use British English
-if exists('&fixeol')   " Handle end of lines at end of files
+set virtualedit=block " Allow cursor placement where characters are not in Visual Block
+set formatoptions=1cj " Auto-format comments
+set mouse=a           " Use mouse
+set clipboard=unnamed " Use macOS clipboard
+set timeoutlen=500    " Time in milliseconds to complete a shortcut
+set textwidth=79      " 79 chars/line
+set modelines=3       " Set how many lines are checked for set commands
+set nojoinspaces      " Insert only one space after punctuation
+set nostartofline     " Keep cursor on same column
+set spell             " Spell check comments and text
+set spelllang=en_gb   " Use British English
+if exists('&fixeol')  " Handle end of lines at end of files
   set nofixeol
 endif
 
@@ -451,11 +454,4 @@ augroup END
 " }}}
 " ===========================================================================
 
-"" Show syntax highlighting groups for word under cursor
-nnoremap <leader>p :call <SID>SynStack()<CR>
-function! <SID>SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
+
