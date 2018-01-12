@@ -446,7 +446,7 @@
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
 	<key>JobName</key>
-	<true/>
+	<false/>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
@@ -494,13 +494,13 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1169 91 445 77 0 0 1680 1050 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>317 419 796 473 0 0 1680 1027 </string>
+	<string>317 424 796 473 0 0 1680 1027 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>130 548 695 372 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>132 195 690 723 0 0 1680 1050 </string>
+	<string>858 46 749 935 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>132 576 690 338 0 0 1680 1050 </string>
+	<string>858 117 679 375 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 10</key>
 	<string>133 193 1414 727 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 11</key>
@@ -508,9 +508,9 @@
 	<key>NSWindow Frame iTerm Window 12</key>
 	<string>131 193 693 727 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>131 246 594 667 0 0 1680 1050 </string>
+	<string>1215 117 322 375 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>131 193 693 727 0 0 1680 1050 </string>
+	<string>610 258 560 423 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
 	<string>131 574 693 343 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
