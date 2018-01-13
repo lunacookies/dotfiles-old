@@ -186,15 +186,23 @@ endif
 " endfunction
 " let &statusline=s:statusline_expr()
 
+" set statusline=
+" set statusline+=\ %F
+" set statusline+=\ %y
+" set statusline+=\ %m
+" set statusline+=\ %r
+" set statusline+=\ %{fugitive#statusline()}
+" set statusline+=\ %=
+" set statusline+=\ %12(%l\ :\ %2v%)
+" set statusline+=\ %5P
+" set statusline+=\ 
+
 set statusline=
-set statusline+=\ %F
-set statusline+=\ %y
+set statusline+=\ %8(%l\ :\ %-2v%)
 set statusline+=\ %m
-set statusline+=\ %r
 set statusline+=\ %{fugitive#statusline()}
 set statusline+=\ %=
-set statusline+=\ %12(%l\ :\ %2v%)
-set statusline+=\ %5P
+set statusline+=\ %y
 set statusline+=\ 
 
 " }}}
