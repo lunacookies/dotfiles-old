@@ -117,7 +117,7 @@ set noimd                       " Fix Input Methods
 syntax enable                   " Enable syntax highlighting
 colorscheme seoul256-light      " Set colour scheme
 set titlestring=                " Reset what shows in window title
-set titlestring+=%t             " Show filename in window title
+set titlestring+=%F             " Show filename and file path in window title
 set title                       " Show the window title
 if exists('&colorcolumn')       " Highlight 79th column
   set colorcolumn=79
