@@ -443,6 +443,8 @@
 	<false/>
 	<key>FullHeightCursor</key>
 	<true/>
+	<key>HideTab</key>
+	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
 	<key>JobName</key>
@@ -494,11 +496,11 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1169 91 445 77 0 0 1680 1050 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>317 424 796 473 0 0 1680 1027 </string>
+	<string>126 334 796 473 0 0 1680 1027 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>130 548 695 372 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>858 46 749 935 0 0 1680 1027 </string>
+	<string>858 536 679 375 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>858 117 679 375 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 10</key>
@@ -510,7 +512,7 @@
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>1215 117 322 375 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>610 258 560 423 0 0 1680 1027 </string>
+	<string>858 117 679 375 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
 	<string>131 574 693 343 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
@@ -1223,6 +1225,8 @@
 	<false/>
 	<key>ShowBookmarkName</key>
 	<false/>
+	<key>StretchTabsToFillBar</key>
+	<true/>
 	<key>TabStyle</key>
 	<integer>0</integer>
 	<key>TerminalMargin</key>
