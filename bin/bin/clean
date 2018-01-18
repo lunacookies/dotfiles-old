@@ -23,14 +23,36 @@ then
   /usr/local/bin/rmtrash ~/.config/nvim/.netrwhist
   /usr/local/bin/rmtrash ~/.terminfo
 
-  sudo rm -rf ~/Downloads
-  sudo rm -rf ~/downloads
-  sudo rm -rf ~/Documents
-  sudo rm -rf ~/documents
-  sudo rm -rf ~/Pictures
-  sudo rm -rf ~/pictures
-  sudo rm -rf ~/Music
-  sudo rm -rf ~/music
+  if [ -e ~/Documents/* ]
+  then
+    echo "Contents rescued"
+  else
+    sudo rm -rf ~/Documents
+  fi
+  if [ -e ~/Downloads/* ]
+  then
+    echo "Contents rescued"
+  else
+    sudo rm -rf ~/Downloads
+  fi
+  if [ -e ~/Movies/* ]
+  then
+    echo "Contents rescued"
+  else
+    sudo rm -rf ~/Movies
+  fi
+  if [ -e ~/Music/* ]
+  then
+    echo "Contents rescued"
+  else
+    sudo rm -rf ~/Music
+  fi
+  if [ -e ~/Pictures/* ]
+  then
+    echo "Contents rescued"
+  else
+    sudo rm -rf ~/Pictures
+  fi
 
   sudo mv ~/Desktop ~/desktop
   sudo mv ~/Movies ~/movies
