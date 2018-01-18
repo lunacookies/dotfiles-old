@@ -55,7 +55,11 @@ then
   fi
 
   sudo mv ~/Desktop ~/desktop
+  sudo mv ~/Documents ~/documents
+  sudo mv ~/Downloads ~/downloads
   sudo mv ~/Movies ~/movies
+  sudo mv ~/Music ~/music
+  sudo mv ~/Pictures ~/pictures
 
   find / -name '.DS_Store' -type f -delete
   find ~/box -name 'Icon*' -type f -delete
