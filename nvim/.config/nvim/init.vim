@@ -404,22 +404,6 @@ inoreabbrev <expr> __
 
 " }}}
 " ---------------------------------------------------------------------------
-" vim-pandoc {{{
-" ---------------------------------------------------------------------------
-
-let g:pandoc#folding#fdc=0          " Don't show foldcolumn
-let g:pandoc#folding#mode='stacked' " Show all headings when folded
-let g:pandoc#folding#fold_yaml=1    " Fold YAML frontmatter
-
-" }}}
-" ---------------------------------------------------------------------------
-" vim-pandoc-syntax {{{
-" ---------------------------------------------------------------------------
-
-let g:pandoc#syntax#conceal#blacklist=['block'] " Don't conceal italic, bold, etc.
-
-" }}}
-" ---------------------------------------------------------------------------
 
 " }}}
 " ===========================================================================
@@ -442,14 +426,11 @@ augroup vimrc
 
   " }}}
   " --------------------------------------------------------------------------
-  " Pandoc options {{{
+  " Rainbow parentheses everywhere {{{
   " --------------------------------------------------------------------------
 
-  autocmd FileType pandoc set formatoptions=tacwq
-  autocmd FileType pandoc set spell
-  autocmd FileType pandoc set scrolloff=15
-  autocmd FileType pandoc call litecorrect#init()
-  autocmd FileType pandoc set nowrap
+  autocmd BufEnter * :RainbowParentheses
+  autocmd BufEnter .* :RainbowParentheses
 
   " }}}
   " --------------------------------------------------------------------------
