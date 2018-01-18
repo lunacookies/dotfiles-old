@@ -7,9 +7,8 @@ read -p "
  thought of as unnecessary junk, and remove any unnecessary homebrew
  dependencies. Updates will also occur.
 
- This includes: caches, bash configs, hyper configs, less histories, netrw
- histories, terminfo folder, Downloads folder, Documents folder, Pictures
- folder, Music folder and more.
+ This includes but is not limited to: caches, bash configs, hyper configs, less
+ histories, netrw histories, terminfo folder, useless default folders and more.
 
  [Y/n]" -n 1 -r
 
