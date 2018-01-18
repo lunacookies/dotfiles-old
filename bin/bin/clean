@@ -61,8 +61,8 @@ then
   sudo mv ~/Music ~/music
   sudo mv ~/Pictures ~/pictures
 
-  find / -name '.DS_Store' -type f -delete
-  find ~/box -name 'Icon*' -type f -delete
+  sudo find / -name '.DS_Store' -type f -delete
+  sudo find ~/box -name 'Icon*' -type f -delete
 
   echo "
    Here! Take a look at that *clean* home folder:"
