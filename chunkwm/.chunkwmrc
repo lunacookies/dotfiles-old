@@ -36,22 +36,11 @@
 # Global padding {{{
 # ---------------------------------------------------------------------------
 
-chunkc set global_desktop_offset_top    40
-chunkc set global_desktop_offset_bottom 40
-chunkc set global_desktop_offset_left   70
-chunkc set global_desktop_offset_right  70
-chunkc set global_desktop_offset_gap    20
-
-# }}}
-# ---------------------------------------------------------------------------
-# 1st desktop padding {{{
-# ---------------------------------------------------------------------------
-
-chunkc set 1_desktop_offset_top    90
-chunkc set 1_desktop_offset_bottom 90
-chunkc set 1_desktop_offset_left   120
-chunkc set 1_desktop_offset_right  120
-chunkc set 1_desktop_offset_gap    30
+chunkc set global_desktop_offset_top    90
+chunkc set global_desktop_offset_bottom 90
+chunkc set global_desktop_offset_left   120
+chunkc set global_desktop_offset_right  120
+chunkc set global_desktop_offset_gap    30
 
 # }}}
 # ---------------------------------------------------------------------------
