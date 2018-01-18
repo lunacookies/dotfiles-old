@@ -29,23 +29,22 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Plugins {{{
 " ---------------------------------------------------------------------------
 
-Plug 'reedes/vim-litecorrect'           " Lightweight auto-correction
-Plug 'junegunn/seoul256.vim'            " Low-contrast colour scheme based on Seoul Colors
-Plug 'junegunn/goyo.vim'                " Distraction-free writing
-Plug 'junegunn/vim-slash'               " Better searching
-Plug 'junegunn/rainbow_parentheses.vim' " Simpler Rainbow Parentheses
-Plug 'junegunn/limelight.vim'           " Hyper-focus writing
 Plug 'Yggdroot/indentLine'              " Indent guides
-Plug 'tpope/vim-fugitive'               " Git wrapper for vim
-Plug 'junegunn/vim-emoji'               " Emoji in vim
-Plug 'junegunn/vim-easy-align'          " A vim alignment plugin
-Plug 'tpope/vim-commentary'             " Comment stuff out
-Plug 'rhysd/vim-grammarous'             " A powerful grammar checker using LanguageTool
-Plug 'dhruvasagar/vim-table-mode'       " vim table mode for instant table creation
-Plug 'vim-pandoc/vim-pandoc'            " Pandoc integration and utilities
-Plug 'vim-pandoc/vim-pandoc-syntax'     " Pandoc markdown syntax
+Plug 'dhruvasagar/vim-table-mode'       " Vim table mode for instant table creation
+Plug 'jiangmiao/auto-pairs'             " Interact with brackets, parens, quotes in pair
 Plug 'junegunn/fzf.vim'                 " fzf on vim
-Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/goyo.vim'                " Distraction-free writing
+Plug 'junegunn/limelight.vim'           " Hyper-focus writing
+Plug 'junegunn/rainbow_parentheses.vim' " Simpler Rainbow Parentheses
+Plug 'junegunn/seoul256.vim'            " Low-contrast colour scheme based on Seoul Colours
+Plug 'junegunn/vim-easy-align'          " A vim alignment plugin
+Plug 'junegunn/vim-emoji'               " Emoji in vim
+Plug 'junegunn/vim-journal'             " A syntax plugin for plain-text notes
+Plug 'junegunn/vim-slash'               " Better searching
+Plug 'reedes/vim-litecorrect'           " Lightweight auto-correction
+Plug 'rhysd/vim-grammarous'             " A powerful grammar checker using LanguageTool
+Plug 'tpope/vim-commentary'             " Comment stuff out
+Plug 'tpope/vim-fugitive'               " Git wrapper for vim
 
 " }}}
 " ---------------------------------------------------------------------------
