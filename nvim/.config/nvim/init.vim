@@ -353,7 +353,6 @@ let g:indentLine_color_gui='#8a8a8a'                    " Set indent guide colou
 
 let g:limelight_paragraph_span=1 " Make limelight.vim span 3 paragraphs
 let g:limelight_priority=-1      " Don't overrule hlsearch
-let g:goyo_linenr=1              " Enable line numbers in goyo mode
 
 " Toggle goyo.vim
 function s:goyo_toggle()
