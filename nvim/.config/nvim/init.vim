@@ -354,15 +354,22 @@ let g:indentLine_color_gui='#8a8a8a'                     " Set indent guide colo
 let g:limelight_paragraph_span=1 " Make limelight.vim span 3 paragraphs
 let g:limelight_priority=-1      " Don't overrule hlsearch
 
-" Toggle goyo.vim
-function s:goyo_toggle()
-  :Limelight!!
-  set linespace=7!
-  :Goyo
+nnoremap <leader>g :Goyo<cr>        " Map goyo.vim
+nnoremap <leader>l :Limelight!!<cr> " Map limelight.vim
+
+function! s:goyo_enter()
+  set scrolloff=999
+  Limelight
 endfunction
 
-nnoremap <leader>g :call <SID>goyo_toggle()<cr> " Map goyo.vim
-nnoremap <leader>l :Limelight!!<cr> " Map limelight.vim
+function! s:goyo_leave()
+  set scrolloff=5
+  Limelight!
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
 
 " }}}
 " ---------------------------------------------------------------------------
