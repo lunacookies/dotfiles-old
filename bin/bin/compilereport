@@ -13,6 +13,11 @@ mv document.pdf output.pdf
 
 rm document*
 
+if [ -e ./texput.log ]
+then
+  rm texput.log
+fi
+
 mv mdtmp document.md
 mv bibtmp refs.bib
 
