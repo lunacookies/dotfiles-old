@@ -140,23 +140,16 @@ $endif$
 
 % }}}
 % ----------------------------------------------------------------------------
-% Line spacing {{{
-% ----------------------------------------------------------------------------
-
-$if(schoolspecific)$
-  \usepackage[doublespacing]{setspace} % Use double spacing when document has school-specific formatting
-% $else$
-%   \usepackage{leading}
-%   \leading{12.5pt}
-$endif$
-
-% }}}
-% ----------------------------------------------------------------------------
 % Paragraph separation {{{
 % ----------------------------------------------------------------------------
 
-% \setlength{\parskip}{100pt}    % Set paragraph before-and-after
-\setlength{\RaggedRightParindent}{14pt} % Set paragraph indent
+$if(schoolspecific)$
+  \setlength{\parindent}{14pt} % Set paragraph indent
+  \setlength{\RaggedRightParindent}{14pt}
+$else$
+  \setlength{\parindent}{12pt} % Set paragraph indent
+  \setlength{\RaggedRightParindent}{12pt}
+$endif$
 
 % }}}
 % ----------------------------------------------------------------------------
@@ -168,18 +161,40 @@ $endif$
 
 % }}}
 % ----------------------------------------------------------------------------
-% Point sizes {{{
+% Point sizes and leading {{{
 % ----------------------------------------------------------------------------
 
-\makeatletter
-\renewcommand\Huge{\@setfontsize\Huge{24pt}{36pt}}
-\renewcommand\huge{\@setfontsize\huge{20pt}{30pt}}
-\renewcommand\LARGE{\@setfontsize\LARGE{14pt}{18pt}}
-\renewcommand\Large{\@setfontsize\Large{12pt}{16pt}}
-\renewcommand\large{\@setfontsize\large{11pt}{15pt}}
-\renewcommand\normalsize{\@setfontsize\normalsize{10pt}{14pt}}
-\renewcommand\footnotesize{\@setfontsize\footnotesize{8pt}{10pt}}
-\makeatother
+$if(schoolspecific)$
+  \makeatletter
+  \renewcommand\Huge{\@setfontsize\Huge{26pt}{39pt}}
+  \renewcommand\huge{\@setfontsize\huge{22pt}{33pt}}
+  \renewcommand\LARGE{\@setfontsize\LARGE{16pt}{21pt}}
+  \renewcommand\Large{\@setfontsize\Large{14pt}{19pt}}
+  \renewcommand\large{\@setfontsize\large{13pt}{17pt}}
+  \renewcommand\normalsize{\@setfontsize\normalsize{12pt}{19pt}}
+  \renewcommand\footnotesize{\@setfontsize\footnotesize{10pt}{14pt}}
+  \makeatother
+$else$
+  \makeatletter
+  \renewcommand\Huge{\@setfontsize\Huge{24pt}{36pt}}
+  \renewcommand\huge{\@setfontsize\huge{20pt}{30pt}}
+  \renewcommand\LARGE{\@setfontsize\LARGE{14pt}{18pt}}
+  \renewcommand\Large{\@setfontsize\Large{12pt}{16pt}}
+  \renewcommand\large{\@setfontsize\large{11pt}{15pt}}
+  \renewcommand\normalsize{\@setfontsize\normalsize{10pt}{14pt}}
+  \renewcommand\footnotesize{\@setfontsize\footnotesize{8pt}{10pt}}
+  \makeatother
+$endif$
+
+% }}}
+% ----------------------------------------------------------------------------
+% \newthought command {{{
+% ----------------------------------------------------------------------------
+
+\providecommand\newthought[1]{%
+  \addvspace{1.0\baselineskip plus 0.5ex minus 0.2ex}
+  \noindent\textsc{#1}
+}
 
 % }}}
 % ----------------------------------------------------------------------------
