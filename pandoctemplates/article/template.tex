@@ -260,17 +260,43 @@ $endif$
 % Margins {{{
 % ----------------------------------------------------------------------------
 
-\geometry{
-  a4paper,
-  left=24.8mm,
-  top=27.4mm,
-  headsep=2\baselineskip,
-  textwidth=107mm,
-  marginparsep=8.2mm,
-  marginparwidth=49.4mm,
-  textheight=65\baselineskip,
-  headheight=\baselineskip
-}
+$if(schoolspecific)$
+  \newlength{\alphabet}
+  \settowidth{\alphabet}{\normalfont abcdefghijklmnopqrstuvwxyz}
+  \geometry{
+    a4paper,
+    textwidth=2.31\alphabet,
+    $if(symmetric)$
+      hmarginratio={1:1},
+    $else$
+      hmarginratio={100:300},
+    $endif$
+    top=27.4mm,
+    bottom=40.2mm,
+    headsep=2\baselineskip,
+    marginparsep=8.2mm,
+    marginparwidth=49.4mm,
+    headheight=\baselineskip
+  }
+$else$
+  \newlength{\alphabet}
+  \settowidth{\alphabet}{\normalfont abcdefghijklmnopqrstuvwxyz}
+  \geometry{
+    a4paper,
+    textwidth=2.26\alphabet,
+    $if(symmetric)$
+      hmarginratio={1:1},
+    $else$
+      hmarginratio={100:300},
+    $endif$
+    top=27.4mm,
+    bottom=40.2mm,
+    headsep=2\baselineskip,
+    marginparsep=8.2mm,
+    marginparwidth=49.4mm,
+    headheight=\baselineskip
+  }
+$endif$
 
 % }}}
 % ----------------------------------------------------------------------------
