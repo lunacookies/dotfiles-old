@@ -521,9 +521,13 @@ $if(toc)$
 $else$
   % \thispagestyle{nohead}
 $endif$
-\begin{FlushLeft}
+$if(symmetric)$
   $body$
-\end{FlushLeft}
+$else$
+  \begin{FlushLeft}
+    $body$
+  \end{FlushLeft}
+$endif$
 
 % }}}
 % ----------------------------------------------------------------------------
