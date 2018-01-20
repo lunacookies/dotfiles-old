@@ -430,6 +430,47 @@ $endif$
 
 % }}}2
 % ----------------------------------------------------------------------------
+% Figures {{{
+% ----------------------------------------------------------------------------
+
+\usepackage{caption}
+\captionsetup{
+  margin=50pt,
+  font=small,
+  labelfont=bf,
+  justification=RaggedRight,
+  labelsep=quad
+}
+\captionsetup[marginfigure]{
+  margin=0pt,
+  font=footnotesize,
+  labelfont=bf,
+  justification=RaggedRight,
+  labelsep=quad
+}
+
+$if(symmetric)$
+  \newcommand{\myfig}[3]{
+    \begin{figure}[h]
+      \centering
+      \includegraphics[height=0.4\linewidth]{#1}
+      \caption{#2}
+      \label{#3}
+    \end{figure}
+  }       % Custom inline figure
+$else$
+  \newcommand{\myfig}[3]{
+    \begin{marginfigure}
+      \captionsetup{type=figure,options=marginfigure}
+      \includegraphics[width=\linewidth]{#1}
+      \caption{#2}
+      \label{#3}
+    \end{marginfigure}
+  } % Custom margin figure
+$endif$
+
+% }}}
+% ----------------------------------------------------------------------------
 
 % }}}
 % ============================================================================
