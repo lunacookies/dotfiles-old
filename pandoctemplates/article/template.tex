@@ -122,6 +122,11 @@ $endif$
 
 $if(schoolspecific)$
   \usepackage{times}                                          % Use Times font when document has school-specific formatting
+  \usepackage[scaled=.95,type1]{cabin}                        % Gill Sans look-alike for sans serif font
+  \usepackage[varqu,varl]{zi4}                                % Inconsolata for typewriter font
+  \usepackage[T1]{fontenc}                                    % Output characters as UTF-8
+  \usepackage[libertine]{newtxmath}                           % Linux Libertine for math
+  \usepackage[cal=boondoxo,bb=boondox,frak=boondox]{mathalfa} % ISO math
 $else$
   % \usepackage[osf, p]{CormorantGaramond}                    % Cormorant Garanmond for serif, main font
   \usepackage[p,osf]{fbb}                                     % osf in text, tabular lining figures in math
