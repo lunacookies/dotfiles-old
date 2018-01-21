@@ -219,7 +219,7 @@ set statusline+=\
 
 inoremap jk <esc>
 xnoremap fd <esc>
-cnoremap jk <C-c>
+cnoremap jk <c-c>
 
 " }}}
 " ---------------------------------------------------------------------------
@@ -242,26 +242,26 @@ nnoremap : ;
 " Save {{{
 " ---------------------------------------------------------------------------
 
-nnoremap <C-s> :w<cr>
-inoremap <C-s> :w<cr>
+nnoremap <c-s> :w<cr>
+inoremap <c-s> :w<cr>
 
 " }}}
 " ---------------------------------------------------------------------------
 " Quit {{{
 " ---------------------------------------------------------------------------
 
-nnoremap <C-q> :wq<cr>
-inoremap <C-q> :wq<cr>
+nnoremap <c-q> :wq<cr>
+inoremap <c-q> :wq<cr>
 
 " }}}
 " ---------------------------------------------------------------------------
 " Movement in insert mode {{{
 " ---------------------------------------------------------------------------
 
-inoremap <C-h> <C-o>h
-inoremap <C-j> <C-o>j
-inoremap <C-k> <C-o>k
-inoremap <C-l> <C-o>a
+inoremap <c-p> <left>
+inoremap <c-j> <down>
+inoremap <c-k> <up>
+inoremap <c-l> <right>
 
 " }}}
 " ---------------------------------------------------------------------------
@@ -368,8 +368,8 @@ function! s:goyo_leave()
   Limelight!
 endfunction
 
-autocmd! User GoyoEnter nested call <SID>goyo_enter()
-autocmd! User GoyoLeave nested call <SID>goyo_leave()
+autocmd! User GoyoEnter nested call <sid>goyo_enter()
+autocmd! User GoyoLeave nested call <sid>goyo_leave()
 
 
 " }}}
@@ -378,10 +378,10 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " ---------------------------------------------------------------------------
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
+xmap ga <plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
+nmap ga <plug>(EasyAlign)
 
 " }}}
 " ---------------------------------------------------------------------------
@@ -396,11 +396,11 @@ function! s:isAtStartOfLine(mapping)
 endfunction
 
 inoreabbrev <expr> <bar><bar>
-  \ <SID>isAtStartOfLine('\|\|') ?
+  \ <sid>isAtStartOfLine('\|\|') ?
   \ '<c-o>:TableModeEnable<cr><bar><space><bar><left><left>' : '<bar><bar>'
 
 inoreabbrev <expr> __
-  \ <SID>isAtStartOfLine('__') ?
+  \ <sid>isAtStartOfLine('__') ?
   \ '<c-o>:silent! TableModeDisable<cr>' : '__'
 
 " }}}
