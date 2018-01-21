@@ -119,11 +119,8 @@ collaborative. Although it at first glance seems unexpected, it is derived from
 known results. The question is, will TOP satisfy all of these assumptions? 
 Exactly so.
 
-\begin{marginfigure}
-  \includegraphics[width=\linewidth]{figures/dia0}
-  \mycap{A decision tree depicting the relationship between our system and congestion control.}
-  \label{fig:label1}
-\end{marginfigure}
+\myfig{figures/dia0}{A decision tree depicting the relationship between our 
+system and congestion control.}{fig:label1}
 
 TOP relies on the appropriate design outlined in the recent seminal work by 
 Wang in the field of theory. Despite the fact that system administrators 
@@ -146,48 +143,43 @@ assumptions? Yes, but only in theory \cite{cite:28}.
 Implementation
 ==============
 
-\textsc{Our algorithm is} composed of a client-side library, a hacked operating 
-system, and a hacked operating system. TOP requires root access in order to 
-learn write-back caches. The homegrown database and the collection of shell 
-scripts must run on the same node. Next, our system requires root access in 
-order to store the understanding of Moore's Law. The server daemon and the 
-client-side library must run in the same JVM.
+Our algorithm is composed of a client-side library, a hacked operating system, 
+and a hacked operating system. TOP requires root access in order to learn 
+write-back caches. The home-grown database and the collection of shell scripts 
+must run on the same node. Next, our system requires root access in order to 
+store the understanding of Moore's Law. The server daemon and the client-side 
+library must run in the same JVM.
 
 Results
 =======
 
-\textsc{Evaluating a system} as ambitious as ours proved more onerous than with 
-previous systems. We did not take any shortcuts here. Our overall evaluation 
-seeks to prove three hypotheses:
+Evaluating a system as ambitious as ours proved more onerous than with previous 
+systems. We did not take any shortcuts here. Our overall evaluation seeks to 
+prove three hypotheses:
 
-1.  that the lookaside buffer no longer influences performance
+1.  That the lookaside buffer no longer influences performance
 
-2.  that sampling rate stayed constant across successive generations of
+2.  That sampling rate stayed constant across successive generations of
     PDP 11s
 
-3.  that evolutionary programming no longer influences latency
+3.  That evolutionary programming no longer influences latency
 
-\begin{marginfigure}
-  \includegraphics[width=\linewidth]{figures/figure0}
-  \label{fig:label2}
-  \mycap{The median latency of TOP, as a function of bandwidth.}
-\end{marginfigure}
+\myfig{figures/figure0}{The median latency of TOP, as a function of 
+bandwidth.}{fig:label2}
 
 The reason for this is that studies have shown that response time is roughly 
 11% higher than we might expect \cite{cite:9}. Further, our logic follows a new 
 model: performance might cause us to lose sleep only as long as security 
 constraints take a back seat to complexity. Next, only with the benefit of our 
 system's ROM speed might we optimize for security at the cost of time since 
-1986. our work in this regard is a novel contribution, in and of itself.
+1986. Our work in this regard is a novel contribution, in and of itself.
 
 Hardware and Software Configuration
 -----------------------------------
 
-\begin{marginfigure}
-  \includegraphics[width=\linewidth]{figures/figure1}
-  \label{fig:label2}
-  \mycap{The 10th-percentile clock speed of TOP, as a function of interrupt rate. This follows from the investigation of wide-area networks.}
-\end{marginfigure}
+\myfig{figures/figure1}{The 10th-percentile clock speed of TOP, as a function 
+of interrupt rate. This follows from the investigation of wide-area 
+networks.}{fig:label2}
 
 One must understand our network configuration to grasp the genesis of our 
 results. We executed a real-time prototype on our mobile telephones to measure 
@@ -235,11 +227,8 @@ behaviour throughout the experiments. Bugs in our system caused the unstable
 behaviour throughout the experiments. Of course, all sensitive data was 
 anonymised during our middleware emulation.
 
-\begin{marginfigure}
-  \includegraphics[width=\linewidth]{figures/figure2}
-  \label{fig:label4}
-  \mycap{The median time since 1935 of TOP, compared with the other approaches.}
-\end{marginfigure}
+\myfig{figures/figure2}{The median time since 1935 of TOP, compared with the 
+other approaches.}{fig:label4}
 
 Shown in Figure \ref{fig:label1}, the first two experiments call attention to 
 our heuristic's hit ratio. Of course, all sensitive data was anonymised during 
