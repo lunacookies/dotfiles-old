@@ -2,7 +2,9 @@
 title: An Exploration of Model Checking with TOP
 author: Aramis Razzaghipour
 
-toc: true
+toc: false
+symmetric: true
+schoolspecific: false
 ---
 
 Abstract {#abstract .unnumbered .unnumbered}
