@@ -29,41 +29,38 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Plugins {{{2
 " -----------------------------------------------------------------------------
 
+Plug '/usr/local/opt/fzf'                                " A command-line fuzzy finder
 Plug 'SirVer/ultisnips'                                  " The ultimate snippet solution for Vim
 Plug 'Yggdroot/indentLine'                               " Indent guides
 Plug 'dbmrq/vim-ditto',            { 'for': 'markdown' } " Stop repeating yourself
-Plug 'drzel/vim-scroll-off-fraction'
 Plug 'dhruvasagar/vim-table-mode', { 'for': 'markdown' } " Vim table mode for instant table creation
 Plug 'dkarter/bullets.vim',        { 'for': 'markdown' } " Automated bullet lists
+Plug 'drzel/vim-scroll-off-fraction'                     " Scrolloff as a fraction of window height
 Plug 'jiangmiao/auto-pairs'                              " Interact with brackets, parens, quotes in pair
+Plug 'junegunn/fzf.vim'                                  " Fzf on vim
 Plug 'junegunn/goyo.vim',          { 'for': 'markdown' } " Distraction-free writing
-Plug 'junegunn/fzf.vim'
-Plug '/usr/local/opt/fzf'
-Plug 'nanotech/jellybeans.vim'
 Plug 'junegunn/limelight.vim',     { 'for': 'markdown' } " Hyper-focus writing
-Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-easy-align'                           " A Vim alignment plugin
 Plug 'kana/vim-textobj-entire'                           " Text objects for entire buffer
 Plug 'kana/vim-textobj-indent'                           " Text objects for indented blocks of lines
 Plug 'kana/vim-textobj-line'                             " Text objects for the current line
 Plug 'kana/vim-textobj-user'                             " Create your own text objects
+Plug 'majutsushi/tagbar'                                 " Display tags in a window, ordered by scope
 Plug 'reedes/vim-litecorrect',     { 'for': 'markdown' } " Lightweight auto-correction
-Plug 'w0rp/ale'
 Plug 'romainl/flattened'                                 " Solarized, without the bullshit
+Plug 'scrooloose/nerdtree'                               " A tree explorer plugin for Vim
 Plug 'takac/vim-hardtime'                                " Stop repeating hjkl
 Plug 'tpope/vim-abolish'                                 " Act on multiple variants of a word
 Plug 'tpope/vim-commentary'                              " Comment stuff out
-Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-endwise'                                 " Wisely add matching closing structures
 Plug 'tpope/vim-fugitive'                                " Git wrapper for vim
 Plug 'tpope/vim-markdown',         { 'for': 'markdown' } " Vim Markdown runtime files
 Plug 'tpope/vim-repeat'                                  " Repeat plugin maps
 Plug 'tpope/vim-surround'                                " Quoting/parenthesising made simple
 Plug 'tpope/vim-unimpaired'                              " Pairs of handy bracket mappings
-Plug 'flazz/vim-colorschemes'
-Plug 'scrooloose/nerdtree'
-Plug 'mbbill/undotree'
-Plug 'majutsushi/tagbar'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'                           " Lean & mean status/tabline that's light as air
+Plug 'vim-airline/vim-airline-themes'                    " A collection of themes for vim-airline
+Plug 'w0rp/ale'                                          " Asynchronous Lint Engine
 
 " }}}2
 " -----------------------------------------------------------------------------
