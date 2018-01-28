@@ -344,7 +344,9 @@ let g:indentLine_color_gui='#93a1a1'          " Set indent guide colour for MacV
 " -----------------------------------------------------------------------------
 
 let g:limelight_paragraph_span=1 " Make limelight.vim span 3 paragraphs
+let g:goyo_width=85              " Leave space for line numbers
 let g:limelight_priority=-1      " Don't overrule hlsearch
+let g:goyo_linenr=1              " Show line numbers in Goyo mode
 
 nnoremap <leader>g :Goyo<cr>        " Map goyo.vim
 nnoremap <leader>l :Limelight!!<cr> " Map limelight.vim
