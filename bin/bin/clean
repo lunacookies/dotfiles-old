@@ -15,6 +15,34 @@ read -p "
 echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
+  echo "
+   Now for the package manager clear-out!"
+
+  pip freeze > requirements.txt
+  pip uninstall -r requirements.txt -y
+  rm requirements.txt
+
+  brew remove --force --ignore-dependencies $(brew list)
+  brew install exa
+  brew install fzf
+  brew install git
+  brew install koekeishiya/formulae/khd
+  brew install chunkwm
+  brew install neovim
+  brew install pandoc
+  brew install python3
+  brew install rmtrash
+  brew install ruby
+  brew install brew-gem
+  brew gem install mdl --homebrew-ruby
+  brew install shellcheck
+  brew install stow
+  brew install tmux
+  brew install zsh
+  brew tap crisidev/homebrew-chunkwm
+  brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+  pip3 install neovim
+
   /usr/local/bin/rmtrash ~/.vim*
   /usr/local/bin/rmtrash ~/.less*
   /usr/local/bin/rmtrash ~/.cache
@@ -22,6 +50,40 @@ then
   /usr/local/bin/rmtrash ~/.hyper*
   /usr/local/bin/rmtrash ~/.config/nvim/.netrwhist
   /usr/local/bin/rmtrash ~/.terminfo
+  /usr/local/bin/rmtrash ~/.cups
+  /usr/local/bin/rmtrash ~/.oracle*
+  /usr/local/bin/rmtrash ~/*.ti
+
+  if [ -e ~/documents/* ]
+  then
+    echo "Contents rescued"
+  else
+    sudo rm -rf ~/documents
+  fi
+  if [ -e ~/downloads/* ]
+  then
+    echo "Contents rescued"
+  else
+    sudo rm -rf ~/downloads
+  fi
+  if [ -e ~/movies/* ]
+  then
+    echo "Contents rescued"
+  else
+    sudo rm -rf ~/movies
+  fi
+  if [ -e ~/music/* ]
+  then
+    echo "Contents rescued"
+  else
+    sudo rm -rf ~/music
+  fi
+  if [ -e ~/pictures/* ]
+  then
+    echo "Contents rescued"
+  else
+    sudo rm -rf ~/pictures
+  fi
 
   if [ -e ~/Documents/* ]
   then
@@ -69,30 +131,6 @@ then
   sleep 2
   cd ~
   ls -aGHl
-
-  echo "
-   Now for the package manager clear-out!"
-
-  pip freeze > requirements.txt
-  pip uninstall -r requirements.txt -y
-  rm requirements.txt
-
-  brew remove --force --ignore-dependencies $(brew list)
-  brew tap crisidev/homebrew-chunkwm
-  brew install chunkwm
-  brew install koekeishiya/formulae/khd
-  brew install git
-  brew install exa
-  brew install stow
-  brew install tmux
-  brew install neovim
-  brew install rmtrash
-  brew install zsh
-  brew install pandoc
-  brew install fzf
-  brew install python3
-  pip3 install neovim
-
 
 else
   echo " Quitting script."
