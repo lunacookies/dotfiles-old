@@ -430,30 +430,9 @@ augroup vimrc
 
   " }}}2
   " --------------------------------------------------------------------------
-  " Rainbow parentheses everywhere {{{
-  " --------------------------------------------------------------------------
-
-  autocmd BufEnter * :RainbowParentheses
-  autocmd BufEnter .* :RainbowParentheses
-
-  " }}}
-  " --------------------------------------------------------------------------
-  " Journal options {{{
-  " --------------------------------------------------------------------------
-
-  autocmd BufEnter,BufNewFile *.md set filetype=journal
-  autocmd FileType journal set formatoptions=tacwq
-  autocmd FileType journal set spell
-  autocmd FileType journal set scrolloff=15
-  autocmd FileType journal call litecorrect#init()
-  autocmd FileType journal set nowrap
-  autocmd FileType journal set textwidth=79
-
-  " }}}
-  " --------------------------------------------------------------------------
 
 augroup END
 
 " }}}1
-" ===========================================================================
+" =============================================================================
 
