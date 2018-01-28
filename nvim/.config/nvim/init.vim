@@ -121,9 +121,9 @@ set list                        " Enable showing invisibles
 let &showbreak='↳ '             " Show occurrences of wrapped text
 set breakindent                 " Display indents before wrapped lines
 set breakindentopt=sbr          " Display  showbreak  before indent
-set guifont=Menlo:h12           " Set MacVim font
+set guifont=Input:h11           " Set MacVim font
 set imi=1                       " Enable lmap and disable IM
-set ims=-1                      " makes it look like imi is used when typing a search pattern
+set ims=-1                      " Makes it look like imi is used when typing a search pattern
 set guioptions=                 " Hide scrollbars in MacVim
 set synmaxcol=790               " Maximum column in which to syntax highlight
 set wildmenu                    " Enhanced command-line completion
