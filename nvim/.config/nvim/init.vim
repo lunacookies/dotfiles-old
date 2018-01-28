@@ -332,11 +332,11 @@ let g:plug_window='-tabnew' " Open vim-plug in new tab
 " indentLine {{{2
 " -----------------------------------------------------------------------------
 
-let g:indentLine_showFirstIndentLevel=1                  " Show indent guides at the first level as well
-let g:indentLine_enabled=1                               " Enable indent guides by default
-let g:indentLine_fileTypeExclude=['markdown', 'journal'] " Don't show indent guides in Markdown files
-let g:indentLine_color_term=245                          " Set indent guide colour for terminal
-let g:indentLine_color_gui='#8a8a8a'                     " Set indent guide colour for MacVim
+let g:indentLine_showFirstIndentLevel=1       " Show indent guides at the first level as well
+let g:indentLine_enabled=1                    " Enable indent guides by default
+let g:indentLine_fileTypeExclude=['markdown'] " Don't show indent guides in Markdown files
+let g:indentLine_color_tty_light=14           " Set indent guide colour for terminal
+let g:indentLine_color_gui='#93a1a1'          " Set indent guide colour for MacVim
 
 " }}}2
 " -----------------------------------------------------------------------------
