@@ -116,6 +116,8 @@ set sidescrolloff=10            " Leave 10 lines at edges of window when scrolli
 set wrap                        " Wrap text
 set linebreak                   " Wrap at words
 set sidescroll=1                " Scroll horizontally at edge of window
+set listchars=trail:•           " Show trailing spaces with a •
+set list                        " Enable showing invisibles
 let &showbreak='↳ '             " Show occurrences of wrapped text
 set breakindent                 " Display indents before wrapped lines
 set breakindentopt=sbr          " Display  showbreak  before indent
