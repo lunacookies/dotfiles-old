@@ -110,7 +110,7 @@ set background=light            " Light background
 set completeopt=menuone,preview " Show possible completions with preview
 set conceallevel=0              " Never conceal
 set shortmess=aIT               " Abbreviate error messages
-set numberwidth=5               " Leave space for 3 digits in line numbers
+set numberwidth=4               " Leave space for 2 digits in line numbers
 set scrolloff=5                 " Leave 5 lines at edges of window when scrolling vertically
 set sidescrolloff=10            " Leave 10 lines at edges of window when scrolling horizontally
 set wrap                        " Wrap text
@@ -130,7 +130,7 @@ set termguicolors               " True colour
 set showcmd                     " Show Ex commands
 set nocursorline                " Never show cursor guide
 set visualbell                  " Flash screen instead of audio bell
-set number                      " Line numbers
+set relativenumber              " Relative line numbers
 set lazyredraw                  " Prevent unnecessary redrawing
 set noimd                       " Fix Input Methods
 syntax enable                   " Enable syntax highlighting
