@@ -1,9 +1,9 @@
 
 " vim: set foldmethod=marker foldlevel=0 nomodeline:
 
-" ===========================================================================
+" =============================================================================
 " aramis' init.vim {{{1
-" ===========================================================================
+" =============================================================================
 
 " /u/aramisreddit
 " github.com/aramisgithub
@@ -14,49 +14,68 @@
 " gihub.com/herrbischoff
 
 " }}}1
-" ===========================================================================
+" =============================================================================
 " VIM-PLUG BLOCK {{{1
-" ===========================================================================
+" =============================================================================
 
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Begin plug {{{2
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-" }}}
-" ---------------------------------------------------------------------------
-" Plugins {{{
-" ---------------------------------------------------------------------------
+" }}}2
+" -----------------------------------------------------------------------------
+" Plugins {{{2
+" -----------------------------------------------------------------------------
 
-Plug 'Yggdroot/indentLine'              " Indent guides
-Plug 'dhruvasagar/vim-table-mode'       " Vim table mode for instant table creation
-Plug 'jiangmiao/auto-pairs'             " Interact with brackets, parens, quotes in pair
-Plug 'junegunn/fzf.vim'                 " fzf on vim
-Plug 'junegunn/goyo.vim'                " Distraction-free writing
-Plug 'junegunn/limelight.vim'           " Hyper-focus writing
-Plug 'junegunn/rainbow_parentheses.vim' " Simpler Rainbow Parentheses
-Plug 'junegunn/seoul256.vim'            " Low-contrast colour scheme based on Seoul Colours
-Plug 'junegunn/vim-easy-align'          " A vim alignment plugin
-Plug 'junegunn/vim-emoji'               " Emoji in vim
-Plug 'junegunn/vim-journal'             " A syntax plugin for plain-text notes
-Plug 'junegunn/vim-slash'               " Better searching
-Plug 'reedes/vim-litecorrect'           " Lightweight auto-correction
-Plug 'rhysd/vim-grammarous'             " A powerful grammar checker using LanguageTool
-Plug 'tpope/vim-commentary'             " Comment stuff out
-Plug 'tpope/vim-fugitive'               " Git wrapper for vim
+Plug 'SirVer/ultisnips'                                  " The ultimate snippet solution for Vim
+Plug 'Yggdroot/indentLine'                               " Indent guides
+Plug 'dbmrq/vim-ditto',            { 'for': 'markdown' } " Stop repeating yourself
+Plug 'drzel/vim-scroll-off-fraction'
+Plug 'dhruvasagar/vim-table-mode', { 'for': 'markdown' } " Vim table mode for instant table creation
+Plug 'dkarter/bullets.vim',        { 'for': 'markdown' } " Automated bullet lists
+Plug 'jiangmiao/auto-pairs'                              " Interact with brackets, parens, quotes in pair
+Plug 'junegunn/goyo.vim',          { 'for': 'markdown' } " Distraction-free writing
+Plug 'junegunn/fzf.vim'
+Plug '/usr/local/opt/fzf'
+Plug 'nanotech/jellybeans.vim'
+Plug 'junegunn/limelight.vim',     { 'for': 'markdown' } " Hyper-focus writing
+Plug 'junegunn/vim-easy-align'
+Plug 'kana/vim-textobj-entire'                           " Text objects for entire buffer
+Plug 'kana/vim-textobj-indent'                           " Text objects for indented blocks of lines
+Plug 'kana/vim-textobj-line'                             " Text objects for the current line
+Plug 'kana/vim-textobj-user'                             " Create your own text objects
+Plug 'reedes/vim-litecorrect',     { 'for': 'markdown' } " Lightweight auto-correction
+Plug 'w0rp/ale'
+Plug 'romainl/flattened'                                 " Solarized, without the bullshit
+Plug 'takac/vim-hardtime'                                " Stop repeating hjkl
+Plug 'tpope/vim-abolish'                                 " Act on multiple variants of a word
+Plug 'tpope/vim-commentary'                              " Comment stuff out
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'                                " Git wrapper for vim
+Plug 'tpope/vim-markdown',         { 'for': 'markdown' } " Vim Markdown runtime files
+Plug 'tpope/vim-repeat'                                  " Repeat plugin maps
+Plug 'tpope/vim-surround'                                " Quoting/parenthesising made simple
+Plug 'tpope/vim-unimpaired'                              " Pairs of handy bracket mappings
+Plug 'flazz/vim-colorschemes'
+Plug 'scrooloose/nerdtree'
+Plug 'mbbill/undotree'
+Plug 'majutsushi/tagbar'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
-" }}}
-" ---------------------------------------------------------------------------
-" End plug {{{
-" ---------------------------------------------------------------------------
+" }}}2
+" -----------------------------------------------------------------------------
+" End plug {{{2
+" -----------------------------------------------------------------------------
 
 call plug#end()
 
 " }}}2
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Automatic plug installation {{{2
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 
 autocmd VimEnter *
   \ if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -64,16 +83,16 @@ autocmd VimEnter *
   \| endif
 
 " }}}2
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 
 " }}}1
-" ===========================================================================
+" =============================================================================
 " BASIC SETTINGS {{{1
-" ===========================================================================
+" =============================================================================
 
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Spaces and indents {{{2
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 
 set tabstop=2          " 2 spaces per tab
 set shiftwidth=2       " 2 spaces for indentation
@@ -82,9 +101,9 @@ set autoindent         " Copy indent from current line into adjacent line
 set expandtab smarttab " Insert spaces when tab is pressed
 
 " }}}2
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " UI {{{2
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 
 set laststatus=2                " Always show status line
 set background=light            " Light background
@@ -126,18 +145,18 @@ let &t_ZH="\e[3m"               " Italics fix
 let &t_ZR="\e[23m"
 
 " }}}2
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Searching {{{2
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 
 set hlsearch             " Highlight search matches
 set incsearch            " Highlight as you type while searching
 set ignorecase smartcase " Smart capitalisation handling
 
 " }}}2
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Files {{{2
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 
 set fileencoding=utf-8 " Write UTF-8
 set encoding=utf-8     " Display UTF-8
@@ -148,54 +167,30 @@ set undofile           " Keep undo history between sessions
 set hidden             " A buffer becomes hidden when abandoned
 set autoread           " Automatically read a file when it has been changed outside of vim
 
-" }}}
-" ---------------------------------------------------------------------------
+" }}}2
+" -----------------------------------------------------------------------------
 " Editing {{{2
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 
-set virtualedit=block " Allow cursor placement where characters are not in Visual Block
-set formatoptions=1cj " Auto-format comments
-set mouse=a           " Use mouse
-set clipboard=unnamed " Use macOS clipboard
-set timeoutlen=500    " Time in milliseconds to complete a shortcut
-set textwidth=79      " 79 chars/line
-set modelines=3       " Set how many lines are checked for set commands
-set nojoinspaces      " Insert only one space after punctuation
-set nostartofline     " Keep cursor on same column
-set spell             " Spell check comments and text
-set spelllang=en_gb   " Use British English
-if exists('&fixeol')  " Handle end of lines at end of files
+set virtualedit=block    " Allow cursor placement where characters are not in Visual Block
+set formatoptions=1cjroq " Auto-format comments
+set mouse=a              " Use mouse
+set clipboard=unnamed    " Use macOS clipboard
+set timeoutlen=500       " Time in milliseconds to complete a shortcut
+set textwidth=79         " 79 chars/line
+set modelines=3          " Set how many lines are checked for set commands
+set nojoinspaces         " Insert only one space after punctuation
+set nostartofline        " Keep cursor on same column
+set spell                " Spell check comments and text
+set spelllang=en_gb      " Use British English
+if exists('&fixeol')     " Handle end of lines at end of files
   set nofixeol
 endif
 
 " }}}2
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Status line {{{2
-" ---------------------------------------------------------------------------
-
-" function! s:statusline_expr()
-"   let mod="%{&modified ? '[+] ' : !&modifiable ? '[x] ' : ''}"
-"   let ro="%{&readonly ? '[RO] ' : ''}"
-"   let ft="%{len(&filetype) ? '['.&filetype.'] ' : ''}"
-"   let fug="%{exists('g:loaded_fugitive') ? fugitive#statusline() : ''}"
-"   let sep=' %='
-"   let pos=' %-12(%l : %c%V%) '
-"   let pct=' %P'
-
-"   return ' %F %<'.mod.ro.ft.fug.sep.pos.'%*'.pct
-" endfunction
-" let &statusline=s:statusline_expr()
-
-" set statusline=
-" set statusline+=\ %F
-" set statusline+=\ %y
-" set statusline+=\ %m
-" set statusline+=\ %r
-" set statusline+=\ %{fugitive#statusline()}
-" set statusline+=\ %=
-" set statusline+=\ %12(%l\ :\ %2v%)
-" set statusline+=\ %5P
-" set statusline+=\ 
+" -----------------------------------------------------------------------------
 
 set statusline=
 set statusline+=\ %8(%l\ :\ %-2v%)
@@ -206,16 +201,16 @@ set statusline+=\ %y
 set statusline+=\ 
 
 " }}}2
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 
 " }}}1
-" ===========================================================================
+" =============================================================================
 " MAPPINGS {{{1
-" ===========================================================================
+" =============================================================================
 
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Escaping {{{2
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 
 inoremap jk <esc>
 xnoremap fd <esc>
@@ -224,15 +219,15 @@ cnoremap jk <c-c>
 " }}}2
 " ---------------------------------------------------------------------------
 " Leader {{{2
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 
 let mapleader=' '
 let maplocalleader=' '
 
 " }}}2
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Easy enter into command line mode {{{2
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 
 nnoremap ; :
 nnoremap : ;
@@ -246,22 +241,20 @@ nnoremap <c-s> :w<cr>
 inoremap <c-s> :w<cr>
 
 " }}}2
-" ---------------------------------------------------------------------------
-" Quit {{{
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
+" Save {{{2
+" -----------------------------------------------------------------------------
 
 nnoremap <c-q> :wq<cr>
 inoremap <c-q> :wq<cr>
 
 " }}}2
-" ---------------------------------------------------------------------------
-" Movement in insert mode {{{
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
+" Quit {{{2
+" -----------------------------------------------------------------------------
 
-inoremap <c-p> <left>
-inoremap <c-j> <down>
-inoremap <c-k> <up>
-inoremap <c-l> <right>
+nnoremap <c-q> :wq<cr> " Save and quit in normal mode
+inoremap <c-q> :wq<cr> " Save and quit in insert mode too
 
 " }}}2
 " ---------------------------------------------------------------------------
@@ -316,38 +309,38 @@ nnoremap <leader>6 0i######<space><esc>
 nnoremap <leader>d :!open dict://<cword><cr><cr>
 
 " }}}2
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Folds {{{2
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 
 nnoremap , za
 
 " }}}2
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Upper-case current word {{{2
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 
 inoremap <c-u> <esc>lviwUea
 nnoremap <c-u> viwUe
 
 " }}}2
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 
 " }}}1
-" ===========================================================================
+" =============================================================================
 " PLUGINS {{{1
-" ===========================================================================
+" =============================================================================
 
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " vim-plug {{{2
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 
 let g:plug_window='-tabnew' " Open vim-plug in new tab
 
 " }}}2
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " indentLine {{{2
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 
 let g:indentLine_showFirstIndentLevel=1                  " Show indent guides at the first level as well
 let g:indentLine_enabled=1                               " Enable indent guides by default
@@ -355,10 +348,10 @@ let g:indentLine_fileTypeExclude=['markdown', 'journal'] " Don't show indent gui
 let g:indentLine_color_term=245                          " Set indent guide colour for terminal
 let g:indentLine_color_gui='#8a8a8a'                     " Set indent guide colour for MacVim
 
-" }}}
-" ---------------------------------------------------------------------------
-" goyo.vim + limelight.vim {{{
-" ---------------------------------------------------------------------------
+" }}}2
+" -----------------------------------------------------------------------------
+" goyo.vim + limelight.vim {{{2
+" -----------------------------------------------------------------------------
 
 let g:limelight_paragraph_span=1 " Make limelight.vim span 3 paragraphs
 let g:limelight_priority=-1      " Don't overrule hlsearch
@@ -414,10 +407,10 @@ inoreabbrev <expr> __
 " }}}
 " ---------------------------------------------------------------------------
 
-" }}}
-" ===========================================================================
+" }}}1
+" =============================================================================
 " AUTOCMD {{{1
-" ===========================================================================
+" =============================================================================
 
 augroup vimrc
 
