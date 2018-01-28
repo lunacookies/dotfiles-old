@@ -149,7 +149,7 @@ set titlestring=                " Reset what shows in window title
 set titlestring+=%F             " Show filename and file path in window title
 set title                       " Show the window title
 if exists('&colorcolumn')       " Highlight 79th column
-  set colorcolumn=79
+  set colorcolumn=80
 endif
 let &t_ZH="\e[3m"               " Italics fix
 let &t_ZR="\e[23m"
