@@ -325,10 +325,10 @@ $if(schoolspecific)$
   \geometry{
     a4paper,
     textwidth=2.31\alphabet,
-    $if(symmetric)$
-      hmarginratio={1:1},
-    $else$
+    $if(asymmetric)$
       hmarginratio={100:300},
+    $else$
+      hmarginratio={1:1},
     $endif$
     top=27.4mm,
     bottom=40.2mm,
@@ -343,10 +343,10 @@ $else$
   \geometry{
     a4paper,
     textwidth=2.26\alphabet,
-    $if(symmetric)$
-      hmarginratio={1:1},
-    $else$
+    $if(asymmetric)$
       hmarginratio={100:300},
+    $else$
+      hmarginratio={1:1},
     $endif$
     top=27.4mm,
     bottom=40.2mm,
@@ -467,16 +467,7 @@ $endif$
   labelsep=quad
 }
 
-$if(symmetric)$
-  \newcommand{\myfig}[3]{
-    \begin{figure}[h]
-      \centering
-      \includegraphics[height=0.4\linewidth]{#1}
-      \caption{#2}
-      \label{#3}
-    \end{figure}
-  }       % Custom inline figure
-$else$
+$if(asymmetric)$
   \newcommand{\myfig}[3]{
     \begin{marginfigure}
       \captionsetup{type=figure,options=marginfigure}
