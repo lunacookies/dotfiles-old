@@ -94,7 +94,7 @@ autocmd VimEnter *
 " Spaces and indents {{{2
 " -----------------------------------------------------------------------------
 
-set tabstop=2          " 2 spaces per tab
+set softtabstop=2      " 2 spaces per tab
 set shiftwidth=2       " 2 spaces for indentation
 set shiftround         " Always set indentation to a multiple of 2
 set autoindent         " Copy indent from current line into adjacent line
