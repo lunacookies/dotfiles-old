@@ -135,8 +135,16 @@ set visualbell                  " Flash screen instead of audio bell
 set relativenumber              " Relative line numbers
 set lazyredraw                  " Prevent unnecessary redrawing
 set noimd                       " Fix Input Methods
-syntax enable                   " Enable syntax highlighting
-colorscheme seoul256-light      " Set colour scheme
+
+" Set colourscheme according to current time of day.
+let hr = str2nr(strftime('%H'))
+if hr < 7 || hr >= 16
+    let cs = 'flattened_dark'
+else
+    let cs = 'flattened_light'
+endif
+execute 'colorscheme '.cs
+
 set titlestring=                " Reset what shows in window title
 set titlestring+=%F             " Show filename and file path in window title
 set title                       " Show the window title
