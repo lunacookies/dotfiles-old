@@ -423,20 +423,9 @@ autocmd! User GoyoLeave nested call <sid>goyo_leave()
 
 
 " }}}2
-" ---------------------------------------------------------------------------
-" vim-easy-align {{{2
-" ---------------------------------------------------------------------------
-
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <plug>(EasyAlign)
-
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <plug>(EasyAlign)
-
-" }}}2
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " vim-table-mode {{{2
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 
 function! s:isAtStartOfLine(mapping)
   let text_before_cursor=getline('.')[0 : col('.')-1]
@@ -453,8 +442,49 @@ inoreabbrev <expr> __
   \ <sid>isAtStartOfLine('__') ?
   \ '<c-o>:silent! TableModeDisable<cr>' : '__'
 
-" }}}
-" ---------------------------------------------------------------------------
+" }}}2
+" -----------------------------------------------------------------------------
+" vim-easy-align {{{2
+" -----------------------------------------------------------------------------
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+" Allow alignment of % character
+let g:easy_align_delimiters = {
+\  '%': { 'pattern': '%\+', 'delimiter_align': 'l', 'ignore_groups': ['!Comment']  },
+\ }
+
+" }}}2
+" -----------------------------------------------------------------------------
+" vim-ditto {{{2
+" -----------------------------------------------------------------------------
+
+let g:ditto_hlgroups=['Error'] " Highlight overused words in red
+
+" }}}2
+" -----------------------------------------------------------------------------
+" vim-hardtime {{{2
+" -----------------------------------------------------------------------------
+
+let g:hardtime_default_on = 1 " Learn better habits
+
+" }}}2
+" -----------------------------------------------------------------------------
+" UltiSnips {{{2
+" -----------------------------------------------------------------------------
+
+let g:UltiSnipsExpandTrigger = "<tab>"                                        " Expand snippet with tab
+let g:UltiSnipsJumpForwardTrigger="<tab>"                                     " Go to next field with tab
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"                                  " Go to previous field with shift-tab
+let g:UltiSnipsSnippetDir = ['~/.config/nvim/UltiSnips']                      " Search for and save snippets here
+let g:UltiSnipsSnippetDirectories = ['~/.config/nvim/UltiSnips', 'UltiSnips'] " Name of snippet directory
+
+" }}}2
+" -----------------------------------------------------------------------------
 
 " }}}1
 " =============================================================================
