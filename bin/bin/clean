@@ -18,8 +18,8 @@ then
   echo "
    Now for the package manager clear-out!"
 
-  pip freeze > requirements.txt
-  pip uninstall -r requirements.txt -y
+  pip3 freeze > requirements.txt
+  pip3 uninstall -r requirements.txt -y
   rm requirements.txt
 
   brew remove --force --ignore-dependencies $(brew list)
@@ -54,62 +54,62 @@ then
   /usr/local/bin/rmtrash ~/.oracle*
   /usr/local/bin/rmtrash ~/*.ti
 
-  if [ -e ~/documents/* ]
+  if [ -n "$(ls -A ~/documents/*)" ]
   then
     echo "Contents rescued"
   else
     sudo rm -rf ~/documents
   fi
-  if [ -e ~/downloads/* ]
+  if [ -n "$(ls -A ~/downloads/*)" ]
   then
     echo "Contents rescued"
   else
     sudo rm -rf ~/downloads
   fi
-  if [ -e ~/movies/* ]
+  if [ -n "$(ls -A ~/movies/*)" ]
   then
     echo "Contents rescued"
   else
     sudo rm -rf ~/movies
   fi
-  if [ -e ~/music/* ]
+  if [ -n "$(ls -A ~/music/*)" ]
   then
     echo "Contents rescued"
   else
     sudo rm -rf ~/music
   fi
-  if [ -e ~/pictures/* ]
+  if [ -n "$(ls -A ~/pictures/*)" ]
   then
     echo "Contents rescued"
   else
     sudo rm -rf ~/pictures
   fi
 
-  if [ -e ~/Documents/* ]
+  if [ -n "$(ls -A ~/Documents/*)" ]
   then
     echo "Contents rescued"
   else
     sudo rm -rf ~/Documents
   fi
-  if [ -e ~/Downloads/* ]
+  if [ -n "$(ls -A ~/Downloads/*)" ]
   then
     echo "Contents rescued"
   else
     sudo rm -rf ~/Downloads
   fi
-  if [ -e ~/Movies/* ]
+  if [ -n "$(ls -A ~/Movies/*)" ]
   then
     echo "Contents rescued"
   else
     sudo rm -rf ~/Movies
   fi
-  if [ -e ~/Music/* ]
+  if [ -n "$(ls -A ~/Music/*)" ]
   then
     echo "Contents rescued"
   else
     sudo rm -rf ~/Music
   fi
-  if [ -e ~/Pictures/* ]
+  if [ -n "$(ls -A ~/Pictures/*)" ]
   then
     echo "Contents rescued"
   else
