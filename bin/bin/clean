@@ -41,6 +41,7 @@ then
   brew tap crisidev/homebrew-chunkwm
   brew install --HEAD universal-ctags/universal-ctags/universal-ctags
   pip3 install neovim
+  pip3 install vim-vint
 
   /usr/local/bin/rmtrash ~/.vim*
   /usr/local/bin/rmtrash ~/.less*
