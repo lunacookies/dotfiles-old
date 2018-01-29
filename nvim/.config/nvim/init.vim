@@ -143,7 +143,7 @@ endif
 execute 'colorscheme '.cs
 
 set titlestring=                " Reset what shows in window title
-set titlestring+=%F             " Show filename and file path in window title
+set titlestring+=%:t            " Show filename and file path in window title
 set title                       " Show the window title
 if exists('&colorcolumn')       " Highlight 79th column
   set colorcolumn=80
