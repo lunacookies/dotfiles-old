@@ -35,7 +35,6 @@ Plug 'Yggdroot/indentLine'                               " Indent guides
 Plug 'dbmrq/vim-ditto',            { 'for': 'markdown' } " Stop repeating yourself
 Plug 'dhruvasagar/vim-table-mode', { 'for': 'markdown' } " Vim table mode for instant table creation
 Plug 'dkarter/bullets.vim',        { 'for': 'markdown' } " Automated bullet lists
-Plug 'drzel/vim-scroll-off-fraction'                     " Scrolloff as a fraction of window height
 Plug 'jiangmiao/auto-pairs'                              " Interact with brackets, parens, quotes in pair
 Plug 'junegunn/fzf.vim'                                  " Fzf on vim
 Plug 'junegunn/goyo.vim',          { 'for': 'markdown' } " Distraction-free writing
