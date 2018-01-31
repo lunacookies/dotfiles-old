@@ -84,12 +84,8 @@ autocmd VimEnter *
 
 " }}}1
 " =============================================================================
-" BASIC SETTINGS {{{1
+" SPACES AND INDENTS {{{1
 " =============================================================================
-
-" -----------------------------------------------------------------------------
-" Spaces and indents {{{2
-" -----------------------------------------------------------------------------
 
 set softtabstop=2      " 2 spaces per tab
 set shiftwidth=2       " 2 spaces for indentation
@@ -97,64 +93,121 @@ set shiftround         " Always set indentation to a multiple of 2
 set autoindent         " Copy indent from current line into adjacent line
 set expandtab smarttab " Insert spaces when tab is pressed
 
-" }}}2
+" }}}1
+" =============================================================================
+" UI {{{1
+" =============================================================================
+
 " -----------------------------------------------------------------------------
-" UI {{{2
+" Colours and Text {{{2
 " -----------------------------------------------------------------------------
 
-set laststatus=2                " Always show status line
-set background=light            " Light background
-set completeopt=menuone,preview " Show possible completions with preview
-set conceallevel=0              " Never conceal
-set shortmess=aIT               " Abbreviate error messages
-set numberwidth=4               " Leave space for 2 digits in line numbers
-set scrolloff=5                 " Leave 5 lines at edges of window when scrolling vertically
-set sidescrolloff=10            " Leave 10 lines at edges of window when scrolling horizontally
-set wrap                        " Wrap text
-set linebreak                   " Wrap at words
-set sidescroll=1                " Scroll horizontally at edge of window
-set listchars=trail:•           " Show trailing spaces with a •
-set list                        " Enable showing invisibles
-let &showbreak='↳ '             " Show occurrences of wrapped text
-set breakindent                 " Display indents before wrapped lines
-set breakindentopt=sbr          " Display  showbreak  before indent
-set guifont=Input:h11           " Set MacVim font
-set imi=1                       " Enable lmap and disable IM
-set ims=-1                      " Makes it look like imi is used when typing a search pattern
-set guioptions=                 " Hide scrollbars in MacVim
-set synmaxcol=790               " Maximum column in which to syntax highlight
-set wildmenu                    " Enhanced command-line completion
-set wildmode=full               " Complete the next full match
-set termguicolors               " True colour
-set showcmd                     " Show Ex commands
-set nocursorline                " Never show cursor guide
-set visualbell                  " Flash screen instead of audio bell
-set relativenumber              " Relative line numbers
-set lazyredraw                  " Prevent unnecessary redrawing
-set noimd                       " Fix Input Methods
-colorscheme flattened_light     " Set colourscheme
-set titlestring=                " Reset what shows in window title
-set titlestring+=%:t            " Show filename and file path in window title
-set title                       " Show the window title
-if exists('&colorcolumn')       " Highlight 79th column
-  set colorcolumn=80
-endif
-let &t_ZH="\e[3m"               " Italics fix
+set background=light        " Light background
+set termguicolors           " True colour
+set synmaxcol=790           " Maximum column in which to syntax highlight
+set guifont=Input:h11       " Set MacVim font
+set listchars=trail:•       " Show trailing spaces with a •
+set list                    " Enable showing invisibles
+colorscheme flattened_light " Set colourscheme
+let &t_ZH="\e[3m"           " Italics fix
 let &t_ZR="\e[23m"
 
 " }}}2
 " -----------------------------------------------------------------------------
-" Searching {{{2
+" Input Methods {{{2
 " -----------------------------------------------------------------------------
+
+set noimdisable " Fix Input Methods
+set iminsert=1  " Enable lmap and disable IM
+set imsearch=-1 " Makes it look like imi is used when typing a search pattern
+
+" }}}2
+" -----------------------------------------------------------------------------
+" Wrapping {{{2
+" -----------------------------------------------------------------------------
+
+set wrap               " Wrap text
+set linebreak          " Wrap at words
+let &showbreak='↳ '    " Show occurrences of wrapped text
+set breakindent        " Display indents before wrapped lines
+set breakindentopt=sbr " Display  showbreak  before indent
+
+" }}}2
+" -----------------------------------------------------------------------------
+" Command line {{{2
+" -----------------------------------------------------------------------------
+
+set completeopt=menuone,preview " Show possible completions with preview
+set wildmenu                    " Enhanced command-line completion
+set wildmode=full               " Complete the next full match
+set showcmd                     " Show Ex commands
+
+" }}}2
+" -----------------------------------------------------------------------------
+" Window title {{{2
+" -----------------------------------------------------------------------------
+
+set titlestring=     " Reset what shows in window title
+set titlestring+=%:t " Show filename and file path in window title
+set title            " Show the window title
+
+" }}}2
+" -----------------------------------------------------------------------------
+" Scrolling {{{2
+" -----------------------------------------------------------------------------
+
+set scrolloff=5      " Leave 5 lines at edges of window when scrolling vertically
+set sidescrolloff=10 " Leave 10 lines at edges of window when scrolling horizontally
+set sidescroll=1     " Scroll horizontally at edge of window
+
+" }}}2
+" -----------------------------------------------------------------------------
+" Status line {{{2
+" -----------------------------------------------------------------------------
+
+set laststatus=2                           " Always show status line
+set visualbell                             " Flash indicator on status line instead of bell
+set statusline=                            " Reset status line
+set statusline+=\ %8(%l\ :\ %-2v%)         " Lines and columns
+set statusline+=\ %m                       " Modified/read-only flag
+set statusline+=\ %{fugitive#statusline()} " Git branch
+set statusline+=\ %=                       " Separator
+set statusline+=\ %y                       " Filetype
+                                           " Spacer
+set statusline+=\ 
+
+" }}}2
+" -----------------------------------------------------------------------------
+" Misc {{{2
+" -----------------------------------------------------------------------------
+
+set conceallevel=0        " Never conceal
+set shortmess=aIT         " Abbreviate error messages
+set numberwidth=4         " Leave space for 2 digits in line numbers
+set guioptions=           " Hide scrollbars in MacVim
+set nocursorline          " Never show cursor guide
+set relativenumber        " Relative line numbers
+set lazyredraw            " Prevent unnecessary redrawing
+if exists('&colorcolumn') " Highlight 79th column
+  set colorcolumn=80
+endif
+
+" }}}2
+" -----------------------------------------------------------------------------
+
+" }}}1
+" =============================================================================
+" SEARCHING {{{1
+" =============================================================================
 
 set hlsearch             " Highlight search matches
 set incsearch            " Highlight as you type while searching
 set ignorecase smartcase " Smart capitalisation handling
 
-" }}}2
-" -----------------------------------------------------------------------------
-" Files {{{2
-" -----------------------------------------------------------------------------
+" }}}1
+" =============================================================================
+" FILES {{{1
+" =============================================================================
 
 set fileencoding=utf-8 " Write UTF-8
 set encoding=utf-8     " Display UTF-8
@@ -165,10 +218,10 @@ set undofile           " Keep undo history between sessions
 set hidden             " A buffer becomes hidden when abandoned
 set autoread           " Automatically read a file when it has been changed outside of vim
 
-" }}}2
-" -----------------------------------------------------------------------------
-" Editing {{{2
-" -----------------------------------------------------------------------------
+" }}}1
+" =============================================================================
+" EDITING {{{1
+" =============================================================================
 
 set virtualedit=block    " Allow cursor placement where characters are not in Visual Block
 set formatoptions=1cjroq " Auto-format comments
@@ -184,22 +237,6 @@ set spelllang=en_gb      " Use British English
 if exists('&fixeol')     " Handle end of lines at end of files
   set nofixeol
 endif
-
-" }}}2
-" -----------------------------------------------------------------------------
-" Status line {{{2
-" -----------------------------------------------------------------------------
-
-set statusline=
-set statusline+=\ %8(%l\ :\ %-2v%)
-set statusline+=\ %m
-set statusline+=\ %{fugitive#statusline()}
-set statusline+=\ %=
-set statusline+=\ %y
-set statusline+=\ 
-
-" }}}2
-" -----------------------------------------------------------------------------
 
 " }}}1
 " =============================================================================
