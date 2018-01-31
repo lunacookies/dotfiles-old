@@ -44,10 +44,8 @@ Plug 'kana/vim-textobj-entire'                           " Text objects for enti
 Plug 'kana/vim-textobj-indent'                           " Text objects for indented blocks of lines
 Plug 'kana/vim-textobj-line'                             " Text objects for the current line
 Plug 'kana/vim-textobj-user'                             " Create your own text objects
-Plug 'majutsushi/tagbar'                                 " Display tags in a window, ordered by scope
 Plug 'reedes/vim-litecorrect',     { 'for': 'markdown' } " Lightweight auto-correction
 Plug 'romainl/flattened'                                 " Solarized, without the bullshit
-Plug 'scrooloose/nerdtree'                               " A tree explorer plugin for Vim
 Plug 'takac/vim-hardtime'                                " Stop repeating hjkl
 Plug 'tpope/vim-abolish'                                 " Act on multiple variants of a word
 Plug 'tpope/vim-commentary'                              " Comment stuff out
@@ -512,21 +510,6 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"                                     " 
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"                                  " Go to previous field with shift-tab
 let g:UltiSnipsSnippetDir = ['~/.config/nvim/UltiSnips']                      " Search for and save snippets here
 let g:UltiSnipsSnippetDirectories = ['~/.config/nvim/UltiSnips', 'UltiSnips'] " Name of snippet directory
-
-" }}}2
-" -----------------------------------------------------------------------------
-" tagbar {{{2
-" -----------------------------------------------------------------------------
-
-let g:tagbar_iconchars = ['▸', '▾'] " Match tagbar icons to NERDTree icons
-let g:tagbar_compact = 1            " Hide help notice
-
-" }}}2
-" -----------------------------------------------------------------------------
-" NERDTree {{{2
-" -----------------------------------------------------------------------------
-
-let NERDTreeMinimalUI=1 " Hide help notice
 
 " }}}2
 " -----------------------------------------------------------------------------
