@@ -27,6 +27,7 @@ then
   brew install fzf
   brew install git
   brew install koekeishiya/formulae/khd
+  brew tap crisidev/homebrew-chunkwm
   brew install chunkwm
   brew install neovim
   brew install pandoc
@@ -38,8 +39,6 @@ then
   brew tap ValeLint/vale
   brew install vale
   brew install zsh
-  brew tap crisidev/homebrew-chunkwm
-  brew install --HEAD universal-ctags/universal-ctags/universal-ctags
   pip3 install neovim
   pip3 install vim-vint
 
@@ -48,6 +47,7 @@ then
   /usr/local/bin/rmtrash ~/.cache
   /usr/local/bin/rmtrash ~/.bash*
   /usr/local/bin/rmtrash ~/.hyper*
+  /usr/local/bin/rmtrash ~/.gem*
   /usr/local/bin/rmtrash ~/.config/nvim/.netrwhist
   /usr/local/bin/rmtrash ~/.terminfo
   /usr/local/bin/rmtrash ~/.cups
@@ -58,62 +58,62 @@ then
   then
     echo "Contents rescued"
   else
-    sudo rm -rf ~/documents
+    sudo mv ~/documents ~/.Trash/old-documents
   fi
   if [ -n "$(ls -A ~/downloads/*)" ]
   then
     echo "Contents rescued"
   else
-    sudo rm -rf ~/downloads
+    sudo mv ~/downloads ~/.Trash/old-downloads
   fi
   if [ -n "$(ls -A ~/movies/*)" ]
   then
     echo "Contents rescued"
   else
-    sudo rm -rf ~/movies
+    sudo mv ~/movies ~/.Trash/old-movies
   fi
   if [ -n "$(ls -A ~/music/*)" ]
   then
     echo "Contents rescued"
   else
-    sudo rm -rf ~/music
+    sudo mv ~/music ~/.Trsh/old-music
   fi
   if [ -n "$(ls -A ~/pictures/*)" ]
   then
     echo "Contents rescued"
   else
-    sudo rm -rf ~/pictures
+    sudo mv ~/pictures ~/.Trash/old-pictures
   fi
 
   if [ -n "$(ls -A ~/Documents/*)" ]
   then
     echo "Contents rescued"
   else
-    sudo rm -rf ~/Documents
+    sudo mv ~/Documents ~/.Trash/old-Documents
   fi
   if [ -n "$(ls -A ~/Downloads/*)" ]
   then
     echo "Contents rescued"
   else
-    sudo rm -rf ~/Downloads
+    sudo mv ~/Downloads ~/.Trash/old-Downloads
   fi
   if [ -n "$(ls -A ~/Movies/*)" ]
   then
     echo "Contents rescued"
   else
-    sudo rm -rf ~/Movies
+    sudo mv ~/Movies ~/.Trash/old-Movies
   fi
   if [ -n "$(ls -A ~/Music/*)" ]
   then
     echo "Contents rescued"
   else
-    sudo rm -rf ~/Music
+    sudo mv ~/Music ~/.Trash/old-Music
   fi
   if [ -n "$(ls -A ~/Pictures/*)" ]
   then
     echo "Contents rescued"
   else
-    sudo rm -rf ~/Pictures
+    sudo mv ~/Pictures ~/.Trash/old-Pictures
   fi
 
   sudo mv ~/Desktop ~/desktop
