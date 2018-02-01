@@ -448,7 +448,7 @@
 	<key>DisableFullscreenTransparency</key>
 	<true/>
 	<key>DisableWindowSizeSnap</key>
-	<false/>
+	<true/>
 	<key>DoubleClickPerformsSmartSelection</key>
 	<true/>
 	<key>EnableDivisionView</key>
@@ -506,10 +506,12 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
+	<key>NSWindow Frame NSFontPanel</key>
+	<string>1169 110 445 103 0 0 1680 1050 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>413 844 918 381 0 0 2560 1440 </string>
+	<string>206 559 796 473 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>857 97 700 855 0 0 1680 1050 </string>
+	<string>122 97 1435 855 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>856 95 703 860 0 0 1680 1050 </string>
 	<key>New Bookmarks</key>
