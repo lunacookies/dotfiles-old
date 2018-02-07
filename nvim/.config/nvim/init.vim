@@ -393,7 +393,7 @@ function! s:goyo_enter()
 
   " Retain rich text syntax highlighting
   hi markdownBold cterm=bold gui=bold
-  hi markdownItalic cterm=italic gui=italic
+  hi markdownItalic cterm=underline gui=underline
 
   hi link LineNr Comment
 
