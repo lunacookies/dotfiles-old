@@ -139,7 +139,7 @@ chunkc tiling::rule --owner \"App Store\" --state float        # Float App Store
 chunkc set bsp_spawn_left    0       # Spawn new windows on the right
 chunkc set bsp_split_mode    optimal # Automatically pick split direction
 chunkc set bsp_optimal_ratio 1.5     # Auto-split aspect ratio
-chunkc set bsp_split_ratio   0.618   # Aspect ratio of windows once they've been split
+chunkc set bsp_split_ratio   0.618   # Aspect ratio of windows once they have been split
 
 # }}}
 # -----------------------------------------------------------------------------
