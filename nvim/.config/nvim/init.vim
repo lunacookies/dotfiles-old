@@ -269,8 +269,8 @@ nnoremap <c-l> <c-w>l
 " Leader {{{2
 " -----------------------------------------------------------------------------
 
-let mapleader=' '      " Regular leader
-let maplocalleader=' ' " Local  leader
+let g:mapleader=' '      " Regular leader
+let g:maplocalleader=' ' " Local  leader
 
 " }}}2
 " -----------------------------------------------------------------------------
@@ -444,17 +444,16 @@ endfunction
 autocmd! User GoyoEnter nested call <sid>goyo_enter()
 autocmd! User GoyoLeave nested call <sid>goyo_leave()
 
-
 " }}}2
 " -----------------------------------------------------------------------------
 " vim-table-mode {{{2
 " -----------------------------------------------------------------------------
 
 function! s:isAtStartOfLine(mapping)
-  let text_before_cursor=getline('.')[0 : col('.')-1]
-  let mapping_pattern='\V' . escape(a:mapping, '\')
-  let comment_pattern='\V' . escape(substitute(&l:commentstring, '%s.*$', '', ''), '\')
-  return (text_before_cursor=~? '^' . ('\v(' . comment_pattern . '\v)?') . '\s*\v' . mapping_pattern . '\v$')
+  let l:text_before_cursor=getline('.')[0 : col('.')-1]
+  let l:mapping_pattern='\V' . escape(a:mapping, '\')
+  let l:comment_pattern='\V' . escape(substitute(&l:commentstring, '%s.*$', '', ''), '\')
+  return (l:text_before_cursor=~? '^' . ('\v(' . l:comment_pattern . '\v)?') . '\s*\v' . l:mapping_pattern . '\v$')
 endfunction
 
 inoreabbrev <expr> <bar><bar>
@@ -500,9 +499,9 @@ let g:hardtime_default_on = 1 " Learn better habits
 " UltiSnips {{{2
 " -----------------------------------------------------------------------------
 
-let g:UltiSnipsExpandTrigger = "<tab>"                                        " Expand snippet with tab
-let g:UltiSnipsJumpForwardTrigger="<tab>"                                     " Go to next field with tab
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"                                  " Go to previous field with shift-tab
+let g:UltiSnipsExpandTrigger = '<tab>'                                        " Expand snippet with tab
+let g:UltiSnipsJumpForwardTrigger='<tab>'                                     " Go to next field with tab
+let g:UltiSnipsJumpBackwardTrigger='<s-tab>'                                  " Go to previous field with shift-tab
 let g:UltiSnipsSnippetDir = ['~/.config/nvim/UltiSnips']                      " Search for and save snippets here
 let g:UltiSnipsSnippetDirectories = ['~/.config/nvim/UltiSnips', 'UltiSnips'] " Name of snippet directory
 
@@ -521,7 +520,7 @@ augroup vimrc
   " ---------------------------------------------------------------------------
 
   function! s:helptab()
-    if &buftype=='help'
+    if &buftype==#'help'
       wincmd T
       nnoremap <buffer> q :q<cr>
     endif
