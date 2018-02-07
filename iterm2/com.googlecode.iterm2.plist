@@ -506,12 +506,19 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
+	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
+	<dict>
+		<key>TB Is Shown</key>
+		<integer>1</integer>
+	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1169 110 445 103 0 0 1680 1050 </string>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>970 787 620 392 0 0 2560 1440 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>206 559 796 473 0 0 1680 1050 </string>
+	<string>206 391 937 512 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>122 97 1435 855 0 0 1680 1050 </string>
+	<string>1041 10 629 1008 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>856 95 703 860 0 0 1680 1050 </string>
 	<key>New Bookmarks</key>
@@ -1168,6 +1175,8 @@
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>4ADBA8B4-FAC5-45EF-9DB5-B2E0736E6372</string>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>538952705.79497194</real>
 	<key>PinchToChangeFontSizeDisabled</key>
@@ -1207,6 +1216,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/aramis/dotfiles/iterm2</string>
+	<key>SUAutomaticallyUpdate</key>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -1216,7 +1227,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-01-29T21:05:07Z</date>
+	<date>2018-02-04T02:50:49Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -1244,7 +1255,7 @@
 	<key>WindowNumber</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.5</string>
+	<string>3.1.5.beta.2</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
