@@ -167,14 +167,6 @@ set statusline+=\
 
 " }}}2
 " -----------------------------------------------------------------------------
-" Folds {{{2
-" -----------------------------------------------------------------------------
-
-set foldmethod=indent
-set fillchars=fold:\ 
-
-" }}}2
-" -----------------------------------------------------------------------------
 " Misc {{{2
 " -----------------------------------------------------------------------------
 
@@ -186,6 +178,8 @@ set nocursorline          " Never show cursor guide
 set relativenumber        " Relative line numbers
 set number                " Absolute line numbers
 set lazyredraw            " Prevent unnecessary redrawing
+" Don't show dashes when folding
+set fillchars=fold:\ 
 if exists('&colorcolumn') " Highlight 79th column
   set colorcolumn=80
 endif
