@@ -184,6 +184,7 @@ set numberwidth=4         " Leave space for 2 digits in line numbers
 set guioptions=           " Hide scrollbars in MacVim
 set nocursorline          " Never show cursor guide
 set relativenumber        " Relative line numbers
+set number                " Absolute line numbers
 set lazyredraw            " Prevent unnecessary redrawing
 if exists('&colorcolumn') " Highlight 79th column
   set colorcolumn=80
