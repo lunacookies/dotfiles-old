@@ -22,7 +22,7 @@ then
   pip3 uninstall -r requirements.txt -y
   rm requirements.txt
 
-  "brew remove --force --ignore-dependencies $(brew list)"
+  brew remove --force --ignore-dependencies $(brew list)
   brew install exa
   brew install fzf
   brew install git
