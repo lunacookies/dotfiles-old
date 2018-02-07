@@ -15,64 +15,58 @@
 
 " }}}1
 " =============================================================================
-" VIM-PLUG BLOCK {{{1
+" MINPAC BLOCK {{{1
 " =============================================================================
 
 " -----------------------------------------------------------------------------
-" Begin plug {{{2
+" Modify packpath {{{2
 " -----------------------------------------------------------------------------
 
-call plug#begin('~/.local/share/nvim/plugged')
+set packpath^=~/.local/share/nvim/site " Don't store packages in dotfiles folder
 
 " }}}2
 " -----------------------------------------------------------------------------
 " Plugins {{{2
 " -----------------------------------------------------------------------------
 
-Plug '/usr/local/opt/fzf'                                " A command-line fuzzy finder
-Plug 'SirVer/ultisnips'                                  " The ultimate snippet solution for Vim
-Plug 'Yggdroot/indentLine'                               " Indent guides
-Plug 'dbmrq/vim-ditto',            { 'for': 'markdown' } " Stop repeating yourself
-Plug 'dhruvasagar/vim-table-mode', { 'for': 'markdown' } " Vim table mode for instant table creation
-Plug 'dkarter/bullets.vim',        { 'for': 'markdown' } " Automated bullet lists
-Plug 'jiangmiao/auto-pairs'                              " Interact with brackets, parens, quotes in pair
-Plug 'junegunn/fzf.vim'                                  " Fzf on vim
-Plug 'junegunn/goyo.vim',          { 'for': 'markdown' } " Distraction-free writing
-Plug 'junegunn/limelight.vim',     { 'for': 'markdown' } " Hyper-focus writing
-Plug 'junegunn/vim-easy-align'                           " A Vim alignment plugin
-Plug 'kana/vim-textobj-entire'                           " Text objects for entire buffer
-Plug 'kana/vim-textobj-indent'                           " Text objects for indented blocks of lines
-Plug 'kana/vim-textobj-line'                             " Text objects for the current line
-Plug 'kana/vim-textobj-user'                             " Create your own text objects
-Plug 'reedes/vim-litecorrect',     { 'for': 'markdown' } " Lightweight auto-correction
-Plug 'romainl/flattened'                                 " Solarized, without the bullshit
-Plug 'takac/vim-hardtime'                                " Stop repeating hjkl
-Plug 'tpope/vim-abolish'                                 " Act on multiple variants of a word
-Plug 'tpope/vim-commentary'                              " Comment stuff out
-Plug 'tpope/vim-endwise'                                 " Wisely add matching closing structures
-Plug 'tpope/vim-fugitive'                                " Git wrapper for vim
-Plug 'tpope/vim-markdown',         { 'for': 'markdown' } " Vim Markdown runtime files
-Plug 'tpope/vim-repeat'                                  " Repeat plugin maps
-Plug 'tpope/vim-surround'                                " Quoting/parenthesising made simple
-Plug 'tpope/vim-unimpaired'                              " Pairs of handy bracket mappings
-Plug 'w0rp/ale'                                          " Asynchronous Lint Engine
+if exists('*minpac#init')
+  call minpac#init()
+  call minpac#add('k-takata/minpac', {'type': 'opt'}) " A minimal package manager for Vim
+
+  call minpac#add('SirVer/ultisnips')           " The ultimate snippet solution for Vim
+  call minpac#add('Yggdroot/indentLine')        " Indent guides
+  call minpac#add('dbmrq/vim-ditto')            " Stop repeating yourself
+  call minpac#add('dhruvasagar/vim-table-mode') " Vim table mode for instant table creation
+  call minpac#add('dkarter/bullets.vim')        " Automated bullet lists
+  call minpac#add('jiangmiao/auto-pairs')       " Interact with brackets, parens, quotes in pair
+  call minpac#add('junegunn/fzf.vim')           " Fzf on Vim
+  call minpac#add('junegunn/goyo.vim')          " Distraction-free writing
+  call minpac#add('junegunn/limelight.vim')     " Hyper-focus writing
+  call minpac#add('junegunn/vim-easy-align')    " A Vim alignment plugin
+  call minpac#add('kana/vim-textobj-entire')    " Text objects for entire buffer
+  call minpac#add('kana/vim-textobj-indent')    " Text objects for indented blocks of lines
+  call minpac#add('kana/vim-textobj-line')      " Text objects for the current line
+  call minpac#add('kana/vim-textobj-user')      " Create your own text objects
+  call minpac#add('reedes/vim-litecorrect')     " Lightweight auto-correction
+  call minpac#add('romainl/flattened')          " Solarized, without the bullshit
+  call minpac#add('takac/vim-hardtime')         " Stop repeating hjkl
+  call minpac#add('tpope/vim-abolish')          " Act on multiple variants of a word
+  call minpac#add('tpope/vim-commentary')       " Comment stuff out
+  call minpac#add('tpope/vim-endwise')          " Wisely add matching closing structures
+  call minpac#add('tpope/vim-fugitive')         " Git wrapper for Vim
+  call minpac#add('tpope/vim-markdown')         " Vim Markdown runtime files
+  call minpac#add('tpope/vim-repeat')           " Repeat plugin maps
+  call minpac#add('tpope/vim-surround')         " Quoting/parenthesising made simple
+  call minpac#add('tpope/vim-unimpaired')       " Pairs of handy bracket mappings
+  call minpac#add('w0rp/ale')                   " Asynchronous Lint Engine
+endif
 
 " }}}2
 " -----------------------------------------------------------------------------
-" End plug {{{2
+" Pack command {{{2
 " -----------------------------------------------------------------------------
 
-call plug#end()
-
-" }}}2
-" -----------------------------------------------------------------------------
-" Automatic plug installation {{{2
-" -----------------------------------------------------------------------------
-
-autocmd VimEnter *
-  \ if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \| PlugInstall --sync | q
-  \| endif
+command! Pack packadd minpac | source $MYVIMRC | call minpac#clean() | call minpac#update()
 
 " }}}2
 " -----------------------------------------------------------------------------
