@@ -13,6 +13,7 @@ set packpath^=~/.local/share/nvim/site " Don't store packages in dotfiles folder
 " =============================================================================
 
 if exists('*minpac#init')
+
   call minpac#init()
   call minpac#add('k-takata/minpac', {'type': 'opt'}) " A minimal package manager for Vim
 
@@ -25,13 +26,13 @@ if exists('*minpac#init')
   call minpac#add('junegunn/fzf.vim')           " Fzf on Vim
   call minpac#add('junegunn/goyo.vim')          " Distraction-free writing
   call minpac#add('junegunn/limelight.vim')     " Hyper-focus writing
+  call minpac#add('junegunn/seoul256.vim')      " Low-contrast Vim colourscheme based on Seoul Colours
   call minpac#add('junegunn/vim-easy-align')    " A Vim alignment plugin
   call minpac#add('kana/vim-textobj-entire')    " Text objects for entire buffer
   call minpac#add('kana/vim-textobj-indent')    " Text objects for indented blocks of lines
   call minpac#add('kana/vim-textobj-line')      " Text objects for the current line
   call minpac#add('kana/vim-textobj-user')      " Create your own text objects
   call minpac#add('reedes/vim-litecorrect')     " Lightweight auto-correction
-  call minpac#add('romainl/flattened')          " Solarized, without the bullshit
   call minpac#add('takac/vim-hardtime')         " Stop repeating hjkl
   call minpac#add('tpope/vim-abolish')          " Act on multiple variants of a word
   call minpac#add('tpope/vim-commentary')       " Comment stuff out

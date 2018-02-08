@@ -26,7 +26,7 @@ set synmaxcol=790           " Maximum column in which to syntax highlight
 set guifont=Input:h11       " Set MacVim font
 set listchars=trail:•       " Show trailing spaces with a •
 set list                    " Enable showing invisibles
-colorscheme flattened_light " Set colourscheme
+colorscheme seoul256-light  " Set colourscheme
 let &t_ZH="\e[3m"           " Italics fix
 let &t_ZR="\e[23m"
 
