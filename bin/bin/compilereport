@@ -2,10 +2,10 @@
 
 pandoc -f markdown -t latex -o document.tex document.md --template=$HOME/dotfiles/pandoctemplates/article/template.tex --top-level-division=section
 
-pdflatex document.tex
+lualatex document.tex
 biber document
-pdflatex document.tex
-pdflatex document.tex
+lualatex document.tex
+lualatex document.tex
 
 mv document.md mdtmp
 mv refs.bib bibtmp
