@@ -164,7 +164,7 @@ export FZF_DEFAULT_OPTS="
   --no-height 
   --no-reverse 
   --preview 'cat {}' 
-  --color=dark 
+  --color=light 
   --margin 8% 
 "
 
