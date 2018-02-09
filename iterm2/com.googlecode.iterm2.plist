@@ -512,13 +512,13 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>622 196 445 77 0 0 1680 1027 </string>
+	<string>622 91 445 77 0 0 1680 1050 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>970 787 620 392 0 0 2560 1440 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>651 487 796 473 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1044 77 623 959 0 0 1680 1050 </string>
+	<string>10 77 1659 959 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>856 95 703 860 0 0 1680 1050 </string>
 	<key>New Bookmarks</key>
@@ -1100,7 +1100,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>MonacoForPowerline 11</string>
+			<string>MonacoForPowerline 12</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1162,7 +1162,7 @@
 			<key>Use Non-ASCII Font</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>1.1363187123493974</real>
+			<real>1.0611704631024095</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
