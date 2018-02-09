@@ -23,7 +23,7 @@ set expandtab smarttab " Insert spaces when tab is pressed
 set background=dark        " Dark background
 set termguicolors           " True colour
 set synmaxcol=790           " Maximum column in which to syntax highlight
-set guifont=Input:h11       " Set MacVim font
+set guifont=Input\ Mono:h11       " Set MacVim font
 set listchars=trail:•       " Show trailing spaces with a •
 set list                    " Enable showing invisibles
 colorscheme base16-atelier-forest " Set colourscheme
