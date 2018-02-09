@@ -19,7 +19,6 @@ call minpac#add('dkarter/bullets.vim')            " Automated bullet lists
 call minpac#add('jiangmiao/auto-pairs')           " Interact with brackets, parens, quotes in pair
 call minpac#add('junegunn/goyo.vim')              " Distraction-free writing
 call minpac#add('junegunn/limelight.vim')         " Hyper-focus writing
-call minpac#add('junegunn/seoul256.vim')          " Low-contrast Vim colourscheme based on Seoul Colours
 call minpac#add('junegunn/vim-easy-align')        " A Vim alignment plugin
 call minpac#add('kana/vim-textobj-entire')        " Text objects for entire buffer
 call minpac#add('kana/vim-textobj-indent')        " Text objects for indented blocks of lines
