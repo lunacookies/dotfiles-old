@@ -21,6 +21,7 @@ call minpac#add('junegunn/goyo.vim')          " Distraction-free writing
 call minpac#add('junegunn/limelight.vim')     " Hyper-focus writing
 call minpac#add('junegunn/seoul256.vim')      " Low-contrast Vim colourscheme based on Seoul Colours
 call minpac#add('junegunn/vim-easy-align')    " A Vim alignment plugin
+call minpac#add('wincent/command-t') " Fast file navigation for Vim
 call minpac#add('kana/vim-textobj-entire')    " Text objects for entire buffer
 call minpac#add('kana/vim-textobj-indent')    " Text objects for indented blocks of lines
 call minpac#add('kana/vim-textobj-line')      " Text objects for the current line
