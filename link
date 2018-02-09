@@ -4,10 +4,11 @@ cd ~/dotfiles
 
 stow bin
 stow chunkwm
+stow fish
+stow git
 stow khd
 stow nvim
-stow sublimetext
+stow ranger
 stow tmux
 stow zsh
-stow git
 

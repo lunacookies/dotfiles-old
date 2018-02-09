@@ -66656,9 +66656,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>970 787 620 392 0 0 2560 1440 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>315 633 796 473 0 0 2560 1440 </string>
+	<string>315 674 796 473 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>13 77 2534 1349 0 0 2560 1440 </string>
+	<string>1587 75 960 1353 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>856 95 703 860 0 0 1680 1050 </string>
 	<key>New Bookmarks</key>
@@ -66896,7 +66896,7 @@
 			<key>Columns</key>
 			<integer>80</integer>
 			<key>Command</key>
-			<string>/usr/local/bin/zsh</string>
+			<string>/usr/local/bin/fish</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -66933,7 +66933,7 @@
 				<real>0.094117647058823528</real>
 			</dict>
 			<key>Custom Command</key>
-			<string>Yes</string>
+			<string>No</string>
 			<key>Custom Directory</key>
 			<string>No</string>
 			<key>Default Bookmark</key>
@@ -66962,7 +66962,7 @@
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string>tmux -2u &amp;&amp; clear</string>
+			<string>tmux -2u; and clear</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
