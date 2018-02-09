@@ -17,7 +17,6 @@ call minpac#add('dbmrq/vim-ditto')                " Stop repeating yourself
 call minpac#add('dhruvasagar/vim-table-mode')     " Vim table mode for instant table creation
 call minpac#add('dkarter/bullets.vim')            " Automated bullet lists
 call minpac#add('jiangmiao/auto-pairs')           " Interact with brackets, parens, quotes in pair
-call minpac#add('junegunn/fzf.vim')               " Fzf on Vim
 call minpac#add('junegunn/goyo.vim')              " Distraction-free writing
 call minpac#add('junegunn/limelight.vim')         " Hyper-focus writing
 call minpac#add('junegunn/seoul256.vim')          " Low-contrast Vim colourscheme based on Seoul Colours
