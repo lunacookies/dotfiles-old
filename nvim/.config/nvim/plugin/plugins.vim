@@ -24,6 +24,8 @@ call minpac#add('junegunn/vim-easy-align')    " A Vim alignment plugin
 call minpac#add('wincent/command-t') " Fast file navigation for Vim
 call minpac#add('kana/vim-textobj-entire')    " Text objects for entire buffer
 call minpac#add('kana/vim-textobj-indent')    " Text objects for indented blocks of lines
+call minpac#add('vim-airline/vim-airline') " Statusline for Vim that's light as air
+call minpac#add('vim-airline/vim-airline-themes') " A collection of themes for vim-airline
 call minpac#add('kana/vim-textobj-line')      " Text objects for the current line
 call minpac#add('kana/vim-textobj-user')      " Create your own text objects
 call minpac#add('reedes/vim-litecorrect')     " Lightweight auto-correction
