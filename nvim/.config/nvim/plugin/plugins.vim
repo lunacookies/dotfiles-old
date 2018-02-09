@@ -12,6 +12,7 @@ call minpac#add('k-takata/minpac', {'type': 'opt'}) " A minimal package manager 
 
 call minpac#add('SirVer/ultisnips')               " The ultimate snippet solution for Vim
 call minpac#add('chriskempson/base16-vim')        " An architecture for building themes
+call minpac#add('dag/vim-fish')                   " Vim support for editing fish scripts
 call minpac#add('dbmrq/vim-ditto')                " Stop repeating yourself
 call minpac#add('dhruvasagar/vim-table-mode')     " Vim table mode for instant table creation
 call minpac#add('dkarter/bullets.vim')            " Automated bullet lists
