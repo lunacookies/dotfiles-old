@@ -20,13 +20,13 @@ set expandtab smarttab " Insert spaces when tab is pressed
 " Colours and Text {{{2
 " -----------------------------------------------------------------------------
 
-set background=light        " Light background
+set background=dark        " Dark background
 set termguicolors           " True colour
 set synmaxcol=790           " Maximum column in which to syntax highlight
 set guifont=Input:h11       " Set MacVim font
 set listchars=trail:•       " Show trailing spaces with a •
 set list                    " Enable showing invisibles
-colorscheme seoul256-light  " Set colourscheme
+colorscheme base16-atelier-forest " Set colourscheme
 let &t_ZH="\e[3m"           " Italics fix
 let &t_ZR="\e[23m"
 
@@ -59,6 +59,7 @@ set completeopt=menuone,preview " Show possible completions with preview
 set wildmenu                    " Enhanced command-line completion
 set wildmode=full               " Complete the next full match
 set showcmd                     " Show Ex commands
+set noshowmode                  " Don't show standard mode indicator
 
 " }}}2
 " -----------------------------------------------------------------------------

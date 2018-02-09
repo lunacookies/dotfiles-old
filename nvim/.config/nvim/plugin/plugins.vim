@@ -26,6 +26,7 @@ call minpac#add('kana/vim-textobj-entire')    " Text objects for entire buffer
 call minpac#add('kana/vim-textobj-indent')    " Text objects for indented blocks of lines
 call minpac#add('vim-airline/vim-airline') " Statusline for Vim that's light as air
 call minpac#add('vim-airline/vim-airline-themes') " A collection of themes for vim-airline
+call minpac#add('chriskempson/base16-vim') " An architecture for building themes
 call minpac#add('kana/vim-textobj-line')      " Text objects for the current line
 call minpac#add('kana/vim-textobj-user')      " Create your own text objects
 call minpac#add('reedes/vim-litecorrect')     " Lightweight auto-correction
