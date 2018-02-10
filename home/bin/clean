@@ -6,10 +6,6 @@ read -p "
  Are you sure? This script will delete all files and folders that the creator
  thought of as unnecessary junk, and remove any unnecessary homebrew
  dependencies. Updates will also occur.
-
- This includes but is not limited to: caches, bash configs, hyper configs, less
- histories, netrw histories, terminfo folder, useless default folders and more.
-
  [Y/n]" -n 1 -r
 
 echo    # (optional) move to a new line
@@ -22,9 +18,10 @@ then
   pip3 uninstall -r requirements.txt -y
   rm requirements.txt
 
+  gem uninstall $(gem list)
+
   brew remove --force --ignore-dependencies $(brew list)
   brew install exa
-  brew install fzf
   brew install git
   brew install koekeishiya/formulae/khd
   brew tap crisidev/homebrew-chunkwm
@@ -32,96 +29,27 @@ then
   brew install neovim
   brew install pandoc
   brew install python3
+  brew install ranger
+  brew install ruby
   brew install rmtrash
   brew install shellcheck
-  brew install stow
   brew install tmux
   brew tap ValeLint/vale
   brew install vale
-  brew install zsh
+  brew install fish
   pip3 install neovim
   pip3 install vim-vint
+  gem install neovim
+  gem install homesick
 
   /usr/local/bin/rmtrash ~/.vim*
   /usr/local/bin/rmtrash ~/.less*
   /usr/local/bin/rmtrash ~/.cache
   /usr/local/bin/rmtrash ~/.bash*
   /usr/local/bin/rmtrash ~/.hyper*
-  /usr/local/bin/rmtrash ~/.gem*
   /usr/local/bin/rmtrash ~/.config/nvim/.netrwhist
-  /usr/local/bin/rmtrash ~/.terminfo
   /usr/local/bin/rmtrash ~/.cups
   /usr/local/bin/rmtrash ~/.oracle*
-  /usr/local/bin/rmtrash ~/*.ti
-
-  if [ -n "$(ls -A ~/documents/*)" ]
-  then
-    echo "Contents rescued"
-  else
-    sudo mv ~/documents ~/.Trash/old-documents
-  fi
-  if [ -n "$(ls -A ~/downloads/*)" ]
-  then
-    echo "Contents rescued"
-  else
-    sudo mv ~/downloads ~/.Trash/old-downloads
-  fi
-  if [ -n "$(ls -A ~/movies/*)" ]
-  then
-    echo "Contents rescued"
-  else
-    sudo mv ~/movies ~/.Trash/old-movies
-  fi
-  if [ -n "$(ls -A ~/music/*)" ]
-  then
-    echo "Contents rescued"
-  else
-    sudo mv ~/music ~/.Trsh/old-music
-  fi
-  if [ -n "$(ls -A ~/pictures/*)" ]
-  then
-    echo "Contents rescued"
-  else
-    sudo mv ~/pictures ~/.Trash/old-pictures
-  fi
-
-  if [ -n "$(ls -A ~/Documents/*)" ]
-  then
-    echo "Contents rescued"
-  else
-    sudo mv ~/Documents ~/.Trash/old-Documents
-  fi
-  if [ -n "$(ls -A ~/Downloads/*)" ]
-  then
-    echo "Contents rescued"
-  else
-    sudo mv ~/Downloads ~/.Trash/old-Downloads
-  fi
-  if [ -n "$(ls -A ~/Movies/*)" ]
-  then
-    echo "Contents rescued"
-  else
-    sudo mv ~/Movies ~/.Trash/old-Movies
-  fi
-  if [ -n "$(ls -A ~/Music/*)" ]
-  then
-    echo "Contents rescued"
-  else
-    sudo mv ~/Music ~/.Trash/old-Music
-  fi
-  if [ -n "$(ls -A ~/Pictures/*)" ]
-  then
-    echo "Contents rescued"
-  else
-    sudo mv ~/Pictures ~/.Trash/old-Pictures
-  fi
-
-  sudo mv ~/Desktop ~/desktop
-  sudo mv ~/Documents ~/documents
-  sudo mv ~/Downloads ~/downloads
-  sudo mv ~/Movies ~/movies
-  sudo mv ~/Music ~/music
-  sudo mv ~/Pictures ~/pictures
 
   sudo find / -name '.DS_Store' -type f -delete
   sudo find ~/box -name 'Icon*' -type f -delete
