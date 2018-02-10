@@ -38,12 +38,10 @@ let g:maplocalleader=' ' " Local  leader
 " =============================================================================
 
 " Normal mode
-nnoremap ; :
-nnoremap : ;
+nnoremap <enter> :
 
 " Visual mode
-xnoremap ; :
-xnoremap : ;
+xnoremap <enter> :
 
 " }}}1
 " =============================================================================
