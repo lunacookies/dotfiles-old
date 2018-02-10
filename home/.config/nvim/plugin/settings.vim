@@ -20,24 +20,13 @@ set expandtab smarttab " Insert spaces when tab is pressed
 " Colours and Text {{{2
 " -----------------------------------------------------------------------------
 
-set background=dark             " Dark background
-set termguicolors               " True colour
-set synmaxcol=790               " Maximum column in which to syntax highlight
-set guifont=Input\ Mono:h11     " Set MacVim font
-set listchars=trail:•           " Show trailing spaces with a •
-set list                        " Enable showing invisibles
-colorscheme base16-default-dark " Set colourscheme
-let &t_ZH="\e[3m"               " Italics fix
-let &t_ZR="\e[23m"
-
-" }}}2
-" -----------------------------------------------------------------------------
-" Input Methods {{{2
-" -----------------------------------------------------------------------------
-
-set noimdisable " Fix Input Methods
-set iminsert=1  " Enable lmap and disable IM
-set imsearch=-1 " Makes it look like imi is used when typing a search pattern
+set background=dark                              " Dark background
+set termguicolors                                " True colour
+set synmaxcol=790                                " Maximum column in which to syntax highlight
+set guifont=Input\ Mono:h11                      " Set MacVim font
+set listchars=eol:¬,trail:⋅,extends:❯,precedes:❮ " Set invisibles
+set list                                         " Enable showing invisibles
+colorscheme base16-atelier-forest                " Set colourscheme
 
 " }}}2
 " -----------------------------------------------------------------------------
