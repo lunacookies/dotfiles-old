@@ -70,22 +70,6 @@ set sidescroll=1     " Scroll horizontally at edge of window
 
 " }}}2
 " -----------------------------------------------------------------------------
-" Status line {{{2
-" -----------------------------------------------------------------------------
-
-set laststatus=2                           " Always show status line
-set visualbell                             " Flash indicator on status line instead of bell
-set statusline=                            " Reset status line
-set statusline+=\ %8(%l\ :\ %-2v%)         " Lines and columns
-set statusline+=\ %m                       " Modified/read-only flag
-set statusline+=\ %{fugitive#statusline()} " Git branch
-set statusline+=\ %=                       " Separator
-set statusline+=\ %y                       " Filetype
-                                           " Spacer
-set statusline+=\ 
-
-" }}}2
-" -----------------------------------------------------------------------------
 " Misc {{{2
 " -----------------------------------------------------------------------------
 
@@ -97,7 +81,7 @@ set nocursorline          " Never show cursor guide
 set relativenumber        " Relative line numbers
 set number                " Absolute line numbers
 set lazyredraw            " Prevent unnecessary redrawing
-" Don't show dashes when folding
+                          " Don't show dashes when folding
 set fillchars=fold:\ 
 if exists('&colorcolumn') " Highlight 79th column
   set colorcolumn=80
@@ -120,14 +104,14 @@ set ignorecase smartcase " Smart capitalisation handling
 " FILES {{{1
 " =============================================================================
 
-set fileencoding=utf-8 " Write UTF-8
-set encoding=utf-8     " Display UTF-8
-set nrformats=hex      " Use hexadecimal and base ten
-set sessionoptions-=options      " Do not save manually set options
-set sessionoptions-=folds        " Do not save manually created folds
-set undofile           " Keep undo history between sessions
-set hidden             " A buffer becomes hidden when abandoned
-set autoread           " Automatically read a file when it has been changed outside of vim
+set fileencoding=utf-8      " Write UTF-8
+set encoding=utf-8          " Display UTF-8
+set nrformats=hex           " Use hexadecimal and base ten
+set sessionoptions-=options " Do not save manually set options
+set sessionoptions-=folds   " Do not save manually created folds
+set undofile                " Keep undo history between sessions
+set hidden                  " A buffer becomes hidden when abandoned
+set autoread                " Automatically read a file when it has been changed outside of vim
 
 " }}}1
 " =============================================================================
