@@ -3,11 +3,6 @@
 
 set fish_greeting # Don't show greeting upon opening fish
 
-# Base16 Shell
-if status --is-interactive
-    eval sh $HOME/.config/base16-shell/scripts/base16-default-dark.sh
-end
-
 # Colored man
 set -xg LESS_TERMCAP_mb (printf "\033[01;31m")
 set -xg LESS_TERMCAP_md (printf "\033[01;31m")
