@@ -25,6 +25,7 @@ call minpac#add('kana/vim-textobj-indent')        " Text objects for indented bl
 call minpac#add('kana/vim-textobj-line')          " Text objects for the current line
 call minpac#add('kana/vim-textobj-user')          " Create your own text objects
 call minpac#add('reedes/vim-litecorrect')         " Lightweight auto-correction
+call minpac#add('scrooloose/nerdtree')            " A tree explorer plugin for Vim
 call minpac#add('takac/vim-hardtime')             " Stop repeating hjkl
 call minpac#add('tpope/vim-abolish')              " Act on multiple variants of a word
 call minpac#add('tpope/vim-commentary')           " Comment stuff out
