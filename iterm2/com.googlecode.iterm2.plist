@@ -66652,11 +66652,11 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>630 676 445 77 0 0 2560 1440 </string>
+	<string>630 281 445 82 0 0 1680 1050 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>970 787 620 392 0 0 2560 1440 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>860 858 796 473 0 0 2560 1440 </string>
+	<string>431 560 796 473 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>32 78 2496 1283 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -67282,7 +67282,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Hasklig-Regular 14</string>
+			<string>Hasklig-Regular 12</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
