@@ -18,7 +18,7 @@ then
   pip3 uninstall -r requirements.txt -y
   rm requirements.txt
 
-  gem uninstall $(gem list)
+  gem uninstall -all
 
   brew remove --force --ignore-dependencies $(brew list)
   brew install exa
