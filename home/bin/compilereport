@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-pandoc -f markdown -t latex -o document.tex document.md --template=$HOME/dotfiles/pandoctemplates/article/template.tex --top-level-division=section
+pandoc -f markdown -t latex -o document.tex document.md --template=$HOME/.homesick/repos/dotfiles/pandoctemplates/article/template.tex --top-level-division=section
 
 pdflatex document.tex
 biber document
