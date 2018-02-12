@@ -13,6 +13,7 @@ call minpac#add('k-takata/minpac', {'type': 'opt'}) " A minimal package manager 
 call minpac#add('SirVer/ultisnips')               " The ultimate snippet solution for Vim
 call minpac#add('Yggdroot/indentLine')            " Indent guides
 call minpac#add('chriskempson/base16-vim')        " An architecture for building themes
+call minpac#add('ctrlpvim/ctrlp.vim')             " Fuzzy file, buffer, mru, tag, etc finder
 call minpac#add('dag/vim-fish')                   " Vim support for editing fish scripts
 call minpac#add('dbmrq/vim-ditto')                " Stop repeating yourself
 call minpac#add('dhruvasagar/vim-table-mode')     " Vim table mode for instant table creation
@@ -38,7 +39,7 @@ call minpac#add('tpope/vim-unimpaired')           " Pairs of handy bracket mappi
 call minpac#add('vim-airline/vim-airline')        " Statusline for Vim that's light as air
 call minpac#add('vim-airline/vim-airline-themes') " A collection of themes for vim-airline
 call minpac#add('w0rp/ale')                       " Asynchronous Lint Engine
-call minpac#add('ctrlpvim/ctrlp.vim')
+call minpac#add('wincent/terminus')               " Enhanced terminal integration for Vim
 
 " }}}1
 " =============================================================================
