@@ -34,6 +34,7 @@ then
   brew install rmtrash
   brew install shellcheck
   brew install tmux
+  brew install fzf
   brew tap ValeLint/vale
   brew install vale
   brew install fish
