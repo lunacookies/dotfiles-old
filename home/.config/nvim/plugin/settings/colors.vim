@@ -10,7 +10,7 @@ set synmaxcol=790                                " Maximum column in which to sy
 set guifont=Input\ Mono:h11                      " Set MacVim font
 set listchars=eol:¬,trail:⋅,extends:❯,precedes:❮ " Set invisibles
 set list                                         " Enable showing invisibles
-colorscheme base16-atelier-forest                " Set colourscheme
+colorscheme seoul256-light                       " Set colourscheme
 
 " -----------------------------------------------------------------------------
 

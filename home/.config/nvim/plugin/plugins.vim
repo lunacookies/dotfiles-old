@@ -12,7 +12,6 @@ call minpac#add('k-takata/minpac', {'type': 'opt'}) " A minimal package manager 
 
 call minpac#add('SirVer/ultisnips')               " The ultimate snippet solution for Vim
 call minpac#add('Yggdroot/indentLine')            " Indent guides
-call minpac#add('chriskempson/base16-vim')        " An architecture for building themes
 call minpac#add('ctrlpvim/ctrlp.vim')             " Fuzzy file, buffer, mru, tag, etc finder
 call minpac#add('dag/vim-fish')                   " Vim support for editing fish scripts
 call minpac#add('dbmrq/vim-ditto')                " Stop repeating yourself
@@ -20,6 +19,7 @@ call minpac#add('dhruvasagar/vim-table-mode')     " Vim table mode for instant t
 call minpac#add('dkarter/bullets.vim')            " Automated bullet lists
 call minpac#add('junegunn/goyo.vim')              " Distraction-free writing
 call minpac#add('junegunn/limelight.vim')         " Hyper-focus writing
+call minpac#add('junegunn/seoul256.vim')          " Low-contrast Vim colour scheme based on Seoul Colours
 call minpac#add('junegunn/vim-easy-align')        " A Vim alignment plugin
 call minpac#add('kana/vim-textobj-entire')        " Text objects for entire buffer
 call minpac#add('kana/vim-textobj-indent')        " Text objects for indented blocks of lines
