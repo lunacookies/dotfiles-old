@@ -85,7 +85,7 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1168 481 445 77 0 0 2560 1440 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>744 852 796 473 0 0 2560 1440 </string>
+	<string>744 940 796 473 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>1014 673 634 301 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -887,7 +887,7 @@
 	<key>ShowPaneTitles</key>
 	<false/>
 	<key>StretchTabsToFillBar</key>
-	<true/>
+	<false/>
 	<key>TabStyle</key>
 	<integer>1</integer>
 	<key>TerminalMargin</key>
