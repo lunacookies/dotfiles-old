@@ -85,9 +85,9 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1168 481 445 77 0 0 2560 1440 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>744 940 796 473 0 0 2560 1440 </string>
+	<string>471 939 796 473 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1014 673 634 301 0 0 1680 1050 </string>
+	<string>1541 141 987 1220 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1541 140 988 471 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -288,13 +288,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.13333333333333333</real>
+				<real>0.46274509803921571</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.13333333333333333</real>
+				<real>0.46274509803921571</real>
 				<key>Red Component</key>
-				<real>0.13333333333333333</real>
+				<real>0.46274509803921571</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
@@ -799,6 +799,19 @@
 			<false/>
 			<key>Sync Title</key>
 			<false/>
+			<key>Tab Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.054901960784313725</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
+				<key>Green Component</key>
+				<real>0.054901960784313725</real>
+				<key>Red Component</key>
+				<real>0.054901960784313725</real>
+			</dict>
 			<key>Tags</key>
 			<array/>
 			<key>Terminal Type</key>
@@ -817,6 +830,8 @@
 			<true/>
 			<key>Use Non-ASCII Font</key>
 			<false/>
+			<key>Use Tab Color</key>
+			<true/>
 			<key>Vertical Spacing</key>
 			<real>1.1467891095632532</real>
 			<key>Visual Bell</key>
