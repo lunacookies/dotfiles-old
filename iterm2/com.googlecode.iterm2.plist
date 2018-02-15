@@ -19,7 +19,7 @@
 	<key>DisableWindowSizeSnap</key>
 	<false/>
 	<key>EnableDivisionView</key>
-	<true/>
+	<false/>
 	<key>EnableProxyIcon</key>
 	<false/>
 	<key>FlashTabBarInFullscreen</key>
@@ -106,13 +106,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.10196078431372549</real>
+				<real>0.054901960784313725</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.10196078431372549</real>
+				<real>0.054901960784313725</real>
 				<key>Red Component</key>
-				<real>0.10196078431372549</real>
+				<real>0.054901960784313725</real>
 			</dict>
 			<key>Ansi 1 Color</key>
 			<dict>
