@@ -5,12 +5,6 @@ function! aramis#syntax#code() abort
   " Italic comments
   highlight! Comment gui=italic cterm=italic
 
-  " Show ColorColumn at end of window
-  highlight! link NonText ColorColumn
-
-  " Make current line number stand out
-  highlight! link CursorLineNr DiffText
-
   " Blend vertical separators with line numbers
   highlight! link VertSplit LineNr
 endfunction
@@ -46,12 +40,6 @@ function! aramis#syntax#prose() abort
   " Make line numbers less focused
   highlight! link LineNr       Comment
   highlight! link CursorLineNr Comment
-
-  " Show ColorColumn at end of window
-  highlight! link NonText ColorColumn
-
-  " Make current line number stand out
-  highlight! link CursorLineNr DiffText
 
   " Blend vertical separators with line numbers
   highlight! link VertSplit LineNr
