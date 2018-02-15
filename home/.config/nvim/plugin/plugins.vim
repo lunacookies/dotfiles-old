@@ -36,8 +36,6 @@ call minpac#add('tpope/vim-markdown')             " Vim Markdown runtime files
 call minpac#add('tpope/vim-repeat')               " Repeat plugin maps
 call minpac#add('tpope/vim-surround')             " Quoting/parenthesising made simple
 call minpac#add('tpope/vim-unimpaired')           " Pairs of handy bracket mappings
-call minpac#add('vim-airline/vim-airline')        " Statusline for Vim that's light as air
-call minpac#add('vim-airline/vim-airline-themes') " A collection of themes for vim-airline
 call minpac#add('w0rp/ale')                       " Asynchronous Lint Engine
 call minpac#add('wincent/terminus')               " Enhanced terminal integration for Vim
 
