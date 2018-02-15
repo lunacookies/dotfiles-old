@@ -19,7 +19,6 @@ call minpac#add('dhruvasagar/vim-table-mode')     " Vim table mode for instant t
 call minpac#add('dkarter/bullets.vim')            " Automated bullet lists
 call minpac#add('junegunn/goyo.vim')              " Distraction-free writing
 call minpac#add('junegunn/limelight.vim')         " Hyper-focus writing
-call minpac#add('junegunn/seoul256.vim')          " Low-contrast Vim colour scheme based on Seoul Colours
 call minpac#add('junegunn/vim-easy-align')        " A Vim alignment plugin
 call minpac#add('kana/vim-textobj-entire')        " Text objects for entire buffer
 call minpac#add('kana/vim-textobj-indent')        " Text objects for indented blocks of lines
@@ -37,7 +36,6 @@ call minpac#add('tpope/vim-repeat')               " Repeat plugin maps
 call minpac#add('tpope/vim-surround')             " Quoting/parenthesising made simple
 call minpac#add('tpope/vim-unimpaired')           " Pairs of handy bracket mappings
 call minpac#add('w0rp/ale')                       " Asynchronous Lint Engine
-call minpac#add('wincent/terminus')               " Enhanced terminal integration for Vim
 
 " }}}1
 " =============================================================================
