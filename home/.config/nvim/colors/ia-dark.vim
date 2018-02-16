@@ -100,7 +100,7 @@ endif
 " Theme setup
 hi clear
 syntax reset
-let g:colors_name = 'ia'
+let g:colors_name = 'ia-dark'
 
 " Highlighting function
 function! g:Base16hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
@@ -161,7 +161,7 @@ call <sid>hi('Cursor',        s:gui00, s:gui05, s:cterm00, s:cterm05, '', '')
 call <sid>hi('NonText',       s:gui03, '', s:cterm03, '', '', '')
 call <sid>hi('LineNr',        s:gui03, s:gui01, s:cterm03, s:cterm01, '', '')
 call <sid>hi('SignColumn',    s:gui03, s:gui01, s:cterm03, s:cterm01, '', '')
-call <sid>hi('StatusLine',    s:gui04, s:gui02, s:cterm04, s:cterm02, 'none', '')
+call <sid>hi('StatusLine',    s:gui04, s:gui01, s:cterm04, s:cterm01, 'none', '')
 call <sid>hi('StatusLineNC',  s:gui03, s:gui01, s:cterm03, s:cterm01, 'none', '')
 call <sid>hi('VertSplit',     s:gui02, s:gui02, s:cterm02, s:cterm02, 'none', '')
 call <sid>hi('ColorColumn',   '', s:gui01, '', s:cterm01, 'none', '')
@@ -297,7 +297,7 @@ call <sid>hi('mailEmail',    s:gui0D, '', s:cterm0D, '', '', '')
 call <sid>hi('markdownCode',              s:gui0B, '', s:cterm0B, '', '', '')
 call <sid>hi('markdownError',             s:gui05, s:gui00, s:cterm05, s:cterm00, '', '')
 call <sid>hi('markdownCodeBlock',         s:gui0B, '', s:cterm0B, '', '', '')
-call <sid>hi('markdownHeadingDelimiter',  s:gui0D, '', s:cterm0D, '', '', '')
+call <sid>hi('markdownHeadingDelimiter',  s:gui05, '', s:cterm05, '', '', '')
 
 " NERDTree highlighting
 call <sid>hi('NERDTreeDirSlash',  s:gui0D, '', s:cterm0D, '', '', '')

@@ -11,7 +11,7 @@ set guifont=Input\ Mono:h11                      " Set MacVim font
 set listchars=eol:¬,trail:⋅,extends:❯,precedes:❮ " Set invisibles
 set list                                         " Enable showing invisibles
                                                  " Set colourscheme
-colorscheme ia
+colorscheme ia-light
 
 " -----------------------------------------------------------------------------
 
