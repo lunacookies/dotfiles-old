@@ -10,32 +10,38 @@ function! aramis#syntax#code() abort
 endfunction
 
 function! aramis#syntax#prose() abort
-  " Disable italic comments
-  highlight! Comment gui=NONE cterm=NONE
-
-  " Show delimiters in a faint colour
-  highlight! link markdownRule                Comment
-  highlight! link markdownHeadingDelimiter    Comment
-  highlight! link markdownItalicDelimiter     Comment
-  highlight! link markdownBoldDelimiter       Comment
-  highlight! link markdownBoldItalicDelimiter Comment
-  highlight! link markdownCodeDelimiter       Comment
-  highlight! link markdownUrlDelimiter        Comment
-  highlight! link markdownUrl                 Comment
-  highlight! link markdownListMarker          Comment
-  highlight! link markdownOrderedListMarker   Comment
+  " Show delimiters in normal text colour
+  highlight! link markdownCodeDelimiter       markdownError
+  highlight! link markdownUrlDelimiter        markdownError
+  highlight! link markdownUrl                 markdownError
+  highlight! link markdownListMarker          markdownError
+  highlight! link markdownOrderedListMarker   markdownError
 
   " Make headings show as bold
-  highlight! markdownH1 cterm=bold gui=bold
-  highlight! markdownH2 cterm=bold gui=bold
-  highlight! markdownH3 cterm=bold gui=bold
-  highlight! markdownH4 cterm=bold gui=bold
-  highlight! markdownH5 cterm=bold gui=bold
-  highlight! markdownH6 cterm=bold gui=bold
+  highlight! link markdownH1               markdownError
+  highlight! link markdownH2               markdownError
+  highlight! link markdownH3               markdownError
+  highlight! link markdownH4               markdownError
+  highlight! link markdownH5               markdownError
+  highlight! link markdownH6               markdownError
+  highlight! link markdownRule             markdownError
+  highlight! link markdownHeadingDelimiter markdownError
+
+  highlight! markdownH1               cterm=bold gui=bold
+  highlight! markdownH2               cterm=bold gui=bold
+  highlight! markdownH3               cterm=bold gui=bold
+  highlight! markdownH4               cterm=bold gui=bold
+  highlight! markdownH5               cterm=bold gui=bold
+  highlight! markdownH6               cterm=bold gui=bold
+  highlight! markdownRule             cterm=bold gui=bold
+  highlight! markdownHeadingDelimiter cterm=bold gui=bold
 
   " Retain rich text syntax highlighting
-  highlight! markdownBold   cterm=bold   gui=bold
-  highlight! markdownItalic cterm=italic gui=italic
+  highlight! markdownBold                cterm=bold        gui=bold
+  highlight! markdownItalic              cterm=italic      gui=italic
+  highlight! markdownItalicDelimiter     cterm=italic      gui=italic
+  highlight! markdownBoldDelimiter       cterm=bold        gui=bold
+  highlight! markdownBoldItalicDelimiter cterm=bold,italic gui=bold,italic
 
   " Make line numbers less focused
   highlight! link LineNr       Comment
