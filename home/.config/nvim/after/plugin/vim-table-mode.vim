@@ -1,6 +1,5 @@
 
-" vim: set foldmethod=marker foldlevel=0 nomodeline:
-
+" Standard vim-table-mode mappings
 function! s:isAtStartOfLine(mapping)
   let l:text_before_cursor=getline('.')[0 : col('.')-1]
   let l:mapping_pattern='\V' . escape(a:mapping, '\')

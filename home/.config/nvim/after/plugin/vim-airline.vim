@@ -1,13 +1,10 @@
 
-" vim: set foldmethod=marker foldlevel=0 nomodeline:
-
 let g:airline#extensions#hunks#enabled=0      " Disable airline hunk integration
 let g:airline#extensions#tabline#left_sep=''  " Use powerline separators in tabline
 let g:airline#extensions#tabline#left_alt_sep=''
 let g:airline#extensions#tabline#right_sep=''
 let g:airline#extensions#tabline#right_alt_sep=''
 let g:airline#extensions#tabline#enabled=1    " Always show tabline
-                                              " let g:airline#extensions#tabline#show_tab_type=0          " Don't show tab type
 let g:airline#extensions#tagbar#enabled=0     " Disable airline's tagbar extension
 let g:airline#extensions#whitespace#enabled=1 " Disable airline's whitespace extension
 let g:airline_detect_spell=0                  " Don't show an indicator when spell checking is enabled
@@ -34,3 +31,4 @@ let g:airline_theme='base16'                  " Use base16 theme for airline
   \ 'S'  : 'S',
   \ '' : 'S',
   \ }
+

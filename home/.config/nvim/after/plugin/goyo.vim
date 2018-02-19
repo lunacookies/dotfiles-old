@@ -1,10 +1,7 @@
 
-let g:goyo_width=67              " Leave a few extra chars more than textwidth
+let g:goyo_width=67 " Leave a few extra chars more than textwidth
 
-" Map goyo.vim
-nnoremap <leader>g :Goyo<cr>
-
-function! s:goyo_enter() " On goyo enter:
+function! s:goyo_enter()     " On goyo enter:
   set nonumber               " Disable line numbers
   set norelativenumber       " Disable relative line numbers
   set nolist                 " Disable invisibles
@@ -16,7 +13,7 @@ function! s:goyo_enter() " On goyo enter:
   Limelight                  " Enable paragraph focus mode
 endfunction
 
-function! s:goyo_leave() " On goyo exit:
+function! s:goyo_leave()     " On goyo exit:
   set number                 " Enable line numbers
   set relativenumber         " Enable relative line numbers
   set nolist                 " Disable invisibles
@@ -30,4 +27,7 @@ endfunction
 
 autocmd! vimrc User GoyoEnter nested call <sid>goyo_enter()
 autocmd! vimrc User GoyoLeave nested call <sid>goyo_leave()
+
+" Map goyo.vim
+nnoremap <leader>g :Goyo<cr>
 

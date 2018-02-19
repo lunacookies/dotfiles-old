@@ -4,3 +4,4 @@ let g:tagbar_iconchars=['▸', '▾'] " Keep arrow icons consistent with NERDTre
 
 " Map <leader>t to toggle tagbar
 nnoremap <leader>t :TagbarToggle<CR>
+
