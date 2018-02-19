@@ -11,21 +11,20 @@ endfunction
 
 function! aramis#syntax#prose() abort
   " Show delimiters in normal text colour
-  highlight! link markdownCodeDelimiter       markdownError
-  highlight! link markdownUrlDelimiter        markdownError
-  highlight! link markdownUrl                 markdownError
-  highlight! link markdownListMarker          markdownError
-  highlight! link markdownOrderedListMarker   markdownError
+  highlight! link markdownCodeDelimiter     markdownError
+  highlight! link markdownUrlDelimiter      markdownError
+  highlight! link markdownUrl               markdownError
+  highlight! link markdownListMarker        markdownError
+  highlight! link markdownOrderedListMarker markdownError
 
   " Make headings show as bold
-  highlight! link markdownH1               markdownError
-  highlight! link markdownH2               markdownError
-  highlight! link markdownH3               markdownError
-  highlight! link markdownH4               markdownError
-  highlight! link markdownH5               markdownError
-  highlight! link markdownH6               markdownError
-  highlight! link markdownRule             markdownError
-  highlight! link markdownHeadingDelimiter markdownError
+  highlight! link markdownH1   markdownError
+  highlight! link markdownH2   markdownError
+  highlight! link markdownH3   markdownError
+  highlight! link markdownH4   markdownError
+  highlight! link markdownH5   markdownError
+  highlight! link markdownH6   markdownError
+  highlight! link markdownRule markdownError
 
   highlight! markdownH1               cterm=bold gui=bold
   highlight! markdownH2               cterm=bold gui=bold
@@ -35,6 +34,8 @@ function! aramis#syntax#prose() abort
   highlight! markdownH6               cterm=bold gui=bold
   highlight! markdownRule             cterm=bold gui=bold
   highlight! markdownHeadingDelimiter cterm=bold gui=bold
+
+  highlight! link markdownHeadingDelimiter markdonwH1
 
   " Retain rich text syntax highlighting
   highlight! markdownBold                cterm=bold        gui=bold
