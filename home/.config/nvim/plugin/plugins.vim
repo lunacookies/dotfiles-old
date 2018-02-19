@@ -22,6 +22,7 @@ call minpac#add('dkarter/bullets.vim')            " Automated bullet lists
 call minpac#add('junegunn/goyo.vim')              " Distraction-free writing
 call minpac#add('junegunn/limelight.vim')         " Hyper-focus writing
 call minpac#add('junegunn/vim-easy-align')        " A Vim alignment plugin
+call minpac#add('justinmk/vim-sneak')             " Two character f/t motion
 call minpac#add('kana/vim-textobj-entire')        " Text objects for entire buffer
 call minpac#add('kana/vim-textobj-indent')        " Text objects for indented blocks of lines
 call minpac#add('kana/vim-textobj-line')          " Text objects for the current line
