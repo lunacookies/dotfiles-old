@@ -49,10 +49,7 @@ xnoremap <enter> :
 " =============================================================================
 
 " Save in normal mode
-nnoremap <c-s> :w<cr>
-
-" Save in insert mode too
-inoremap <c-s> :w<cr>
+nnoremap <leader>s :w<cr>
 
 " }}}1
 " =============================================================================
@@ -60,10 +57,7 @@ inoremap <c-s> :w<cr>
 " =============================================================================
 
 " Save and quit in normal mode
-nnoremap <c-q> :wq<cr>
-
-" Save and quit in insert mode too
-inoremap <c-q> :wq<cr>
+nnoremap <leader>q :wq<cr>
 
 " }}}1
 " =============================================================================
