@@ -5,20 +5,21 @@ let g:goyo_width=67              " Leave a few extra chars more than textwidth
 nnoremap <leader>g :Goyo<cr>
 
 function! s:goyo_enter() " On goyo enter:
-  set nolist                  " Disable invisibles
-  silent !tmux set status off " Hide tmux statusbar
-  set noshowmode              " Don't show current mode
-  set noshowcmd               " Don't show last command
-  call aramis#syntax#prose()  " Call prose syntax function
-  set scrolloff=999           " Centre current line
-  set nocursorline            " Don't show cursor guide
-  Limelight                   " Enable paragraph focus mode
+  set nonumber               " Disable line numbers
+  set norelativenumber       " Disable relative line numbers
+  set nolist                 " Disable invisibles
+  set noshowmode             " Don't show current mode
+  set noshowcmd              " Don't show last command
+  call aramis#syntax#prose() " Call prose syntax function
+  set scrolloff=999          " Centre current line
+  set nocursorline           " Don't show cursor guide
+  Limelight                  " Enable paragraph focus mode
 endfunction
 
 function! s:goyo_leave() " On goyo exit:
-  colorscheme ia-light
+  set number                 " Enable line numbers
+  set relativenumber         " Enable relative line numbers
   set nolist                 " Disable invisibles
-  silent !tmux set status on " Show tmux statusbar
   set showmode               " Show current mode
   set showcmd                " Show last command
   call aramis#syntax#prose() " Call prose syntax function
