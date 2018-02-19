@@ -6,7 +6,7 @@
 " =============================================================================
 
 " Insert mode
-inoremap jk <esc>
+inoremap jk <esc>`^
 
 " Visual mode
 xnoremap fd <esc>
