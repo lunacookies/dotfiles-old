@@ -1,17 +1,24 @@
 
-" Colors {{{1
+" vim: set foldmethod=marker foldlevel=0 nomodeline:
 
-set background=light                             " Light background
-set termguicolors                                " True colour
-set synmaxcol=790                                " Maximum column in which to syntax highlight
-set guifont=Input\ Mono:h11                      " Set MacVim font
-set listchars=eol:¬,trail:⋅,extends:❯,precedes:❮ " Set invisibles
-set list                                         " Enable showing invisibles
-                                                 " Set colourscheme
-colorscheme ia-light
+" =============================================================================
+" Colors {{{1
+" =============================================================================
+
+set background=dark                       " Dark background
+let &t_8f="\e[38;2;%ld;%ld;%ldm"
+let &t_8b="\e[48;2;%ld;%ld;%ldm"
+set termguicolors                          " True colour
+set synmaxcol=790                          " Maximum column in which to syntax highlight
+set guifont=Input\ Mono:h11                " Set MacVim font
+set listchars=trail:⋅,extends:❯,precedes:❮ " Set invisibles
+set list                                   " Enable showing invisibles
+colorscheme base16-tomorrow-night          " Set colourscheme
 
 " }}}1
+" =============================================================================
 " Command-line {{{1
+" =============================================================================
 
 set completeopt=menuone,preview " Show possible completions with preview
 set wildmenu                    " Enhanced command-line completion
