@@ -40,6 +40,8 @@ call minpac#add('tpope/vim-repeat')               " Repeat plugin maps
 call minpac#add('tpope/vim-rsi')                  " Readline style insertion
 call minpac#add('tpope/vim-surround')             " Quoting/parenthesising made simple
 call minpac#add('tpope/vim-unimpaired')           " Pairs of handy bracket mappings
+call minpac#add('vim-airline/vim-airline')        " Lean & mean status that's light as air
+call minpac#add('vim-airline/vim-airline-themes') " A collection of themes for vim-airline
 call minpac#add('w0rp/ale')                       " Asynchronous Lint Engine
 
 " }}}1
