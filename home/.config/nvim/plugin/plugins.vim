@@ -37,6 +37,7 @@ call minpac#add('tpope/vim-endwise')              " Wisely add matching closing 
 call minpac#add('tpope/vim-fugitive')             " Git wrapper for Vim
 call minpac#add('tpope/vim-markdown')             " Vim Markdown runtime files
 call minpac#add('tpope/vim-repeat')               " Repeat plugin maps
+call minpac#add('tpope/vim-rsi')                  " Readline style insertion
 call minpac#add('tpope/vim-surround')             " Quoting/parenthesising made simple
 call minpac#add('tpope/vim-unimpaired')           " Pairs of handy bracket mappings
 call minpac#add('w0rp/ale')                       " Asynchronous Lint Engine
