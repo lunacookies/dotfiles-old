@@ -5,9 +5,7 @@
 " Colors {{{1
 " =============================================================================
 
-set background=dark                       " Dark background
-let &t_8f="\e[38;2;%ld;%ld;%ldm"
-let &t_8b="\e[48;2;%ld;%ld;%ldm"
+set background=dark                        " Dark background
 set termguicolors                          " True colour
 set synmaxcol=790                          " Maximum column in which to syntax highlight
 set guifont=Input\ Mono:h11                " Set MacVim font
