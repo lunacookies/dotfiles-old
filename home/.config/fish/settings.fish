@@ -12,7 +12,3 @@ set -xg LESS_TERMCAP_so (printf "\033[01;31;33m")
 set -xg LESS_TERMCAP_ue (printf "\033[0m")
 set -xg LESS_TERMCAP_us (printf "\033[01;32m")
 
-function tmuxwindowtitle --on-event fish_prompt
-  tmux rename-window (prompt_pwd)
-end
-
