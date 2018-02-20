@@ -1,10 +1,4 @@
 
-" vim: set foldmethod=marker foldlevel=0 nomodeline:
-
-" =============================================================================
-" Plugins {{{1
-" =============================================================================
-
 packadd minpac
 
 call minpac#init()
@@ -45,13 +39,5 @@ call minpac#add('vim-airline/vim-airline')        " Lean & mean status that's li
 call minpac#add('vim-airline/vim-airline-themes') " A collection of themes for vim-airline
 call minpac#add('w0rp/ale')                       " Asynchronous Lint Engine
 
-" }}}1
-" =============================================================================
-" Pack command {{{1
-" =============================================================================
-
-command! Pack call minpac#clean() | call minpac#update()
-
-" }}}1
-" =============================================================================
+command! Pack call minpac#clean() | call minpac#update() " Call  pack  to update, clean and install plugins
 
