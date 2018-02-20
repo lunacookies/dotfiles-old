@@ -38,6 +38,8 @@ then
   brew tap ValeLint/vale
   brew install vale
   brew install fish
+  brew tap universal-ctags/universal-ctags
+  brew install --HEAD universal-ctags
   pip3 install neovim
   pip3 install vim-vint
   gem install neovim
