@@ -37,8 +37,6 @@ Plug 'tpope/vim-repeat'                " Repeat plugin maps
 Plug 'tpope/vim-rsi'                   " Readline style insertion
 Plug 'tpope/vim-surround'              " Quoting/parenthesising made simple
 Plug 'tpope/vim-unimpaired'            " Pairs of handy bracket mappings
-Plug 'vim-airline/vim-airline'         " Lean & mean status that's light as air
-Plug 'vim-airline/vim-airline-themes'  " A collection of themes for vim-airline
 Plug 'w0rp/ale'                        " Asynchronous Lint Engine
 call plug#end()
 
