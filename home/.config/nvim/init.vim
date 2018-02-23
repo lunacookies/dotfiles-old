@@ -24,4 +24,24 @@ augroup END
 
 " }}}1
 " =============================================================================
+" Source config files {{{1
+" =============================================================================
+
+function! s:SourceConfigFilesIn(directory)
+  let a:directory_splat = '~/.config/nvim/' . a:directory . '/*'
+  for a:config_file in split(glob(a:directory_splat), '\n')
+    if filereadable(a:config_file)
+      execute 'source' a:config_file
+    endif
+  endfor
+endfunction
+
+call plug#begin('~/.local/share/nvim/plugged')
+call s:SourceConfigFilesIn('plugin/rcplugins')
+call plug#end()
+
+call s:SourceConfigFilesIn('plugin/rcfiles')
+
+" }}}1
+" =============================================================================
 
