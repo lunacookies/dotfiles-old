@@ -363,7 +363,7 @@
 	<key>DisableFullscreenTransparency</key>
 	<false/>
 	<key>DisableWindowSizeSnap</key>
-	<true/>
+	<false/>
 	<key>EnableDivisionView</key>
 	<false/>
 	<key>EnableProxyIcon</key>
@@ -533,13 +533,13 @@
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>1125 439 445 77 0 0 2560 1440 </string>
+	<string>1125 305 445 116 0 0 2560 1440 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>583 664 796 473 0 0 2560 1440 </string>
+	<string>691 125 796 473 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>80 80 1420 1280 0 0 2560 1440 </string>
+	<string>80 80 892 890 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 408 329 1029 0 0 2560 1440 </string>
+	<string>80 80 1520 890 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>80 80 2400 1280 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -822,18 +822,20 @@
 			<integer>80</integer>
 			<key>Command</key>
 			<string></string>
+			<key>Cursor Boost</key>
+			<real>0.0</real>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>1</real>
+				<real>0.63921568627450975</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>1</real>
+				<real>0.63921568627450975</real>
 				<key>Red Component</key>
-				<real>1</real>
+				<real>0.63921568627450975</real>
 			</dict>
 			<key>Cursor Guide Color</key>
 			<dict>
@@ -1199,6 +1201,8 @@
 				<key>Red Component</key>
 				<real>0.0</real>
 			</dict>
+			<key>Minimum Contrast</key>
+			<real>0.0</real>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
@@ -1268,13 +1272,15 @@
 			<key>Thin Strokes</key>
 			<integer>0</integer>
 			<key>Transparency</key>
-			<real>0.062460342639593915</real>
+			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
 			<true/>
+			<key>Use Cursor Guide</key>
+			<false/>
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Use Non-ASCII Font</key>
@@ -1296,7 +1302,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>33D7BD01-FA76-4E79-8EA0-78F564936AD0</string>
 	<key>NoSyncLastTipTime</key>
-	<real>541041203.27704895</real>
+	<real>541222642.88914502</real>
 	<key>NoSyncNewWindowOrTabFromTmuxOpensTmux</key>
 	<true/>
 	<key>NoSyncNewWindowOrTabFromTmuxOpensTmux_selection</key>
@@ -1310,6 +1316,8 @@
 		<string>000</string>
 		<string>0000</string>
 		<string>0001</string>
+		<string>0002</string>
+		<string>0003</string>
 	</array>
 	<key>PointerActions</key>
 	<dict>
