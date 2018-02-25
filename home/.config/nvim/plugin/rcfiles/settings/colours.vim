@@ -1,5 +1,6 @@
 
 " Colours
+
 set background=dark                        " Dark background
 set termguicolors                          " True colour
 set synmaxcol=790                          " Maximum column in which to syntax highlight

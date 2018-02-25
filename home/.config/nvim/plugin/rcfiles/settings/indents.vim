@@ -1,5 +1,6 @@
 
 " Spaces and indents
+
 set softtabstop=2      " 2 spaces per tab
 set shiftwidth=2       " 2 spaces for indentation
 set shiftround         " Always set indentation to a multiple of 2

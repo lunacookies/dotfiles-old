@@ -1,5 +1,6 @@
 
 " Files
+
 set fileencoding=utf-8      " Write UTF-8
 set encoding=utf-8          " Display UTF-8
 set nrformats=hex           " Use hexadecimal and base ten

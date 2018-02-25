@@ -1,5 +1,6 @@
 
 " Wrapping
+
 set wrap               " Wrap text
 set linebreak          " Wrap at words
 let &showbreak='↳ '    " Show occurrences of wrapped text

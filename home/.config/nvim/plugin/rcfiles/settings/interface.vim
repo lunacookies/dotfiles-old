@@ -1,5 +1,6 @@
 
 " Interface
+
 set conceallevel=0 " Never conceal
 set shortmess=aIT  " Abbreviate error messages
 set numberwidth=4  " Leave space for 2 digits in line numbers
