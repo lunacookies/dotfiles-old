@@ -12,3 +12,16 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
+" Mappings for aligning common characters
+nmap <leader>" mz<Plug>(EasyAlign)ip"`z
+nmap <leader># mz<Plug>(EasyAlign)ip#`z
+nmap <leader>% mz<Plug>(EasyAlign)ip%`z
+nmap <leader>& mz<Plug>(EasyAlign)ip&`z
+nmap <leader>' mz<Plug>(EasyAlign)ip"`z
+nmap <leader>, mz<Plug>(EasyAlign)ip,`z
+nmap <leader>. mz<Plug>(EasyAlign)ip.`z
+nmap <leader>: mz<Plug>(EasyAlign)ip:`z
+nmap <leader><space> mz<Plug>(EasyAlign)ip*<space>`z
+nmap <leader>= mz<Plug>(EasyAlign)ip=`z
+nmap <leader>t mz<Plug>(EasyAlign)ip*\|`z
+
