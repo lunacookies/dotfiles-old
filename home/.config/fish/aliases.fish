@@ -24,7 +24,7 @@ alias cr="~/bin/compilereport"                         # Compile report
 # Quick dotfile access {{{1
 # =============================================================================
 
-alias tdf="cd ~/dofiles; and fzf"      # To dotfiles
+alias tdf="cd ~/dofiles; and fzf"    # To dotfiles
 alias shlc="e ~/.zshrc"              # Shell config
 alias ec="e ~/.config/nvim/init.vim" # Editor config
 alias wmc="e ~/.chunkwmrc"           # Window manager config
@@ -55,9 +55,9 @@ alias nhd="brew services stop khd"        # No hotkey daemon
 # Git {{{1
 # =============================================================================
 
-alias gc="git add -A; and git commit -am"                                              # Git commit
+alias gc="git add -A; and git commit -am"                                            # Git commit
 alias gcl="git clone"                                                                # Git clone
-alias gi="git init; and git add -A"                                                    # Git initialise new repo
+alias gi="git init; and git add -A"                                                  # Git initialise new repo
 alias gpl="git pull"                                                                 # Git pull
 alias gps="git push"                                                                 # Git push
 alias gs="git status"                                                                # Git status
