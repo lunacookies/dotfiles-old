@@ -12,5 +12,4 @@ set lazyredraw     " Prevent unnecessary redrawing
                    " Don't show dashes when folding
 set fillchars=fold:\ 
 set fillchars+=vert:\│
-set colorcolumn=80 " Show marker at 80 columns
 

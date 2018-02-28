@@ -1,5 +1,5 @@
 
-" vim: set foldmethod=marker foldlevel=0 nomodeline:
+" Code syntax function
 
 function! aramis#syntax#code() abort
   " Italic comments
@@ -7,7 +7,18 @@ function! aramis#syntax#code() abort
 
   " Blend vertical separators with line numbers
   highlight! link VertSplit LineNr
+
+  " Make ColorColumn last to end of window
+  let &l:colorcolumn='+' . join(range(1, 254), ',+')
+
+  " Set ColorColumn to be *lighter* than background
+  highlight! link ColorColumn CursorLine
+
+  " Highlight end of file
+  highlight! link NonText ColorColumn
 endfunction
+
+" Prose syntax function
 
 function! aramis#syntax#prose() abort
   " Show delimiters in normal text colour
