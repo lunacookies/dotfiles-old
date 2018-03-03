@@ -1,0 +1,21 @@
+tap 'ValeLint/vale'
+tap 'crisidev/homebrew-chunkwm'
+tap 'universal-ctags/universal-ctags'
+
+brew 'universal-ctags', args: ['HEAD']
+brew 'chunkwm'
+brew 'exa'
+brew 'fish'
+brew 'fzf'
+brew 'git'
+brew 'koekeishiya/formulae/khd'
+brew 'neovim'
+brew 'pandoc'
+brew 'python3'
+brew 'ranger'
+brew 'rmtrash'
+brew 'ruby'
+brew 'shellcheck'
+brew 'tmux'
+brew 'vale'
+

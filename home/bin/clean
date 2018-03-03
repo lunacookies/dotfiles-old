@@ -3,47 +3,46 @@
 cd ~
 
 read -p "
- Are you sure? This script will delete all files and folders that the creator
- thought of as unnecessary junk, and remove any unnecessary homebrew
- dependencies. Updates will also occur.
- [Y/n]" -n 1 -r
+Are you sure? This script will delete all files and folders that the creator
+thought of as unnecessary junk, and remove any unnecessary homebrew
+dependencies. Updates will also occur.
+[Y/n]" -n 1 -r
 
 echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
   echo "
-   Now for the package manager clear-out!"
+  Now for the package manager clear-out!"
 
-  pip3 freeze > requirements.txt
-  pip3 uninstall -r requirements.txt -y
-  rm requirements.txt
+  # Fix some brew things
+  brew update
+  brew upgrade
+  brew doctor
+  brew prune
 
-  gem uninstall -all
-
+  # Uninstall all packages
+  pip freeze | xargs pip uninstall -y
+  gem uninstall -aIx
   brew remove --force --ignore-dependencies $(brew list)
-  brew install exa
-  brew install git
-  brew install koekeishiya/formulae/khd
-  brew tap crisidev/homebrew-chunkwm
-  brew install chunkwm
-  brew install neovim
-  brew install pandoc
-  brew install python3
-  brew install ranger
-  brew install ruby
-  brew install rmtrash
-  brew install shellcheck
-  brew install tmux
-  brew install fzf
-  brew tap ValeLint/vale
-  brew install vale
-  brew install fish
-  brew tap universal-ctags/universal-ctags
-  brew install --HEAD universal-ctags
-  pip3 install neovim
-  pip3 install vim-vint
-  gem install neovim
-  gem install homesick
+
+  cd ~/.homesick/repos/dotfiles
+
+  # Install all packages
+  brew bundle
+  bundle install
+  pip install -r Pipfile
+
+  cd ~
+
+  # Update/upgrade all packages
+  brew update
+  brew upgrade
+  pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
+  sudo gem update `gem list | cut -d ' ' -f 1`
+
+  # Fix some brew things
+  brew doctor
+  brew prune
 
   /usr/local/bin/rmtrash ~/.vim*
   /usr/local/bin/rmtrash ~/.less*
@@ -53,12 +52,15 @@ then
   /usr/local/bin/rmtrash ~/.config/nvim/.netrwhist
   /usr/local/bin/rmtrash ~/.cups
   /usr/local/bin/rmtrash ~/.oracle*
+  /usr/local/bin/rmtrash ~/.fzf*
+  /usr/local/bin/rmtrash ~/.zsh*
+  /usr/local/bin/rmtrash ~/.emacs*
 
   sudo find / -name '.DS_Store' -type f -delete
   sudo find ~/box -name 'Icon*' -type f -delete
 
   echo "
-   Here! Take a look at that *clean* home folder:"
+  Here! Take a look at that *clean* home folder:"
   sleep 2
   cd ~
   ls -aGHl
