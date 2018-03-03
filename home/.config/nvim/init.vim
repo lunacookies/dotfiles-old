@@ -36,7 +36,7 @@ let g:maplocalleader=' ' " Local  leader
 " =============================================================================
 
 function! s:SourceConfigFilesIn(directory)
-  let a:directory_splat = '~/.config/nvim/' . a:directory . '/*'
+  let a:directory_splat = '~/.config/nvim/' . a:directory . '/**/*'
   for a:config_file in split(glob(a:directory_splat), '\n')
     if filereadable(a:config_file)
       execute 'source' a:config_file
@@ -45,10 +45,10 @@ function! s:SourceConfigFilesIn(directory)
 endfunction
 
 call plug#begin('~/.local/share/nvim/plugged')
-call s:SourceConfigFilesIn('plugin/rcplugins')
+call s:SourceConfigFilesIn('rcplugins')
 call plug#end()
 
-call s:SourceConfigFilesIn('plugin/rcfiles')
+call s:SourceConfigFilesIn('rcfiles')
 
 " }}}1
 " =============================================================================
