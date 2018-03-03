@@ -1,4 +1,3 @@
-
 Plug 'takac/vim-hardtime' " Stop repeating hjkl
 
 autocmd! vimrc VimEnter * HardTimeOn " Learn better habits

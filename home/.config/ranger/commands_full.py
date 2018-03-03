@@ -91,7 +91,6 @@ import re
 
 from ranger.api.commands import Command
 
-
 class alias(Command):
     """:alias <newcommand> <oldcommand>
 
@@ -108,7 +107,6 @@ class alias(Command):
 
         self.fm.commands.alias(self.arg(1), self.rest(2))
 
-
 class echo(Command):
     """:echo <text>
 
@@ -117,7 +115,6 @@ class echo(Command):
 
     def execute(self):
         self.fm.notify(self.rest(1))
-
 
 class cd(Command):
     """:cd [-r] <dirname>
@@ -269,7 +266,6 @@ class cd(Command):
             return start + paths[0] + sep
         return [start + dirname for dirname in paths]
 
-
 class chain(Command):
     """:chain <command1>; <command2>; ...
 
@@ -282,7 +278,6 @@ class chain(Command):
             return
         for command in [s.strip() for s in self.rest(1).split(";")]:
             self.fm.execute_console(command)
-
 
 class shell(Command):
     escape_macros_for_shell = True
@@ -321,7 +316,6 @@ class shell(Command):
         return (before_word + ' ' + file.shell_escaped_basename
                 for file in self.fm.thisdir.files or []
                 if file.shell_escaped_basename.startswith(start_of_word))
-
 
 class open_with(Command):
 
@@ -417,7 +411,6 @@ class open_with(Command):
     def _is_mode(arg):
         return all(x in '0123456789' for x in arg)
 
-
 class set_(Command):
     """:set <option name>=<python expression>
 
@@ -470,7 +463,6 @@ class set_(Command):
                           in get_all_colorschemes(self.fm) if colorscheme.startswith(value))
         return None
 
-
 class setlocal(set_):
     """:setlocal path=<regular expression> <option name>=<python expression>
 
@@ -502,7 +494,6 @@ class setlocal(set_):
         name, value, _ = self.parse_setting_line()
         self.fm.set_option_from_string(name, value, localpath=path)
 
-
 class setintag(set_):
     """:setintag <tag or tags> <option name>=<option value>
 
@@ -514,7 +505,6 @@ class setintag(set_):
         self.shift()
         name, value, _ = self.parse_setting_line()
         self.fm.set_option_from_string(name, value, tags=tags)
-
 
 class default_linemode(Command):
 
@@ -561,7 +551,6 @@ class default_linemode(Command):
                 for lmode in self.fm.thisfile.linemode_dict.keys()
                 if lmode.startswith(self.arg(1)))
 
-
 class quit(Command):  # pylint: disable=redefined-builtin
     """:quit
 
@@ -580,7 +569,6 @@ class quit(Command):  # pylint: disable=redefined-builtin
         else:
             self._exit_no_work()
 
-
 class quit_bang(Command):
     """:quit!
 
@@ -596,7 +584,6 @@ class quit_bang(Command):
         else:
             self.fm.exit()
 
-
 class quitall(Command):
     """:quitall
 
@@ -611,7 +598,6 @@ class quitall(Command):
     def execute(self):
         self._exit_no_work()
 
-
 class quitall_bang(Command):
     """:quitall!
 
@@ -623,7 +609,6 @@ class quitall_bang(Command):
     def execute(self):
         self.fm.exit()
 
-
 class terminal(Command):
     """:terminal
 
@@ -633,7 +618,6 @@ class terminal(Command):
     def execute(self):
         from ranger.ext.get_executables import get_term
         self.fm.run(get_term(), flags='f')
-
 
 class delete(Command):
     """:delete
@@ -691,7 +675,6 @@ class delete(Command):
         if answer == 'y' or answer == 'Y':
             self.fm.delete(files)
 
-
 class jump_non(Command):
     """:jump_non [-FLAGS...]
 
@@ -734,7 +717,6 @@ class jump_non(Command):
         elif self._flag_wrap and found_before:
             self.fm.select_file(found_before)
 
-
 class mark_tag(Command):
     """:mark_tag [<tags>]
 
@@ -758,7 +740,6 @@ class mark_tag(Command):
         self.fm.ui.status.need_redraw = True
         self.fm.ui.need_redraw = True
 
-
 class console(Command):
     """:console <command>
 
@@ -775,7 +756,6 @@ class console(Command):
             else:
                 self.shift()
         self.fm.open_console(self.rest(1), position=position)
-
 
 class load_copy_buffer(Command):
     """:load_copy_buffer
@@ -802,7 +782,6 @@ class load_copy_buffer(Command):
         self.fm.ui.redraw_main_column()
         return None
 
-
 class save_copy_buffer(Command):
     """:save_copy_buffer
 
@@ -824,7 +803,6 @@ class save_copy_buffer(Command):
         fobj.close()
         return None
 
-
 class unmark_tag(mark_tag):
     """:unmark_tag [<tags>]
 
@@ -832,7 +810,6 @@ class unmark_tag(mark_tag):
     When leaving out the tag argument, all tagged files are unmarked.
     """
     do_mark = False
-
 
 class mkdir(Command):
     """:mkdir <dirname>
@@ -853,7 +830,6 @@ class mkdir(Command):
     def tab(self, tabnum):
         return self._tab_directory_content()
 
-
 class touch(Command):
     """:touch <fname>
 
@@ -872,7 +848,6 @@ class touch(Command):
     def tab(self, tabnum):
         return self._tab_directory_content()
 
-
 class edit(Command):
     """:edit <filename>
 
@@ -887,7 +862,6 @@ class edit(Command):
 
     def tab(self, tabnum):
         return self._tab_directory_content()
-
 
 class eval_(Command):
     """:eval [-q] <python code>
@@ -930,7 +904,6 @@ class eval_(Command):
             fm.notify("The error `%s` was caused by evaluating the "
                       "following code: `%s`" % (err, code), bad=True)
 
-
 class rename(Command):
     """:rename <newname>
 
@@ -963,7 +936,6 @@ class rename(Command):
 
     def tab(self, tabnum):
         return self._tab_directory_content()
-
 
 class rename_append(Command):
     """:rename_append [-FLAGS...]
@@ -1005,7 +977,6 @@ class rename_append(Command):
 
         self.fm.open_console('rename ' + relpath, position=(7 + pos))
 
-
 class chmod(Command):
     """:chmod <octal number>
 
@@ -1043,7 +1014,6 @@ class chmod(Command):
         # reloading directory.  maybe its better to reload the selected
         # files only.
         self.fm.thisdir.content_outdated = True
-
 
 class bulkrename(Command):
     """:bulkrename
@@ -1124,7 +1094,6 @@ class bulkrename(Command):
         else:
             fm.notify("files have not been retagged")
 
-
 class relink(Command):
     """:relink <newpath>
 
@@ -1161,7 +1130,6 @@ class relink(Command):
             return self.line + os.readlink(self.fm.thisfile.path)
         return self._tab_directory_content()
 
-
 class help_(Command):
     """:help
 
@@ -1188,7 +1156,6 @@ class help_(Command):
             list("mqkcs")
         )
 
-
 class copymap(Command):
     """:copymap <keys> <newkeys1> [<newkeys2>...]
 
@@ -1205,14 +1172,12 @@ class copymap(Command):
 
         return None
 
-
 class copypmap(copymap):
     """:copypmap <keys> <newkeys1> [<newkeys2>...]
 
     Copies a "pager" keybinding from <keys> to <newkeys>
     """
     context = 'pager'
-
 
 class copycmap(copymap):
     """:copycmap <keys> <newkeys1> [<newkeys2>...]
@@ -1221,14 +1186,12 @@ class copycmap(copymap):
     """
     context = 'console'
 
-
 class copytmap(copymap):
     """:copycmap <keys> <newkeys1> [<newkeys2>...]
 
     Copies a "taskview" keybinding from <keys> to <newkeys>
     """
     context = 'taskview'
-
 
 class unmap(Command):
     """:unmap <keys> [<keys2>, ...]
@@ -1241,14 +1204,12 @@ class unmap(Command):
         for arg in self.args[1:]:
             self.fm.ui.keymaps.unbind(self.context, arg)
 
-
 class cunmap(unmap):
     """:cunmap <keys> [<keys2>, ...]
 
     Remove the given "console" mappings
     """
     context = 'browser'
-
 
 class punmap(unmap):
     """:punmap <keys> [<keys2>, ...]
@@ -1257,14 +1218,12 @@ class punmap(unmap):
     """
     context = 'pager'
 
-
 class tunmap(unmap):
     """:tunmap <keys> [<keys2>, ...]
 
     Remove the given "taskview" mappings
     """
     context = 'taskview'
-
 
 class map_(Command):
     """:map <keysequence> <command>
@@ -1286,7 +1245,6 @@ class map_(Command):
 
         self.fm.ui.keymaps.bind(self.context, self.arg(1), self.rest(2))
 
-
 class cmap(map_):
     """:cmap <keysequence> <command>
 
@@ -1298,7 +1256,6 @@ class cmap(map_):
     """
     context = 'console'
 
-
 class tmap(map_):
     """:tmap <keysequence> <command>
 
@@ -1306,14 +1263,12 @@ class tmap(map_):
     """
     context = 'taskview'
 
-
 class pmap(map_):
     """:pmap <keysequence> <command>
 
     Maps a command to a keysequence in the "pager" context.
     """
     context = 'pager'
-
 
 class scout(Command):
     """:scout [-FLAGS...] <pattern>
@@ -1499,7 +1454,6 @@ class scout(Command):
 
         return count == 1
 
-
 class narrow(Command):
     """
     :narrow
@@ -1514,7 +1468,6 @@ class narrow(Command):
         else:
             self.fm.thisdir.narrow_filter = None
         self.fm.thisdir.refilter()
-
 
 class filter_inode_type(Command):
     """
@@ -1535,7 +1488,6 @@ class filter_inode_type(Command):
             self.fm.thisdir.inode_type_filter = self.arg(1)
         self.fm.thisdir.refilter()
 
-
 class grep(Command):
     """:grep <string>
 
@@ -1548,7 +1500,6 @@ class grep(Command):
             action.extend(['-e', self.rest(1), '-r'])
             action.extend(f.path for f in self.fm.thistab.get_selection())
             self.fm.execute_command(action, flags='p')
-
 
 class flat(Command):
     """
@@ -1578,7 +1529,6 @@ class flat(Command):
 # Version control commands
 # --------------------------------
 
-
 class stage(Command):
     """
     :stage
@@ -1598,7 +1548,6 @@ class stage(Command):
             self.fm.ui.vcsthread.process(self.fm.thisdir)
         else:
             self.fm.notify('Unable to stage files: Not in repository')
-
 
 class unstage(Command):
     """
@@ -1622,7 +1571,6 @@ class unstage(Command):
 
 # Metadata commands
 # --------------------------------
-
 
 class prompt_metadata(Command):
     """
@@ -1655,7 +1603,6 @@ class prompt_metadata(Command):
         text = "%s %s %s" % (self._command_name, key, existing_value)
         self.fm.open_console(text, position=len(text))
 
-
 class meta(prompt_metadata):
     """
     :meta <key> [<value>]
@@ -1679,7 +1626,6 @@ class meta(prompt_metadata):
             return [" ".join([self.arg(0), self.arg(1), metadata[key]])]
         return [self.arg(0) + " " + k for k in sorted(metadata)
                 if k.startswith(self.arg(1))]
-
 
 class linemode(default_linemode):
     """
@@ -1707,7 +1653,6 @@ class linemode(default_linemode):
         # Ask the browsercolumns to redraw
         for col in self.fm.ui.browser.columns:
             col.need_redraw = True
-
 
 class yank(Command):
     """:yank [name|dir|path]
@@ -1767,3 +1712,4 @@ class yank(Command):
             in sorted(self.modes.keys())
             if mode
         )
+

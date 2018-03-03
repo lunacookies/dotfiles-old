@@ -1,4 +1,3 @@
-
 Plug 'majutsushi/tagbar' " Vim plugin that displays tags in a window
 
 let g:tagbar_compact=1            " Don't show help marker

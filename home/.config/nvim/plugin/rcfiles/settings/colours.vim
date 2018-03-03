@@ -1,4 +1,3 @@
-
 " Colours
 
 set background=dark                        " Dark background

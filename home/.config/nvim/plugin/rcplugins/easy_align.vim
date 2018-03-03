@@ -1,4 +1,3 @@
-
 Plug 'junegunn/vim-easy-align' " A Vim alignment plugin
 
 " Allow alignment of % character

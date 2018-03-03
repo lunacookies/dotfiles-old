@@ -1,4 +1,3 @@
-
 " Interface
 
 set conceallevel=0 " Never conceal

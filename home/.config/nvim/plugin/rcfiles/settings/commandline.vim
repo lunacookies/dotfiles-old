@@ -1,4 +1,3 @@
-
 " Command-line
 
 set completeopt=menuone,preview " Show possible completions with preview

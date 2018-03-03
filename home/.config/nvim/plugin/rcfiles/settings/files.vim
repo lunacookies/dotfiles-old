@@ -1,4 +1,3 @@
-
 " Files
 
 set fileencoding=utf-8      " Write UTF-8

@@ -1,4 +1,3 @@
-
 Plug 'junegunn/goyo.vim' " Distraction-free writing
 
 let g:goyo_width=67 " Leave a few extra chars more than textwidth

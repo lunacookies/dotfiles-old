@@ -1,4 +1,3 @@
-
 Plug 'justinmk/vim-sneak' " Two character f/t motion
 
 let g:sneak#use_ic_scs=1 " Use case settings from vimrc (ignorecase + smartcase)

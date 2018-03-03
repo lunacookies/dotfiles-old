@@ -1,4 +1,3 @@
-
 Plug 'dhruvasagar/vim-table-mode' " Vim table mode for instant table creation
 
 " Standard vim-table-mode mappings

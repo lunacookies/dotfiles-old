@@ -1,4 +1,3 @@
-
 " Escape from modes
 
 " Insert mode

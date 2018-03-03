@@ -1,4 +1,3 @@
-
 " Wrapping
 
 set wrap               " Wrap text

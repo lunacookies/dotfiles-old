@@ -1,4 +1,3 @@
-
 " Use <leader> + level of markdown header to apply it
 nnoremap <leader>1 I#<space><esc>0
 nnoremap <leader>2 I##<space><esc>0

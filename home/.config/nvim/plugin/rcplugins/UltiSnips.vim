@@ -1,4 +1,3 @@
-
 Plug 'SirVer/ultisnips' " The ultimate snippet solution for Vim
 
 let g:UltiSnipsExpandTrigger='<tab>'                                        " Expand snippet with tab

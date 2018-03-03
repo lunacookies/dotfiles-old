@@ -145,3 +145,4 @@ ctrl + alt - w : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/dev_1
 cmd - 7 : khd -p "shift + alt - 7"
 cmd - 8 : khd -p "shift + alt - 8"
 cmd - 9 : khd -p "shift + alt - 9"
+

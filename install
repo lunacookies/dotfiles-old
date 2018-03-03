@@ -194,7 +194,6 @@ defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-ty
 #"Add a spacer to the right side of the Dock (where the Trash is)"
 defaults write com.apple.dock persistent-others -array-add '{tile-data={}; tile-type="spacer-tile";}'
 
-
 ################################################
 #bot "Standard System Changes"
 ################################################
@@ -293,7 +292,6 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
 #"Disable smart dashes as they’re annoying when typing code"
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
-
 
 ###############################################################################
 #bot "Trackpad, mouse, keyboard, Bluetooth accessories, and input"
@@ -440,7 +438,6 @@ defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 #"Show the ~/Library folder"
 chflags nohidden ~/Library
 
-
 #"Expand the following File Info panes: “General”, “Open with”, and “Sharing & Permissions”"
 defaults write com.apple.finder FXInfoPanesExpanded -dict \
   General -bool true \
@@ -571,7 +568,6 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 #bot "Configuring Mail"
 ###############################################################################
 
-
 #"Disable send and reply animations in Mail.app"
 defaults write com.apple.mail DisableReplyAnimations -bool true
 defaults write com.apple.mail DisableSendAnimations -bool true
@@ -652,8 +648,6 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 "Disable continuous spell checking"
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
 
-
-
 brew tap crisidev/homebrew-chunkwm
 brew install chunkwm
 #cp /usr/local/opt/chunkwm/share/chunkwm/examples/chunkwmrc
@@ -661,3 +655,4 @@ brew install chunkwm
 brew install koekeishiya/formulae/khd
 brew services start chunkwm
 brew services start khd
+

@@ -1,4 +1,3 @@
-
 " Code syntax function
 
 function! aramis#syntax#code() abort
@@ -62,3 +61,4 @@ function! aramis#syntax#prose() abort
   " Blend vertical separators with line numbers
   highlight! link VertSplit LineNr
 endfunction
+

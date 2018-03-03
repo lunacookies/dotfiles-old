@@ -1,4 +1,3 @@
-
 " Spaces and indents
 
 set softtabstop=2      " 2 spaces per tab

@@ -1,4 +1,3 @@
-
 Plug 'scrooloose/nerdtree' " A tree explorer plugin for Vim
 
 let g:NERDTreeShowHidden=1 " Show hidden files

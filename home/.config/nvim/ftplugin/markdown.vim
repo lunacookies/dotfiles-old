@@ -1,4 +1,3 @@
-
 set spell                  " Enable spellchecking
 set textwidth=64           " Use a textwidth of 64
 set formatoptions=tacwqn   " Automatically reflow text, but not code

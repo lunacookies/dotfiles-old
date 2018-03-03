@@ -1,4 +1,3 @@
-
 Plug 'Yggdroot/indentLine' " Indent guides
 
 let g:indentLine_showFirstIndentLevel=1              " Show indent guides at the first level as well

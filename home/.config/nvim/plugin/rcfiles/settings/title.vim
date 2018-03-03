@@ -1,4 +1,3 @@
-
 " Window title
 
 set titlestring=     " Reset what shows in window title

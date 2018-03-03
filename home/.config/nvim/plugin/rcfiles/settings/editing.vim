@@ -1,4 +1,3 @@
-
 " Editing
 
 set virtualedit=block    " Allow cursor placement where characters are not in Visual Block

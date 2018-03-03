@@ -1,4 +1,3 @@
-
 Plug '/usr/local/opt/fzf' " The command-line fuzzy finder
 Plug 'junegunn/fzf.vim'   " fzf on Vim
 

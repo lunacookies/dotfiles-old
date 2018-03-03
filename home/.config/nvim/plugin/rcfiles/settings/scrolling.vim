@@ -1,4 +1,3 @@
-
 " Scrolling
 
 set scrolloff=5      " Leave 5 lines at edges of window when scrolling vertically

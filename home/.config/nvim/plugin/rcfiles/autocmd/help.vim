@@ -1,4 +1,3 @@
-
 " Open help in new tabs
 function! s:helptab()
   if &buftype==#'help'

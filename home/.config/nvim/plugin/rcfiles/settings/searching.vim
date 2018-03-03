@@ -1,4 +1,3 @@
-
 " Searching
 
 set hlsearch             " Highlight search matches

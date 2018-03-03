@@ -1,4 +1,3 @@
-
 " Statusline
 
 set statusline=\ %f  " Path to the file
@@ -12,5 +11,4 @@ set statusline+=/%L  " Total lines
 set statusline+=\ %{ALEGetStatusLine()}\ 
                      " Git branch
 set statusline+=\ %{fugitive#statusline()}\ 
-
 

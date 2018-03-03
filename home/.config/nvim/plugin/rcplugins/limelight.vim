@@ -1,4 +1,3 @@
-
 Plug 'junegunn/limelight.vim' " Hyper-focus writing
 
 let g:limelight_priority=-1             " Don't overrule hlsearch

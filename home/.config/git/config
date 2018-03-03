@@ -3,4 +3,5 @@
 	email = aramisnoah@gmail.com
 [core]
 	editor = nvim
-	pager = less
+  pager = less
+

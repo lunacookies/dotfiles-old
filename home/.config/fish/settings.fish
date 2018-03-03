@@ -1,4 +1,3 @@
-
 # vim: set foldmethod=marker foldlevel=0 nomodeline:
 
 # =============================================================================
@@ -43,5 +42,4 @@ set -gx FZF_DEFAULT_COMMAND 'ag --hidden --ignore .git --ignore .Trash --ignore 
 
 # }}}1
 # =============================================================================
-
 
