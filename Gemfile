@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'neovim'
+gem 'bundler'
 gem 'homesick'
+gem 'neovim'
+gem 'rake'
 
