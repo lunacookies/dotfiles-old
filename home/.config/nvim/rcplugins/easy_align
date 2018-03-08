@@ -15,7 +15,7 @@ nmap ga <Plug>(EasyAlign)
 nmap <leader>" mz<Plug>(EasyAlign)ip"`z
 nmap <leader># mz<Plug>(EasyAlign)ip#`z
 nmap <leader>% mz<Plug>(EasyAlign)ip%`z
-nmap <leader>& mz<Plug>(EasyAlign)ip&`z
+nmap <leader>& mz<Plug>(EasyAlign)ip*&`z
 nmap <leader>' mz<Plug>(EasyAlign)ip"`z
 nmap <leader>, mz<Plug>(EasyAlign)ip,`z
 nmap <leader>. mz<Plug>(EasyAlign)ip.`z
