@@ -532,22 +532,33 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
+	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
+	<dict>
+		<key>TB Is Shown</key>
+		<integer>1</integer>
+	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>1125 305 445 116 0 0 2560 1440 </string>
+	<string>1096 377 445 77 0 0 1680 1027 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>691 125 796 473 0 0 1680 1050 </string>
+	<string>1347 848 796 473 0 0 2560 1417 </string>
+	<key>NSWindow Frame com.apple.typography_panel_Input-Regular</key>
+	<string>346 268 260 362 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>80 80 892 890 0 0 1680 1050 </string>
+	<string>63 66 1554 896 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>80 80 1520 890 0 0 1680 1050 </string>
+	<string>63 66 1554 896 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>80 80 2400 1280 0 0 2560 1440 </string>
+	<string>62 66 945 896 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>80 80 2400 1280 0 0 2560 1440 </string>
+	<string>1039 66 581 896 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>80 80 1420 1280 0 0 2560 1440 </string>
+	<string>81 165 889 782 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
-	<string>80 80 1420 492 0 0 2560 1440 </string>
+	<string>635 502 336 442 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 6</key>
+	<string>1012 85 588 326 0 0 1680 1050 </string>
+	<key>NSWindow Frame iTerm Window 7</key>
+	<string>1232 230 112 60 0 0 1680 1050 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1262,7 +1273,7 @@
 			<key>Silence Bell</key>
 			<false/>
 			<key>Smart Cursor Color</key>
-			<false/>
+			<true/>
 			<key>Sync Title</key>
 			<false/>
 			<key>Tags</key>
@@ -1302,7 +1313,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>33D7BD01-FA76-4E79-8EA0-78F564936AD0</string>
 	<key>NoSyncLastTipTime</key>
-	<real>541222642.88914502</real>
+	<real>542238803.89231002</real>
 	<key>NoSyncNewWindowOrTabFromTmuxOpensTmux</key>
 	<true/>
 	<key>NoSyncNewWindowOrTabFromTmuxOpensTmux_selection</key>
@@ -1318,6 +1329,16 @@
 		<string>0001</string>
 		<string>0002</string>
 		<string>0003</string>
+		<string>0004</string>
+		<string>0005</string>
+		<string>0006</string>
+		<string>0007</string>
+		<string>0008</string>
+		<string>0009</string>
+		<string>0010</string>
+		<string>0011</string>
+		<string>0012</string>
+		<string>0013</string>
 	</array>
 	<key>PointerActions</key>
 	<dict>
@@ -1363,7 +1384,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-02-23T06:13:26Z</date>
+	<date>2018-03-08T14:16:12Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
