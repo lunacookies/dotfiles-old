@@ -35,11 +35,11 @@
 # Global padding {{{
 # -----------------------------------------------------------------------------
 
-chunkc set global_desktop_offset_top    10
-chunkc set global_desktop_offset_bottom 10
-chunkc set global_desktop_offset_left   10
-chunkc set global_desktop_offset_right  10
-chunkc set global_desktop_offset_gap    10
+chunkc set global_desktop_offset_top    60
+chunkc set global_desktop_offset_bottom 60
+chunkc set global_desktop_offset_left   60
+chunkc set global_desktop_offset_right  60
+chunkc set global_desktop_offset_gap    30
 
 # }}}
 # -----------------------------------------------------------------------------
