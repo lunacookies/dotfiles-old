@@ -21,3 +21,5 @@ fi
 mv mdtmp document.md
 mv bibtmp refs.bib
 
+optpdf output.pdf
+
