@@ -8,14 +8,17 @@ GEM
     neovim (0.7.0)
       msgpack (~> 1.1)
       multi_json (~> 1.0)
+    rake (12.3.0)
     thor (0.20.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  bundler
   homesick
   neovim
+  rake
 
 BUNDLED WITH
    1.16.1
