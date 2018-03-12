@@ -1,0 +1,180 @@
+#!/usr/bin/env bash
+
+# vim: set foldmethod=marker foldlevel=0 nomodeline:
+
+# =============================================================================
+# aramis' chunkwmrc {{{
+# =============================================================================
+
+# /u/aramisreddit
+# github.com/aramisgithub
+
+# Inspired by
+# github.com/junegunn
+# github.com/Geospace
+# gihub.com/herrbischoff
+
+# }}}
+# =============================================================================
+# SHEBANG {{{
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Bash {{{
+# -----------------------------------------------------------------------------
+
+# }}}
+# -----------------------------------------------------------------------------
+
+# }}}
+# =============================================================================
+# PADDING {{{
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Global padding {{{
+# -----------------------------------------------------------------------------
+
+chunkc set global_desktop_offset_top    60
+chunkc set global_desktop_offset_bottom 60
+chunkc set global_desktop_offset_left   60
+chunkc set global_desktop_offset_right  60
+chunkc set global_desktop_offset_gap    30
+
+# }}}
+# -----------------------------------------------------------------------------
+# Padding step size {{{
+# -----------------------------------------------------------------------------
+
+chunkc set desktop_padding_step_size 10.0
+chunkc set desktop_gap_step_size     5.0
+
+# }}}
+# -----------------------------------------------------------------------------
+
+# }}}
+# =============================================================================
+# BORDER {{{
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Preselect {{{
+# -----------------------------------------------------------------------------
+
+chunkc set preselect_border_color  0x00000000 # Do not show preselect border
+chunkc set preselect_border_width  5
+chunkc set preselect_border_radius 6
+
+# }}}
+# -----------------------------------------------------------------------------
+# Focused {{{
+# -----------------------------------------------------------------------------
+
+chunkc set focused_border_color         0x00d9d9d9 # seoul256 colours (do not show at the moment)
+chunkc set focused_border_width         5
+chunkc set focused_border_radius        6          # set radius to 6 to match native macOS rounding
+chunkc set focused_border_skip_floating 0 
+
+# }}}
+# -----------------------------------------------------------------------------
+
+# }}}
+# =============================================================================
+# PLUGINS {{{
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Plugin directory {{{
+# -----------------------------------------------------------------------------
+
+chunkc core::plugin_dir /usr/local/opt/chunkwm/share/chunkwm/plugins
+
+# }}}
+# -----------------------------------------------------------------------------
+# Hotload {{{
+# -----------------------------------------------------------------------------
+
+chunkc core::hotload 1 # Automatically load any new plugins
+
+# }}}
+# -----------------------------------------------------------------------------
+# Load plugins {{{
+# -----------------------------------------------------------------------------
+
+chunkc core::load border.so # Load border
+chunkc core::load tiling.so # Load tiling
+chunkc core::load ffm.so    # Load focus follows mouse
+
+# }}}
+# -----------------------------------------------------------------------------
+
+# }}}
+# =============================================================================
+# RULES {{{
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Float {{{
+# -----------------------------------------------------------------------------
+
+chunkc tiling::rule --owner Finder --state float               # Float Finder
+chunkc tiling::rule --owner Dictionary --state float           # Float Dictionary
+chunkc tiling::rule --owner \"QuickTime Player\" --state float # Float Quicktime
+chunkc tiling::rule --owner mpv --state float                  # Float mpv
+chunkc tiling::rule --owner \"App Store\" --state float        # Float App Store
+
+# }}}
+# -----------------------------------------------------------------------------
+
+# }}}
+# =============================================================================
+# BASIC SETTINGS {{{
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# bsp {{{
+# -----------------------------------------------------------------------------
+
+chunkc set bsp_spawn_left    0       # Spawn new windows on the right
+chunkc set bsp_split_mode    optimal # Automatically pick split direction
+chunkc set bsp_optimal_ratio 1.5     # Auto-split aspect ratio
+chunkc set bsp_split_ratio   0.618   # Aspect ratio of windows once they have been split
+
+# }}}
+# -----------------------------------------------------------------------------
+# Mode {{{
+# -----------------------------------------------------------------------------
+
+chunkc set global_desktop_mode bsp   # Use bsp mode everywhere
+chunkc set 5_desktop_mode      float # Use float mode on desktop 5
+
+# }}}
+# -----------------------------------------------------------------------------
+# Interaction {{{
+# -----------------------------------------------------------------------------
+
+chunkc set mouse_follows_focus 1   # Focus follows mouse
+chunkc set mouse_modifier      fn  # Drag floated windows from anywhere using fn
+chunkc set window_focus_cycle  all # Window focus change works across monitors
+
+# }}}
+# -----------------------------------------------------------------------------
+# Tiling behaviour {{{
+# -----------------------------------------------------------------------------
+
+chunkc set window_region_locked 1 # Contrain windows to bsp region
+chunkc set window_float_next    0 # Always tile
+
+# }}}
+# -----------------------------------------------------------------------------
+# On float {{{
+# -----------------------------------------------------------------------------
+
+chunkc set window_float_center 1 # Center windows when floated
+
+# }}}
+# -----------------------------------------------------------------------------
+
+# }}}
+# =============================================================================
+
