@@ -34,10 +34,10 @@ alias hdc="e ~/.khdrc"               # Hotkey daemon config
 # List files/directories {{{1
 # =============================================================================
 
-alias l="exa -l -F --ignore-glob .git"              # List
-alias la="exa -l -F --ignore-glob .git -a"          # List all
-alias ll="exa -l -T -L 2 -F --ignore-glob .git"     # List longer
-alias lal="exa -l -T -L 2 -F --ignore-glob .git -a" # List all longer
+alias l="exa -l --group-directories-first -F --ignore-glob .git"              # List
+alias la="exa -l --group-directories-first -F --ignore-glob .git -a"          # List all
+alias ll="exa -l --group-directories-first -T -L 2 -F --ignore-glob .git"     # List longer
+alias lal="exa -l --group-directories-first -T -L 2 -F --ignore-glob .git -a" # List all longer
 
 # }}}1
 # =============================================================================
