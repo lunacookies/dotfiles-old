@@ -14,9 +14,6 @@ alt - l : chunkc tiling::window --focus east
 cmd - j : chunkc tiling::window --focus prev
 cmd - k : chunkc tiling::window --focus next
 
-# equalize size of windows
-shift + alt - 0 : chunkc tiling::desktop --equalize
-
 # swap window
 shift + alt - h : chunkc tiling::window --swap west
 shift + alt - j : chunkc tiling::window --swap south
@@ -48,6 +45,10 @@ shift + alt - 3 : chunkc tiling::window --send-to-desktop 3
 shift + alt - 4 : chunkc tiling::window --send-to-desktop 4
 shift + alt - 5 : chunkc tiling::window --send-to-desktop 5
 shift + alt - 6 : chunkc tiling::window --send-to-desktop 6
+shift + alt - 7 : chunkc tiling::window --send-to-desktop 7
+shift + alt - 8 : chunkc tiling::window --send-to-desktop 8
+shift + alt - 9 : chunkc tiling::window --send-to-desktop 9
+shift + alt - 0 : chunkc tiling::window --send-to-desktop 0
 
 # send window to desktop and switch desktop
 shift + cmd - x : `id=$(chunkc get _last_active_desktop); chunkc tiling::window -d $id; khd -p "cmd + alt - $id" &> /dev/null`
@@ -59,6 +60,10 @@ shift + cmd - 3 : chunkc tiling::window -d 3; khd -p "cmd + alt - 3"
 shift + cmd - 4 : chunkc tiling::window -d 4; khd -p "cmd + alt - 4"
 shift + cmd - 5 : chunkc tiling::window -d 5; khd -p "cmd + alt - 5"
 shift + cmd - 6 : chunkc tiling::window -d 6; khd -p "cmd + alt - 6"
+shift + cmd - 7 : chunkc tiling::window -d 7; khd -p "cmd + alt - 7"
+shift + cmd - 8 : chunkc tiling::window -d 8; khd -p "cmd + alt - 8"
+shift + cmd - 9 : chunkc tiling::window -d 9; khd -p "cmd + alt - 9"
+shift + cmd - 0 : chunkc tiling::window -d 0; khd -p "cmd + alt - 0"
 
 # switch to last active desktop
 cmd + alt - x   : `id=$(chunkc get _last_active_desktop); khd -p "cmd + alt - $id" &> /dev/null`
