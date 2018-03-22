@@ -1,7 +1,3 @@
-" Call code syntax function in files other than markdown
-autocmd vimrc WinEnter,BufEnter * if &filetype != "markdown"
-      \ | call aramis#syntax#code()
-      \ | else
-      \ | call aramis#syntax#prose()
-      \ | endif
+" Call code syntax function in all files
+autocmd vimrc WinEnter,BufEnter * call aramis#syntax#code()
 
