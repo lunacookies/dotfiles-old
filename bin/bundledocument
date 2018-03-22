@@ -2,6 +2,6 @@
 
 mkdir ~/Desktop/Aramis
 cp ./output.pdf ~/Desktop/Aramis/document.pdf
-cp ~/.homesick/repos/dotfiles/pandoctemplates/readme ~/Desktop/Aramis/README.txt
+cp ~/.dotfiles/tex/readme ~/Desktop/Aramis/README.txt
 zip -r ~/Desktop/Aramis.zip ~/Desktop/Aramis
 
