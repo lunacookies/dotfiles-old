@@ -21,23 +21,23 @@ then
   brew prune
 
   # Uninstall all packages
-  pip freeze | xargs pip uninstall -y
+  pip3 freeze | xargs pip3 uninstall -y
   gem uninstall -aIx
   brew remove --force --ignore-dependencies $(brew list)
 
-  cd ~/.homesick/repos/dotfiles
+  cd ~/.dotfiles
 
   # Install all packages
   brew bundle
   bundle install
-  pip install -r Pipfile
+  pip3 install -r Pipfile
 
   cd ~
 
   # Update/upgrade all packages
   brew update
   brew upgrade
-  pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
+  pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip3 install -U
   sudo gem update `gem list | cut -d ' ' -f 1`
 
   # Fix some brew things
