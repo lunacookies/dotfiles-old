@@ -35,11 +35,11 @@
 # Global padding {{{
 # -----------------------------------------------------------------------------
 
-chunkc set global_desktop_offset_top    60
-chunkc set global_desktop_offset_bottom 60
-chunkc set global_desktop_offset_left   60
-chunkc set global_desktop_offset_right  60
-chunkc set global_desktop_offset_gap    30
+chunkc set global_desktop_offset_top    80
+chunkc set global_desktop_offset_bottom 80
+chunkc set global_desktop_offset_left   300
+chunkc set global_desktop_offset_right  300
+chunkc set global_desktop_offset_gap    0
 
 # }}}
 # -----------------------------------------------------------------------------
@@ -138,15 +138,14 @@ chunkc tiling::rule --owner \"App Store\" --state float        # Float App Store
 chunkc set bsp_spawn_left    0       # Spawn new windows on the right
 chunkc set bsp_split_mode    optimal # Automatically pick split direction
 chunkc set bsp_optimal_ratio 1.5     # Auto-split aspect ratio
-chunkc set bsp_split_ratio   0.618   # Aspect ratio of windows once they have been split
+chunkc set bsp_split_ratio   0.7     # Aspect ratio of windows once they have been split
 
 # }}}
 # -----------------------------------------------------------------------------
 # Mode {{{
 # -----------------------------------------------------------------------------
 
-chunkc set global_desktop_mode bsp   # Use bsp mode everywhere
-chunkc set 5_desktop_mode      float # Use float mode on desktop 5
+chunkc set global_desktop_mode monocle   # Use bsp mode everywhere
 
 # }}}
 # -----------------------------------------------------------------------------
