@@ -360,12 +360,16 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>2384A590-1CE3-497B-801F-347E6B97E64A</string>
+	<key>DeleteProfile_SilenceUntil</key>
+	<real>543199461.00801206</real>
+	<key>DeleteProfile_selection</key>
+	<integer>0</integer>
 	<key>DisableFullscreenTransparency</key>
 	<false/>
 	<key>DisableWindowSizeSnap</key>
 	<true/>
 	<key>EnableDivisionView</key>
-	<false/>
+	<true/>
 	<key>EnableProxyIcon</key>
 	<false/>
 	<key>FlashTabBarInFullscreen</key>
@@ -493,6 +497,12 @@
 	<false/>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
+	<key>NSColorPanelMode</key>
+	<string>1</string>
+	<key>NSColorPickerPreferredRGBEntryMode</key>
+	<integer>2</integer>
+	<key>NSColorPickerSlidersDefaults</key>
+	<string>1</string>
 	<key>NSFontPanelAttributes</key>
 	<string>1, 4</string>
 	<key>NSNavLastRootDirectory</key>
@@ -537,33 +547,139 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame NSColorPanel</key>
+	<string>427 412 224 289 0 0 1680 1050 </string>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>614 242 445 127 0 0 1680 1027 </string>
+	<string>523 394 445 77 0 0 1680 1050 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>174 525 796 473 0 0 1680 1027 </string>
+	<string>166 564 796 473 0 0 1680 1050 </string>
 	<key>NSWindow Frame com.apple.typography_panel_Input-Regular</key>
 	<string>346 268 260 362 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>60 60 949 908 0 0 1680 1027 </string>
+	<string>1120 4 560 598 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>60 60 2440 1298 0 0 2560 1417 </string>
+	<string>0 2 1680 1045 0 0 1680 1050 </string>
+	<key>NSWindow Frame iTerm Window 10</key>
+	<string>1529 95 151 66 0 0 1680 1050 </string>
+	<key>NSWindow Frame iTerm Window 11</key>
+	<string>1422 3 106 89 0 0 1680 1050 </string>
+	<key>NSWindow Frame iTerm Window 12</key>
+	<string>1176 2 353 310 0 0 1680 1050 </string>
+	<key>NSWindow Frame iTerm Window 13</key>
+	<string>1176 94 247 220 0 0 1680 1050 </string>
+	<key>NSWindow Frame iTerm Window 14</key>
+	<string>1634 -34 73 62 0 0 1680 1050 </string>
+	<key>NSWindow Frame iTerm Window 15</key>
+	<string>1603 -34 73 62 0 0 1680 1050 </string>
+	<key>NSWindow Frame iTerm Window 16</key>
+	<string>1580 -34 73 62 0 0 1680 1050 </string>
+	<key>NSWindow Frame iTerm Window 17</key>
+	<string>1634 52 73 62 0 0 1680 1050 </string>
+	<key>NSWindow Frame iTerm Window 18</key>
+	<string>1634 66 73 62 0 0 1680 1050 </string>
+	<key>NSWindow Frame iTerm Window 19</key>
+	<string>1176 3 353 89 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>60 60 2440 1298 0 0 2560 1417 </string>
+	<string>0 2 1680 1045 0 0 1680 1050 </string>
+	<key>NSWindow Frame iTerm Window 20</key>
+	<string>1176 94 353 220 0 0 1680 1050 </string>
+	<key>NSWindow Frame iTerm Window 21</key>
+	<string>1497 0 73 62 0 0 1680 1050 </string>
+	<key>NSWindow Frame iTerm Window 22</key>
+	<string>1192 25 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 23</key>
+	<string>1192 38 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 24</key>
+	<string>1176 38 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 25</key>
+	<string>1176 47 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 26</key>
+	<string>1176 54 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 27</key>
+	<string>1165 47 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 28</key>
+	<string>1158 47 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 29</key>
+	<string>1214 -34 73 60 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>60 571 1493 787 0 0 2560 1417 </string>
+	<string>0 2 1680 1045 0 0 1680 1050 </string>
+	<key>NSWindow Frame iTerm Window 30</key>
+	<string>1192 -34 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 31</key>
+	<string>1192 -34 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 32</key>
+	<string>1214 -13 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 33</key>
+	<string>1192 -13 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 34</key>
+	<string>1192 -8 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 35</key>
+	<string>1236 25 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 36</key>
+	<string>1236 38 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 37</key>
+	<string>1192 11 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 38</key>
+	<string>1207 38 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 39</key>
+	<string>1192 29 73 60 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>60 60 1560 908 0 0 1680 1027 </string>
+	<string>1176 2 504 310 0 0 1680 1050 </string>
+	<key>NSWindow Frame iTerm Window 40</key>
+	<string>1176 29 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 41</key>
+	<string>1187 47 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 42</key>
+	<string>1187 54 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 43</key>
+	<string>1184 54 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 44</key>
+	<string>1165 41 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 45</key>
+	<string>1158 41 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 46</key>
+	<string>1236 -34 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 47</key>
+	<string>1207 -34 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 48</key>
+	<string>1207 -34 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 49</key>
+	<string>1202 -34 73 60 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
-	<string>635 502 336 442 0 0 1680 1027 </string>
+	<string>1176 94 353 220 0 0 1680 1050 </string>
+	<key>NSWindow Frame iTerm Window 50</key>
+	<string>1236 -13 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 51</key>
+	<string>1207 -13 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 52</key>
+	<string>1207 -8 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 53</key>
+	<string>1236 11 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 54</key>
+	<string>1236 15 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 55</key>
+	<string>1236 29 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 56</key>
+	<string>1207 11 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 57</key>
+	<string>1207 29 73 60 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 58</key>
+	<string>1202 29 73 60 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 6</key>
-	<string>1012 85 588 326 0 0 1680 1050 </string>
+	<string>1529 2 151 310 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 7</key>
-	<string>1232 230 112 60 0 0 1680 1050 </string>
+	<string>1176 3 353 89 0 0 1680 1050 </string>
+	<key>NSWindow Frame iTerm Window 8</key>
+	<string>1176 94 247 220 0 0 1680 1050 </string>
+	<key>NSWindow Frame iTerm Window 9</key>
+	<string>1529 3 151 89 0 0 1680 1050 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
 			<key>ASCII Anti Aliased</key>
 			<true/>
+			<key>ASCII Ligatures</key>
+			<false/>
 			<key>Allow Title Reporting</key>
 			<true/>
 			<key>Ambiguous Double Width</key>
@@ -703,13 +819,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.8898966908454895</real>
+				<real>0.89019608497619629</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.79224908351898193</real>
+				<real>0.7921568751335144</real>
 				<key>Red Component</key>
-				<real>0.65348523855209351</real>
+				<real>0.65490198135375977</real>
 			</dict>
 			<key>Ansi 5 Color</key>
 			<dict>
@@ -806,6 +922,8 @@
 			</dict>
 			<key>Blend</key>
 			<real>0.050000000000000003</real>
+			<key>Blink Allowed</key>
+			<true/>
 			<key>Blinking Cursor</key>
 			<true/>
 			<key>Blur</key>
@@ -840,13 +958,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.63921568627450975</real>
+				<real>0.9228411677170868</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.63921568627450975</real>
+				<real>0.77625473176890802</real>
 				<key>Red Component</key>
-				<real>0.63921568627450975</real>
+				<real>0.57103372144145736</real>
 			</dict>
 			<key>Cursor Guide Color</key>
 			<dict>
@@ -1223,7 +1341,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Monaco 11</string>
+			<string>IBMPlexMono 12</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -1276,14 +1394,40 @@
 			<true/>
 			<key>Sync Title</key>
 			<false/>
+			<key>Tab Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.051594823598861694</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
+				<key>Green Component</key>
+				<real>0.051596097648143768</real>
+				<key>Red Component</key>
+				<real>0.051593735814094543</real>
+			</dict>
 			<key>Tags</key>
 			<array/>
 			<key>Terminal Type</key>
 			<string>xterm-256color-italic</string>
 			<key>Thin Strokes</key>
-			<integer>3</integer>
+			<integer>4</integer>
 			<key>Transparency</key>
 			<real>0.0</real>
+			<key>Underline Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.19055428018375323</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
+				<key>Green Component</key>
+				<real>0.29307630963423964</real>
+				<key>Red Component</key>
+				<real>0.93426339285714288</real>
+			</dict>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -1298,8 +1442,10 @@
 			<false/>
 			<key>Use Tab Color</key>
 			<true/>
+			<key>Use Underline Color</key>
+			<false/>
 			<key>Vertical Spacing</key>
-			<real>1.2575924792921687</real>
+			<real>1.3782920745481926</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
@@ -1313,7 +1459,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>33D7BD01-FA76-4E79-8EA0-78F564936AD0</string>
 	<key>NoSyncLastTipTime</key>
-	<real>542602371.96040702</real>
+	<real>543361388.07398403</real>
 	<key>NoSyncNewWindowOrTabFromTmuxOpensTmux</key>
 	<true/>
 	<key>NoSyncNewWindowOrTabFromTmuxOpensTmux_selection</key>
@@ -1343,6 +1489,14 @@
 		<string>0015</string>
 		<string>0016</string>
 		<string>0017</string>
+		<string>0018</string>
+		<string>0019</string>
+		<string>0020</string>
+		<string>0021</string>
+		<string>0022</string>
+		<string>0023</string>
+		<string>0024</string>
+		<string>0025</string>
 	</array>
 	<key>PointerActions</key>
 	<dict>
@@ -1388,7 +1542,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-03-11T05:03:53Z</date>
+	<date>2018-03-20T08:40:12Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
@@ -1397,10 +1551,12 @@
 	<false/>
 	<key>ShowPaneTitles</key>
 	<false/>
+	<key>SmartCursorColorBgThreshold</key>
+	<real>0.20000000298023224</real>
 	<key>StretchTabsToFillBar</key>
 	<false/>
 	<key>TabStyle</key>
-	<integer>0</integer>
+	<integer>1</integer>
 	<key>TerminalMargin</key>
 	<integer>0</integer>
 	<key>TerminalVMargin</key>
@@ -1418,6 +1574,8 @@
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>6</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
+	<false/>
+	<key>kCPKUseSystemColorPicker</key>
 	<false/>
 </dict>
 </plist>
