@@ -1,9 +1,0 @@
-Plug 'nanotech/jellybeans.vim' " A colourful, dark colour scheme for Vim yess
-
-let g:jellybeans_overrides = {
-\    'SpellBad': { 'guibg': 'NONE', 'ctermbg': 'NONE' },
-\    'SpellCap': { 'guibg': 'NONE', 'ctermbg': 'NONE' },
-\    'SpellRare': { 'guibg': 'NONE', 'ctermbg': 'NONE' },
-\    'SpellLocal': { 'guibg': 'NONE', 'ctermbg': 'NONE' },
-\}
-
