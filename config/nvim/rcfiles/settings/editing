@@ -7,7 +7,6 @@ set mouse=a              " Use mouse
 set nojoinspaces         " Insert only one space after punctuation
 set nospell              " Don't spell check comments and text
 set nostartofline        " Keep cursor on same column
-set scrolloff=1          " Show 1 lines of context when scrolling
 set spelllang=en_gb      " Use British English
 set textwidth=79         " 79 chars/line
 set virtualedit=block    " Allow cursor placement where characters are not in Visual Block

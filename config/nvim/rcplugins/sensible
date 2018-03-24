@@ -1,4 +1,3 @@
-if !has('nvim')             " Only needed if regular Vim because nvim loads by default
-  Plug 'tpope/vim-sensible' " Defaults everyone can agree on
-endif
+
+Plug 'tpope/vim-sensible' " Defaults everyone can agree on
 
