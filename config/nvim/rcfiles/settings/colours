@@ -6,5 +6,5 @@ set synmaxcol=790                          " Maximum column in which to syntax h
 set guifont=Input\ Mono:h11                " Set MacVim font
 set listchars=trail:•,extends:❯,precedes:❮ " Set invisibles
 set list                                   " Enable showing invisibles
-colorscheme seoul256                       " Set colourscheme
+colorscheme jellybeans                     " Set colourscheme
 
