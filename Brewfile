@@ -4,6 +4,7 @@ tap 'universal-ctags/universal-ctags'
 
 brew 'chunkwm'
 brew 'exa'
+brew 'fd'
 brew 'fish'
 brew 'fzf'
 brew 'git'

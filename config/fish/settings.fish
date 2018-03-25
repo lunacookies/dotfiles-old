@@ -38,7 +38,9 @@ set -gx FZF_DEFAULT_OPTS "
 # Dark colour scheme
 # Small padding
 
-set -gx FZF_DEFAULT_COMMAND 'ag --hidden --ignore .git --ignore .Trash --ignore .DS_Store --ignore .gem --ignore Library -l -g ""' # Show hidden files in fzf
+set -gx FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow --exclude .git --exclude Library' # Show hidden files in fzf
+set -gx FZF_ALT_C_COMMAND 'fd --type d --hidden --follow --exclude .git --exclude Library'
+set -gx FZF_CTRL_T_COMMAND 'fd --type f --type d --hidden --follow --exclude .git --exclude Library'
 
 # }}}1
 # =============================================================================
