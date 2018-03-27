@@ -1,3 +1,0 @@
-" Save in normal mode
-nnoremap <leader>s mz:w<cr>`z`
-

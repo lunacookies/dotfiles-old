@@ -1,3 +1,0 @@
-" Set filetype to vim if in vim configuration directory
-autocmd vimrc BufRead,BufNewFile ~/.dotfiles/config/nvim/* set filetype=vim
-

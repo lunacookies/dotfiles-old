@@ -1,8 +1,0 @@
-" Files
-
-set fileencoding=utf-8    " Write UTF-8
-set encoding=utf-8        " Display UTF-8
-set sessionoptions-=folds " Do not save manually created folds
-set undofile              " Keep undo history between sessions
-set hidden                " A buffer becomes hidden when abandoned
-

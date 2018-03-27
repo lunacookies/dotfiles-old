@@ -1,3 +1,0 @@
-" Call code syntax function in all files
-autocmd vimrc WinEnter,BufEnter * call aramis#syntax#code()
-
