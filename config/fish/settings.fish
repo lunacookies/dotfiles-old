@@ -27,9 +27,8 @@ set -gx LESS_TERMCAP_us (printf "\033[01;32m")
 set -gx FZF_DEFAULT_OPTS "
   --no-height 
   --no-reverse 
-  --preview 'cat {}' 
   --color=dark 
-  --margin 8% 
+  --margin 2% 
 "
 
 # Full screen
