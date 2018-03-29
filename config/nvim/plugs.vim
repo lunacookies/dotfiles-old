@@ -1,6 +1,30 @@
-Plug 'w0rp/ale'                " Asynchronous Lint Engine
-Plug 'tpope/vim-commentary'    " Comment stuff out
+" vim: set foldmethod=marker foldlevel=0 nomodeline:
+
+" Plugs
+" ----------------------------------------------------------
+
+Plug '/usr/local/opt/fzf'      " The command-line fuzzy finder
+Plug 'junegunn/fzf.vim'        " fzf on Vim
+Plug 'junegunn/goyo.vim'       " Distraction-free writing
+Plug 'junegunn/limelight.vim'  " Hyper-focus writing
+Plug 'junegunn/seoul256.vim'   " Low-contrast Vim colour scheme based on Seoul Colours
 Plug 'junegunn/vim-easy-align' " A Vim alignment plugin
+Plug 'justinmk/vim-sneak'      " Two character f/t motion
+Plug 'sheerun/vim-polyglot'    " A solid language pack for Vim
+Plug 'skwp/greplace.vim'       " Global search and replace for Vim
+Plug 'tpope/vim-commentary'    " Comment stuff out
+Plug 'tpope/vim-endwise'       " Wisely add matching closing structures
+Plug 'tpope/vim-fugitive'      " Git wrapper for Vim
+Plug 'tpope/vim-repeat'        " Repeat plugin maps
+Plug 'tpope/vim-sensible'      " Defaults everyone can agree on
+Plug 'tpope/vim-surround'      " Quoting/parenthesising made simple
+Plug 'tpope/vim-unimpaired'    " Pairs of handy bracket mappings
+Plug 'w0rp/ale'                " Asynchronous Lint Engine
+
+" Settings
+" ----------------------------------------------------------
+
+" Easy align {{{
 
 " Allow alignment of % character
 let g:easy_align_delimiters = {
@@ -13,33 +37,26 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
-Plug 'tpope/vim-endwise'  " Wisely add matching closing structures
-Plug 'tpope/vim-fugitive' " Git wrapper for Vim
-Plug '/usr/local/opt/fzf' " The command-line fuzzy finder
-Plug 'junegunn/fzf.vim'   " fzf on Vim
+" }}}
+" Fzf {{{
 
-let g:fzf_action = {
-      \ 'ctrl-t': 'tab split',
-      \ 'ctrl-s': 'split',
-      \ 'ctrl-v': 'vsplit' }
-let g:fzf_layout = { 'right': '~20%' }
-let g:fzf_colors = {
-      \ 'fg':      ['fg', 'Normal'],
-      \ 'bg':      ['bg', 'Normal'],
-      \ 'hl':      ['fg', 'Comment'],
-      \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-      \ 'bg+':     ['bg', 'Normal', 'CursorColumn'],
-      \ 'hl+':     ['fg', 'Statement'],
-      \ 'info':    ['fg', 'PreProc'],
-      \ 'border':  ['fg', 'Ignore'],
-      \ 'prompt':  ['fg', 'Conditional'],
-      \ 'pointer': ['fg', 'Exception'],
-      \ 'marker':  ['fg', 'Keyword'],
-      \ 'spinner': ['fg', 'Label'],
-      \ 'header':  ['fg', 'Comment']
-      \ }
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 
-Plug 'junegunn/goyo.vim' " Distraction-free writing
+" }}}
+" Goyo {{{
 
 let g:goyo_width  = 67 " Leave a few extra chars more than textwidth
 let g:goyo_linenr = 1  " Show line numbers in goyo mode
@@ -68,35 +85,24 @@ endfunction
 autocmd! vimrc User GoyoEnter nested call <sid>goyo_enter()
 autocmd! vimrc User GoyoLeave nested call <sid>goyo_leave()
 
-Plug 'skwp/greplace.vim' " Global search and replace for Vim
-
-Plug 'nanotech/jellybeans.vim' " A colourful, dark colour scheme for Vim yess
-
-let g:jellybeans_overrides = {
-      \    'SpellBad': { 'guibg': 'NONE', 'ctermbg': 'NONE' },
-      \    'SpellCap': { 'guibg': 'NONE', 'ctermbg': 'NONE' },
-      \    'SpellRare': { 'guibg': 'NONE', 'ctermbg': 'NONE' },
-      \    'SpellLocal': { 'guibg': 'NONE', 'ctermbg': 'NONE' },
-      \}
-
-Plug 'junegunn/limelight.vim' " Hyper-focus writing
+" }}}
+" Limelight {{{
 
 let g:limelight_priority            = -1  " Don't overrule hlsearch
 let g:limelight_default_coefficient = 0.6 " Dim other paragraphs more
 
-Plug 'sheerun/vim-polyglot' " A solid language pack for Vim
+" }}}
+" Polyglot {{{
 
 let g:polyglot_disabled = ['markdown']
 
-Plug 'tpope/vim-repeat'   " Repeat plugin maps
-Plug 'tpope/vim-sensible' " Defaults everyone can agree on
-Plug 'justinmk/vim-sneak' " Two character f/t motion
+" }}}
+" Sneak {{{
 
 let g:sneak#use_ic_scs = 1 " Use case settings from vimrc
 
 " Make sneak highlighting the same as search results
 hi! link Sneak Search
 
-Plug 'tpope/vim-surround'   " Quoting/parenthesising made simple
-Plug 'tpope/vim-unimpaired' " Pairs of handy bracket mappings
+" }}}
 

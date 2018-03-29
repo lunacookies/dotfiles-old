@@ -1,17 +1,21 @@
-" =============== aramis' init.vim ===============
+" aramis' init.vim
+" ==========================================================
+" - /u/aramisreddit
+" - github.com/aramisgithub
 
-" /u/aramisreddit
-" github.com/aramisgithub
+" Basics
+" ----------------------------------------------------------
 
+""" Create autocmd group
 augroup vimrc
   autocmd!
 augroup END
 
-" Map leader to <space> so that it is easier to reach
+""" Map leader
 let g:mapleader      = ' ' " Regular leader
 let g:maplocalleader = ' ' " Local leader
 
-" Create function for sourcing a config file
+""" Source config file function
 function! s:SourceConfigFile(file)
   let a:file_splat = '~/.config/nvim/'
   for a:config_file in split(glob(a:file_splat), '\n')
@@ -21,13 +25,14 @@ function! s:SourceConfigFile(file)
   endfor
 endfunction
 
-" Source plugs
+""" Source plugs
 call plug#begin('~/.local/share/nvim/plugged')
 call s:SourceConfigFile('plugs.vim')
 source ~/.config/nvim/plugs.vim
 call plug#end()
 
-" =================== Settings ===================
+" Settings
+" ----------------------------------------------------------
 
 set hidden                      " A buffer becomes hidden when abandoned
 set noshowmode                  " Don't show standard mode indicator
@@ -35,7 +40,7 @@ set number                      " Absolute line numbers
 set relativenumber              " Relative line numbers
 set showcmd                     " Show Ex commands
 
-colorscheme jellybeans          " Set colourscheme
+colorscheme seoul256            " Set colourscheme
 set synmaxcol=790               " Maximum column in which to syntax highlight
 set termguicolors               " True colour
 
@@ -98,8 +103,10 @@ set linebreak                   " Wrap at words
 set wrap                        " Wrap text
 
 " Statusline
+" ----------------------------------------------------------
 
-function! LinterStatus() abort " ALE statusline function
+""" ALE statusline function
+function! LinterStatus() abort
   let l:counts = ale#statusline#Count(bufnr(''))
 
   let l:all_errors = l:counts.error + l:counts.style_error
@@ -112,6 +119,7 @@ function! LinterStatus() abort " ALE statusline function
         \)
 endfunction
 
+""" Set statusline
 set statusline=%{LinterStatus()}
 set statusline=\ %f  " Path to the file
 set statusline+=\ %m " Modified flag
@@ -125,24 +133,25 @@ set statusline+=\ %{LinterStatus()}\
 " Git branch
 set statusline+=\ %{fugitive#statusline()}\ 
 
-" =================== Mappings ===================
+" Mappings
+" ----------------------------------------------------------
 
-" Command-line mode
+""" Command-line mode
 nnoremap <cr> :
 xnoremap <cr> :
 
-" Escape from modes
+""" Escape from modes
 inoremap jk <esc>`^
 xnoremap fd <esc>
 cnoremap jk <c-c>
 
-" Navigate splits faster
+""" Navigate splits faster
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
-" Markdown headers
+""" Markdown headers
 nnoremap <leader>1 mmI#<space><esc>`m2l
 nnoremap <leader>2 mmI##<space><esc>`m3l
 nnoremap <leader>3 mmI###<space><esc>`m4l
@@ -150,7 +159,7 @@ nnoremap <leader>4 mmI####<space><esc>`m5l
 nnoremap <leader>5 mmI#####<space><esc>`m6l
 nnoremap <leader>6 mmI######<space><esc>`m7l
 
-" Alignment
+""" Alignment
 nmap <leader>" mz<Plug>(EasyAlign)ip*"`z
 nmap <leader># mz<Plug>(EasyAlign)ip*#`z
 nmap <leader>% mz<Plug>(EasyAlign)ip*%`z
@@ -172,7 +181,7 @@ xmap <leader>: mz<Plug>(EasyAlign)*:`z
 xmap <leader>= mz<Plug>(EasyAlign)*=`z
 xmap <leader>t mz<Plug>(EasyAlign)*\|`z
 
-" Leader
+""" Leader
 nnoremap <leader><leader> <C-^>
 nnoremap <leader>d :!open dict://<cword><cr><cr>
 nnoremap <leader>fb :Buffers<cr>
@@ -184,7 +193,8 @@ nnoremap <leader>l :Limelight!!<cr>
 nnoremap <leader>q :wq<cr>
 nnoremap <leader>s mz:w<cr>`z`
 
-" =================== Autocmds ===================
+" Autocmds
+" ----------------------------------------------------------
 
 " Remove empty lines
 autocmd vimrc BufWritePre,BufReadPost,FileReadPost * if &filetype != 'gitcommit'

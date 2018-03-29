@@ -8,7 +8,7 @@ function! aramis#syntax#code() abort
   highlight! link VertSplit LineNr
 
   " Make ColorColumn last to end of window
-  execute 'set colorcolumn=' . join(range(81,335), ',')
+  execute 'set colorcolumn=' . join(range(80,335), ',')
 
   " Set ColorColumn to be *lighter* than background
   highlight! link ColorColumn CursorLine
