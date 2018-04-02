@@ -1,4 +1,4 @@
-" aramis' init.vim
+" init.vim for macOS
 " ==========================================================
 " - /u/aramisreddit
 " - github.com/aramisgithub
