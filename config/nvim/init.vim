@@ -25,13 +25,34 @@ function! s:SourceConfigFile(file)
   endfor
 endfunction
 
+""" Install missing plugs
+autocmd vimrc VimEnter *
+  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall --sync | q
+  \| endif
+
+""" Install plug if not installed
+if has('nvim')
+  if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd vimrc VimEnter * PlugInstall --sync | source $MYVIMRC
+  endif
+else
+  if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd vimrc VimEnter * PlugInstall --sync | source $MYVIMRC
+  endif
+endif
+
 """ Source plugs
 call plug#begin('~/.local/share/nvim/plugged')
 call s:SourceConfigFile('plugs.vim')
 source ~/.config/nvim/plugs.vim
 call plug#end()
 
-" Settings
+" Options
 " ----------------------------------------------------------
 
 set hidden                      " A buffer becomes hidden when abandoned
