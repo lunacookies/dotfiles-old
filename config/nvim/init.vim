@@ -160,6 +160,14 @@ nnoremap <leader>6 mmI######<space><esc>`m7l
 nnoremap ]r :ALENextWrap<cr>
 nnoremap [r :ALEPreviousWrap<cr>
 
+""" Undo points
+inoremap ! !<C-g>u
+inoremap , ,<C-g>u
+inoremap . .<C-g>u
+inoremap : :<C-g>u
+inoremap ; ;<C-g>u
+inoremap ? ?<C-g>u
+
 """ Alignment
 nmap <leader>" mz<Plug>(EasyAlign)ip*"`z
 nmap <leader># mz<Plug>(EasyAlign)ip*#`z
