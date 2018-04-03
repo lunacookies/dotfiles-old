@@ -168,6 +168,9 @@ inoremap : :<C-g>u
 inoremap ; ;<C-g>u
 inoremap ? ?<C-g>u
 
+""" Make Y behave like other capitals
+nnoremap Y y$
+
 """ Alignment
 nmap <leader>" mz<Plug>(EasyAlign)ip*"`z
 nmap <leader># mz<Plug>(EasyAlign)ip*#`z
