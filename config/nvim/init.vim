@@ -63,7 +63,6 @@ set clipboard=unnamed           " Use macOS clipboard
 set colorcolumn=+1              " Show dark column after textwidth
 set completeopt=menuone,preview " Show possible completions with preview
 set conceallevel=0              " Never conceal
-set cursorline                  " Always show cursor guide
 set encoding=utf-8              " Display UTF-8
 set expandtab                   " Insert spaces when tab is pressed
 set fillchars+=vert:\│          " Show clean separators in splits
