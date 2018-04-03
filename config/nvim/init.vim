@@ -55,104 +55,77 @@ call plug#end()
 " Options
 " ----------------------------------------------------------
 
-set hidden                      " A buffer becomes hidden when abandoned
-set noshowmode                  " Don't show standard mode indicator
-set number                      " Absolute line numbers
-set relativenumber              " Relative line numbers
-set showcmd                     " Show Ex commands
-
 colorscheme seoul256            " Set colourscheme
-set synmaxcol=790               " Maximum column in which to syntax highlight
-set termguicolors               " True colour
-
-set completeopt=menuone,preview " Show possible completions with preview
-set gdefault                    " Replace all instances on a line by default
-set wildmode=full               " Complete the next full match
-
-set clipboard=unnamed           " Use macOS clipboard
-set formatoptions=1cjroq        " Auto-format comments
-set modelines=3                 " Set how many lines are checked for set commands
-set mouse=a                     " Use mouse
-set nojoinspaces                " Insert only one space after punctuation
-set nostartofline               " Keep cursor on same column
-set spell                       " Spell check comments and text
-set spelllang=en_gb             " Use British English
-set textwidth=79                " 79 chars/line
-set virtualedit=block           " Allow cursor placement where characters are not in Visual Block
-if exists('&fixeol')            " Handle end of lines at end of files
-  set nofixeol
-endif
-
-set encoding=utf-8              " Display UTF-8
-set sessionoptions-=folds       " Do not save manually created folds
-set undofile                    " Keep undo history between sessions
-setglobal fileencoding=utf-8    " Write UTF-8
-
-set expandtab                   " Insert spaces when tab is pressed
-set shiftround                  " Always set indentation to a multiple of 2
-set shiftwidth=2                " 2 spaces for indentation
-set softtabstop=2               " 2 spaces per tab
-
-set fillchars=fold:\            " Do not show dashes when folding
-set foldenable                  " Always use folding
-set foldlevel=4                 " Completely fold up files
-set foldmethod=indent           " Fold based on indentation level
-
-set conceallevel=0              " Never conceal
-set cursorline                  " Always show cursor guide
-set fillchars+=vert:\│          " Show clean separators in splits
-set guioptions=                 " Hide scrollbars in MacVim
-set lazyredraw                  " Prevent unnecessary redrawing
-set list                        " Enable showing invisibles
-set listchars=trail:•           " Set invisibles
-set numberwidth=4               " Leave space for 2 digits in line numbers
-set shortmess=acIT              " Abbreviate error messages
-
-set hlsearch                    " Highlight search matches
-set ignorecase                  " Ignore capitalisation …
-set smartcase                   " … except if something has been capitalised
-set inccommand=split            " Live preview of substitute command
-
-set title                       " Show the window title
-set titlestring+=%:t            " Show filename and file path in window title
-set titlestring=                " Reset what shows in window title
-
 let &showbreak = '↳ '           " Show occurrences of wrapped text
 set breakindent                 " Display indents before wrapped lines
 set breakindentopt=sbr          " Display  showbreak  before indent
+set clipboard=unnamed           " Use macOS clipboard
+set colorcolumn=+1              " Show dark column after textwidth
+set completeopt=menuone,preview " Show possible completions with preview
+set conceallevel=0              " Never conceal
+set cursorline                  " Always show cursor guide
+set encoding=utf-8              " Display UTF-8
+set expandtab                   " Insert spaces when tab is pressed
+set fillchars+=vert:\│          " Show clean separators in splits
+set fillchars=fold:\            " Do not show dashes when folding
+set foldenable                  " Always use folding
+set foldlevel=2                 " Completely fold up files
+set foldmethod=indent           " Fold based on indentation level
+set formatoptions=1cjroq        " Auto-format comments
+set gdefault                    " Replace all instances on a line by default
+set guioptions=                 " Hide scrollbars in MacVim
+set hidden                      " A buffer becomes hidden when abandoned
+set hlsearch                    " Highlight search matches
+set ignorecase                  " Ignore capitalisation …
+set inccommand=split            " Live preview of substitute command
+set lazyredraw                  " Prevent unnecessary redrawing
 set linebreak                   " Wrap at words
+set list                        " Enable showing invisibles
+set listchars=trail:•           " Set invisibles
+set modelines=3                 " Set how many lines are checked for set commands
+set mouse=a                     " Use mouse
+set nojoinspaces                " Insert only one space after punctuation
+set noshowmode                  " Don't show standard mode indicator
+set nostartofline               " Keep cursor on same column
+set number                      " Absolute line numbers
+set numberwidth=4               " Leave space for 2 digits in line numbers
+set relativenumber              " Relative line numbers
+set sessionoptions-=folds       " Do not save manually created folds
+set shiftround                  " Always set indentation to a multiple of 2
+set shiftwidth=2                " 2 spaces for indentation
+set shortmess=acIT              " Abbreviate error messages
+set showcmd                     " Show Ex commands
+set smartcase                   " … except if something has been capitalised
+set softtabstop=2               " 2 spaces per tab
+set spell                       " Spell check comments and text
+set spelllang=en_gb             " Use British English
+set synmaxcol=790               " Maximum column in which to syntax highlight
+set termguicolors               " True colour
+set textwidth=80                " 80 chars/line
+set title                       " Show the window title
+set titlestring+=%:t            " Show filename and file path in window title
+set titlestring=                " Reset what shows in window title
+set undofile                    " Keep undo history between sessions
+set virtualedit=block           " Allow cursor placement where characters are not in Visual Block
+set wildmode=full               " Complete the next full match
 set wrap                        " Wrap text
+setglobal fileencoding=utf-8    " Write UTF-8
 
 " Statusline
 " ----------------------------------------------------------
 
-""" ALE statusline function
-function! LinterStatus() abort
-  let l:counts = ale#statusline#Count(bufnr(''))
+function! s:statusline_expr()
+  let l:mod = "%{&modified ? '[+] ' : !&modifiable ? '[x] ' : ''}"
+  let l:ro  = "%{&readonly ? '[RO] ' : ''}"
+  let l:ft  = "%{len(&filetype) ? '['.&filetype.'] ' : ''}"
+  let l:fug = "%{exists('g:loaded_fugitive') ? fugitive#statusline() : ''}"
+  let l:sep = ' %= '
+  let l:pos = ' %-12(%l : %c%V%) '
+  let l:pct = ' %P'
 
-  let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
-
-  return l:counts.total == 0 ? 'OK' : printf(
-        \   '%dW %dE',
-        \   l:all_non_errors,
-        \   l:all_errors
-        \)
+  return ' [%n] %F %<'.l:mod.ro.ft.fug.sep.pos.'%*'.l:pct.' '
 endfunction
-
-""" Set statusline
-set statusline=%{LinterStatus()}
-set statusline=\ %f  " Path to the file
-set statusline+=\ %m " Modified flag
-set statusline+=\ %y " Filetype
-set statusline+=%=   " Switch to the right side
-set statusline+=%c\  " Current column
-set statusline+=%l   " Current line
-set statusline+=/%L  " Total lines
-" ALE errors
-set statusline+=\ %{LinterStatus()}\ 
-" Git branch
-set statusline+=\ %{fugitive#statusline()}\ 
+let &statusline = s:statusline_expr()
 
 " Mappings
 " ----------------------------------------------------------
@@ -212,16 +185,16 @@ nnoremap <leader>g :Goyo<cr>
 nnoremap <leader>h :nohl<cr>
 nnoremap <leader>l :Limelight!!<cr>
 nnoremap <leader>q :wq<cr>
-nnoremap <leader>s mz:w<cr>`z`
+nnoremap <leader>s mz:w<cr>`z
 
 " Autocmds
 " ----------------------------------------------------------
 
-" Remove empty lines
-autocmd vimrc BufWritePre,BufReadPost,FileReadPost * if &filetype != 'gitcommit'
+""" Remove empty lines
+autocmd vimrc VimLeave * if &filetype != 'gitcommit'
       \ | silent! call aramis#emptyline#remove()
 
-" Open help in new tabs
+""" Open help in new tabs
 function! s:helptab()
   if &buftype==#'help'
     wincmd T
@@ -229,7 +202,4 @@ function! s:helptab()
   endif
 endfunction
 autocmd vimrc BufEnter *.txt call s:helptab()
-
-" Call code syntax function in all files
-autocmd vimrc WinEnter,BufEnter * call aramis#syntax#code()
 
