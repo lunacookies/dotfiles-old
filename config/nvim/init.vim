@@ -206,3 +206,7 @@ function! s:helptab()
 endfunction
 autocmd vimrc BufEnter *.txt call s:helptab()
 
+""" Do not show whitespace in insert mode
+autocmd vimrc InsertEnter * set nolist
+autocmd vimrc InsertLeave * set list
+
