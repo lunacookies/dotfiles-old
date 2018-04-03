@@ -109,6 +109,7 @@ set title                       " Show the window title
 set titlestring+=%:t            " Show filename and file path in window title
 set titlestring=                " Reset what shows in window title
 set undofile                    " Keep undo history between sessions
+set updatetime=1000             " Call CursorHold lint event after 1 second
 set virtualedit=block           " Allow cursor placement where characters are not in Visual Block
 set wildmode=full               " Complete the next full match
 set wrap                        " Wrap text
