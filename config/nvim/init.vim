@@ -156,6 +156,10 @@ nnoremap <leader>4 mmI####<space><esc>`m5l
 nnoremap <leader>5 mmI#####<space><esc>`m6l
 nnoremap <leader>6 mmI######<space><esc>`m7l
 
+""" Move between errors/warnings
+nnoremap ]r :ALENextWrap<cr>
+nnoremap [r :ALEPreviousWrap<cr>
+
 """ Alignment
 nmap <leader>" mz<Plug>(EasyAlign)ip*"`z
 nmap <leader># mz<Plug>(EasyAlign)ip*#`z
