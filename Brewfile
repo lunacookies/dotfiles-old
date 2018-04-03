@@ -1,8 +1,11 @@
+# vim: set ft=zsh nomodeline:
+
 tap 'ValeLint/vale'
 tap 'crisidev/homebrew-chunkwm'
-tap 'universal-ctags/universal-ctags'
 
 brew 'chunkwm'
+brew 'cmake'
+brew 'ctags'
 brew 'exa'
 brew 'fd'
 brew 'fish'
