@@ -190,7 +190,7 @@ nnoremap <leader>ff :Files<cr>
 nnoremap <leader>fl :Lines<cr>
 nnoremap <leader>g :Goyo<cr>
 nnoremap <leader>h :nohlsearch<cr>
-nnoremap <leader>i mzgg=G`z
+nnoremap <leader>i mzgg=G`zzz
 nnoremap <leader>l :Limelight!!<cr>
 nnoremap <leader>q :quit<cr>
 nnoremap <leader>s mzvip:sort<cr>`z
