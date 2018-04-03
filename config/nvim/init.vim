@@ -90,6 +90,7 @@ set nostartofline               " Keep cursor on same column
 set number                      " Absolute line numbers
 set numberwidth=4               " Leave space for 2 digits in line numbers
 set relativenumber              " Relative line numbers
+set scrolloff=5                 " Leave a 5 line margin when scrolling
 set sessionoptions-=folds       " Do not save manually created folds
 set shiftround                  " Always set indentation to a multiple of 2
 set shiftwidth=2                " 2 spaces for indentation
