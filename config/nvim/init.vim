@@ -186,9 +186,10 @@ nnoremap <leader>fb :Buffers<cr>
 nnoremap <leader>ff :Files<cr>
 nnoremap <leader>fl :Lines<cr>
 nnoremap <leader>g :Goyo<cr>
-nnoremap <leader>h :nohl<cr>
+nnoremap <leader>h :nohlsearch<cr>
 nnoremap <leader>l :Limelight!!<cr>
 nnoremap <leader>q :quit<cr>
+nnoremap <leader>s mzvip:sort<cr>`z
 nnoremap <leader>w :update<cr>
 
 " Autocmds
