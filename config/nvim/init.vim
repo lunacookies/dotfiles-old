@@ -187,8 +187,8 @@ nnoremap <leader>fl :Lines<cr>
 nnoremap <leader>g :Goyo<cr>
 nnoremap <leader>h :nohl<cr>
 nnoremap <leader>l :Limelight!!<cr>
-nnoremap <leader>q :wq<cr>
-nnoremap <leader>s mz:w<cr>`z
+nnoremap <leader>q :quit<cr>
+nnoremap <leader>w :update<cr>
 
 " Autocmds
 " ----------------------------------------------------------
