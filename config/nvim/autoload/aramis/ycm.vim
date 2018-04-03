@@ -1,4 +1,4 @@
-" Build YCM using this function
+""" Build YCM using this function
 function! aramis#ycm#install(info) abort
   if executable('cmake')
     if a:info.status ==# 'installed' || a:info.force
