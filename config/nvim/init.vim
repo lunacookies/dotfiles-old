@@ -27,21 +27,21 @@ endfunction
 
 """ Install missing plugs
 autocmd vimrc VimEnter *
-  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \|   PlugInstall --sync | q
-  \| endif
+      \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+      \|   PlugInstall --sync | q
+      \| endif
 
 """ Install plug if not installed
 if has('nvim')
   if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+          \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     autocmd vimrc VimEnter * PlugInstall --sync | source $MYVIMRC
   endif
 else
   if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+          \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     autocmd vimrc VimEnter * PlugInstall --sync | source $MYVIMRC
   endif
 endif
@@ -187,6 +187,7 @@ nnoremap <leader>ff :Files<cr>
 nnoremap <leader>fl :Lines<cr>
 nnoremap <leader>g :Goyo<cr>
 nnoremap <leader>h :nohlsearch<cr>
+nnoremap <leader>i mzgg=G`z
 nnoremap <leader>l :Limelight!!<cr>
 nnoremap <leader>q :quit<cr>
 nnoremap <leader>s mzvip:sort<cr>`z
