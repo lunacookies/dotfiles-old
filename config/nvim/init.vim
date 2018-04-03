@@ -100,6 +100,8 @@ set smartcase                   " … except if something has been capitalised
 set softtabstop=2               " 2 spaces per tab
 set spell                       " Spell check comments and text
 set spelllang=en_gb             " Use British English
+set splitbelow                  " Create new splits to the bottom
+set splitright                  " Create new splits to the right
 set synmaxcol=790               " Maximum column in which to syntax highlight
 set termguicolors               " True colour
 set textwidth=80                " 80 chars/line
