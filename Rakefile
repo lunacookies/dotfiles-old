@@ -9,7 +9,7 @@ namespace :dotfiles do
   task :install do
     replace_all = false
     Dir['*'].each do |file|
-      next if %w[Rakefile Brewfile Pipfile Gemfile Gemfile.lock tex install README.md iterm2 vale].include? file
+      next if %w[Rakefile Brewfile Pipfile Gemfile Gemfile.lock tex tags install README.md iterm2 vale].include? file
 
       if File.exist?(File.join(ENV['HOME'], ".#{file}"))
         if replace_all
