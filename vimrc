@@ -1,4 +1,4 @@
-" init.vim for macOS
+" vimrc for macOS
 " ==========================================================
 " - /u/aramisreddit
 " - github.com/aramisgithub
@@ -15,16 +15,6 @@ augroup END
 let g:mapleader      = ' ' " Regular leader
 let g:maplocalleader = ' ' " Local leader
 
-""" Source config file function
-function! s:SourceConfigFile(file)
-  let a:file_splat = '~/.dotfiles/'
-  for a:config_file in split(glob(a:file_splat), '\n')
-    if filereadable(a:file)
-      execute 'source' a:file
-    endif
-  endfor
-endfunction
-
 """ Install missing plugs
 autocmd vimrc VimEnter *
       \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -40,7 +30,9 @@ endif
 
 """ Source plugs
 call plug#begin('~/.vim/plugged')
-call s:SourceConfigFile('vimrc.plugs')
+if filereadable(expand('~/.vimrc.plugs'))
+  source ~/.vimrc.plugs
+endif
 call plug#end()
 
 " Options
