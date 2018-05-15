@@ -11,13 +11,16 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     brew install git
   fi
 else
-  # Install git and rustup
+  # Install git
   if ! type "git" > /dev/null; then
     sudo apt install git
   fi
-  if ! type "cargo" > /dev/null; then
-    curl https://sh.rustup.rs -sSf | sh
-  fi
+fi
+
+# Install rust if it does not exist
+if ! type "cargo" > /dev/null; then
+  curl https://sh.rustup.rs -sSf | sh
+  source $HOME/.cargo/env
 fi
 
 # If dotfiles directory does not exist then clone it
@@ -40,6 +43,7 @@ else
 fi
 bundle install
 pip3 install -r Pipfile
+./cargo.sh
 
 # Symlink all configuration
 ./stow.fish

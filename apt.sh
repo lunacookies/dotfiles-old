@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-cargo install exa
-cargo install fd-find
-cargo install ripgrep
 sudo apt install exuberant-ctags
 sudo apt install fish
 sudo apt install fonts-mplus
