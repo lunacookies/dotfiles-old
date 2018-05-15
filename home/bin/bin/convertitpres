@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+rm $(cat $HOME/.currentfile).pdf
+pandoc -t beamer $(cat $HOME/.currentfile) -o $(cat $HOME/.currentfile).tex --template=$HOME/.dotfiles/tex/presentation.tex --slide-level=2
+osascript /Library/Scripts/texshop.scpt $(cat $HOME/.currentfile).tex
+

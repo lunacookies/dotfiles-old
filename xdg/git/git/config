@@ -1,0 +1,12 @@
+[user]
+	name = Aramis Razzaghipour
+	email = aramisnoah@gmail.com
+[core]
+	editor = nvim
+  pager = less
+	excludesfile = /Users/aramis/.gitignore
+
+[url "https://github.com/"]
+	insteadOf = git@github.com:
+[url "https://gitlab.com/"]
+	insteadOf = git@gitlab.com:

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+rm $(cat $HOME/.currentfile).pdf
+pandoc -f markdown -t latex $(cat $HOME/.currentfile) -o $(cat $HOME/.currentfile).tex --template=$HOME/.dotfiles/tex/report.tex --top-level-division=chapter
+osascript /Library/Scripts/texshop.scpt $(cat $HOME/.currentfile).tex
+

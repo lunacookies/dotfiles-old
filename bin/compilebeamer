@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-pandoc -t beamer document.md -o output.pdf --template=$HOME/.dotfiles/tex/presentation/template.tex --pdf-engine=xelatex --slide-level=2
-
-optpdf output.pdf
-

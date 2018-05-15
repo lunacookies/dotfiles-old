@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+mv $(cat $HOME/.currentfile).pdf $(cat $HOME/.currentfile)pdf
+rm $(cat $HOME/.currentfile).*
+mv $(cat $HOME/.currentfile)pdf $(cat $HOME/.currentfile).pdf
+
