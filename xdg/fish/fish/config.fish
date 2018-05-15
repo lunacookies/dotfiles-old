@@ -75,6 +75,7 @@ set -gx PATH /usr/local $PATH
 set -gx PATH /usr/local/bin $PATH
 set -gx PATH /usr/local/texlive/2017/bin $PATH
 set -gx PATH /Library/TeX/texbin $PATH
+set -gx PATH ~/.cargo/bin $PATH
 set -gx PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
 set -gx PATH /usr/local/opt/findutils/libexec/gnubin $PATH
 set -gx PATH /usr/local/opt/grep/libexec/gnubin $PATH
