@@ -15,7 +15,6 @@ brew install exa
 brew install fd
 brew install findutils
 brew install fish
-brew install fzf
 brew install git
 brew install gnu-sed --with-default-names
 brew install grep

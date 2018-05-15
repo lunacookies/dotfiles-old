@@ -12,8 +12,12 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   fi
 else
   # Install git and rustup
-  sudo apt install git
-  curl https://sh.rustup.rs -sSf | sh
+  if ! type "git" > /dev/null; then
+    sudo apt install git
+  fi
+  if ! type "cargo" > /dev/null; then
+    curl https://sh.rustup.rs -sSf | sh
+  fi
 fi
 
 # If dotfiles directory does not exist then clone it
