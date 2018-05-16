@@ -11,8 +11,11 @@ brew install coreutils
 brew install ctags
 brew install diffutils
 brew install ed --with-default-names
+brew install exa
+brew install fd
 brew install findutils
 brew install fish
+brew install fzf
 brew install git
 brew install gnu-sed --with-default-names
 brew install grep
@@ -22,6 +25,7 @@ brew install moreutils
 brew install neovim
 brew install pandoc
 brew install python3
+brew install rg
 brew install rmtrash
 brew install stow
 brew install the_silver_searcher
