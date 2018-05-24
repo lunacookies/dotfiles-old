@@ -1,22 +1,26 @@
-function! aramis#pandoc#convertarticle() abort
+""
+"" Pandoc functions
+""
+
+function! aramis#functions#pandocconvertarticle() abort
   normal! mz
   call system('~/bin/convertitarticle')
   normal! `z
 endfunction
 
-function! aramis#pandoc#convertreport() abort
+function! aramis#functions#pandocconvertreport() abort
   normal! mz
   call system('~/bin/convertitreport')
   normal! `z
 endfunction
 
-function! aramis#pandoc#convertpres() abort
+function! aramis#functions#pandocconvertpres() abort
   normal! mz
   call system('~/bin/convertitpres')
   normal! `z
 endfunction
 
-function! aramis#pandoc#clean() abort
+function! aramis#functions#pandocclean() abort
   normal! mz
   call system('~/bin/cleanit')
   normal! `z

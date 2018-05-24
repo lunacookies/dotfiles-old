@@ -1,8 +1,10 @@
+" vim: set foldmethod=marker foldlevel=0 nomodeline:
+
 " aramis' init.vim
 
 
 ""
-"" Basics
+"" Basics {{{1
 ""
 
 " Create autocmd group
@@ -15,8 +17,8 @@ let g:mapleader      = ' ' " Regular leader
 let g:maplocalleader = ' ' " Local leader
 
 
-""
-"" Plugin
+"" }}}1
+"" Plugin {{{1
 ""
 
 " Install missing plugs
@@ -35,56 +37,106 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug '/usr/local/opt/fzf'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-Plug 'junegunn/vim-easy-align'
-Plug 'mhinz/vim-sayonara'
-Plug 'romainl/vim-cool'
-Plug 'sheerun/vim-polyglot'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-Plug 'wellle/targets.vim'
+
+Plug 'ajh17/VimCompletesMe'           " Completion
+Plug 'christoomey/vim-tmux-navigator' " Move seamlessly between tmux and vim
+Plug 'junegunn/fzf.vim'               " Fuzzy finding
+Plug 'junegunn/goyo.vim'              " Distraction-free mode
+Plug 'junegunn/limelight.vim'         " Focus mode
+Plug 'junegunn/vim-easy-align'        " Alignments
+Plug 'mhinz/vim-sayonara'             " Close windows in a smart way
+Plug 'romainl/vim-cool'               " Better search
+Plug 'sheerun/vim-polyglot'           " Syntax for many languages
+Plug 'tpope/vim-commentary'           " Comment out code
+Plug 'tpope/vim-endwise'              " Auto-close if's and for's
+Plug 'tpope/vim-repeat'               " Repeat plugin maps
+Plug 'tpope/vim-sensible'             " Sets a bunch of sensible settings
+Plug 'tpope/vim-surround'             " Easily change delimiters
+Plug 'tpope/vim-unimpaired'           " Many mappings in the style of [s
+Plug 'wellle/targets.vim'             " Access textobj from anywhere in line
 
 call plug#end()
 
 
+"" }}}1
+"" Plug options {{{1
 ""
-"" Colourscheme
+
+" Easy align
+
+" Allow alignment of % character
+let g:easy_align_delimiters = {
+      \  '%': { 'pattern': '%\+', 'delimiter_align': 'l', 'ignore_groups': ['!Comment']  },
+      \ }
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+" fzf
+
+" Set colours
+let g:fzf_colors =
+      \ { 'fg':    ['fg', 'Normal'],
+      \ 'bg':      ['bg', 'Normal'],
+      \ 'hl':      ['fg', 'Comment'],
+      \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+      \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+      \ 'hl+':     ['fg', 'Statement'],
+      \ 'info':    ['fg', 'PreProc'],
+      \ 'border':  ['fg', 'Ignore'],
+      \ 'prompt':  ['fg', 'Conditional'],
+      \ 'pointer': ['fg', 'Exception'],
+      \ 'marker':  ['fg', 'Keyword'],
+      \ 'spinner': ['fg', 'Label'],
+      \ 'header':  ['fg', 'Comment'] }
+
+" Do not show statusline in fzf
+autocmd vimrc FileType fzf set noshowmode noruler
+      \| autocmd BufLeave <buffer> set showmode ruler
+
+" Goyo
+
+let g:goyo_width = 68 " Leave a few extra chars more than textwidth
+
+function! s:goyo_enter() " On goyo enter:
+  set noshowcmd          " Don't show last command
+  set scrolloff=999      " Centre current line
+  Limelight              " Enable paragraph focus mode
+endfunction
+
+function! s:goyo_leave() " On goyo exit:
+  set showcmd            " Show last command
+  set scrolloff=1        " Show 1 line of context when scrolling
+  Limelight!             " Disable paragraph focus mode
+endfunction
+
+" Activate respective function on goyo enter and leave
+autocmd! vimrc User GoyoEnter nested call <sid>goyo_enter()
+autocmd! vimrc User GoyoLeave nested call <sid>goyo_leave()
+
+" Limelight
+
+" let g:limelight_conceal_ctermfg     = '240' " Set dimmed paragraph colour
+let g:limelight_priority            = -1    " Don't overrule hlsearch
+
+" Polyglot
+
+" Disable plasticboy markdown
+let g:polyglot_disabled = ['markdown']
+
+
 ""
-
-" Operator Mono-style italic syntax kighlighting
-autocmd vimrc ColorScheme * highlight Comment    gui=italic cterm=italic
-autocmd vimrc ColorScheme * highlight Identifier gui=italic cterm=italic
-autocmd vimrc ColorScheme * highlight Special    gui=italic cterm=italic
-autocmd vimrc ColorScheme * highlight Type       gui=italic cterm=italic
-autocmd vimrc ColorScheme * highlight htmlArg    gui=italic cterm=italic
-
-" More syntax hghlighting in autocmds
-autocmd vimrc ColorScheme * highlight! link vimAutoCmdSfxList Type
-
-autocmd vimrc ColorScheme * highlight clear ALEErrorSign
-autocmd vimrc ColorScheme * highlight clear ALEWarningSign
-autocmd vimrc ColorScheme * highlight clear SignColumn
-
-" Set colourscheme
-colorscheme ubuntu
-
-
-""
-"" Options
+"" Options {{{1
 ""
 
 let &showbreak = '↳ '           " Show occurrences of wrapped text
 set breakindent                 " Display indents before wrapped lines
 set breakindentopt=sbr          " Display  showbreak  before indent
 set clipboard=unnamed           " Use macOS clipboard
-set colorcolumn=+1              " Show dark column after textwidth
+set colorcolumn=+1              " Show vertical line after textwidth
 set completeopt=menuone,preview " Show possible completions with preview
 set conceallevel=0              " Never conceal
 set encoding=utf-8              " Display UTF-8
@@ -92,30 +144,29 @@ set expandtab                   " Insert spaces when tab is pressed
 set foldenable                  " Always use folding
 set foldlevel=3                 " Almost never fold by default
 set foldmethod=indent           " Fold based on indentation level
-set formatoptions=1cjroq        " Auto-format comments
+set formatoptions=1acjqr        " Auto-format comments
 set gdefault                    " Replace all instances on a line by default
 set guioptions=                 " Hide scrollbars in MacVim
 set hidden                      " A buffer becomes hidden when abandoned
 set hlsearch                    " Highlight search matches
-set ignorecase                  " Ignore capitalisation …
-set lazyredraw                  " Prevent unnecessary redrawing
-set linebreak                   " Wrap at words
-set list                        " Enable showing invisibles
-set listchars=trail:•           " Set invisibles
-set modelines=1                 " Set how many lines are checked for set commands
-set mouse=a                     " Use mouse
+set ignorecase smartcase        " Smarter capitalisation when searching
+set lazyredraw                  " Don't redraw during macros
+set linebreak                   " Don't break words
+set list                        " Show invisibles
+set listchars=trail:•           " Display a bullet point on trailing spacess
+set modelines=1                 " Check one line for modeline
+set mouse=a                     " Enable mouse
 set nojoinspaces                " Insert only one space after punctuation
-set noshowmode                  " Don't show standard mode indicator
-set nospell                     " Do not spell check
 set nostartofline               " Keep cursor on same column
-" set scrolloff=5                 " Leave a 5 line margin when scrolling
+set number                      " Show absolute line numbers
+set relativenumber              " Show relative line numbers
 set sessionoptions-=folds       " Do not save manually created folds
 set shiftround                  " Always set indentation to a multiple of 2
 set shiftwidth=2                " 2 spaces for indentation
 set shortmess=acIT              " Abbreviate error messages
-set showcmd                     " Show Ex commands
-set smartcase                   " … except if something has been capitalised
+set showcmd                     " Tells you if you press a non-alphabetic key
 set softtabstop=2               " 2 spaces per tab
+set spell                       " Spell check comments
 set spelllang=en_gb             " Use British English
 set splitbelow                  " Create new splits to the bottom
 set splitright                  " Create new splits to the right
@@ -125,14 +176,14 @@ set title                       " Show the window title
 set titlestring=%t              " Show filename and file path in window title
 set undofile                    " Keep undo history between sessions
 set updatetime=1000             " Call CursorHold lint event after 1 second
-set virtualedit=block           " Allow cursor placement where characters are not in Visual Block
+set virtualedit=block           " Allow cursor placement anywhere in V-block
 set wildmode=full               " Complete the next full match
 set wrap                        " Wrap text
 setglobal fileencoding=utf-8    " Write UTF-8
 
 
-""
-"" Neovim
+"" }}}1
+"" Neovim {{{1
 ""
 
 " Live preview of substitute command
@@ -148,8 +199,8 @@ if has('nvim')
 endif
 
 
-""
-"" Statusline
+"" }}}1
+"" Statusline {{{1
 ""
 
 function! s:statusline_expr()
@@ -166,35 +217,27 @@ endfunction
 let &statusline = s:statusline_expr()
 
 
-""
-"" Mappings
+"" }}}1
+"" Mappings {{{1
 ""
 
 " Command-line mode
-nnoremap <cr> :
-xnoremap <cr> :
+nnoremap <CR> :
+xnoremap <CR> :
+
+" Easier fzf
+nnoremap <silent> gb :Buffers<CR>
+nnoremap <silent> gf :Files<CR>
+nnoremap <silent> gl :Lines<CR>
 
 " Escape from modes
-inoremap jk <esc>
-xnoremap fd <esc>
-cnoremap jk <c-c>
-
-" Tabs
-nnoremap gt :tabnew<cr>
-nnoremap ]t :tabnext<cr>
-nnoremap ]t :tabprev<cr>
-
-" Markdown headers
-nnoremap <leader>1 mmI#<space><esc>`m2l
-nnoremap <leader>2 mmI##<space><esc>`m3l
-nnoremap <leader>3 mmI###<space><esc>`m4l
-nnoremap <leader>4 mmI####<space><esc>`m5l
-nnoremap <leader>5 mmI#####<space><esc>`m6l
-nnoremap <leader>6 mmI######<space><esc>`m7l
+inoremap jk <Esc>`^
+xnoremap fd <Esc>
+cnoremap jk <C-c>
 
 " Move between errors/warnings
-nnoremap ]w :ALENextWrap<cr>
-nnoremap [w :ALEPreviousWrap<cr>
+nnoremap ]w :ALENextWrap<CR>
+nnoremap [w :ALEPreviousWrap<CR>
 
 " Undo points
 inoremap ! !<C-g>u
@@ -208,51 +251,46 @@ inoremap ? ?<C-g>u
 nnoremap Y y$
 
 " Alignment
-nmap <leader>" mz<Plug>(EasyAlign)ip*"`z
-nmap <leader># mz<Plug>(EasyAlign)ip*#`z
-nmap <leader>% mz<Plug>(EasyAlign)ip*%`z
-nmap <leader>& mz<Plug>(EasyAlign)ip*&`z
-nmap <leader>' mz<Plug>(EasyAlign)ip*"`z
-nmap <leader>, mz<Plug>(EasyAlign)ip*,`z
-nmap <leader>. mz<Plug>(EasyAlign)ip*.`z
-nmap <leader>: mz<Plug>(EasyAlign)ip*:`z
-nmap <leader>= mz<Plug>(EasyAlign)ip*=`z
-nmap <leader>t mz<Plug>(EasyAlign)ip*\|`z
-xmap <leader>" mz<Plug>(EasyAlign)*"`z
-xmap <leader># mz<Plug>(EasyAlign)*#`z
-xmap <leader>% mz<Plug>(EasyAlign)*%`z
-xmap <leader>& mz<Plug>(EasyAlign)*&`z
-xmap <leader>' mz<Plug>(EasyAlign)*"`z
-xmap <leader>, mz<Plug>(EasyAlign)*,`z
-xmap <leader>. mz<Plug>(EasyAlign)*.`z
-xmap <leader>: mz<Plug>(EasyAlign)*:`z
-xmap <leader>= mz<Plug>(EasyAlign)*=`z
-xmap <leader>t mz<Plug>(EasyAlign)*\|`z
+nmap <Leader>" mz<Plug>(EasyAlign)ip*"`z
+nmap <Leader># mz<Plug>(EasyAlign)ip*#`z
+nmap <Leader>% mz<Plug>(EasyAlign)ip*%`z
+nmap <Leader>& mz<Plug>(EasyAlign)ip*&`z
+nmap <Leader>' mz<Plug>(EasyAlign)ip*"`z
+nmap <Leader>, mz<Plug>(EasyAlign)ip*,`z
+nmap <Leader>. mz<Plug>(EasyAlign)ip*.`z
+nmap <Leader>: mz<Plug>(EasyAlign)ip*:`z
+nmap <Leader>= mz<Plug>(EasyAlign)ip*=`z
+nmap <Leader>t mz<Plug>(EasyAlign)ip*\|`z
+xmap <Leader>" mz<Plug>(EasyAlign)*"`z
+xmap <Leader># mz<Plug>(EasyAlign)*#`z
+xmap <Leader>% mz<Plug>(EasyAlign)*%`z
+xmap <Leader>& mz<Plug>(EasyAlign)*&`z
+xmap <Leader>' mz<Plug>(EasyAlign)*"`z
+xmap <Leader>, mz<Plug>(EasyAlign)*,`z
+xmap <Leader>. mz<Plug>(EasyAlign)*.`z
+xmap <Leader>: mz<Plug>(EasyAlign)*:`z
+xmap <Leader>= mz<Plug>(EasyAlign)*=`z
+xmap <Leader>t mz<Plug>(EasyAlign)*\|`z
 
 " Leader
-nmap <leader>t mz<Plug>(EasyAlign)ip*\|`z
-nnoremap <leader><leader> :bnext<cr>
-nnoremap <leader>a :call aramis#pandoc#convertarticle()<cr>
-nnoremap <leader>c :call aramis#pandoc#clean()<cr>
-nnoremap <leader>d :!open dict://<cword><cr><cr>
-nnoremap <leader>f mzgggqG`z
-nnoremap <leader>g :Goyo<cr>
-nnoremap <leader>h :nohlsearch<cr>
-nnoremap <leader>i mzgg=G`zzz
-nnoremap <leader>l :Limelight!!<cr>
-nnoremap <leader>p :call aramis#pandoc#convertpres()<cr>
-nnoremap <leader>q :wq<cr>
-nnoremap <leader>r :call aramis#pandoc#convertreport()<cr>
-nnoremap <leader>s mzvip:sort<cr>`z
-nnoremap <leader>x :Sayonara<cr>
-nnoremap <silent> <leader>fb :Buffers<cr>
-nnoremap <silent> <leader>ff :Files<cr>
-nnoremap <silent> <leader>fl :Lines<cr>
-xmap <leader>t mz<Plug>(EasyAlign)*\|`z
+nnoremap <Leader><Leader> :bnext<CR>
+nnoremap <Leader>a :call aramis#pandoc#convertarticle()<CR>
+nnoremap <Leader>c :call aramis#pandoc#clean()<CR>
+nnoremap <Leader>d :!open dict://<cword><CR><CR>
+nnoremap <Leader>f mzgggqG`z
+nnoremap <Leader>g :Goyo<CR>
+nnoremap <Leader>h :nohlsearch<CR>
+nnoremap <Leader>i mzgg=G`zzz
+nnoremap <Leader>l :Limelight!!<CR>
+nnoremap <Leader>p :call aramis#pandoc#convertpres()<CR>
+nnoremap <Leader>q :wq<CR>
+nnoremap <Leader>r :call aramis#pandoc#convertreport()<CR>
+nnoremap <Leader>s mzvip:sort<CR>`z
+nnoremap <Leader>x :Sayonara<CR>
 
 
-""
-"" Autocmds
+"" }}}1
+"" Autocmds {{{1
 ""
 
 " Do not show whitespace in insert mode
@@ -266,7 +304,22 @@ autocmd vimrc BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-win
 " compilation
 autocmd vimrc BufReadPost,BufWritePost,FileReadPost,BufNewFile *.md call system('echo ' . expand('%:p') . ' > $HOME/.currentfile')
 
-map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+" Show highlight group when oressingF10
+nnoremap <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
       \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
       \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+
+"" }}}1
+"" Colourscheme {{{1
+""
+
+" Better syntax hghlighting
+autocmd vimrc ColorScheme * highlight! link vimAutoCmdSfxList Type
+autocmd vimrc ColorScheme * highlight! link vimIsCommand Statement
+
+" Set colourscheme
+colorscheme ubuntu
+
+""" }}}1
 

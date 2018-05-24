@@ -25,10 +25,10 @@ hi PmenuThumb          ctermbg=7
 hi PmenuSBar           ctermbg=8
 hi PmenuSel            ctermfg=0     ctermbg=4
 hi ColorColumn         ctermbg=0
-hi SpellBad            ctermfg=1     ctermbg=NONE  cterm=underline
-hi SpellCap            ctermfg=10    ctermbg=NONE  cterm=underline
-hi SpellRare           ctermfg=11    ctermbg=NONE  cterm=underline
-hi SpellLocal          ctermfg=13    ctermbg=NONE  cterm=underline
+hi SpellBad            ctermbg=NONE  cterm=underline
+hi SpellCap            ctermbg=NONE  cterm=underline
+hi SpellRare           ctermbg=NONE  cterm=underline
+hi SpellLocal          ctermbg=NONE  cterm=underline
 hi NonText             ctermfg=8
 hi LineNr              ctermfg=8     ctermbg=NONE
 hi CursorLineNr        ctermfg=11    ctermbg=0
@@ -40,7 +40,7 @@ hi StatusLineNC        ctermfg=8     ctermbg=0     cterm=bold
 hi VertSplit           ctermfg=0     ctermbg=0     cterm=NONE
 hi TabLine             ctermfg=8     ctermbg=0     cterm=NONE
 hi TabLineSel          ctermfg=7     ctermbg=0
-hi Folded              ctermfg=6     ctermbg=0     cterm=bold
+hi Folded              ctermfg=8     ctermbg=0     cterm=bold
 hi Conceal             ctermfg=6     ctermbg=NONE
 hi Directory           ctermfg=12
 hi Title               ctermfg=3     cterm=bold
