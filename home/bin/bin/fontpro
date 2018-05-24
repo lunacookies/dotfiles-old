@@ -1,0 +1,40 @@
+#! /usr/bin/env fish
+
+if test -e ~/Library/MinionPro-Regular.otf
+
+  # Download FontPro
+  echo "Downloading FontPro ..."
+  echo
+  cd ~
+  git clone https://github.com/sebschub/FontPro.git
+  cd FontPro
+
+  # Copy font files and build
+  echo
+  echo
+  echo "Building and installing"
+  echo
+  mkdir otf
+  cd otf
+  cp ~/Library/Fonts/MinionPro-*.otf .
+  rm *Cn*
+  cd ..
+  ./scripts/makeall MinionPro --expanded
+
+  # Install
+  sudo ./scripts/install
+  sudo updmap-sys --enable Map=MinionPro.map
+
+  echo
+  echo
+  echo "MinionPro LaTeX font installation complete!"
+  echo
+else
+  echo
+  echo
+  echo "You do not have Minion Pro installed. Please purchase the font from Adobe before continuing."
+  echo
+  sleep 0.5
+  echo "Exiting script ..."
+end
+
