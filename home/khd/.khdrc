@@ -1,36 +1,36 @@
 #!/usr/bin/env bash
 
-# khdrc for macOS
-# ==========================================================
-# - /u/aramisreddit
-# - github.com/aramisgithub
+# aramis' khdrc
 
 
-# Manipulate windows
-# ----------------------------------------------------------
+##
+## Manipulate windows
+##
 
-### Cycle window
+# Cycle window
 alt - h : chunkc tiling::window --focus west
 alt - j : chunkc tiling::window --focus south
 alt - k : chunkc tiling::window --focus north
 alt - l : chunkc tiling::window --focus east
 
-### Swap window
+# Swap window
 shift + alt - h : chunkc tiling::window --swap west
 shift + alt - j : chunkc tiling::window --swap south
 shift + alt - k : chunkc tiling::window --swap north
 shift + alt - l : chunkc tiling::window --swap east
 
-### Move window
+# Move window
 shift + cmd - h : chunkc tiling::window --warp west
 shift + cmd - j : chunkc tiling::window --warp south
 shift + cmd - k : chunkc tiling::window --warp north
 shift + cmd - l : chunkc tiling::window --warp east
 
-# Desktops
-# ----------------------------------------------------------
 
-### Send window to desktop and switch desktop
+##
+## Desktops
+##
+
+# Send window to desktop and switch desktop
 shift + alt - 1 : chunkc tiling::window -d 1; khd -p "cmd + alt - 1"
 shift + alt - 2 : chunkc tiling::window -d 2; khd -p "cmd + alt - 2"
 shift + alt - 3 : chunkc tiling::window -d 3; khd -p "cmd + alt - 3"
@@ -42,66 +42,72 @@ shift + alt - 8 : chunkc tiling::window -d 8; khd -p "cmd + alt - 8"
 shift + alt - 9 : chunkc tiling::window -d 9; khd -p "cmd + alt - 9"
 shift + alt - 0 : chunkc tiling::window -d 10; khd -p "cmd + alt - 0"
 
-# Monitors
-# ----------------------------------------------------------
 
-### Focus monitor
+##
+## Monitors
+##
+
+# Focus monitor
 ctrl + alt - 1 : chunkc tiling::monitor -f 1
 ctrl + alt - 2 : chunkc tiling::monitor -f 2
 ctrl + alt - 3 : chunkc tiling::monitor -f 3
 
-### Send window to monitor and follow focus
+# Send window to monitor and follow focus
 ctrl + cmd - 1 : chunkc tiling::window --send-to-monitor 1; chunkc tiling::monitor -f 1
 ctrl + cmd - 2 : chunkc tiling::window --send-to-monitor 2; chunkc tiling::monitor -f 2
 ctrl + cmd - 3 : chunkc tiling::window --send-to-monitor 3; chunkc tiling::monitor -f 3
 
-# Manipulate regions
-# ----------------------------------------------------------
 
-### Increase region size
+##
+## Manipulate regions
+##
+
+# Increase region size
 shift + alt - a : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge west
 shift + alt - s : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge south
 shift + alt - w : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge north
 shift + alt - d : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge east
 
-### Decrease region size
+# Decrease region size
 shift + cmd - a : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge west
 shift + cmd - s : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge south
 shift + cmd - w : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge north
 shift + cmd - d : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge east
 
-### Rotate tree
+# Rotate tree
 alt - r : chunkc tiling::desktop --rotate 90
 
-### Equalize size of windows
+# Equalize size of windows
 shift + alt - 0 : chunkc tiling::desktop --equalize
 
-# Misc
-# ----------------------------------------------------------
 
-### Reload config
+##
+## Misc
+##
+
+# Reload config
 cmd + alt + ctrl - r : khd -e "reload"
 
-### Open apps
+# Open apps
 cmd - return : osascript ~/bin/newchrome.scpt
 alt - return : osascript ~/bin/newiterm.scpt
 
-### Toggle desktop offset
+# Toggle desktop offset
 alt - a : chunkc tiling::desktop --toggle offset
 
-### Toggle window fullscreen
+# Toggle window fullscreen
 alt - f : chunkc tiling::window --toggle fullscreen
 
-### Toggle window native fullscreen
+# Toggle window native fullscreen
 shift + alt - f : chunkc tiling::window --toggle native-fullscreen
 
-### Toggle window parent zoom
+# Toggle window parent zoom
 alt - d : chunkc tiling::window --toggle parent
 
-### Toggle window split type
+# Toggle window split type
 alt - e : chunkc tiling::window --toggle split
 
-### Float / unfloat window and center on screen
+# Float / unfloat window and center on screen
 alt - t : chunkc tiling::window --toggle float;\
           chunkc tiling::window --grid-layout 4:4:1:1:2:2
 
