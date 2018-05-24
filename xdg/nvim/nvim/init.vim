@@ -18,7 +18,7 @@ let g:maplocalleader = ' ' " Local leader
 
 
 "" }}}1
-"" Plugin {{{1
+"" Plugs {{{1
 ""
 
 " Install missing plugs
@@ -44,9 +44,11 @@ Plug 'junegunn/fzf.vim'               " Fuzzy finding
 Plug 'junegunn/goyo.vim'              " Distraction-free mode
 Plug 'junegunn/limelight.vim'         " Focus mode
 Plug 'junegunn/vim-easy-align'        " Alignments
+Plug 'justinmk/vim-sneak'             " Two character f
 Plug 'mhinz/vim-sayonara'             " Close windows in a smart way
 Plug 'romainl/vim-cool'               " Better search
 Plug 'sheerun/vim-polyglot'           " Syntax for many languages
+Plug 'takac/vim-hardtime'             " Get better at vim
 Plug 'tpope/vim-commentary'           " Comment out code
 Plug 'tpope/vim-endwise'              " Auto-close if's and for's
 Plug 'tpope/vim-repeat'               " Repeat plugin maps
@@ -127,6 +129,21 @@ let g:limelight_priority            = -1    " Don't overrule hlsearch
 " Disable plasticboy markdown
 let g:polyglot_disabled = ['markdown']
 
+" Hardtime
+
+let g:hardtime_default_on = 1 " Enable hardtime by default
+
+" Sneak
+
+let g:sneak#use_ic_scs = 1 " Use ignorecase + smartcase
+let g:sneak#label      = 1 " Use label mode
+
+
+" Replace f/F/t/T with one-character sneak
+map f <Plug>Sneak_f
+map F <Plug>Sneak_F
+map t <Plug>Sneak_t
+map T <Plug>Sneak_T
 
 ""
 "" Options {{{1
@@ -317,6 +334,7 @@ nnoremap <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> 
 " Better syntax hghlighting
 autocmd vimrc ColorScheme * highlight! link vimAutoCmdSfxList Type
 autocmd vimrc ColorScheme * highlight! link vimIsCommand Statement
+autocmd vimrc ColorScheme * highlight! link Sneak Search
 
 " Set colourscheme
 colorscheme ubuntu
