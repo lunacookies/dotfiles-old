@@ -33,7 +33,6 @@ brew install tmux
 brew install wget
 
 brew cask install appcleaner
-brew cask install bettertouchtool
 brew cask install flux
 brew cask install font-dejavu-sans
 brew cask install font-fira-mono
@@ -41,8 +40,7 @@ brew cask install font-fira-sans
 brew cask install font-m-plus
 brew cask install google-backup-and-sync
 brew cask install google-chrome
-brew cask install kitty
+brew cask install iterm2
 brew cask install mactex
 brew cask install mpv
-brew cask install ubersicht
 
