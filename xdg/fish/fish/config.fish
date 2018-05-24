@@ -55,14 +55,15 @@ alias yhd "brew services restart khd"
 alias ywm "brew services restart chunkwm"
 
 # Git
-alias g "git"
+alias ga "git add"
 alias gc "git commit"
 alias gca "git add -A; and git commit -a"
 alias gcl "git clone"
+alias gd "git diff"
 alias gi "git init; and git add -A"
 alias gl "git log --color --graph --pretty format:' %Cgreen%s%Creset%nby %an%n%ar%n ' "
-alias gl "git pull"
-alias gp "git push"
+alias gpl "git pull"
+alias gps "git push"
 alias gs "git status -s"
 alias gsl "git status"
 
@@ -73,17 +74,16 @@ alias gsl "git status"
 set -gx PATH ~/bin $PATH
 set -gx PATH /usr/local $PATH
 set -gx PATH /usr/local/bin $PATH
-set -gx PATH /usr/local/texlive/2017/bin $PATH
+set -gx PATH /usr/local/texlive/20*/bin $PATH
 set -gx PATH /Library/TeX/texbin $PATH
-set -gx PATH ~/.cargo/bin $PATH
 set -gx PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
 set -gx PATH /usr/local/opt/findutils/libexec/gnubin $PATH
 set -gx PATH /usr/local/opt/grep/libexec/gnubin $PATH
 
 # Manpath
-set -gx MANPATH /usr/local/opt/coreutils/libexec/gnuman $MANPATH
-set -gx MANPATH /usr/local/opt/findutils/libexec/gnuman $MANPATH
-set -gx MANPATH /usr/local/opt/grep/libexec/gnuman $MANPATH
+# set -gx MANPATH /usr/local/opt/coreutils/libexec/gnuman $MANPATH
+# set -gx MANPATH /usr/local/opt/findutils/libexec/gnuman $MANPATH
+# set -gx MANPATH /usr/local/opt/grep/libexec/gnuman $MANPATH
 
 # Editor
 set -gx EDITOR nvim
@@ -94,17 +94,16 @@ set -gx __CF_USER_TEXT_ENCODING 0x08000100:0x0
 # Fzf
 # ----------------------------------------------------------
 
-# Fzf display
-set -gx FZF_DEFAULT_OPTS '
---no-height 
---no-reverse 
---color=dark 
---margin 2% '
+# # Fzf display
+# set -gx FZF_DEFAULT_OPTS '
+# --no-height 
+# --no-reverse 
+# --color=dark'
 
 # Fzf command
-set -gx FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow --exclude .git --exclude Library'
-set -gx FZF_ALT_C_COMMAND 'fd --type d --hidden --follow --exclude .git --exclude Library'
-set -gx FZF_CTRL_T_COMMAND 'fd --type f --type d --hidden --follow --exclude .git --exclude Library'
+set -gx FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow --exclude .git'
+set -gx FZF_ALT_C_COMMAND 'fd --type d --hidden --follow --exclude .git'
+set -gx FZF_CTRL_T_COMMAND 'fd --type f --type d --hidden --follow --exclude .git'
 
 # Use fzf-tmux script
 # set -gx FZF_TMUX 1
