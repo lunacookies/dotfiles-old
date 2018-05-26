@@ -4,7 +4,7 @@
 
 
 ""
-"" Basics {{{1
+"" Basics
 ""
 
 " Create autocmd group
@@ -17,8 +17,8 @@ let g:mapleader      = ' ' " Regular leader
 let g:maplocalleader = ' ' " Local leader
 
 
-"" }}}1
-"" Plugs {{{1
+""
+"" Plugs
 ""
 
 " Install missing plugs
@@ -36,40 +36,48 @@ endif
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug '/usr/local/opt/fzf'
+" Things that should be part of vim
 
+Plug 'mhinz/vim-sayonara'             " Close windows in a smart way
+Plug 'romainl/vim-cool'               " Better search
+Plug 'sheerun/vim-polyglot'           " Syntax for many languages
+Plug 'takac/vim-hardtime'             " Get better at vim
+Plug 'tpope/vim-endwise'              " Auto-close if's and for's
+Plug 'tpope/vim-repeat'               " Repeat plugin maps
+Plug 'tpope/vim-sensible'             " Sets a bunch of sensible settings
+Plug 'tpope/vim-unimpaired'           " Many mappings in the style of [s
+
+" Operators and textobjects
+
+Plug 'AndrewRadev/splitjoin.vim'      " Switch between single and multiline code
+Plug 'junegunn/vim-easy-align'        " Alignments
+Plug 'justinmk/vim-sneak'             " Two character f
+Plug 'tpope/vim-commentary'           " Comment out code
+Plug 'tpope/vim-surround'             " Easily change delimiters
+Plug 'wellle/targets.vim'             " Access textobj from anywhere in line
+
+" Everything else
+
+Plug '/usr/local/opt/fzf'
 Plug 'ajh17/VimCompletesMe'           " Completion
 Plug 'christoomey/vim-tmux-navigator' " Move seamlessly between tmux and vim
 Plug 'junegunn/fzf.vim'               " Fuzzy finding
 Plug 'junegunn/goyo.vim'              " Distraction-free mode
 Plug 'junegunn/limelight.vim'         " Focus mode
-Plug 'junegunn/vim-easy-align'        " Alignments
-Plug 'justinmk/vim-sneak'             " Two character f
-Plug 'mhinz/vim-sayonara'             " Close windows in a smart way
-Plug 'romainl/vim-cool'               " Better search
-Plug 'sheerun/vim-polyglot'           " Syntax for many languages
-Plug 'takac/vim-hardtime'             " Get better at vim
-Plug 'tpope/vim-commentary'           " Comment out code
-Plug 'tpope/vim-endwise'              " Auto-close if's and for's
-Plug 'tpope/vim-repeat'               " Repeat plugin maps
-Plug 'tpope/vim-sensible'             " Sets a bunch of sensible settings
-Plug 'tpope/vim-surround'             " Easily change delimiters
-Plug 'tpope/vim-unimpaired'           " Many mappings in the style of [s
-Plug 'wellle/targets.vim'             " Access textobj from anywhere in line
 
 call plug#end()
 
 
-"" }}}1
-"" Plug options {{{1
+""
+"" Plug options
 ""
 
 " Easy align
 
 " Allow alignment of % character
-let g:easy_align_delimiters = {
-      \  '%': { 'pattern': '%\+', 'delimiter_align': 'l', 'ignore_groups': ['!Comment']  },
-      \ }
+let g:easy_align_delimiters = { '%': {
+      \ 'pattern': '%\+', 'delimiter_align': 'l', 'ignore_groups': ['!Comment']
+      \ }, }
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
@@ -80,8 +88,8 @@ nmap ga <Plug>(EasyAlign)
 " fzf
 
 " Set colours
-let g:fzf_colors =
-      \ { 'fg':    ['fg', 'Normal'],
+let g:fzf_colors = {
+      \ 'fg':      ['fg', 'Normal'],
       \ 'bg':      ['bg', 'Normal'],
       \ 'hl':      ['fg', 'Comment'],
       \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
@@ -93,7 +101,8 @@ let g:fzf_colors =
       \ 'pointer': ['fg', 'Exception'],
       \ 'marker':  ['fg', 'Keyword'],
       \ 'spinner': ['fg', 'Label'],
-      \ 'header':  ['fg', 'Comment'] }
+      \ 'header':  ['fg', 'Comment']
+      \ }
 
 " Do not show statusline in fzf
 autocmd vimrc FileType fzf set noshowmode noruler
@@ -121,13 +130,12 @@ autocmd! vimrc User GoyoLeave nested call <sid>goyo_leave()
 
 " Limelight
 
-" let g:limelight_conceal_ctermfg     = '240' " Set dimmed paragraph colour
+let g:limelight_conceal_ctermfg     = '240' " Set dimmed paragraph colour
 let g:limelight_priority            = -1    " Don't overrule hlsearch
 
 " Polyglot
 
-" Disable plasticboy markdown
-let g:polyglot_disabled = ['markdown']
+let g:polyglot_disabled = ['markdown'] " Disable plasticboy markdown
 
 " Hardtime
 
@@ -138,15 +146,15 @@ let g:hardtime_default_on = 1 " Enable hardtime by default
 let g:sneak#use_ic_scs = 1 " Use ignorecase + smartcase
 let g:sneak#label      = 1 " Use label mode
 
-
 " Replace f/F/t/T with one-character sneak
 map f <Plug>Sneak_f
 map F <Plug>Sneak_F
 map t <Plug>Sneak_t
 map T <Plug>Sneak_T
 
+
 ""
-"" Options {{{1
+"" Options
 ""
 
 let &showbreak = '↳ '           " Show occurrences of wrapped text
@@ -199,8 +207,8 @@ set wrap                        " Wrap text
 setglobal fileencoding=utf-8    " Write UTF-8
 
 
-"" }}}1
-"" Neovim {{{1
+""
+"" Neovim
 ""
 
 " Live preview of substitute command
@@ -216,8 +224,8 @@ if has('nvim')
 endif
 
 
-"" }}}1
-"" Statusline {{{1
+""
+"" Statusline
 ""
 
 function! s:statusline_expr()
@@ -234,8 +242,8 @@ endfunction
 let &statusline = s:statusline_expr()
 
 
-"" }}}1
-"" Mappings {{{1
+""
+"" Mappings
 ""
 
 " Command-line mode
@@ -306,8 +314,8 @@ nnoremap <Leader>s mzvip:sort<CR>`z
 nnoremap <Leader>x :Sayonara<CR>
 
 
-"" }}}1
-"" Autocmds {{{1
+""
+"" Autocmds
 ""
 
 " Do not show whitespace in insert mode
@@ -315,20 +323,23 @@ autocmd vimrc InsertEnter * set nolist
 autocmd vimrc InsertLeave * set list
 
 " Set tmux window name to vim filename
-autocmd vimrc BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%:t"))
+autocmd vimrc BufReadPost,FileReadPost,BufNewFile *
+      \ call system("tmux rename-window " . expand("%:t"))
 
 " Write name of current markdown file to ~/.currentfile for automatic LaTeX
 " compilation
-autocmd vimrc BufReadPost,BufWritePost,FileReadPost,BufNewFile *.md call system('echo ' . expand('%:p') . ' > $HOME/.currentfile')
+autocmd vimrc BufReadPost,BufWritePost,FileReadPost,BufNewFile *.md
+      \ call system('echo ' . expand('%:p') . ' > $HOME/.currentfile')
 
-" Show highlight group when oressingF10
-nnoremap <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+" Show highlight group when pressing F10
+nnoremap <F10> :echo "hi<"
+      \ . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
       \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
       \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 
-"" }}}1
-"" Colourscheme {{{1
+""
+"" Colourscheme
 ""
 
 " Better syntax hghlighting
@@ -338,6 +349,4 @@ autocmd vimrc ColorScheme * highlight! link Sneak Search
 
 " Set colourscheme
 colorscheme ubuntu
-
-""" }}}1
 
