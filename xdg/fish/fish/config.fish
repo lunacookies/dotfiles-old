@@ -1,10 +1,9 @@
-# config.fish for macOS
-# ==========================================================
-# - /u/aramisreddit
-# - github.com/aramisgithub
+# aramis' config.fish
 
-# Options
-# ----------------------------------------------------------
+
+##
+## Options
+##
 
 # Coloured man
 set -gx LESS_TERMCAP_mb (printf "\033[01;31m")
@@ -18,8 +17,10 @@ set -gx LESS_TERMCAP_us (printf "\033[01;32m")
 # Disable greeting
 set fish_greeting
 
-# Aliases
-# ----------------------------------------------------------
+
+##
+## Aliases
+##
 
 # System
 alias cb "chmod +x ~/bin/*"
@@ -67,8 +68,10 @@ alias gps "git push"
 alias gs "git status -s"
 alias gsl "git status"
 
-# Environment variables
-# ----------------------------------------------------------
+
+##
+## Environment variables
+##
 
 # Path
 set -gx PATH ~/bin $PATH
@@ -81,9 +84,9 @@ set -gx PATH /usr/local/opt/findutils/libexec/gnubin $PATH
 set -gx PATH /usr/local/opt/grep/libexec/gnubin $PATH
 
 # Manpath
-# set -gx MANPATH /usr/local/opt/coreutils/libexec/gnuman $MANPATH
-# set -gx MANPATH /usr/local/opt/findutils/libexec/gnuman $MANPATH
-# set -gx MANPATH /usr/local/opt/grep/libexec/gnuman $MANPATH
+set -gx MANPATH /usr/local/opt/coreutils/libexec/gnuman $MANPATH
+set -gx MANPATH /usr/local/opt/findutils/libexec/gnuman $MANPATH
+set -gx MANPATH /usr/local/opt/grep/libexec/gnuman $MANPATH
 
 # Editor
 set -gx EDITOR nvim
@@ -91,35 +94,38 @@ set -gx EDITOR nvim
 # Text encoding
 set -gx __CF_USER_TEXT_ENCODING 0x08000100:0x0
 
-# Fzf
-# ----------------------------------------------------------
 
-# # Fzf display
-# set -gx FZF_DEFAULT_OPTS '
-# --no-height 
-# --no-reverse 
-# --color=dark'
+##
+## Fzf
+##
 
 # Fzf command
 set -gx FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow --exclude .git'
 set -gx FZF_ALT_C_COMMAND 'fd --type d --hidden --follow --exclude .git'
 set -gx FZF_CTRL_T_COMMAND 'fd --type f --type d --hidden --follow --exclude .git'
 
-# Use fzf-tmux script
-# set -gx FZF_TMUX 1
 
-# Window title
-# ----------------------------------------------------------
+##
+## Window title
+##
 
 # Set window title to shortened PWD
 function fish_title
-   echo (prompt_pwd)
+  echo (prompt_pwd)
 end
 
 # Set tmux window title to PWD
 if set -q TMUX
-   function precmd --on-event fish_prompt
-      tmux rename-window (prompt_pwd)
-   end
- end
+  function precmd --on-event fish_prompt
+    tmux rename-window (prompt_pwd)
+  end
+end
+
+
+##
+## Fortune on startup
+##
+
+# No wider than 80 chars
+fortune -sn 80
 
