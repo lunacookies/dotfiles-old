@@ -1,10 +1,15 @@
-" noctu.vim - Vim color scheme for 16-color terminals
+" term.vim - A colour scheme for simple intuitive syntax highlighting that takes
+" colours from your terminal emulator
 " --------------------------------------------------------------
-" Author:   Noah Frederick (http://noahfrederick.com/)
-" Version:  1.8.0
+" Author:   Aramis Razzaghipour (http://github.com/aramisgithub)
+" Version:  1.9.0
 " --------------------------------------------------------------
 
-" Scheme setup {{{
+
+""
+"" Scheme setup
+""
+
 set background=dark
 hi! clear
 
@@ -12,10 +17,13 @@ if exists('syntax_on')
   syntax reset
 endif
 
-let g:colors_name = 'ubuntu'
+let g:colors_name = 'term'
 
-"}}}
-" Vim UI {{{
+
+""
+"" Vim UI
+""
+
 hi Normal              ctermfg=7
 hi Cursor              ctermfg=7     ctermbg=1
 hi CursorLine          ctermbg=0     cterm=NONE
@@ -69,8 +77,11 @@ hi! link ModeMsg       MoreMsg
 hi! link TabLineFill   StatusLineNC
 hi! link SpecialKey    NonText
 
-"}}}
-" Generic syntax {{{
+
+""
+"" Generic syntax
+""
+
 hi Delimiter       ctermfg=7
 hi Comment         ctermfg=8
 hi Underlined      ctermfg=4   cterm=underline
@@ -90,8 +101,11 @@ hi PreProc         ctermfg=12
 hi! link Operator  Delimiter
 hi! link Error     ErrorMsg
 
-"}}}
-" HTML {{{
+
+""
+"" HTML
+""
+
 hi htmlTagName              ctermfg=2
 hi htmlTag                  ctermfg=2
 hi htmlArg                  ctermfg=10
@@ -106,8 +120,11 @@ hi htmlBoldUnderlineItalic  cterm=bold,underline
 hi! link htmlLink           Underlined
 hi! link htmlEndTag         htmlTag
 
-"}}}
-" XML {{{
+
+""
+"" XML
+""
+
 hi xmlTagName       ctermfg=4
 hi xmlTag           ctermfg=12
 hi! link xmlString  xmlTagName
@@ -115,13 +132,19 @@ hi! link xmlAttrib  xmlTag
 hi! link xmlEndTag  xmlTag
 hi! link xmlEqual   xmlTag
 
-"}}}
-" JavaScript {{{
+
+""
+"" JavaScript
+""
+
 hi! link javaScript        Normal
 hi! link javaScriptBraces  Delimiter
 
-"}}}
-" PHP {{{
+
+""
+"" PHP
+""
+
 hi phpSpecialFunction    ctermfg=5
 hi phpIdentifier         ctermfg=11
 hi phpParent             ctermfg=8
@@ -129,8 +152,11 @@ hi! link phpVarSelector  phpIdentifier
 hi! link phpHereDoc      String
 hi! link phpDefine       Statement
 
-"}}}
-" Markdown {{{
+
+""
+"" Markdown
+""
+
 hi! link markdownHeadingRule        NonText
 hi! link markdownHeadingDelimiter   markdownHeadingRule
 hi! link markdownLinkDelimiter      Delimiter
@@ -144,16 +170,22 @@ hi markdownCode                     cterm=bold
 hi markdownBold                     cterm=bold
 hi markdownItalic                   cterm=underline
 
-"}}}
-" Ruby {{{
+
+""
+"" Ruby
+""
+
 hi! link rubyDefine                 Statement
 hi! link rubyLocalVariableOrMethod  Identifier
 hi! link rubyConstant               Constant
 hi! link rubyInstanceVariable       Number
 hi! link rubyStringDelimiter        rubyString
 
-"}}}
-" Git {{{
+
+""
+"" Git
+""
+
 hi gitCommitBranch               ctermfg=3
 hi gitCommitSelectedType         ctermfg=10
 hi gitCommitSelectedFile         ctermfg=2
@@ -164,31 +196,46 @@ hi! link gitCommitUntrackedFile  gitCommitUnmergedFile
 hi! link gitCommitDiscardedType  gitCommitUnmergedType
 hi! link gitCommitDiscardedFile  gitCommitUnmergedFile
 
-"}}}
-" Vim {{{
+
+""
+"" Vim
+""
+
 hi! link vimSetSep    Delimiter
 hi! link vimContinue  Delimiter
 hi! link vimHiAttrib  Constant
 
-"}}}
-" LESS {{{
+
+""
+"" LESS
+""
+
 hi lessVariable             ctermfg=11
 hi! link lessVariableValue  Normal
 
-"}}}
-" NERDTree {{{
+
+""
+"" NERDTree
+""
+
 hi! link NERDTreeHelp      Comment
 hi! link NERDTreeExecFile  String
 
-"}}}
-" Vimwiki {{{
+
+""
+"" Vimwiki
+""
+
 hi! link VimwikiHeaderChar  markdownHeadingDelimiter
 hi! link VimwikiList        markdownListMarker
 hi! link VimwikiCode        markdownCode
 hi! link VimwikiCodeChar    markdownCodeDelimiter
 
-"}}}
-" Help {{{
+
+""
+"" Help
+""
+
 hi! link helpExample         String
 hi! link helpHeadline        Title
 hi! link helpSectionDelim    Comment
@@ -196,59 +243,83 @@ hi! link helpHyperTextEntry  Statement
 hi! link helpHyperTextJump   Underlined
 hi! link helpURL             Underlined
 
-"}}}
-" CtrlP {{{
+
+""
+"" CtrlP
+""
+
 hi! link CtrlPMatch    String
 hi! link CtrlPLinePre  Comment
 
-"}}}
-" Mustache {{{
+
+""
+"" Mustache
+""
+
 hi mustacheSection           ctermfg=14  cterm=bold
 hi mustacheMarker            ctermfg=6
 hi mustacheVariable          ctermfg=14
 hi mustacheVariableUnescape  ctermfg=9
 hi mustachePartial           ctermfg=13
 
-"}}}
-" Shell {{{
+
+""
+"" Shell
+""
+
 hi shDerefSimple     ctermfg=11
 hi! link shDerefVar  shDerefSimple
 
-"}}}
-" Syntastic {{{
+
+""
+"" Syntastic
+""
+
 hi SyntasticWarningSign       ctermfg=3  ctermbg=NONE
 hi SyntasticErrorSign         ctermfg=1  ctermbg=NONE
 hi SyntasticStyleWarningSign  ctermfg=2  ctermbg=NONE
 hi SyntasticStyleErrorSign    ctermfg=4  ctermbg=NONE
 
-"}}}
-" Netrw {{{
+
+""
+"" Netrw
+""
+
 hi netrwExe       ctermfg=9
 hi netrwClassify  ctermfg=8  cterm=bold
 
-"}}}
-" Ledger {{{
+
+""
+"" Ledger
+""
+
 hi ledgerAccount  ctermfg=11
 hi! link ledgerMetadata  Comment
 hi! link ledgerTransactionStatus  Statement
 
-"}}}
-" Diff {{{
+
+""
+"" Diff
+""
+
 hi diffAdded  ctermfg=2
 hi diffRemoved  ctermfg=1
 hi! link diffFile  PreProc
 hi! link diffLine  Title
 
-"}}}
-" Plug {{{
+
+""
+"" Plug
+""
+
 hi plugSha  ctermfg=3
 
-"}}}
-" Blade {{{
+
+""
+"" Blade
+""
+
 hi! link bladeStructure  PreProc
 hi! link bladeParen      phpParent
 hi! link bladeEchoDelim  PreProc
 
-"}}}
-
-" vim: fdm=marker:sw=2:sts=2:et

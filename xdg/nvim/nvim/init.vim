@@ -13,8 +13,8 @@ augroup vimrc
 augroup END
 
 " Map leader
-let g:mapleader      = ' ' " Regular leader
-let g:maplocalleader = ' ' " Local leader
+let mapleader      = ' ' " Regular leader
+let maplocalleader = ' ' " Local leader
 
 
 ""
@@ -36,29 +36,34 @@ endif
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-" Things that should be part of vim
+" General utilities
 
-Plug 'mhinz/vim-sayonara'             " Close windows in a smart way
-Plug 'romainl/vim-cool'               " Better search
-Plug 'sheerun/vim-polyglot'           " Syntax for many languages
-Plug 'takac/vim-hardtime'             " Get better at vim
-Plug 'tpope/vim-endwise'              " Auto-close if's and for's
-Plug 'tpope/vim-repeat'               " Repeat plugin maps
-Plug 'tpope/vim-sensible'             " Sets a bunch of sensible settings
-Plug 'tpope/vim-unimpaired'           " Many mappings in the style of [s
+Plug 'mhinz/vim-sayonara'   " Close windows in a smart way
+Plug 'romainl/vim-cool'     " Better search
+Plug 'sheerun/vim-polyglot' " Syntax for many languages
+Plug 'tpope/vim-endwise'    " Auto-close if's and for's
+Plug 'tpope/vim-eunuch'     " UNIX command helpers
+Plug 'tpope/vim-repeat'     " Repeat plugin maps
+Plug 'tpope/vim-sensible'   " Sets a bunch of sensible settings
+Plug 'tpope/vim-unimpaired' " Many mappings in the style of [s
 
 " Operators and textobjects
 
-Plug 'AndrewRadev/splitjoin.vim'      " Switch between single and multiline code
-Plug 'junegunn/vim-easy-align'        " Alignments
-Plug 'justinmk/vim-sneak'             " Two character f
-Plug 'tpope/vim-commentary'           " Comment out code
-Plug 'tpope/vim-surround'             " Easily change delimiters
-Plug 'wellle/targets.vim'             " Access textobj from anywhere in line
+Plug 'AndrewRadev/splitjoin.vim' " Switch between single and multiline code
+Plug 'junegunn/vim-easy-align'   " Alignments
+Plug 'justinmk/vim-sneak'        " Two character f
+Plug 'kana/vim-textobj-entire'   " Textobj for entire buffer
+Plug 'kana/vim-textobj-indent'   " Textobj for common indentation level
+Plug 'kana/vim-textobj-line'     " Textobj targeting the current line
+Plug 'kana/vim-textobj-user'     " Backend for custom textobj
+Plug 'tomtom/tcomment_vim'       " Comment out code
+Plug 'tpope/vim-surround'        " Easily change delimiters
+Plug 'wellle/targets.vim'        " Access textobj from anywhere in line
 
 " Everything else
 
 Plug '/usr/local/opt/fzf'
+Plug 'Raimondi/delimitMate'           " Auto-close pairs
 Plug 'ajh17/VimCompletesMe'           " Completion
 Plug 'christoomey/vim-tmux-navigator' " Move seamlessly between tmux and vim
 Plug 'junegunn/fzf.vim'               " Fuzzy finding
@@ -137,20 +142,10 @@ let g:limelight_priority            = -1    " Don't overrule hlsearch
 
 let g:polyglot_disabled = ['markdown'] " Disable plasticboy markdown
 
-" Hardtime
-
-let g:hardtime_default_on = 1 " Enable hardtime by default
-
 " Sneak
 
 let g:sneak#use_ic_scs = 1 " Use ignorecase + smartcase
 let g:sneak#label      = 1 " Use label mode
-
-" Replace f/F/t/T with one-character sneak
-map f <Plug>Sneak_f
-map F <Plug>Sneak_F
-map t <Plug>Sneak_t
-map T <Plug>Sneak_T
 
 
 ""
@@ -191,7 +186,6 @@ set shiftwidth=2                " 2 spaces for indentation
 set shortmess=acIT              " Abbreviate error messages
 set showcmd                     " Tells you if you press a non-alphabetic key
 set softtabstop=2               " 2 spaces per tab
-set spell                       " Spell check comments
 set spelllang=en_gb             " Use British English
 set splitbelow                  " Create new splits to the bottom
 set splitright                  " Create new splits to the right
@@ -272,6 +266,11 @@ inoremap : :<C-g>u
 inoremap ; ;<C-g>u
 inoremap ? ?<C-g>u
 
+" Move by screen lines, except when a count is given. This is for the relative
+" line numbers used for quick jumps around.
+nnoremap <expr> j v:count ? 'j' : 'gj'
+nnoremap <expr> k v:count ? 'k' : 'gk'
+
 " Make Y behave like other capitals
 nnoremap Y y$
 
@@ -299,17 +298,17 @@ xmap <Leader>t mz<Plug>(EasyAlign)*\|`z
 
 " Leader
 nnoremap <Leader><Leader> :bnext<CR>
-nnoremap <Leader>a :call aramis#pandoc#convertarticle()<CR>
-nnoremap <Leader>c :call aramis#pandoc#clean()<CR>
+nnoremap <Leader>a :call aramis#functions#pandocconvertarticle()<CR>
+nnoremap <Leader>c :call aramis#functions#pandocclean()<CR>
 nnoremap <Leader>d :!open dict://<cword><CR><CR>
 nnoremap <Leader>f mzgggqG`z
 nnoremap <Leader>g :Goyo<CR>
 nnoremap <Leader>h :nohlsearch<CR>
 nnoremap <Leader>i mzgg=G`zzz
 nnoremap <Leader>l :Limelight!!<CR>
-nnoremap <Leader>p :call aramis#pandoc#convertpres()<CR>
+nnoremap <Leader>p :call aramis#functions#pandocconvertpres()<CR>
 nnoremap <Leader>q :wq<CR>
-nnoremap <Leader>r :call aramis#pandoc#convertreport()<CR>
+nnoremap <Leader>r :call aramis#functions#pandocconvertreport()<CR>
 nnoremap <Leader>s mzvip:sort<CR>`z
 nnoremap <Leader>x :Sayonara<CR>
 
@@ -343,10 +342,10 @@ nnoremap <F10> :echo "hi<"
 ""
 
 " Better syntax hghlighting
+autocmd vimrc ColorScheme * highlight! link Sneak Search
 autocmd vimrc ColorScheme * highlight! link vimAutoCmdSfxList Type
 autocmd vimrc ColorScheme * highlight! link vimIsCommand Statement
-autocmd vimrc ColorScheme * highlight! link Sneak Search
 
 " Set colourscheme
-colorscheme ubuntu
+colorscheme term
 
