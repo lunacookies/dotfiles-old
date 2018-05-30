@@ -1,5 +1,3 @@
-" vim: set foldmethod=marker foldlevel=0 nomodeline:
-
 " aramis' init.vim
 
 
@@ -160,9 +158,6 @@ set completeopt=menuone,preview " Show possible completions with preview
 set conceallevel=0              " Never conceal
 set encoding=utf-8              " Display UTF-8
 set expandtab                   " Insert spaces when tab is pressed
-set foldenable                  " Always use folding
-set foldlevel=3                 " Almost never fold by default
-set foldmethod=indent           " Fold based on indentation level
 set formatoptions=1acjqr        " Auto-format comments
 set gdefault                    " Replace all instances on a line by default
 set guioptions=                 " Hide scrollbars in MacVim
@@ -179,7 +174,6 @@ set nojoinspaces                " Insert only one space after punctuation
 set nostartofline               " Keep cursor on same column
 set number                      " Show absolute line numbers
 set relativenumber              " Show relative line numbers
-set sessionoptions-=folds       " Do not save manually created folds
 set shiftround                  " Always set indentation to a multiple of 2
 set shiftwidth=2                " 2 spaces for indentation
 set shortmess=acIT              " Abbreviate error messages
