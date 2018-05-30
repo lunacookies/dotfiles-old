@@ -149,49 +149,49 @@ let g:sneak#label      = 1 " Use label mode
 "" Options
 ""
 
-let &showbreak = '↳ '           " Show occurrences of wrapped text
-set breakindent                 " Display indents before wrapped lines
-set breakindentopt=sbr          " Display  showbreak  before indent
-set clipboard=unnamed           " Use macOS clipboard
-set colorcolumn=+1              " Show vertical line after textwidth
-set completeopt=menuone,preview " Show possible completions with preview
-set conceallevel=0              " Never conceal
-set encoding=utf-8              " Display UTF-8
-set expandtab                   " Insert spaces when tab is pressed
-set formatoptions=1acjqr        " Auto-format comments
-set gdefault                    " Replace all instances on a line by default
-set guioptions=                 " Hide scrollbars in MacVim
-set hidden                      " A buffer becomes hidden when abandoned
-set hlsearch                    " Highlight search matches
-set ignorecase smartcase        " Smarter capitalisation when searching
-set lazyredraw                  " Don't redraw during macros
-set linebreak                   " Don't break words
-set list                        " Show invisibles
-set listchars=trail:•           " Display a bullet point on trailing spacess
-set modelines=1                 " Check one line for modeline
-set mouse=a                     " Enable mouse
-set nojoinspaces                " Insert only one space after punctuation
-set nostartofline               " Keep cursor on same column
-set number                      " Show absolute line numbers
-set relativenumber              " Show relative line numbers
-set shiftround                  " Always set indentation to a multiple of 2
-set shiftwidth=2                " 2 spaces for indentation
-set shortmess=acIT              " Abbreviate error messages
-set showcmd                     " Tells you if you press a non-alphabetic key
-set softtabstop=2               " 2 spaces per tab
-set spelllang=en_gb             " Use British English
-set splitbelow                  " Create new splits to the bottom
-set splitright                  " Create new splits to the right
-set synmaxcol=790               " Maximum column in which to syntax highlight
-set textwidth=80                " 80 chars/line
-set title                       " Show the window title
-set titlestring=%t              " Show filename and file path in window title
-set undofile                    " Keep undo history between sessions
-set updatetime=1000             " Call CursorHold lint event after 1 second
-set virtualedit=block           " Allow cursor placement anywhere in V-block
-set wildmode=full               " Complete the next full match
-set wrap                        " Wrap text
-setglobal fileencoding=utf-8    " Write UTF-8
+let &showbreak = '↳ '              " Show occurrences of wrapped text
+set breakindent                    " Display indents before wrapped lines
+set breakindentopt=sbr             " Display  showbreak  before indent
+set clipboard^=unnamed,unnamedplus " Use macOS clipboard when available
+set colorcolumn=+1                 " Show vertical line after textwidth
+set completeopt=menuone,preview    " Show possible completions with preview
+set conceallevel=0                 " Never conceal
+set encoding=utf-8                 " Display UTF-8
+set expandtab                      " Insert spaces when tab is pressed
+set formatoptions=1acjqr           " Auto-format comments
+set gdefault                       " Replace all instances on a line by default
+set guioptions=                    " Hide scrollbars in MacVim
+set hidden                         " A buffer becomes hidden when abandoned
+set hlsearch                       " Highlight search matches
+set ignorecase smartcase           " Smarter capitalisation when searching
+set lazyredraw                     " Don't redraw during macros
+set linebreak                      " Don't break words
+set list                           " Show invisibles
+set listchars=trail:•              " Display a bullet point on trailing spacess
+set modelines=1                    " Check one line for modeline
+set mouse=a                        " Enable mouse
+set nojoinspaces                   " Insert only one space after punctuation
+set nostartofline                  " Keep cursor on same column
+set number                         " Show absolute line numbers
+set relativenumber                 " Show relative line numbers
+set shiftround                     " Always set indentation to a multiple of 2
+set shiftwidth=2                   " 2 spaces for indentation
+set shortmess=acIT                 " Abbreviate error messages
+set showcmd                        " Tells you if you press a non-alphabetic key
+set softtabstop=2                  " 2 spaces per tab
+set spelllang=en_gb                " Use British English
+set splitbelow                     " Create new splits to the bottom
+set splitright                     " Create new splits to the right
+set synmaxcol=790                  " Maximum column in which to syntax highlight
+set textwidth=80                   " 80 chars/line
+set title                          " Show the window title
+set titlestring=%t                 " Show filename and file path in window title
+set undofile                       " Keep undo history between sessions
+set updatetime=1000                " Call CursorHold lint event after 1 second
+set virtualedit=block              " Allow cursor placement anywhere in V-block
+set wildmode=full                  " Complete the next full match
+set wrap                           " Wrap text
+setglobal fileencoding=utf-8       " Write UTF-8
 
 
 ""
