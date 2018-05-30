@@ -121,11 +121,3 @@ if set -q TMUX
   end
 end
 
-
-##
-## Fortune on startup
-##
-
-# No wider than 80 chars
-fortune -sn 80
-
