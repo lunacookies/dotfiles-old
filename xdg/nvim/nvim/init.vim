@@ -63,7 +63,6 @@ Plug 'wellle/targets.vim'        " Access textobj from anywhere in line
 " Everything else
 
 Plug '/usr/local/opt/fzf'
-Plug 'Raimondi/delimitMate'           " Auto-close pairs
 Plug 'ajh17/VimCompletesMe'           " Completion
 Plug 'christoomey/vim-tmux-navigator' " Move seamlessly between tmux and vim
 Plug 'junegunn/fzf.vim'               " Fuzzy finding
