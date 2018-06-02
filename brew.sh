@@ -18,6 +18,7 @@ brew install fish
 brew install fzf
 brew install git
 brew install gnu-sed --with-default-names
+brew install gpp
 brew install grep
 brew install khd
 brew install less
