@@ -44,6 +44,7 @@ Plug 'tpope/vim-eunuch'     " UNIX command helpers
 Plug 'tpope/vim-repeat'     " Repeat plugin maps
 Plug 'tpope/vim-sensible'   " Sets a bunch of sensible settings
 Plug 'tpope/vim-unimpaired' " Many mappings in the style of [s
+Plug '~/code/vim-ruby'      " Slightly better syntax for ruby
 
 " Operators and textobjects
 
@@ -137,7 +138,7 @@ let g:limelight_priority            = -1    " Don't overrule hlsearch
 
 " Polyglot
 
-let g:polyglot_disabled = ['markdown'] " Disable plasticboy markdown
+let g:polyglot_disabled = ['markdown', 'ruby'] " Disable plasticboy markdown and vim-ruby
 
 " Sneak
 
