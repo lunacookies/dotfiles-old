@@ -218,9 +218,11 @@ inoremap jk <Esc>`^
 xnoremap fd <Esc>
 cnoremap jk <C-c>
 
-" Move between errors/warnings
-nnoremap ]w :ALENextWrap<CR>
-nnoremap [w :ALEPreviousWrap<CR>
+" Do not jump to the next match automatically
+nnoremap * *N
+nnoremap # #N
+nnoremap g* g*N
+nnoremap g# g#N
 
 " Undo points
 inoremap ! !<C-g>u
