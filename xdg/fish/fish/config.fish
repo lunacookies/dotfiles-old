@@ -57,6 +57,7 @@ alias ywm "brew services restart chunkwm"
 
 # Git
 alias ga "git add"
+alias gap "git add --patch"
 alias gc "git commit"
 alias gca "git add -A; and git commit -a"
 alias gcl "git clone"
