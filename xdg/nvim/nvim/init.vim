@@ -61,10 +61,8 @@ Plug 'wellle/targets.vim'        " Access textobj from anywhere in line
 
 " Everything else
 
-Plug '/usr/local/opt/fzf'
 Plug 'ajh17/VimCompletesMe'           " Completion
 Plug 'christoomey/vim-tmux-navigator' " Move seamlessly between tmux and vim
-Plug 'junegunn/fzf.vim'               " Fuzzy finding
 Plug 'junegunn/goyo.vim'              " Distraction-free mode
 Plug 'junegunn/limelight.vim'         " Focus mode
 Plug 'romainl/Apprentice'             " Low contrast colourscheme
@@ -88,29 +86,6 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
-
-" fzf
-
-" Set colours
-let g:fzf_colors = {
-      \ 'fg':      ['fg', 'Normal'],
-      \ 'bg':      ['bg', 'Normal'],
-      \ 'hl':      ['fg', 'Comment'],
-      \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-      \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-      \ 'hl+':     ['fg', 'Statement'],
-      \ 'info':    ['fg', 'PreProc'],
-      \ 'border':  ['fg', 'Ignore'],
-      \ 'prompt':  ['fg', 'Conditional'],
-      \ 'pointer': ['fg', 'Exception'],
-      \ 'marker':  ['fg', 'Keyword'],
-      \ 'spinner': ['fg', 'Label'],
-      \ 'header':  ['fg', 'Comment']
-      \ }
-
-" Do not show statusline in fzf
-autocmd vimrc FileType fzf set noshowmode noruler
-      \| autocmd BufLeave <buffer> set showmode ruler
 
 " Goyo
 
@@ -172,8 +147,7 @@ set modelines=0              " Don't check for modelines
 set mouse=nvc                " Enable mouse in all modes except insert mode
 set nojoinspaces             " Insert only one space after punctuation
 set nostartofline            " Keep cursor on same column
-set number                   " Show absolute line numbers
-set relativenumber           " Show relative line numbers
+set path=$PWD/**             " Recursively search directories
 set shiftround               " Always set indentation to a multiple of 2
 set shiftwidth=2             " 2 spaces for indentation
 set shortmess=acIT           " Abbreviate error messages
@@ -240,11 +214,6 @@ let &statusline = s:statusline_expr()
 nnoremap <CR> :
 xnoremap <CR> :
 
-" Easier fzf
-nnoremap <silent> gb :Buffers<CR>
-nnoremap <silent> gf :Files<CR>
-nnoremap <silent> gl :Lines<CR>
-
 " Escape from modes
 inoremap jk <Esc>`^
 xnoremap fd <Esc>
@@ -295,9 +264,10 @@ xmap <Leader>t mz<Plug>(EasyAlign)*\|`z
 " Leader
 nnoremap <Leader><Leader> :bnext<CR>
 nnoremap <Leader>a :call aramis#functions#pandocconvertarticle()<CR>
+nnoremap <Leader>b :ls<CR>:buffer<Space>
 nnoremap <Leader>c :call aramis#functions#pandocclean()<CR>
-nnoremap <Leader>d :!open dict://<cword><CR><CR>
-nnoremap <Leader>f mzgggqG`z
+nnoremap <Leader>e :edit<Space>
+nnoremap <Leader>f :find<Space>
 nnoremap <Leader>g :Goyo<CR>
 nnoremap <Leader>h :nohlsearch<CR>
 nnoremap <Leader>i mzgg=G`zzz
@@ -331,6 +301,11 @@ nnoremap <F10> :echo "hi<"
       \ . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
       \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
       \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+" Automatically show quickfix list
+autocmd vimrc QuickFixCmdPost [^l]* cwindow
+autocmd vimrc QuickFixCmdPost    l* lwindow
+autocmd vimrc VimEnter            * cwindow
 
 
 ""
