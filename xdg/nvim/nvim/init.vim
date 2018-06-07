@@ -51,7 +51,6 @@ Plug '~/code/vim-ruby'      " Slightly better syntax for ruby
 Plug 'AndrewRadev/splitjoin.vim' " Switch between single and multiline code
 Plug 'junegunn/vim-easy-align'   " Alignments
 Plug 'justinmk/vim-sneak'        " Two character f
-Plug 'kana/vim-textobj-entire'   " Textobj for entire buffer
 Plug 'kana/vim-textobj-indent'   " Textobj for common indentation level
 Plug 'kana/vim-textobj-line'     " Textobj targeting the current line
 Plug 'kana/vim-textobj-user'     " Backend for custom textobj
