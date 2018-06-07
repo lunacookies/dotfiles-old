@@ -122,3 +122,27 @@ if set -q TMUX
   end
 end
 
+
+##
+## Prompt
+##
+
+function fish_prompt
+  set last_status $status
+
+  set_color blue
+  printf '==> '
+  set_color normal
+  set_color -o
+  printf '%s ' (prompt_pwd)
+  set_color normal
+end
+
+
+##
+## Colours
+##
+
+# Use color8 for autosuggestions
+set fish_color_autosuggestion brblack
+
