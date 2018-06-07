@@ -54,7 +54,7 @@ Plug 'justinmk/vim-sneak'        " Two character f
 Plug 'kana/vim-textobj-indent'   " Textobj for common indentation level
 Plug 'kana/vim-textobj-line'     " Textobj targeting the current line
 Plug 'kana/vim-textobj-user'     " Backend for custom textobj
-Plug 'tomtom/tcomment_vim'       " Comment out code
+Plug 'tpope/vim-commentary'      " Comment out code
 Plug 'tpope/vim-surround'        " Easily change delimiters
 Plug 'wellle/targets.vim'        " Access textobj from anywhere in line
 
