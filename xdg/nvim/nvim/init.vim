@@ -67,6 +67,7 @@ Plug 'christoomey/vim-tmux-navigator' " Move seamlessly between tmux and vim
 Plug 'junegunn/fzf.vim'               " Fuzzy finding
 Plug 'junegunn/goyo.vim'              " Distraction-free mode
 Plug 'junegunn/limelight.vim'         " Focus mode
+Plug 'romainl/Apprentice'             " Low contrast colourscheme
 
 call plug#end()
 
@@ -200,6 +201,11 @@ if has('nvim')
   set inccommand=split
 endif
 
+" 24-bit colour
+if has('nvim')
+  set termguicolors
+endif
+
 " Blinking cursor
 if has('nvim')
   set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
@@ -331,11 +337,15 @@ nnoremap <F10> :echo "hi<"
 "" Colourscheme
 ""
 
-" Better syntax hghlighting
+" Italic syntax highlighting
+autocmd vimrc ColorScheme * highlight! Comment cterm=italic, gui=italic
+
+" Better syntax highlighting
 autocmd vimrc ColorScheme * highlight! link Sneak Search
 autocmd vimrc ColorScheme * highlight! link vimAutoCmdSfxList Type
 autocmd vimrc ColorScheme * highlight! link vimIsCommand Statement
+autocmd vimrc ColorScheme * highlight! link rubyKeywordAsMethod rubyString
 
 " Set colourscheme
-colorscheme term
+colorscheme apprentice
 
