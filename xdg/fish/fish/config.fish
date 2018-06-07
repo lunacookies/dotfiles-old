@@ -66,6 +66,8 @@ alias gi "git init; and git add -A"
 alias gl "git log --color --graph --pretty format:' %Cgreen%s%Creset%nby %an%n%ar%n ' "
 alias gpl "git pull"
 alias gps "git push"
+alias gr "git rm"
+alias grc "git reset --hard"
 alias gs "git status -s"
 alias gsl "git status"
 
