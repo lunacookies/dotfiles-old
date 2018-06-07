@@ -334,11 +334,12 @@ autocmd vimrc VimEnter            * cwindow
 
 " Italic syntax highlighting
 autocmd vimrc ColorScheme * highlight! Comment cterm=italic, gui=italic
+autocmd vimrc ColorScheme * highlight! Type    cterm=italic, gui=italic
 
 " Better syntax highlighting
-autocmd vimrc ColorScheme * highlight! link Sneak Search
-autocmd vimrc ColorScheme * highlight! link vimAutoCmdSfxList Type
-autocmd vimrc ColorScheme * highlight! link vimIsCommand Statement
+autocmd vimrc ColorScheme * highlight! link Sneak               Search
+autocmd vimrc ColorScheme * highlight! link vimAutoCmdSfxList   Type
+autocmd vimrc ColorScheme * highlight! link vimIsCommand        Statement
 autocmd vimrc ColorScheme * highlight! link rubyKeywordAsMethod rubyString
 
 " Set colourscheme
