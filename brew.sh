@@ -26,6 +26,7 @@ brew install moreutils
 brew install neovim
 brew install pandoc
 brew install python3
+brew install ranger
 brew install rg
 brew install rmtrash
 brew install stow
@@ -33,9 +34,12 @@ brew install the_silver_searcher
 brew install tmux
 brew install wget
 
+brew cask install adobe-acrobat-reader
+brew cask install android-file-transfer
 brew cask install appcleaner
 brew cask install flux
 brew cask install font-dejavu-sans
+brew cask install font-fira-code
 brew cask install font-fira-mono
 brew cask install font-fira-sans
 brew cask install font-m-plus
@@ -44,4 +48,6 @@ brew cask install google-chrome
 brew cask install iterm2
 brew cask install mactex
 brew cask install mpv
+brew cask install soundflower
+brew cask install soundflowerbed
 
