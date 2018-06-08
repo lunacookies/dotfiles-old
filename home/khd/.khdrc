@@ -31,16 +31,16 @@ shift + cmd - l : chunkc tiling::window --warp east
 ##
 
 # Send window to desktop and switch desktop
-shift + alt - 1 : chunkc tiling::window -d 1; khd -p "cmd + alt - 1"
-shift + alt - 2 : chunkc tiling::window -d 2; khd -p "cmd + alt - 2"
-shift + alt - 3 : chunkc tiling::window -d 3; khd -p "cmd + alt - 3"
-shift + alt - 4 : chunkc tiling::window -d 4; khd -p "cmd + alt - 4"
-shift + alt - 5 : chunkc tiling::window -d 5; khd -p "cmd + alt - 5"
-shift + alt - 6 : chunkc tiling::window -d 6; khd -p "cmd + alt - 6"
-shift + alt - 7 : chunkc tiling::window -d 7; khd -p "cmd + alt - 7"
-shift + alt - 8 : chunkc tiling::window -d 8; khd -p "cmd + alt - 8"
-shift + alt - 9 : chunkc tiling::window -d 9; khd -p "cmd + alt - 9"
-shift + alt - 0 : chunkc tiling::window -d 10; khd -p "cmd + alt - 0"
+shift + alt - 1 : chunkc tiling::window -d 1; chunkc tiling::desktop --focus 1
+shift + alt - 2 : chunkc tiling::window -d 2; chunkc tiling::desktop --focus 2
+shift + alt - 3 : chunkc tiling::window -d 3; chunkc tiling::desktop --focus 3
+shift + alt - 4 : chunkc tiling::window -d 4; chunkc tiling::desktop --focus 4
+shift + alt - 5 : chunkc tiling::window -d 5; chunkc tiling::desktop --focus 5
+shift + alt - 6 : chunkc tiling::window -d 6; chunkc tiling::desktop --focus 6
+shift + alt - 7 : chunkc tiling::window -d 7; chunkc tiling::desktop --focus 7
+shift + alt - 8 : chunkc tiling::window -d 8; chunkc tiling::desktop --focus 8
+shift + alt - 9 : chunkc tiling::window -d 9; chunkc tiling::desktop --focus 9
+shift + alt - 0 : chunkc tiling::window -d 10; chunkc tiling::desktop --focus 10
 
 
 ##
