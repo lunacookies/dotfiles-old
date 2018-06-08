@@ -120,6 +120,10 @@ let g:polyglot_disabled = ['markdown', 'ruby'] " Disable plasticboy markdown and
 let g:sneak#use_ic_scs = 1 " Use ignorecase + smartcase
 let g:sneak#label      = 1 " Use label mode
 
+" Cool
+
+let g:CoolTotalMatches = 1 " Show number of matches in command line
+
 
 ""
 "" Options
