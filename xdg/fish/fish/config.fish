@@ -23,9 +23,9 @@ set fish_greeting
 ##
 
 # System
-alias cb "chmod +x ~/bin/*"
 alias cp "cp -riv"
 alias cx "chmod +x"
+alias cxb "chmod +x ~/bin/*"
 alias e "nvim"
 alias ma "math --scale=7 --"
 alias mk "mkdir -pv"
