@@ -292,12 +292,6 @@ nnoremap <Leader>r :call aramis#functions#pandocconvertreport()<CR>
 nnoremap <Leader>s mzvip:sort<CR>`z
 nnoremap <Leader>x :Sayonara<CR>
 
-" Tab through search matches while searching incrementally
-cnoremap <expr> <Tab>   getcmdtype() == "/" \|\| getcmdtype()
-      \ == "?" ? "<CR>/<C-r>/" : "<C-z>"
-cnoremap <expr> <S-Tab> getcmdtype() == "/" \|\| getcmdtype()
-      \ == "?" ? "<CR>?<C-r>/" : "<S-Tab>"
-
 " Search in all currently opened buffers
 command! -nargs=1 Vim call aramis#functions#vimgrepall(<f-args>)
 nnoremap <Leader>v :Vim<Space>
