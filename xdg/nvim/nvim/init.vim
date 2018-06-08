@@ -237,13 +237,13 @@ inoremap ; ;<C-g>u
 inoremap ? ?<C-g>u
 
 " Autoexpansion
-inoremap (<CR> (<CR>)<Esc>O<tab>
-inoremap {<CR> {<CR>}<Esc>O<tab>
-inoremap {; {<CR>};<Esc>O<tab>
-inoremap {, {<CR>},<Esc>O<tab>
-inoremap [<CR> [<CR>]<Esc>O<tab>
-inoremap [; [<CR>];<Esc>O<tab>
-inoremap [, [<CR>],<Esc>O<tab>
+inoremap (<CR> (<CR>)<Esc>O
+inoremap {<CR> {<CR>}<Esc>O
+inoremap {; {<CR>};<Esc>O
+inoremap {, {<CR>},<Esc>O
+inoremap [<CR> [<CR>]<Esc>O
+inoremap [; [<CR>];<Esc>O
+inoremap [, [<CR>],<Esc>O
 
 " Move by screen lines, except when a count is given. This is for the relative
 " line numbers used for quick jumps around.
