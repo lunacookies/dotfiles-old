@@ -83,7 +83,7 @@ chunkc set preselect_border_width 5
 chunkc set preselect_border_radius 5
 
 # Focused
-chunkc set focused_border_color 0xff719abd
+chunkc set focused_border_color 0x00719abd
 chunkc set focused_border_width 5
 chunkc set focused_border_radius 5
 chunkc set focused_border_skip_floating 1
