@@ -91,8 +91,7 @@ alias doc="e document.md"
 # Quick dotfile access
 alias ec="e ~/.config/nvim/init.vim"
 alias hdc="e ~/.khdrc"
-alias sc="e ~/.config/fish/config.fish"
-alias tec="e ~/.config/kitty/kitty.conf"
+alias sc="e ~/.zshrc"
 alias wmc="e ~/.chunkwmrc"
 
 # List files/directories
