@@ -28,7 +28,7 @@ cd ~/dotfiles
 /usr/local/bin/pip3 install -r Pipfile
 
 # Symlink all configuration
-./stow.fish
+./stow.sh
 
 # Set settings
 ./macos

@@ -14,7 +14,6 @@ brew install ed --with-default-names
 brew install exa
 brew install fd
 brew install findutils
-brew install fish
 brew install fzf
 brew install git
 brew install gnu-sed --with-default-names
@@ -33,6 +32,7 @@ brew install stow
 brew install the_silver_searcher
 brew install tmux
 brew install wget
+brew install zsh
 
 brew cask install adobe-acrobat-reader
 brew cask install android-file-transfer

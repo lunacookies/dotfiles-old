@@ -1,6 +1,6 @@
-#! /usr/bin/env fish
+#!/usr/bin/env bash
 
-if test -e ~/Library/MinionPro-Regular.otf
+if [ -e ~/Library/MinionPro-Regular.otf ]; then
 
   # Download FontPro
   echo "Downloading FontPro ..."
@@ -36,5 +36,5 @@ else
   echo
   sleep 0.5
   echo "Exiting script ..."
-end
+fi
 
