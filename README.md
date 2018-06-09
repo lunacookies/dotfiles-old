@@ -1,7 +1,7 @@
 # My dotfiles
 
-These are my dotfiles. They are managed through a combination 
-of `stow` and a small fish script(`stow.fish`).
+These are my dotfiles. They are managed through a combination of 
+`stow` and a small bash script (`stow.sh`).
 
 ## A word of warning
 
@@ -43,8 +43,7 @@ your machine.
    ```
    xdg
    └── foo
-      └── foo
-         └── config
+      └── config
    ```
 
    If they do *not* follow XDG, then create a hierarchy like 
@@ -56,7 +55,7 @@ your machine.
       └── .foorc
    ```
 
-1. Run `stow.fish`
+1. Run `stow.sh`
 
 ## Contact
 
