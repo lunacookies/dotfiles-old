@@ -5,23 +5,13 @@
 ## Greeting
 ##
 
-echo "
-
-
-
-"
+echo
 echo "This is aramisgithub's macOS configuration script."
-sleep 2
 echo "Proceeding with changes."
 echo "This may take a few seconds."
+echo
 
-sleep 3
 echo "Please provide password:"
-echo "
-
-
-
-"
 
 ##
 ## Security                                                                   #
@@ -309,15 +299,9 @@ killall "Activity Monitor"
 ## Epilogue
 ##
 
-echo "
-
-
-
-"
+echo
 echo "Done!"
-sleep 1
 echo "Restart to apply all changes"
-sleep 1
 echo "Exiting script..."
-sleep 1
+echo
 
