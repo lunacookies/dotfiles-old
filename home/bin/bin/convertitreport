@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-rm $(cat $HOME/.currentfile).pdf
-sed -E 's/([A-Za-z0-9.,:?;\"\')|] )([A-Z][A-Z]+)/\1\\\abbr{\2}/g' $(cat $HOME/.currentfile) > $(cat $HOME/.currentfile).asc
-pandoc -f markdown -t latex $(cat $HOME/.currentfile).asc -o $(cat $HOME/.currentfile).tex --template=$HOME/code/argonclass/pandoc/report.tex --top-level-division=chapter
-osascript /Library/Scripts/texshop.scpt $(cat $HOME/.currentfile).tex
-

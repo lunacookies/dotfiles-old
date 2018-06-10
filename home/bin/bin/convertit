@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+doc=$(cat $HOME/.currentfile)
+
+# Delete old PDF
+rm $doc.pdf
+
+# Run some regexes to convert abbreviations and acronyms into small caps. If
+# a differt kind of formatting for abbreviations/acronyms is desired, the \abbr
+# command can be redefined.
+sed -E 's/([A-Za-z0-9.,:?;\)\"\x27|] )([A-Z][A-Z]+)/\1\\abbr{\2}/g' $doc > $doc.ssc
+sed -E 's/^([A-Z][A-Z]+)/\\abbr{\1}/g' $doc.ssc > $doc.asc
+
+# Convert the various document types into temporary tex files
+if [ $1 = "report" ]; then
+  pandoc -f markdown -t latex $doc.asc -o $doc.badnum.tex --template=$HOME/code/argonclass/pandoc/report.tex --top-level-division=chapter
+elif [ $1 = "article" ]; then
+  pandoc -f markdown -t latex $doc.asc -o $doc.badnum.tex --template=$HOME/code/argonclass/pandoc/article.tex --top-level-division=section
+elif [ $1 = "pres" ]; then
+  pandoc -t beamer $doc.asc -o $doc.badnum.tex --template=$HOME/code/argonclass/pandoc/pres.tex --slide-level=2
+else
+  echo "Specified document type not valid. Try using report, article, or pres."
+fi
+
+# Delete pandoc's code that prohibits custom labels on ordered lists. You can
+# comment this part out if you use the many different kinds of list in pandoc's
+# markdown; such as i. ii. iii. and a. b. c
+sed '/\\def\\labelenumi/d' $doc.badnum.tex > $doc.lessbadnum.tex
+sed '/\\tightlist/d' $doc.lessbadnum.tex > $doc.tex
+
+# Remove all the temporary files that this script creates
+rm $doc.badnum.tex
+rm $doc.lessbadnum.tex
+rm $doc.ssc
+rm $doc.asc
+
+# Compile using texshop
+osascript ~/dotfiles/home/bin/bin/texshop.scpt $doc.tex
+

@@ -4,19 +4,19 @@
 
 function! aramis#functions#pandocconvertarticle() abort
   normal! mz
-  call system('~/bin/convertitarticle')
+  call system('~/bin/convertit article')
   normal! `z
 endfunction
 
 function! aramis#functions#pandocconvertreport() abort
   normal! mz
-  call system('~/bin/convertitreport')
+  call system('~/bin/convertit report')
   normal! `z
 endfunction
 
 function! aramis#functions#pandocconvertpres() abort
   normal! mz
-  call system('~/bin/convertitpres')
+  call system('~/bin/convertit pres')
   normal! `z
 endfunction
 
