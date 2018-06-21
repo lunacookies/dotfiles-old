@@ -38,8 +38,6 @@ brew cask install adobe-acrobat-reader
 brew cask install android-file-transfer
 brew cask install appcleaner
 brew cask install flux
-brew cask install font-dejavu-sans
-brew cask install font-fira-code
 brew cask install font-fira-mono
 brew cask install font-fira-sans
 brew cask install font-m-plus
