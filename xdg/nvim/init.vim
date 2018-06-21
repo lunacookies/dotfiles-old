@@ -52,15 +52,15 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " General utilities
 
-Plug 'mhinz/vim-sayonara'   " Close windows in a smart way
-Plug 'romainl/vim-cool'     " Better search
-Plug 'sheerun/vim-polyglot' " Syntax for many languages
-Plug 'tpope/vim-endwise'    " Auto-close if's and for's
-Plug 'tpope/vim-eunuch'     " UNIX command helpers
-Plug 'tpope/vim-repeat'     " Repeat plugin maps
-Plug 'tpope/vim-sensible'   " Sets a bunch of sensible settings
-Plug 'tpope/vim-unimpaired' " Many mappings in the style of [s
-Plug '~/code/vim-ruby'      " Slightly better syntax for ruby
+Plug 'mhinz/vim-sayonara'     " Close windows in a smart way
+Plug 'romainl/vim-cool'       " Better search
+Plug 'sheerun/vim-polyglot'   " Syntax for many languages
+Plug 'toyamarinyon/vim-swift' " Much better swift syntax
+Plug 'tpope/vim-endwise'      " Auto-close if's and for's
+Plug 'tpope/vim-eunuch'       " UNIX command helpers
+Plug 'tpope/vim-repeat'       " Repeat plugin maps
+Plug 'tpope/vim-unimpaired'   " Many mappings in the style of [s
+Plug '~/code/vim-ruby'        " Slightly better syntax for ruby
 
 " Operators and textobjects
 
@@ -129,7 +129,13 @@ let g:limelight_priority            = -1    " Don't overrule hlsearch
 
 " Polyglot
 
-let g:polyglot_disabled = ['markdown', 'ruby'] " Disable plasticboy markdown and vim-ruby
+let g:polyglot_disabled = [ 'markdown', 'ruby', 'swift', ]
+"                            |           |       |
+"                            |           |       +- Use toyamarinyon swift
+"                            |           |          instead
+"                            |           +- Use my fork of vim-ruby instead of
+"                            |              the official one
+"                            +- Replace plasticboy markdown with tpope markdown
 
 " Sneak
 
