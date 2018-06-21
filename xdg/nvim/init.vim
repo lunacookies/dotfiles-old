@@ -200,11 +200,6 @@ if !has('nvim') && &ttimeoutlen == -1
   set ttimeoutlen=100
 endif
 
-" 24-bit colour
-if has('termguicolors')
-  set termguicolors
-endif
-
 " Blinking cursor
 if has('nvim')
   set guicursor=n-v:block,c-i-ci-ve:ver25,r-cr:hor20,o:hor50
