@@ -1,18 +1,34 @@
 " aramis' init.vim
 
 
+
 ""
 "" Basics
 ""
 
-" Create autocmd group
+" Encoding, UTF-8, other backend stuff
+
+if !has('nvim')
+  let &termencoding = &encoding " Keyboard and terminal both  use utf-8
+endif
+
+if !has('nvim')
+  set encoding=utf-8            " Use utf-8 internally (nvim always does this)
+endif
+
+setglobal fileencoding=utf-8    " Set default file encoding
+scriptencoding utf-8            " This file uses some utf-8 symbols
+set fileencodings=ucs-bom,utf-8 " Sets how (n)vim detects the current encoding
+set fileformat=unix             " Unix file format
+set nolangremap                 " Assume English keyboard
+
+" Allow syntax colouring, filetype detection, and built-in plugins
+filetype plugin indent on
+
+" Create autocmd group used by all my autocmds (cleared when sourcing vimrc)
 augroup vimrc
   autocmd!
 augroup END
-
-" Map leader
-let mapleader      = ' ' " Regular leader
-let maplocalleader = ' ' " Local leader
 
 
 ""
@@ -129,66 +145,147 @@ let g:CoolTotalMatches = 1 " Show number of matches in command line
 "" Options
 ""
 
-let &showbreak = '↳ '        " Show occurrences of wrapped text
-set breakindent              " Display indents before wrapped lines
-set breakindentopt=sbr       " Display  showbreak  before indent
-set clipboard^=unnamed       " Use macOS clipboard when available
-set colorcolumn=+1           " Show vertical line after textwidth
-set conceallevel=0           " Never conceal
-set expandtab                " Insert spaces when tab is pressed
-set formatoptions=1acjqr     " Auto-format comments
-set gdefault                 " Replace all instances on a line by default
-set guioptions=              " Hide scrollbars in MacVim
-set hidden                   " A buffer becomes hidden when abandoned
-set hlsearch                 " Highlight search matches
-set ignorecase smartcase     " Smarter capitalisation when searching
-set lazyredraw               " Don't redraw during macros
-set linebreak                " Don't break words
-set list                     " Show invisibles
-set listchars=trail:•        " Display a bullet point on trailing spacess
-set modelines=0              " Don't check for modelines
-set mouse=nvc                " Enable mouse in all modes except insert mode
-set nojoinspaces             " Insert only one space after punctuation
-set nostartofline            " Keep cursor on same column
-set path=$PWD/**             " Recursively search directories
-set shiftround               " Always set indentation to a multiple of 2
-set shiftwidth=2             " 2 spaces for indentation
-set shortmess=acIT           " Abbreviate error messages
-set showcmd                  " Tells you if you press a non-alphabetic key
-set softtabstop=2            " 2 spaces per tab
-set spelllang=en_gb          " Use British English
-set splitbelow               " Create new splits to the bottom
-set splitright               " Create new splits to the right
-set textwidth=80             " 80 chars/line
-set title                    " Show the window title
-set titlestring=%t           " Show filename and file path in window title
-set undofile                 " Keep undo history between sessions
-set virtualedit=block        " Allow cursor placement anywhere in V-block
-set wildmode=full            " Complete the next full match
-set wrap                     " Wrap text
-setglobal fileencoding=utf-8 " Write UTF-8
+" Editing
 
+set backspace=2             " Backspace over everything
+set clipboard^=unnamed      " Use macOS clipboard when available
+set formatoptions=1cjqr     " Wrap and join comments intelligently
+set mouse=nvc               " Enable mouse in all modes except insert mode
+set nojoinspaces            " Insert only one space after punctuation
+set nostartofline           " Keep cursor on same column
+set nrformats+=alpha        " Allow incrementing single alphabetics
+set nrformats-=octal        " Do not consider some numbers to be octal
+set sessionoptions-=options " Do not save manually-set options in sessions
+set spelllang=en_gb         " Use British English
+set tags=./tags;,tags       " Where to search for tags
+set textwidth=80            " 80 chars/line
+set virtualedit=block       " Allow cursor placement anywhere in V-block
 
-""
-"" Neovim
-""
+" User interface and interactions
+
+set belloff=all       " Disable all bells
+set colorcolumn=+1    " Highlight one column after textwidth
+set complete-=i       " Don't show completion messages
+set conceallevel=0    " Never conceal
+set display=lastline  " Show as much of partially-displayed lines as possible
+set fillchars+=vert:│ " Display vsplit divider as a perfect vertical line
+set guioptions=       " Hide scrollbars in MacVim
+set laststatus=2      " Always display statusline
+set lazyredraw        " Don't redraw during macros
+set list              " Show invisibles
+set listchars=trail:• " Display a bullet point on trailing spaces
+set shortmess=acIT    " Abbreviate error messages
+set showcmd           " Tells you if you press a non-alphabetic key
+set signcolumn=yes    " Always display signcolumn
+set splitbelow        " Create new splits to the bottom
+set splitright        " Create new splits to the right
+set tabpagemax=50     " Maximum number of tab pages
+set title             " Show the window title
+set titlestring=%t    " Show filename and file path in window title
+
+" Make redrawing smoother
+if !('nvim')
+  set ttyfast
+endif
+
+" Time out mapping after 100ms
+if !has('nvim') && &ttimeoutlen == -1
+  set ttimeout
+  set ttimeoutlen=100
+endif
+
+" 24-bit colour
+if has('termguicolors')
+  set termguicolors
+endif
+
+" Blinking cursor
+if has('nvim')
+  set guicursor=n-v:block,c-i-ci-ve:ver25,r-cr:hor20,o:hor50
+        \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+        \,sm:block-blinkwait175-blinkoff150-blinkon175
+endif
+
+" Buffers and files
+
+set autoread     " Read a file again if it has been modified outside of vim
+set hidden       " A buffer becomes hidden when abandoned
+set path=$PWD/** " Recursively search directories
+
+" Juggling with buffers
+nnoremap <Space>b :ls<CR>:buffer<Space>
+nnoremap <Space><Space> :bnext<CR>
+
+" Juggling with files
+nnoremap <Space>f :find<Space>
+nnoremap <Space>e :edit<Space>
+
+" Small/temporary files and undo
+
+set viminfo+=!
+set backup                               " Make a backup of every file you open in vim
+set backupdir=~/.local/share/nvim/backup " Save backups here
+set swapfile                             " Create swapfiles
+set directory=~/.local/share/nvim/swap// " Save swap files here
+set undodir=~/.local/share/nvim/undo     " Save undo history here
+set undofile                             " Keep undo history between sessions
+
+" Undo points
+inoremap ! !<C-g>u
+inoremap , ,<C-g>u
+inoremap . .<C-g>u
+inoremap : :<C-g>u
+inoremap ; ;<C-g>u
+inoremap ? ?<C-g>u
+
+" Searching, substitute, global, etc
+
+set gdefault   " Replace all instances on a line by default (use /g to disable)
+set hlsearch   " Highlight search matches
+set ignorecase " Ignore
+set incsearch  " Jump to search results as you type
+set smartcase  " Smarter capitalisation when searching
+
+" Jump through incsearch matches with <Tab>
+cnoremap <expr> <Tab>   getcmdtype()
+      \ == "/" \|\| getcmdtype()
+      \ == "?" ? "<CR>/<C-r>/" : "<C-z>"
+
+cnoremap <expr> <S-Tab> getcmdtype()
+      \ == "/" \|\| getcmdtype()
+      \ == "?" ? "<CR>?<C-r>/" : "<S-Tab>"
 
 " Live preview of substitute command
 if has('nvim')
   set inccommand=split
 endif
 
-" 24-bit colour
-if has('nvim')
-  set termguicolors
-endif
+" Wrapping and scrolling
 
-" Blinking cursor
-if has('nvim')
-  set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
-        \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
-        \,sm:block-blinkwait175-blinkoff150-blinkon175
-endif
+let &showbreak = '↳ '  " Show occurrences of wrapped text
+set breakindent        " Display indents before wrapped lines
+set breakindentopt=sbr " Display  showbreak  before indent
+set linebreak          " Don't break words
+set scrolloff=1        " Show one line of context around the cursor
+set sidescroll=1       " Scroll horizontally when wrapping is disabled
+set sidescrolloff=5    " Show five columns of context around the cursor
+set wrap               " Soft wrap text
+
+" Indentation
+
+set autoindent   " Copy the previous line's indent to the current one
+set expandtab    " Insert spaces when tab is pressed
+set shiftround   " Always set indentation to a multiple of 2
+set shiftwidth=2 " 2 spaces for indentation
+set smarttab     " Indent and dedent in insert mode using <Tab>
+let &softtabstop = &shiftwidth
+
+" Command-line
+
+set history=10000   " Save as many lines of command-line history as possible
+set wildcharm=<C-z> " Send <C-z> when tab completing (for incsearch tab mapping)
+set wildmenu        " Better command-line completion
+set wildmode=full   " Complete the next full match
 
 
 ""
@@ -228,14 +325,6 @@ nnoremap # #N
 nnoremap g* g*N
 nnoremap g# g#N
 
-" Undo points
-inoremap ! !<C-g>u
-inoremap , ,<C-g>u
-inoremap . .<C-g>u
-inoremap : :<C-g>u
-inoremap ; ;<C-g>u
-inoremap ? ?<C-g>u
-
 " Autoexpansion
 inoremap (<CR> (<CR>)<Esc>O
 inoremap {<CR> {<CR>}<Esc>O
@@ -254,47 +343,51 @@ nnoremap <expr> k v:count ? 'k' : 'gk'
 nnoremap Y y$
 
 " Alignment
-nmap <Leader>" mz<Plug>(EasyAlign)ip*"`z
-nmap <Leader># mz<Plug>(EasyAlign)ip*#`z
-nmap <Leader>% mz<Plug>(EasyAlign)ip*%`z
-nmap <Leader>& mz<Plug>(EasyAlign)ip*&`z
-nmap <Leader>' mz<Plug>(EasyAlign)ip*"`z
-nmap <Leader>, mz<Plug>(EasyAlign)ip*,`z
-nmap <Leader>. mz<Plug>(EasyAlign)ip*.`z
-nmap <Leader>: mz<Plug>(EasyAlign)ip*:`z
-nmap <Leader>= mz<Plug>(EasyAlign)ip*=`z
-nmap <Leader>t mz<Plug>(EasyAlign)ip*\|`z
-xmap <Leader>" mz<Plug>(EasyAlign)*"`z
-xmap <Leader># mz<Plug>(EasyAlign)*#`z
-xmap <Leader>% mz<Plug>(EasyAlign)*%`z
-xmap <Leader>& mz<Plug>(EasyAlign)*&`z
-xmap <Leader>' mz<Plug>(EasyAlign)*"`z
-xmap <Leader>, mz<Plug>(EasyAlign)*,`z
-xmap <Leader>. mz<Plug>(EasyAlign)*.`z
-xmap <Leader>: mz<Plug>(EasyAlign)*:`z
-xmap <Leader>= mz<Plug>(EasyAlign)*=`z
-xmap <Leader>t mz<Plug>(EasyAlign)*\|`z
+nmap <Space>" mz<Plug>(EasyAlign)ip*"`z
+nmap <Space># mz<Plug>(EasyAlign)ip*#`z
+nmap <Space>% mz<Plug>(EasyAlign)ip*%`z
+nmap <Space>& mz<Plug>(EasyAlign)ip*&`z
+nmap <Space>' mz<Plug>(EasyAlign)ip*"`z
+nmap <Space>, mz<Plug>(EasyAlign)ip*,`z
+nmap <Space>. mz<Plug>(EasyAlign)ip*.`z
+nmap <Space>: mz<Plug>(EasyAlign)ip*:`z
+nmap <Space>= mz<Plug>(EasyAlign)ip*=`z
+nmap <Space>t mz<Plug>(EasyAlign)ip*\|`z
+xmap <Space>" mz<Plug>(EasyAlign)*"`z
+xmap <Space># mz<Plug>(EasyAlign)*#`z
+xmap <Space>% mz<Plug>(EasyAlign)*%`z
+xmap <Space>& mz<Plug>(EasyAlign)*&`z
+xmap <Space>' mz<Plug>(EasyAlign)*"`z
+xmap <Space>, mz<Plug>(EasyAlign)*,`z
+xmap <Space>. mz<Plug>(EasyAlign)*.`z
+xmap <Space>: mz<Plug>(EasyAlign)*:`z
+xmap <Space>= mz<Plug>(EasyAlign)*=`z
+xmap <Space>t mz<Plug>(EasyAlign)*\|`z
 
-" Leader
-nnoremap <Leader><Leader> :bnext<CR>
-nnoremap <Leader>a :call aramis#functions#pandocconvertarticle()<CR>
-nnoremap <Leader>b :ls<CR>:buffer<Space>
-nnoremap <Leader>c :call aramis#functions#pandocclean()<CR>
-nnoremap <Leader>e :edit<Space>
-nnoremap <Leader>f :find<Space>
-nnoremap <Leader>g :Goyo<CR>
-nnoremap <Leader>h :nohlsearch<CR>
-nnoremap <Leader>i mzgg=G`zzz
-nnoremap <Leader>l :Limelight!!<CR>
-nnoremap <Leader>p :call aramis#functions#pandocconvertpres()<CR>
-nnoremap <Leader>q :wq<CR>
-nnoremap <Leader>r :call aramis#functions#pandocconvertreport()<CR>
-nnoremap <Leader>s mzvip:sort<CR>`z
-nnoremap <Leader>x :Sayonara<CR>
+" LaTeX + pandoc mappings
+nnoremap <Space>a :call aramis#functions#pandocconvertarticle()<CR>
+nnoremap <Space>c :call aramis#functions#pandocclean()<CR>
+nnoremap <Space>p :call aramis#functions#pandocconvertpres()<CR>
+nnoremap <Space>r :call aramis#functions#pandocconvertreport()<CR>
+
+" Closing/saving
+nnoremap <Space>q :wq<CR>
+nnoremap <Space>w :write<CR>
+nnoremap <Space>x :Sayonara<CR>
+
+" Distraction-free writing
+nnoremap <Space>g :Goyo<CR>
+nnoremap <Space>l :Limelight!!<CR>
+
+" Auto-indent
+nnoremap <Space>i mzgg=G`zzz
+
+" Sort
+nnoremap <Space>s mzvip:sort<CR>`z
 
 " Search in all currently opened buffers
 command! -nargs=1 Vim call aramis#functions#vimgrepall(<f-args>)
-nnoremap <Leader>v :Vim<Space>
+nnoremap <Space>v :Vim<Space>
 
 
 ""
@@ -330,15 +423,18 @@ autocmd vimrc VimEnter            * cwindow
 "" Colourscheme
 ""
 
-" Italic syntax highlighting
-autocmd vimrc ColorScheme * highlight! Comment cterm=italic, gui=italic
-autocmd vimrc ColorScheme * highlight! Type    cterm=italic, gui=italic
+" Custom vim interface
+autocmd vimrc ColorScheme * highlight! clear SignColumn
+autocmd vimrc ColorScheme * highlight! ModeMsg gui=reverse, cterm=reverse
+autocmd vimrc ColorScheme * highlight! link VertSplit Normal
 
 " Better syntax highlighting
-autocmd vimrc ColorScheme * highlight! link Sneak               Search
-autocmd vimrc ColorScheme * highlight! link vimAutoCmdSfxList   Type
-autocmd vimrc ColorScheme * highlight! link vimIsCommand        Statement
-autocmd vimrc ColorScheme * highlight! link rubyKeywordAsMethod rubyString
+autocmd vimrc ColorScheme * highlight! Comment cterm=italic        gui=italic
+autocmd vimrc ColorScheme * highlight! Type    cterm=italic        gui=italic
+autocmd vimrc ColorScheme * highlight! link    Sneak               Search
+autocmd vimrc ColorScheme * highlight! link    rubyKeywordAsMethod rubyString
+autocmd vimrc ColorScheme * highlight! link    vimAutoCmdSfxList   Type
+autocmd vimrc ColorScheme * highlight! link    vimIsCommand        Statement
 
 " Set colourscheme
 colorscheme apprentice
