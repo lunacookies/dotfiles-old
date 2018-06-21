@@ -124,8 +124,8 @@ autocmd! vimrc User GoyoLeave nested call <sid>goyo_leave()
 
 " Limelight
 
-let g:limelight_conceal_ctermfg     = '240' " Set dimmed paragraph colour
-let g:limelight_priority            = -1    " Don't overrule hlsearch
+let g:limelight_default_coefficient = 0.6 " Set dimmed paragraph colour
+let g:limelight_priority            = -1  " Don't overrule hlsearch
 
 " Polyglot
 
