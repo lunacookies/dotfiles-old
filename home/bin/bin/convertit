@@ -8,8 +8,10 @@ rm $doc.pdf
 # Run some regexes to convert abbreviations and acronyms into small caps. If
 # a differt kind of formatting for abbreviations/acronyms is desired, the \abbr
 # command can be redefined.
-sed -E 's/([A-Za-z0-9.,:?;\)\"\x27|] )([A-Z][A-Z]+)/\1\\abbr{\2}/g' $doc > $doc.ssc
-sed -E 's/^([A-Z][A-Z]+)/\\abbr{\1}/g' $doc.ssc > $doc.asc
+sed -E 's/([A-Za-z0-9.,:?;\)\"\x27}|] )([A-Z][A-Z]+)/\1\\abbr{\2}/g' $doc > $doc.ssc1
+sed -E 's/(\*)([A-Z][A-Z]+)/\1\\abbr{\2}/g' $doc.ssc1 > $doc.ssc2
+sed -E 's/^([A-Z][A-Z]+)/\\abbr{\1}/g' $doc.ssc2 > $doc.ssc3
+sed -E 's/\(([A-Z][A-Z]+)/\(\\abbr{\1}/g' $doc.ssc3 > $doc.asc
 
 # Convert the various document types into temporary tex files
 if [ $1 = "report" ]; then
@@ -31,7 +33,7 @@ sed '/\\tightlist/d' $doc.lessbadnum.tex > $doc.tex
 # Remove all the temporary files that this script creates
 rm $doc.badnum.tex
 rm $doc.lessbadnum.tex
-rm $doc.ssc
+rm $doc.ssc*
 rm $doc.asc
 
 # Compile using texshop
