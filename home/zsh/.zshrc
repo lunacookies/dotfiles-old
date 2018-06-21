@@ -55,6 +55,9 @@ setopt extendedglob
 # Show an error if a filename does not match
 setopt nomatch
 
+# Ignore duplicates in history
+setopt hist_ignore_dups
+
 # Outputting flow control is disables using start/stop chars
 unsetopt flowcontrol
 
