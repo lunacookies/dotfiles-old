@@ -288,14 +288,18 @@ endif
 
 " Wrapping and scrolling
 
-let &showbreak = '↳ '  " Show occurrences of wrapped text
-set breakindent        " Display indents before wrapped lines
-set breakindentopt=sbr " Display  showbreak  before indent
-set linebreak          " Don't break words
-set scrolloff=1        " Show one line of context around the cursor
-set sidescroll=1       " Scroll horizontally when wrapping is disabled
-set sidescrolloff=5    " Show five columns of context around the cursor
-set wrap               " Soft wrap text
+if exists('+breakindent')
+  let &showbreak = '››› ' " Mark which lines have been wrapped with three arrows
+  set breakindent         " Display indents before wrapped lines
+  set breakindentopt=sbr  " Display  showbreak  before indent
+endif
+if has('linebreak')
+  set linebreak           " Don't break words
+endif
+set scrolloff=1           " Show one line of context around the cursor
+set sidescroll=1          " Scroll horizontally when wrapping is disabled
+set sidescrolloff=5       " Show five columns of context around the cursor
+set wrap                  " Soft wrap text
 
 " Indentation
 
