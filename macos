@@ -182,14 +182,6 @@ chflags nohidden ~/Library
 
 
 ##
-## Terminal.app
-##
-
-# Focus follows mouse for Terminal.app
-defaults write com.apple.terminal FocusFollowsMouse -bool true
-
-
-##
 ## Activity Monitor
 ##
 
