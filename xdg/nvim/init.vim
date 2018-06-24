@@ -178,6 +178,7 @@ set belloff=all       " Disable all bells
 set colorcolumn=+1    " Highlight one column after textwidth
 set complete-=i       " Don't show completion messages
 set conceallevel=0    " Never conceal
+set cursorline        " Make the current line more prominent
 set display=lastline  " Show as much of partially-displayed lines as possible
 set fillchars+=vert:│ " Display vsplit divider as a perfect vertical line
 set guioptions=       " Hide scrollbars in MacVim
