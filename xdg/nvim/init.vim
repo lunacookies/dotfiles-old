@@ -197,7 +197,6 @@ set tabpagemax=50     " Maximum number of tab pages
 if has('nvim')
   function! SetTerminalTitle() abort
     let titleString = 'file://'.expand('%:p')
-    " this is the format iTerm2 expects when setting the window title
     let args = ']6;'.titleString.''
     let cmd = 'call chansend(2, "'.args.'")'
     execute cmd
@@ -208,10 +207,14 @@ if has('nvim')
   endif
 else
   set title
-  set t_ts=]6;
-  set t_fs=
-  set titlestring=%{bufname('%')==''?'':'file://'.hostname().expand('%:p:gs/\ /%20/')}
-  set titlelen=0
+  if !has('gui_running')
+    set t_ts=]6;
+    set t_fs=
+    set titlestring=%{bufname('%')==''?'':'file://'.hostname().expand('%:p:gs/\ /%20/')}
+    set titlelen=0
+  else
+    set titlestring=%F
+  endif
 endif
 
 " Make redrawing smoother
