@@ -191,8 +191,28 @@ set signcolumn=yes    " Always display signcolumn
 set splitbelow        " Create new splits to the bottom
 set splitright        " Create new splits to the right
 set tabpagemax=50     " Maximum number of tab pages
-set title             " Show the window title
-set titlestring=%t    " Show filename and file path in window title
+
+" Smart window title
+
+if has('nvim')
+  function! SetTerminalTitle() abort
+    let titleString = 'file://'.expand('%:p')
+    " this is the format iTerm2 expects when setting the window title
+    let args = ']6;'.titleString.''
+    let cmd = 'call chansend(2, "'.args.'")'
+    execute cmd
+  endfunction
+
+  if !has('gui_running')
+    autocmd vimrc BufEnter * call SetTerminalTitle()
+  endif
+else
+  set title
+  set t_ts=]6;
+  set t_fs=
+  set titlestring=%{bufname('%')==''?'':'file://'.hostname().expand('%:p:gs/\ /%20/')}
+  set titlelen=0
+endif
 
 " Make redrawing smoother
 if !('nvim')
