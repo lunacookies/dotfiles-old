@@ -44,7 +44,6 @@ brew cask install font-fira-sans
 brew cask install font-m-plus
 brew cask install google-backup-and-sync
 brew cask install google-chrome
-brew cask install iterm2
 brew cask install liteicon
 brew cask install mactex
 brew cask install mpv
