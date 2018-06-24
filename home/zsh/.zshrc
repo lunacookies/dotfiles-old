@@ -206,17 +206,9 @@ esac
 zstyle ':vcs_info:*' enable git
 
 # Show branch in vcs_info
-zstyle ':vcs_info:git*' formats '%b '
-
-# Allow italic using fg_italic
-local lc=$'\e[' rc=m
-typeset -AHg fg_italic fg_no_italic
-for k in ${(k)color[(I)fg-*]}; do
-  fg_italic[${k#fg-}]="$lc${color[standout]};${color[$k]}$rc"
-  fg_no_italic[${k#fg-}]="$lc${color[normal]};${color[$k]}$rc"
-done
+zstyle ':vcs_info:git*' formats '%b'
 
 # Use Plan 9-inspired prompt
-PROMPT=' %{$fg_italic[white]%}%~%{$reset_color%}%{$fg_bold[white]%}%% %{$reset_color%}'
-RPROMPT='%{$reset_color%}%{$fg_italic[white]%}${vcs_info_msg_0_}%{$reset_color%}'
+PROMPT='%{$fg[white]%}%~%{$reset_color%}%{$fg_bold[white]%}%% %{$reset_color%}'
+RPROMPT='%{$reset_color%}%{$fg[white]%}${vcs_info_msg_0_}%{$reset_color%}'
 
