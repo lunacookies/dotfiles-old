@@ -35,6 +35,7 @@ brew install wget
 brew install zsh
 
 brew cask install adobe-acrobat-reader
+brew cask install alfred
 brew cask install android-file-transfer
 brew cask install appcleaner
 brew cask install flux
@@ -44,6 +45,7 @@ brew cask install font-m-plus
 brew cask install google-backup-and-sync
 brew cask install google-chrome
 brew cask install iterm2
+brew cask install liteicon
 brew cask install mactex
 brew cask install mpv
 brew cask install soundflower
