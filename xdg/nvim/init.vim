@@ -22,6 +22,11 @@ set fileencodings=ucs-bom,utf-8 " Sets how (n)vim detects the current encoding
 set fileformat=unix             " Unix file format
 set nolangremap                 " Assume English keyboard
 
+" Load matchit.vim if it hasn't already been loaded
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &runtimepath) ==# ''
+  runtime! macros/matchit.vim
+endif
+
 " Allow syntax colouring, filetype detection, and built-in plugins
 filetype plugin indent on
 
