@@ -187,7 +187,6 @@ set list              " Show invisibles
 set listchars=trail:• " Display a bullet point on trailing spaces
 set shortmess=acIT    " Abbreviate error messages
 set showcmd           " Tells you if you press a non-alphabetic key
-set signcolumn=yes    " Always display signcolumn
 set splitbelow        " Create new splits to the bottom
 set splitright        " Create new splits to the right
 set tabpagemax=50     " Maximum number of tab pages
@@ -454,7 +453,6 @@ autocmd vimrc VimEnter            * cwindow
 ""
 
 " Custom vim interface
-autocmd vimrc ColorScheme * highlight! clear SignColumn
 autocmd vimrc ColorScheme * highlight! ModeMsg gui=reverse, cterm=reverse
 autocmd vimrc ColorScheme * highlight! link VertSplit Normal
 
