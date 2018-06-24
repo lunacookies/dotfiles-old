@@ -86,6 +86,9 @@ Plug 'christoomey/vim-tmux-navigator' " Move seamlessly between tmux and vim
 Plug 'junegunn/goyo.vim'              " Distraction-free mode
 Plug 'junegunn/limelight.vim'         " Focus mode
 Plug 'romainl/Apprentice'             " Low contrast colourscheme
+if !has('nvim')
+  Plug 'markonm/traces.vim'           " Like inccommand but for vim (not nvim)
+endif
 
 call plug#end()
 
