@@ -457,8 +457,6 @@ autocmd vimrc ColorScheme * highlight! ModeMsg gui=reverse, cterm=reverse
 autocmd vimrc ColorScheme * highlight! link VertSplit Normal
 
 " Better syntax highlighting
-autocmd vimrc ColorScheme * highlight! Comment cterm=italic        gui=italic
-autocmd vimrc ColorScheme * highlight! Type    cterm=italic        gui=italic
 autocmd vimrc ColorScheme * highlight! link    Sneak               Search
 autocmd vimrc ColorScheme * highlight! link    rubyKeywordAsMethod rubyString
 autocmd vimrc ColorScheme * highlight! link    vimAutoCmdSfxList   Type
