@@ -90,7 +90,7 @@ cmd + alt + ctrl - r : khd -e "reload"
 
 # Open apps
 cmd - return : osascript ~/bin/newchrome.scpt
-alt - return : osascript ~/bin/newiterm.scpt
+alt - return : osascript ~/bin/newterminal.scpt
 
 # Toggle desktop offset
 alt - a : chunkc tiling::desktop --toggle offset
