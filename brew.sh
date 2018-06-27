@@ -39,7 +39,6 @@ brew cask install alfred
 brew cask install android-file-transfer
 brew cask install appcleaner
 brew cask install flux
-brew cask install font-fira-mono
 brew cask install font-fira-sans
 brew cask install font-m-plus
 brew cask install google-backup-and-sync
