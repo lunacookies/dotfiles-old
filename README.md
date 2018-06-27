@@ -57,11 +57,8 @@ machine.
 
 1. Run `stow.sh`
 
-## Contact
-
-You can find me on [reddit](https://reddit.com/u/aramisreddit), 
-[twitter](https://twitter.com/aramistweets). Feel free to have a 
-poke around, and steal anything you may find useful.
+Feel free to have a poke around, and steal anything you may find 
+useful.
 
 ## Note
 
