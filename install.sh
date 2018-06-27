@@ -7,7 +7,7 @@ fi
 
 # If git from homebrew is not installed then install it
 if [ ! -e /usr/local/bin/git ]; then
-  /usr/local/bin/brew install git
+  brew install git
 fi
 
 # If dotfiles directory does not exist then clone it
@@ -22,21 +22,12 @@ fi
 
 cd ~/dotfiles
 
-# Install packages
-./brew.sh
-/usr/local/bin/bundle install
-/usr/local/bin/pip3 install -r Pipfile
+# Install and update packages
+./packages.sh
 
 # Symlink all configuration
 ./stow.sh
 
 # Set settings
 ./macos
-
-# Cleanup brew
-/usr/local/bin/brew update
-/usr/local/bin/brew upgrade
-/usr/local/bin/brew cleanup
-/usr/local/bin/brew prune
-/usr/local/bin/brew doctor
 
