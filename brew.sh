@@ -46,6 +46,7 @@ brew cask install google-backup-and-sync
 brew cask install google-chrome
 brew cask install liteicon
 brew cask install mactex
+brew cask install macvim
 brew cask install mpv
 brew cask install soundflower
 brew cask install soundflowerbed
