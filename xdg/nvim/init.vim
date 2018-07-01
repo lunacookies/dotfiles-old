@@ -1,7 +1,6 @@
 " aramis' init.vim
 
 
-
 ""
 "" Basics
 ""
@@ -409,11 +408,6 @@ nnoremap <F10> :echo "hi<"
       \ . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
       \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
       \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
-
-" Automatically show quickfix list
-autocmd vimrc QuickFixCmdPost [^l]* cwindow
-autocmd vimrc QuickFixCmdPost    l* lwindow
-autocmd vimrc VimEnter            * cwindow
 
 
 ""

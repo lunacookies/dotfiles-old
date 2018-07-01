@@ -31,6 +31,7 @@ christoomey/vim-tmux-navigator
 junegunn/goyo.vim
 junegunn/limelight.vim
 romainl/Apprentice
+romainl/vim-qf
 )
 
 # The plugins that can are loaded seperately (on a condition) in the vimrc
