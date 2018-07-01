@@ -92,7 +92,7 @@ alias trs="rmtrash"
 alias doc="e document.md"
 
 # Quick dotfile access
-alias ec="e ~/.config/nvim/init.vim ~/.config/nvim/install.sh ~/.config/nvim/autoload/**/* ~/.config/nvim/ftplugin/*"
+alias ec="e ~/.config/nvim/init.vim ~/.config/nvim/install.sh ~/.config/nvim/autoload/**/*.vim ~/.config/nvim/ftplugin/*"
 alias hdc="e ~/.khdrc"
 alias sc="e ~/.zshrc"
 alias wmc="e ~/.chunkwmrc"
