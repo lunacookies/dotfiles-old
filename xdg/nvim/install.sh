@@ -11,7 +11,6 @@ start=(
 AndrewRadev/splitjoin.vim
 ajh17/VimCompletesMe
 aramisgithub/vim-ruby
-christoomey/vim-tmux-navigator
 junegunn/goyo.vim
 junegunn/limelight.vim
 junegunn/vim-easy-align

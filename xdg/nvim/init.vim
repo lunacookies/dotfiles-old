@@ -310,12 +310,13 @@ let &statusline = s:statusline_expr()
 nnoremap <expr> <CR> &ma?":":"\<cr>"
 xnoremap <CR> :
 
-" Escape from modes
+" Escape from modes easily
 inoremap jk <Esc>`^
 xnoremap fd <Esc>
 cnoremap jk <C-c>
 
-" Do not jump to the next match automatically
+" Do not jump to the next match automatically when searching for the current
+" word
 nnoremap * *N
 nnoremap # #N
 nnoremap g* g*N
@@ -335,10 +336,12 @@ inoremap [, [<CR>],<Esc>O
 nnoremap <expr> j v:count ? 'j' : 'gj'
 nnoremap <expr> k v:count ? 'k' : 'gk'
 
-" Make Y behave like other capitals
+" Make Y behave like other capitals (why does everyone use this exact comment
+" for this option? Because we all steal our vimrcs from other people? Or am
+" I being cynical?).
 nnoremap Y y$
 
-" Alignment
+" Alignment mappings using easy_align
 nmap <Space>" mz<Plug>(EasyAlign)ip*"`z
 nmap <Space># mz<Plug>(EasyAlign)ip*#`z
 nmap <Space>% mz<Plug>(EasyAlign)ip*%`z
@@ -360,23 +363,29 @@ xmap <Space>: mz<Plug>(EasyAlign)*:`z
 xmap <Space>= mz<Plug>(EasyAlign)*=`z
 xmap <Space>t mz<Plug>(EasyAlign)*\|`z
 
-" LaTeX + pandoc mappings
+" LaTeX + pandoc compilation mappings
 nnoremap <Space>a :call aramis#functions#pandocconvertarticle()<CR>
 nnoremap <Space>c :call aramis#functions#pandocclean()<CR>
 nnoremap <Space>p :call aramis#functions#pandocconvertpres()<CR>
 nnoremap <Space>r :call aramis#functions#pandocconvertreport()<CR>
 
-" Close a window
+" Move more quickly between splits
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+" Close a window while retaining the layout
 nnoremap <Space>x :Sayonara<CR>
 
-" Distraction-free writing
+" Distraction-free writing mappings
 nnoremap <Space>g :Goyo<CR>
 nnoremap <Space>l :Limelight!!<CR>
 
-" Auto-indent
+" Auto-indent the whole file
 nnoremap <Space>i mzgg=G`zzz
 
-" Sort
+" Sort the current paragraph alphabetically
 nnoremap <Space>s mzvip:sort<CR>`z
 
 " Search in all currently opened buffers

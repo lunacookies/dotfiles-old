@@ -31,7 +31,6 @@ brew install rmtrash
 brew install shellcheck
 brew install stow
 brew install the_silver_searcher
-brew install tmux
 brew install wget
 brew install zsh
 
