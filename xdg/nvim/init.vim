@@ -306,8 +306,8 @@ let &statusline = s:statusline_expr()
 "" Mappings
 ""
 
-" Command-line mode
-nnoremap <CR> :
+" Command-line mode with <CR> (apart from non-modifiable buffers)
+nnoremap <expr> <CR> &ma?":":"\<cr>"
 xnoremap <CR> :
 
 " Escape from modes
