@@ -407,6 +407,11 @@ nnoremap <F10> :echo "hi<"
       \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
       \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
+" Set makeprg to the appropriate linter for a given filetype
+autocmd vimrc FileType vim setlocal makeprg=vint\ %
+autocmd vimrc FileType ruby setlocal makeprg=ruby\ -c\ %
+autocmd vimrc FileType sh setlocal makeprg=shellcheck\ --format=gcc\ %
+
 
 ""
 "" Colourscheme
