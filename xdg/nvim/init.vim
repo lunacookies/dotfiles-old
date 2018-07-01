@@ -366,9 +366,7 @@ nnoremap <Space>c :call aramis#functions#pandocclean()<CR>
 nnoremap <Space>p :call aramis#functions#pandocconvertpres()<CR>
 nnoremap <Space>r :call aramis#functions#pandocconvertreport()<CR>
 
-" Closing/saving
-nnoremap <Space>q :wq<CR>
-nnoremap <Space>w :write<CR>
+" Close a window
 nnoremap <Space>x :Sayonara<CR>
 
 " Distraction-free writing
