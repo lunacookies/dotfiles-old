@@ -4,7 +4,6 @@
 [core]
 	editor = nvim
   pager = less
-	excludesfile = ~/.cvsignore
 
 [url "https://github.com/"]
 	insteadOf = git@github.com:
