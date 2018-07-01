@@ -28,6 +28,7 @@ brew install python3
 brew install ranger
 brew install rg
 brew install rmtrash
+brew install shellcheck
 brew install stow
 brew install the_silver_searcher
 brew install tmux
