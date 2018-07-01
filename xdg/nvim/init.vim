@@ -27,70 +27,30 @@ if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &runtimepath) =
   runtime! macros/matchit.vim
 endif
 
+" Load plugins with packages if available; otherwise load them with pathogen
+if !has('packages')
+  execute pathogen#infect('pack/aramis/start/{}')
+  if !has('nvim')
+    execute pathogen#infect('pack/aramis/opt/traces.vim')
+  endif
+else
+  if !has('nvim')
+    packadd traces.vim
+  endif
+endif
+
 " Allow syntax colouring, filetype detection, and built-in plugins
 filetype plugin indent on
+
+" Enable syntax colouring
+if !exists('g:syntax_on')
+  syntax enable
+endif
 
 " Create autocmd group used by all my autocmds (cleared when sourcing vimrc)
 augroup vimrc
   autocmd!
 augroup END
-
-
-""
-"" Plugs
-""
-
-" Install missing plugs
-autocmd vimrc VimEnter *
-      \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-      \|   PlugInstall --sync | q
-      \| endif
-
-" Install plug if not installed
-if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
-  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd vimrc VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-call plug#begin('~/.local/share/nvim/plugged')
-
-" General utilities
-
-Plug 'mhinz/vim-sayonara'     " Close windows in a smart way
-Plug 'romainl/vim-cool'       " Better search
-Plug 'sheerun/vim-polyglot'   " Syntax for many languages
-Plug 'toyamarinyon/vim-swift' " Much better swift syntax
-Plug 'tpope/vim-endwise'      " Auto-close if's and for's
-Plug 'tpope/vim-eunuch'       " UNIX command helpers
-Plug 'tpope/vim-repeat'       " Repeat plugin maps
-Plug 'tpope/vim-unimpaired'   " Many mappings in the style of [s
-Plug '~/code/vim-ruby'        " Slightly better syntax for ruby
-
-" Operators and textobjects
-
-Plug 'AndrewRadev/splitjoin.vim' " Switch between single and multiline code
-Plug 'junegunn/vim-easy-align'   " Alignments
-Plug 'justinmk/vim-sneak'        " Two character f
-Plug 'kana/vim-textobj-indent'   " Textobj for common indentation level
-Plug 'kana/vim-textobj-line'     " Textobj targeting the current line
-Plug 'kana/vim-textobj-user'     " Backend for custom textobj
-Plug 'tpope/vim-commentary'      " Comment out code
-Plug 'tpope/vim-surround'        " Easily change delimiters
-Plug 'wellle/targets.vim'        " Access textobj from anywhere in line
-
-" Everything else
-
-Plug 'ajh17/VimCompletesMe'           " Completion
-Plug 'christoomey/vim-tmux-navigator' " Move seamlessly between tmux and vim
-Plug 'junegunn/goyo.vim'              " Distraction-free mode
-Plug 'junegunn/limelight.vim'         " Focus mode
-Plug 'romainl/Apprentice'             " Low contrast colourscheme
-if !has('nvim')
-  Plug 'markonm/traces.vim'           " Like inccommand but for vim (not nvim)
-endif
-
-call plug#end()
 
 
 ""
