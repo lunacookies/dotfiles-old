@@ -27,6 +27,6 @@ cp *ttf ~/Library/Fonts/
 
 # Clean up
 cd ~
-rm fonttmp
+rm -rf fonttmp
 cd ~/dotfiles
 
