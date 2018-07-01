@@ -8,30 +8,28 @@ fi
 
 # The plugins that will always be loaded
 start=(
-mhinz/vim-sayonara
-romainl/vim-cool
-sheerun/vim-polyglot
-toyamarinyon/vim-swift
-tpope/vim-endwise
-tpope/vim-eunuch
-tpope/vim-repeat
-tpope/vim-unimpaired
-aramisgithub/vim-ruby
 AndrewRadev/splitjoin.vim
-junegunn/vim-easy-align
-justinmk/vim-sneak
-kana/vim-textobj-indent
-kana/vim-textobj-line
-kana/vim-textobj-user
-tpope/vim-commentary
-tpope/vim-surround
-wellle/targets.vim
 ajh17/VimCompletesMe
+aramisgithub/vim-ruby
 christoomey/vim-tmux-navigator
 junegunn/goyo.vim
 junegunn/limelight.vim
+junegunn/vim-easy-align
+justinmk/vim-sneak
+mhinz/vim-sayonara
 romainl/Apprentice
+romainl/vim-cool
 romainl/vim-qf
+sheerun/vim-polyglot
+toyamarinyon/vim-swift
+tpope/vim-commentary
+tpope/vim-dispatch
+tpope/vim-endwise
+tpope/vim-eunuch
+tpope/vim-repeat
+tpope/vim-surround
+tpope/vim-unimpaired
+wellle/targets.vim
 )
 
 # The plugins that can are loaded seperately (on a condition) in the vimrc

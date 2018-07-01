@@ -383,6 +383,9 @@ nnoremap <Space>s mzvip:sort<CR>`z
 command! -nargs=1 Vim call aramis#functions#vimgrepall(<f-args>)
 nnoremap <Space>v :Vim<Space>
 
+" Make using dispatch
+nnoremap <Space>m :Make<CR>
+
 
 ""
 "" Autocmds
