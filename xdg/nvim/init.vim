@@ -143,7 +143,6 @@ set complete-=i       " Don't show completion messages
 set conceallevel=0    " Never conceal
 set cursorline        " Make the current line more prominent
 set display=lastline  " Show as much of partially-displayed lines as possible
-set fillchars+=vert:│ " Display vsplit divider as a perfect vertical line
 set guioptions=       " Hide scrollbars in MacVim
 set laststatus=2      " Always display statusline
 set lazyredraw        " Don't redraw during macros
@@ -423,7 +422,6 @@ autocmd vimrc VimEnter            * cwindow
 
 " Custom vim interface
 autocmd vimrc ColorScheme * highlight! ModeMsg gui=reverse, cterm=reverse
-autocmd vimrc ColorScheme * highlight! link VertSplit Normal
 
 " Better syntax highlighting
 autocmd vimrc ColorScheme * highlight! link    Sneak               Search
