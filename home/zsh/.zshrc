@@ -145,6 +145,9 @@ export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
 export MANPATH=/usr/local/opt/findutils/libexec/gnuman:$MANPATH
 export MANPATH=/usr/local/opt/grep/libexec/gnuman:$MANPATH
 
+# ConTeXt
+export OSFONTDIR="/Library/Fonts//;/System/Library/Fonts;$HOME/Library/Fonts"
+
 # Editor
 export EDITOR=nvim
 
