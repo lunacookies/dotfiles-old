@@ -16,9 +16,7 @@ provided installer is meant for fresh **macs**. The dotfiles will
 automatically, run this command:
 
 ```
-curl -sL --proto-redir -all,https 
-https://raw.githubusercontent.com/aramisgithub/dotfiles/master/install.sh 
-| bash
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/aramisgithub/dotfiles/master/install.sh | bash
 ```
 
 This will download an installer script (`install.sh`) which will:
