@@ -5,23 +5,13 @@ brew tap crisidev/homebrew-chunkwm
 brew tap koekeishiya/formulae
 
 brew install bash
-brew install binutils
 brew install chunkwm
-brew install coreutils
 brew install ctags
-brew install diffutils
-brew install ed --with-default-names
 brew install exa
 brew install fd
-brew install findutils
 brew install fzf
 brew install git
-brew install gnu-sed --with-default-names
-brew install gpp
-brew install grep
 brew install khd
-brew install less
-brew install moreutils
 brew install neovim
 brew install pandoc
 brew install python3

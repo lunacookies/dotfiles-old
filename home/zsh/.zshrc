@@ -136,14 +136,6 @@ export PATH=/usr/local:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/texlive/20*/bin:$PATH
 export PATH=/Library/TeX/texbin:$PATH
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
-export PATH=/usr/local/opt/findutils/libexec/gnubin:$PATH
-export PATH=/usr/local/opt/grep/libexec/gnubin:$PATH
-
-# Manpath
-export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
-export MANPATH=/usr/local/opt/findutils/libexec/gnuman:$MANPATH
-export MANPATH=/usr/local/opt/grep/libexec/gnuman:$MANPATH
 
 # ConTeXt
 export OSFONTDIR="/Library/Fonts//;/System/Library/Fonts;$HOME/Library/Fonts"
