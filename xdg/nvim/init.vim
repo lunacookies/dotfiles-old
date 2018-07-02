@@ -306,8 +306,10 @@ let &statusline = s:statusline_expr()
 "" Mappings
 ""
 
-" Command-line mode with <CR> (apart from non-modifiable buffers)
-nnoremap <expr> <CR> &ma?":":"\<cr>"
+" Command-line mode with <CR> (apart from command-line window and quickfix)
+nnoremap <CR> :
+autocmd vimrc BufWinEnter quickfix nnoremap <buffer> <CR> <CR>
+autocmd vimrc CmdwinEnter * nnoremap <buffer> <CR> <CR>
 xnoremap <CR> :
 
 " Escape from modes easily
