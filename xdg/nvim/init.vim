@@ -395,7 +395,7 @@ command! -nargs=1 Vim call aramis#functions#vimgrepall(<f-args>)
 nnoremap <Space>v :Vim<Space>
 
 " Make using dispatch
-nnoremap <Space>m :Make<CR>
+nnoremap <Space>m :update<CR>:Make<CR>
 
 
 ""
