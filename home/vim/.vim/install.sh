@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # Create neccesary plugin folders
-if [ ! -e ~/dotfiles/xdg/nvim/pack ];then
-  mkdir -p ~/dotfiles/xdg/nvim/pack/aramis/start
-  mkdir -p ~/dotfiles/xdg/nvim/pack/aramis/opt
+if [ ! -e ~/dotfiles/home/vim/.vim/pack ];then
+  mkdir -p ~/dotfiles/home/vim/.vim/pack/aramis/start
+  mkdir -p ~/dotfiles/home/vim/.vim/pack/aramis/opt
 fi
 
 # The plugins that will always be loaded
@@ -42,9 +42,9 @@ install_plugins() {
   plugin_collection=$1[@]
   for repo in ${!plugin_collection}; do
     plugin="$(echo $repo | sed -e 's/.*[\/]//')"
-    rm -rf ~/dotfiles/xdg/nvim/pack/aramis/$1/$plugin
-    git clone --depth=1 -q https://github.com/$repo.git ~/dotfiles/xdg/nvim/pack/aramis/$1/$plugin
-    rm -rf ~/dotfiles/xdg/nvim/pack/aramis/$1/$plugin/.git*
+    rm -rf ~/dotfiles/home/vim/.vim/pack/aramis/$1/$plugin
+    git clone --depth=1 -q https://github.com/$repo.git ~/dotfiles/home/vim/.vim/pack/aramis/$1/$plugin
+    rm -rf ~/dotfiles/home/vim/.vim/pack/aramis/$1/$plugin/.git*
     echo $plugin installed!
   done
 }
@@ -59,5 +59,5 @@ install_plugins opt
 echo "pack
 spell
 .netrwhist
-" > ~/dotfiles/xdg/nvim/.gitignore
+" > ~/dotfiles/home/vim/.vim/.gitignore
 
