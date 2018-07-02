@@ -88,8 +88,21 @@ alias mv="mv -iv"
 alias rm="echo Use 'trs' or '/bin/rm'"
 alias trs="rmtrash"
 
+# Run pip install correctly (it would usually prompt you about permissions --
+# you go on to run as sudo, which is not recommended and just breaks things.
+# You then try the --user option, which homebrew breaks. The method presented
+# below is what is recommended by homebrew.)
+pip() {
+  if [ $1 = "install" ]; then
+    /usr/local/bin/pip3 install --user --install-option="--prefix=" $2
+  else
+    /usr/local/bin/pip3 $1
+  fi
+}
+
 # LaTeX shortcuts
 alias doc="e document.md"
+alias pdf="open *.pdf"
 
 # Quick dotfile access
 alias ec="e ~/.config/nvim/init.vim ~/.config/nvim/install.sh ~/.config/nvim/autoload/**/*.vim ~/.config/nvim/ftplugin/*"
@@ -136,6 +149,7 @@ export PATH=/usr/local:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/texlive/20*/bin:$PATH
 export PATH=/Library/TeX/texbin:$PATH
+export PATH=$HOME/Library/Python/3.7/bin:$PATH
 
 # ConTeXt
 export OSFONTDIR="/Library/Fonts//;/System/Library/Fonts;$HOME/Library/Fonts"
