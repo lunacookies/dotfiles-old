@@ -14,7 +14,7 @@ brew install git
 brew install khd
 brew install neovim
 brew install pandoc
-brew install python3
+brew install python
 brew install ranger
 brew install rg
 brew install rmtrash
