@@ -105,7 +105,7 @@ alias doc="e document.md"
 alias pdf="open *.pdf"
 
 # Quick dotfile access
-alias ec="e ~/.config/nvim/init.vim ~/.config/nvim/install.sh ~/.config/nvim/autoload/**/*.vim ~/.config/nvim/ftplugin/*"
+alias ec="e ~/.vim/vimrc ~/.vim/install.sh ~/.vim/autoload/aramis/* ~/.vim/ftplugin/*"
 alias hdc="e ~/.khdrc"
 alias sc="e ~/.zshrc"
 alias wmc="e ~/.chunkwmrc"
