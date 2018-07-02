@@ -12,7 +12,7 @@ brew update
 bundle install
 pip3 install -r Pipfile
 
-# Clean up if neccessary
+# Clean up if necessary
 brew cleanup
 brew prune
 brew doctor
