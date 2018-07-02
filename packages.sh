@@ -10,7 +10,7 @@ brew update
 # Install all packages
 ./brew.sh
 bundle install
-pip3 install -r Pipfile
+pip3 install --user --install-option="--prefix=" -r Pipfile
 
 # Clean up if necessary
 brew cleanup

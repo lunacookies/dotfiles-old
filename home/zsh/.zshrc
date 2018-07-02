@@ -195,7 +195,7 @@ case "$TERM" in
       tmux rename-window ${COLLAPSEPWD}
       vcs_info
     }
-      ;;
+    ;;
 esac
 
 case "$TERM" in
@@ -204,7 +204,7 @@ case "$TERM" in
       print -Pn "\e]0;%~\a"
       vcs_info
     }
-      ;;
+    ;;
 esac
 
 ##
