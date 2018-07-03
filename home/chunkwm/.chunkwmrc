@@ -28,10 +28,10 @@ chunkc core::hotload 0
 chunkc set global_desktop_mode bsp
 
 # Global padding
-chunkc set global_desktop_offset_top 30
-chunkc set global_desktop_offset_bottom 30
-chunkc set global_desktop_offset_left 30
-chunkc set global_desktop_offset_right 30
+chunkc set global_desktop_offset_top 50
+chunkc set global_desktop_offset_bottom 50
+chunkc set global_desktop_offset_left 50
+chunkc set global_desktop_offset_right 50
 chunkc set global_desktop_offset_gap 15
 
 # Padding step size
