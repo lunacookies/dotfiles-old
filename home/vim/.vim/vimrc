@@ -220,15 +220,22 @@ nnoremap <Space><Space> :bnext<CR>
 nnoremap <Space>f :find<Space>
 nnoremap <Space>e :edit<Space>
 
-" Small/temporary files and undo
+" Viminfo
 
-set viminfo+=!
-set backup                               " Make a backup of every file you open in vim
-set backupdir=~/.local/share/nvim/backup " Save backups here
-set swapfile                             " Create swapfiles
-set directory=~/.local/share/nvim/swap// " Save swap files here
-set undodir=~/.local/share/nvim/undo     " Save undo history here
-set undofile                             " Keep undo history between sessions
+set viminfo+=! " Save uppercase variables into viminfo (default behavoiur)
+
+" Undo
+
+" Only use persistent undo if vim has it compiled in
+if has('persistent_undo')
+  set undodir=~/.vim/undo " Save undo history here
+  set undofile            " Keep undo history between sessions
+
+  " Automatically create directory for undo if it does not exist
+  if !isdirectory(expand('~').'/.vim/undo')
+    !mkdir -p $HOME/.vim/undo
+  endif
+endif
 
 " Undo points
 inoremap ! !<C-g>u
@@ -237,6 +244,26 @@ inoremap . .<C-g>u
 inoremap : :<C-g>u
 inoremap ; ;<C-g>u
 inoremap ? ?<C-g>u
+
+" Backup
+
+set backup                  " Make a backup of every file you open in vim
+set backupdir=~/.vim/backup " Save backups here
+
+" Automatically create directory for backups if it does not exist
+if !isdirectory(expand('~').'/.vim/backup')
+  !mkdir -p $HOME/.vim/backup
+endif
+
+" Swapfiles
+
+set swapfile                " Create swapfiles
+set directory=~/.vim/swap// " Save swap files here
+
+" Automatically create directory for swapfiles if it does not exist
+if !isdirectory(expand('~').'/.vim/swap')
+  !mkdir -p $HOME/.vim/swap
+endif
 
 " Searching, substitute, global, etc
 
