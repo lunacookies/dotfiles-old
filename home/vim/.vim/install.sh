@@ -10,6 +10,7 @@ fi
 start=(
 AndrewRadev/splitjoin.vim
 ajh17/VimCompletesMe
+andymass/vim-matchup
 aramisgithub/vim-ruby
 junegunn/goyo.vim
 junegunn/limelight.vim
