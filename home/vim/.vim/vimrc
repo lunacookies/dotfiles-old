@@ -441,7 +441,7 @@ nnoremap <Space>m :update<CR>:Make<CR>
 autocmd vimrc InsertEnter * set nolist
 autocmd vimrc InsertLeave * set list
 
-" Set tmux window name to vim filename
+" Set tmux window name to vim filename if we are in tmux
 if $TERM ==# 'screen-256color'
   autocmd vimrc BufReadPost,FileReadPost,BufNewFile *
         \ call system("tmux rename-window " . expand("%:t"))
