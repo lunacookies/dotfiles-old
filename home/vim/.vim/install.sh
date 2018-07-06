@@ -38,7 +38,7 @@ markonm/traces.vim
 )
 
 # Clone plugins into their directories and remove any git-related files from the
-# plugin
+# plugin to stop git from getting confused
 install_plugins() {
   plugin_collection=$1[@]
   for repo in ${!plugin_collection}; do
@@ -59,6 +59,9 @@ install_plugins opt
 # do it in future).
 echo "pack
 spell
+undo
+backup
+swap
 .netrwhist
 " > ~/dotfiles/home/vim/.vim/.gitignore
 
