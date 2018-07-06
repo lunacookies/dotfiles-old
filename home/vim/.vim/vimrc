@@ -142,7 +142,6 @@ set virtualedit=block       " Allow cursor placement anywhere in V-block
 " User interface and interactions
 
 set belloff=all       " Disable all bells
-set colorcolumn=+1    " Highlight one column after textwidth
 set complete-=i       " Don't show completion messages
 set conceallevel=0    " Never conceal
 set cursorline        " Make the current line more prominent
@@ -182,6 +181,10 @@ else
     set titlestring=%F
   endif
 endif
+
+" Show colourcolumn on characters that go over textwidth
+autocmd vimrc winEnter,BufEnter * call clearmatches()
+      \ | call matchadd('ColorColumn', '\%81v', 100)
 
 " Make redrawing smoother
 if !('nvim')
@@ -438,6 +441,7 @@ autocmd vimrc FileType sh   setlocal makeprg=shellcheck\ --format=gcc\ %
 
 " Custom vim interface
 autocmd vimrc ColorScheme * highlight! ModeMsg gui=reverse, cterm=reverse
+autocmd vimrc ColorScheme * highlight! link    ColorColumn  ErrorMsg
 
 " Better syntax highlighting
 autocmd vimrc ColorScheme * highlight! link Sneak               Search
