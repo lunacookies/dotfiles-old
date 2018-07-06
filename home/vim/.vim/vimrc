@@ -157,31 +157,6 @@ set splitbelow        " Create new splits to the bottom
 set splitright        " Create new splits to the right
 set tabpagemax=50     " Maximum number of tab pages
 
-" Smart window title
-
-if has('nvim')
-  function! SetTerminalTitle() abort
-    let titleString = 'file://'.expand('%:p')
-    let args = ']6;'.titleString.''
-    let cmd = 'call chansend(2, "'.args.'")'
-    execute cmd
-  endfunction
-
-  if !has('gui_running')
-    autocmd vimrc BufEnter * call SetTerminalTitle()
-  endif
-else
-  set title
-  if !has('gui_running')
-    set t_ts=]6;
-    set t_fs=
-    set titlestring=%{bufname('%')==''?'':'file://'.hostname().expand('%:p:gs/\ /%20/')}
-    set titlelen=0
-  else
-    set titlestring=%F
-  endif
-endif
-
 " Show colourcolumn on characters that go over textwidth
 autocmd vimrc winEnter,BufEnter * call clearmatches()
       \ | call matchadd('ColorColumn', '\%81v', 100)
@@ -204,6 +179,65 @@ else
   let &t_SI.="\e[5 q"
   let &t_SR.="\e[4 q"
   let &t_EI.="\e[1 q"
+endif
+
+" Smart window title
+
+" We have a special window title system set up that cleverly handles the window
+" title to suit the application vim is running in. It is compatible with
+" gvim/MacVim, Terminal.app, tmux, and any terminal emulator that vim's native
+" set title will work in. There is also some code in my zshrc to glue it all
+" together.
+"
+" There are two different results my window title system will output: The
+" filename of the current file (with nothing else), and a macOS proxy icon in
+" conjunction with the filename.
+"
+" Result one occurs if you are running in tmux, gvim/MacVim, and any terminal
+" emulator that supports vim's set title (apart from the macOS Terminal.app). In
+" addition, MacVim displays a macOS proxy icon next to the filename.
+"
+" The second result occurs if you are in Terminal.app, and are *not* running in
+" any kind of terminal multiplexer (tmux, screen, etc).
+
+" Tmux requires some specialised code to set the window title
+if $TERM !=# 'screen-256color'
+  " Only run proxy icon code if we are in Terminal.app (no other terminal
+  " emulators have implemented this feature)
+  if $TERM_PROGRAM ==# 'Apple_Terminal'
+    if has('nvim')
+      function! SetTerminalTitle() abort
+        let titleString = 'file://'.expand('%:p')
+        let args = ']6;'.titleString.''
+        let cmd = 'call chansend(2, "'.args.'")'
+        execute cmd
+      endfunction
+
+      if !has('gui_running')
+        autocmd vimrc BufEnter * call SetTerminalTitle()
+      endif
+    else
+      set title
+      if !has('gui_running')
+        set t_ts=]6;
+        set t_fs=
+        set titlestring=%{bufname('%')==''?'':'file://'.hostname().expand('%:p:gs/\ /%20/')}
+        set titlelen=0
+      else
+        set titlestring=%t
+      endif
+    endif
+  else
+    " Set window title to resemble the one used for tmux if we are not in
+    " Terminal.app.
+    set title
+    set titlestring=%t
+  endif
+else
+  " Set tmux window name to vim filename (not entire path to file because that
+  " is often too long for a tab name)
+  autocmd vimrc BufReadPost,FileReadPost,BufNewFile *
+        \ call system("tmux rename-window " . expand("%:t"))
 endif
 
 " Buffers and files
@@ -440,12 +474,6 @@ nnoremap <Space>m :update<CR>:Make<CR>
 " Do not show whitespace in insert mode
 autocmd vimrc InsertEnter * set nolist
 autocmd vimrc InsertLeave * set list
-
-" Set tmux window name to vim filename if we are in tmux
-if $TERM ==# 'screen-256color'
-  autocmd vimrc BufReadPost,FileReadPost,BufNewFile *
-        \ call system("tmux rename-window " . expand("%:t"))
-endif
 
 " Write name of current markdown file to ~/.currentfile for automatic LaTeX
 " compilation
