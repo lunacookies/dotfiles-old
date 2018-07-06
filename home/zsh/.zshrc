@@ -189,7 +189,7 @@ source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 # Set the window title to match the present working directory -- whether in
 # tmux or in a regular terminal. This also checks git status after every prompt.
 case "$TERM" in
-  tmux*)
+  screen*)
     precmd () {
       COLLAPSEPWD=$(print -rD $PWD)
       tmux rename-window ${COLLAPSEPWD}
