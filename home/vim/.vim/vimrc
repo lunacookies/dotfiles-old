@@ -18,12 +18,7 @@ scriptencoding utf-8            " This file uses some utf-8 symbols
 set fileencodings=ucs-bom,utf-8 " Sets how (n)vim detects the current encoding
 set fileformat=unix             " Unix file format
 
-" Load matchit.vim if it hasn't already been loaded
-if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &runtimepath) ==# ''
-  runtime! macros/matchit.vim
-endif
-
-" Installs pathogen if necessary
+" Install pathogen if necessary
 if !has('packages')
   if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/pathogen.vim --create-dirs
