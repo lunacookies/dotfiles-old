@@ -55,10 +55,42 @@ machine.
 
 1. Run `stow.sh`
 
-Feel free to have a poke around, and steal anything you may find 
-useful.
+## My smart window title config
+
+I have spent a considerable amount of time perfecting the window 
+and tab titles used throughout my dotfiles. Presented here is an 
+explanation of how they work.
+
+### macoS's Terminal.app
+
+Terminal.app supports an escape code that tells the terminal what 
+file or directory is currently being used/viewed/worked on. Once 
+this escape code has been set, the window title will display a 
+proxy icon, along with the full or partial name of the file (this 
+is configurable in Preferences>Your Profile>Window>Title).
+
+I have exploited this functionality to set the window title to be 
+the name of the file that is currently being edited in `(n)vim` or 
+the working directory in `zsh`. This all works inside `tmux` as 
+well!
+
+## Other terminal emulators
+
+If you are running in a terminal emulator different from 
+Terminal.app, my configuration will still work just fine, 
+mimicking Terminal.app's output as much as possible.
+
+### `tmux`
+
+In addition, if you are in tmux, the window title will also 
+contain the name of the currently running program, the session 
+name, and also the current filename or directory. Again, if you 
+are running in Terminal.app, a proxy icon will appear.
 
 ## Note
+
+Feel free to have a poke around, and steal anything you may find 
+useful.
 
 I use an Early 2015 MacBook Pro 13in base model running macOS High 
 Sierra.

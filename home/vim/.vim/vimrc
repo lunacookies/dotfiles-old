@@ -178,61 +178,71 @@ endif
 
 " Smart window title
 
-" We have a special window title system set up that cleverly handles the window
-" title to suit the application vim is running in. It is compatible with
-" gvim/MacVim, Terminal.app, tmux, and any terminal emulator that vim's native
-" set title will work in. There is also some code in my zshrc to glue it all
-" together.
-"
-" There are two different results my window title system will output: The
-" filename of the current file (with nothing else), and a macOS proxy icon in
-" conjunction with the filename.
-"
-" Result one occurs if you are running in tmux, gvim/MacVim, and any terminal
-" emulator that supports vim's set title (apart from the macOS Terminal.app). In
-" addition, MacVim displays a macOS proxy icon next to the filename.
-"
-" The second result occurs if you are in Terminal.app, and are *not* running in
-" any kind of terminal multiplexer (tmux, screen, etc).
+" See README.md
 
-" Tmux requires some specialised code to set the window title
-if $TERM !=# 'screen-256color'
+" Make the gui's window title match with the others
+if has('gui_running')
+  set title
+  set titlestring=%t\ —\ gvim
+else
   " Only run proxy icon code if we are in Terminal.app (no other terminal
   " emulators have implemented this feature)
   if $TERM_PROGRAM ==# 'Apple_Terminal'
-    if has('nvim')
-      function! SetTerminalTitle() abort
-        let titleString = 'file://'.expand('%:p')
-        let args = ']6;'.titleString.''
-        let cmd = 'call chansend(2, "'.args.'")'
-        execute cmd
-      endfunction
 
-      if !has('gui_running')
-        autocmd vimrc BufEnter * call SetTerminalTitle()
+    " Tmux requires different escape codes, and because escape codes cannot be
+    " an argument for a function, I have ended up duplicating the code.
+    if $TERM ==# 'screen-256color'
+
+      " We use nvim's chansend to send the escape codes because the printf-based
+      " approach doesn't work in nvim
+      if has('nvim')
+        function! SetTerminalTitle() abort
+          let titleString = 'file://'.expand('%:p')
+          let args = '\ePtmux;\e\e]6;'.titleString.'\e\\'
+          let cmd = 'call chansend(2, "'.args.'")'
+          execute cmd
+        endfunction
+        " Refresh window title on BufEnter (when switching files) and on
+        " FocusGained (when switching tmux panes)
+        autocmd vimrc BufEnter,FocusGained * call SetTerminalTitle()
+      else
+
+        " Use printf to call escape sequence
+        autocmd vimrc BufEnter,FocusGained * execute 'silent !printf "\ePtmux;\e\e]6;file://' . hostname() . expand("%:p") . '\a\e\\"'
+        autocmd vimrc BufEnter,FocusGained * execute 'redraw!'
       endif
     else
-      set title
-      if !has('gui_running')
-        set t_ts=]6;
-        set t_fs=
-        set titlestring=%{bufname('%')==''?'':'file://'.hostname().expand('%:p:gs/\ /%20/')}
-        set titlelen=0
+      if has('nvim')
+        function! SetTerminalTitle() abort
+          let titleString = 'file://'.expand('%:p')
+          let args = '\e]6;'.titleString.''
+          let cmd = 'call chansend(2, "'.args.'")'
+          execute cmd
+        endfunction
+        autocmd vimrc BufEnter,FocusGained * call SetTerminalTitle()
       else
-        set titlestring=%t
+        autocmd vimrc BufEnter,FocusGained * execute 'silent !printf "\e]6;file://' . hostname() . expand("%:p") . '\a"'
+        autocmd vimrc BufEnter,FocusGained * execute 'redraw!'
       endif
     endif
   else
-    " Set window title to resemble the one used for tmux if we are not in
-    " Terminal.app.
-    set title
-    set titlestring=%t
+    " If setting a proxy icon is unavailable …
+    if $TERM ==# 'screen-256color'
+      " Set tmux window name to vim filename (not entire path to file because that
+      " is often too long for a tab name) in conjunction with the name of the
+      " program being run ((n)vim).
+      autocmd vimrc BufReadPost,FileReadPost,BufNewFile *
+            \ call system("tmux rename-window $(echo " . expand("%:t") . " — vim")
+    else
+      " Same as tmux, but for system window title
+      set title
+      if has('nvim')
+        set titlestring=%t\ —\ nvim
+      else
+        set titlestring=%t\ —\ vim
+      endif
+    endif
   endif
-else
-  " Set tmux window name to vim filename (not entire path to file because that
-  " is often too long for a tab name)
-  autocmd vimrc BufReadPost,FileReadPost,BufNewFile *
-        \ call system("tmux rename-window " . expand("%:t"))
 endif
 
 " Buffers and files
