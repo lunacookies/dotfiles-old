@@ -196,6 +196,29 @@ endif
 
 " See README.md
 
+function! ProxyIconTitle(prefix,suffix) abort
+  " This is the format used by Terminal.app to specify what file is being
+  " edited
+  let filenameurl = 'file://' . hostname() . expand('%:p')
+
+  " This is how the command used to specify the window title is structured in
+  " both vim and nvim, so we specify it here
+  let args = a:prefix . filenameurl . a:suffix
+
+  if has('nvim')
+    " We use nvim's chansend to send the escape codes because it is more direct
+    " than printf
+    let cmd = 'call chansend(2, "' . args . '")'
+    execute cmd
+  else
+    " Use printf to call escape sequence because chansend() is unique to nvim
+    let cmd = 'silent !printf "' . args . '"'
+    execute cmd
+    execute 'redraw!'
+    execute 'redraw!'
+  endif
+endfunction
+
 " Make the gui's window title match with the others
 if has('gui_running')
   set title
@@ -208,38 +231,13 @@ else
     " Tmux requires different escape codes, and because escape codes cannot be
     " an argument for a function, I have ended up duplicating the code.
     if $TERM ==# 'screen-256color'
-
-      " We use nvim's chansend to send the escape codes because the printf-based
-      " approach doesn't work in nvim
-      if has('nvim')
-        function! SetTerminalTitle() abort
-          let titleString = 'file://'.expand('%:p')
-          let args = '\ePtmux;\e\e]6;'.titleString.'\e\\'
-          let cmd = 'call chansend(2, "'.args.'")'
-          execute cmd
-        endfunction
-        " Refresh window title on BufEnter (when switching files) and on
-        " FocusGained (when switching tmux panes)
-        autocmd vimrc BufEnter,FocusGained * call SetTerminalTitle()
-      else
-
-        " Use printf to call escape sequence
-        autocmd vimrc BufEnter,FocusGained * execute 'silent !printf "\ePtmux;\e\e]6;file://' . hostname() . expand("%:p") . '\a\e\\"'
-        autocmd vimrc BufEnter,FocusGained * execute 'redraw!'
-      endif
+      " Refresh window title on BufEnter (when switching files) and on
+      " FocusGained (when switching tmux panes)
+      autocmd vimrc BufEnter,FocusGained *
+            \ call ProxyIconTitle('\ePtmux;\e\e]6;','\e\\')
     else
-      if has('nvim')
-        function! SetTerminalTitle() abort
-          let titleString = 'file://'.expand('%:p')
-          let args = '\e]6;'.titleString.''
-          let cmd = 'call chansend(2, "'.args.'")'
-          execute cmd
-        endfunction
-        autocmd vimrc BufEnter,FocusGained * call SetTerminalTitle()
-      else
-        autocmd vimrc BufEnter,FocusGained * execute 'silent !printf "\e]6;file://' . hostname() . expand("%:p") . '\a"'
-        autocmd vimrc BufEnter,FocusGained * execute 'redraw!'
-      endif
+      autocmd vimrc BufEnter,FocusGained *
+            \ call ProxyIconTitle('\e]6;','')
     endif
   else
     " If setting a proxy icon is unavailable …
@@ -250,7 +248,7 @@ else
       autocmd vimrc BufReadPost,FileReadPost,BufNewFile *
             \ call system("tmux rename-window $(echo " . expand("%:t") . " — vim")
     else
-      " Same as tmux, but for system window title
+      " Same format as tmux, but for system window title
       set title
       if has('nvim')
         set titlestring=%t\ —\ nvim
