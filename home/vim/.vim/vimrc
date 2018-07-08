@@ -340,6 +340,23 @@ if has('nvim')
   set inccommand=split
 endif
 
+" Use ripgrep if available, then fall back to the silver searcher for grepping
+if executable('rg')
+  set grepprg=rg\ --vimgrep
+  set grepformat^=%f:%l:%c:%m
+elseif executable('ag')
+  set grepprg=ag\ --vimgrep
+  set grepformat^=%f:%l:%c:%m
+endif
+
+" Smarter grep command
+command! -nargs=+ -complete=file_in_path -bar Grep
+      \ silent! grep! <args> | redraw!
+
+" Project-wide search
+nnoremap <silent> <Space>G :Grep <C-r><C-w><CR>
+nnoremap <silent> <Space>g :Grep<Space>
+
 " Wrapping and scrolling
 
 if exists('+breakindent')
@@ -469,7 +486,7 @@ nnoremap <C-l> <C-w>l
 nnoremap <Space>x :Sayonara<CR>
 
 " Distraction-free writing mappings
-nnoremap <Space>g :Goyo<CR>
+nnoremap <Space>d :Goyo<CR>
 nnoremap <Space>l :Limelight!!<CR>
 
 " Auto-indent the whole file
