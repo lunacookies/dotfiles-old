@@ -38,13 +38,13 @@ opt=(
 markonm/traces.vim
 )
 
-# Clone plugins into their directories and remove any git-related files from the
-# plugin to stop git from getting confused
+# Remove any old plugins, clone plugins into their directories and remove any
+# git-related files from the plugin to stop git from getting confused
 install_plugins() {
   plugin_collection=$1[@]
+  rm -rf ~/dotfiles/home/vim/.vim/pack/aramis/$1/*
   for repo in ${!plugin_collection}; do
     plugin="$(echo $repo | sed -e 's/.*[\/]//')"
-    rm -rf ~/dotfiles/home/vim/.vim/pack/aramis/$1/$plugin
     git clone --depth=1 -q https://github.com/$repo.git ~/dotfiles/home/vim/.vim/pack/aramis/$1/$plugin
     rm -rf ~/dotfiles/home/vim/.vim/pack/aramis/$1/$plugin/.git*
     echo $plugin installed!
