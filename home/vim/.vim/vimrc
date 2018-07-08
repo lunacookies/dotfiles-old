@@ -113,6 +113,19 @@ let g:sneak#label      = 1 " Use label mode
 
 let g:CoolTotalMatches = 1 " Show number of matches in command line
 
+" MUComplete
+
+" Fix MUComplete incompatibility with endwise
+imap <Plug>MyCR <Plug>(MUcompleteCR)
+imap <cr> <Plug>MyCR
+
+" Complete dictionary words first before looking for similar words in markdown
+" files.
+let g:mucomplete#chains = {
+      \ 'vim' : [ 'path', 'omni', 'cmd', 'keyn' ],
+      \ 'markdown' : [ 'dict', 'c-p' ],
+      \ }
+
 
 ""
 "" Options
@@ -120,24 +133,27 @@ let g:CoolTotalMatches = 1 " Show number of matches in command line
 
 " Editing
 
-set backspace=2             " Backspace over everything
-set clipboard^=unnamed      " Use macOS clipboard when available
-set formatoptions=1cjqr     " Wrap and join comments intelligently
-set mouse=nvc               " Enable mouse in all modes except insert mode
-set nojoinspaces            " Insert only one space after punctuation
-set nostartofline           " Keep cursor on same column
-set nrformats+=alpha        " Allow incrementing single alphabetics
-set nrformats-=octal        " Do not consider some numbers to be octal
-set sessionoptions-=options " Do not save manually-set options in sessions
-set spelllang=en_gb         " Use British English
-set tags=./tags;,tags       " Where to search for tags
-set textwidth=80            " 80 chars/line
-set virtualedit=block       " Allow cursor placement anywhere in V-block
+set backspace=2                       " Backspace over everything
+set clipboard^=unnamed                " Use macOS clipboard when available
+set completeopt=menuone               " Show completions when there is a match
+set completeopt+=noselect             " Required for MUComplete
+set completeopt+=preview              " Display extra info about the match
+set dictionary+=/usr/share/dict/words " Larger dictionary
+set formatoptions=1cjqr               " Wrap and join comments intelligently
+set mouse=nvc                         " Use mouse in all modes except insert
+set nojoinspaces                      " Insert only one space after punctuation
+set nostartofline                     " Keep cursor on same column
+set nrformats+=alpha                  " Allow incrementing single alphabetics
+set nrformats-=octal                  " Do not consider octal numbers
+set sessionoptions-=options           " Don't keep manually-set options
+set spelllang=en_gb                   " Use British English
+set tags=./tags;,tags                 " Where to search for tags
+set textwidth=80                      " 80 chars/line
+set virtualedit=block                 " Better visual block mode
 
 " User interface and interactions
 
 set belloff=all       " Disable all bells
-set complete-=i       " Don't show completion messages
 set conceallevel=0    " Never conceal
 set cursorline        " Make the current line more prominent
 set display=lastline  " Show as much of partially-displayed lines as possible

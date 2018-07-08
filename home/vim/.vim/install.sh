@@ -9,13 +9,13 @@ fi
 # The plugins that will always be loaded
 start=(
 AndrewRadev/splitjoin.vim
-ajh17/VimCompletesMe
 andymass/vim-matchup
 aramisgithub/vim-ruby
 junegunn/goyo.vim
 junegunn/limelight.vim
 junegunn/vim-easy-align
 justinmk/vim-sneak
+lifepillar/vim-mucomplete
 mhinz/vim-sayonara
 romainl/Apprentice
 romainl/vim-cool
