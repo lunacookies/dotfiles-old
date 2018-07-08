@@ -191,8 +191,14 @@ source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 case "$TERM" in
   screen*)
     precmd () {
-      COLLAPSEPWD=$(print -rD $PWD)
-      tmux rename-window ${COLLAPSEPWD}
+      if [ "$TERM_PROGRAM" = "Apple_Terminal" ]; then
+        local SEARCH=' '
+        local REPLACE='%20'
+        local PWD_URL="file://$HOSTNAME${PWD//$SEARCH/$REPLACE}"
+        printf '\ePtmux;\e\e]6;%s\a\e\\' "$PWD_URL"
+      else
+        tmux rename-window -t $(tmux display-message -p '#I') $(echo $(basename $PWD) — zsh)
+      fi
       vcs_info
     }
     ;;
@@ -201,7 +207,14 @@ esac
 case "$TERM" in
   xterm*)
     precmd () {
-      print -Pn "\e]0;%~\a"
+      if [ "$TERM_PROGRAM" = "Apple_Terminal" ]; then
+        local SEARCH=' '
+        local REPLACE='%20'
+        local PWD_URL="file://$HOSTNAME${PWD//$SEARCH/$REPLACE}"
+        printf '\e]6;%s\a' "$PWD_URL"
+      else
+        printf "\e]0;$(echo $(basename $PWD) — zsh)\a"
+      fi
       vcs_info
     }
     ;;
