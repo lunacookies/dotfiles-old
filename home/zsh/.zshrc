@@ -151,6 +151,11 @@ export PATH=/usr/local/texlive/20*/bin:$PATH
 export PATH=/Library/TeX/texbin:$PATH
 export PATH=$HOME/Library/Python/3.7/bin:$PATH
 
+# Cdpath
+export CDPATH=.:~ # This facilitates passing the name of any directory in $HOME
+                  # to cd, regardless of the working directory, and be taken
+                  # there
+
 # ConTeXt
 export OSFONTDIR="/Library/Fonts//;/System/Library/Fonts;$HOME/Library/Fonts"
 
