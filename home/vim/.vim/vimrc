@@ -226,6 +226,10 @@ if !has('nvim') && &ttimeoutlen == -1
   set ttimeoutlen=100
 endif
 
+" Redraw the screen
+" 'r' for redraw
+nnoremap <Space>r :redraw!<CR>
+
 " Dynamic cursor shape that does not blink
 if has('nvim')
   set guicursor=n-v-c-ci:block,i-ve:ver25,r-cr:hor20,o:hor50,n:blinkon0
@@ -494,10 +498,10 @@ nnoremap <expr> k v:count ? 'k' : 'gk'
 nnoremap Y y$
 
 " LaTeX + pandoc compilation mappings
-nnoremap <Space>a :call aramis#functions#pandocconvertarticle()<CR>
-nnoremap <Space>c :call aramis#functions#pandocclean()<CR>
-nnoremap <Space>p :call aramis#functions#pandocconvertpres()<CR>
-nnoremap <Space>r :call aramis#functions#pandocconvertreport()<CR>
+nnoremap <Space>ca :call aramis#functions#pandocconvertarticle()<CR>
+nnoremap <Space>cc :call aramis#functions#pandocclean()<CR>
+nnoremap <Space>cp :call aramis#functions#pandocconvertpres()<CR>
+nnoremap <Space>cr :call aramis#functions#pandocconvertreport()<CR>
 
 " Move more quickly between splits
 nnoremap <C-j> <C-w>j
