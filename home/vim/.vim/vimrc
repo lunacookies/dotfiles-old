@@ -169,6 +169,12 @@ nnoremap <Space>x :Sayonara<CR>
 " 'm' for make
 nnoremap <Space>m :update<CR>:Make<CR>
 
+" Hardtime
+
+let g:hardtime_default_on = 1      " Enable hardtime by default
+let g:hardtime_ignore_quickfix = 1 " Don't enable it in the quickfix list
+let g:hardtime_maxcount = 2        " Allow repeating a key twice
+
 
 ""
 "" Options
