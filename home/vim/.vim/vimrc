@@ -22,7 +22,8 @@ set fileformat=unix             " Unix file format
 if !has('packages')
   if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/pathogen.vim --create-dirs
-          \ https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+          \ https://raw.githubusercontent.com/
+          \ tpope/vim-pathogen/master/autoload/pathogen.vim
   endif
 endif
 
@@ -215,7 +216,7 @@ autocmd vimrc winEnter,BufEnter * call clearmatches()
       \ | call matchadd('ColorColumn', '\%81v', 100)
 
 " Make redrawing smoother
-if !('nvim')
+if !has('nvim')
   set ttyfast
 endif
 
@@ -284,11 +285,12 @@ else
   else
     " If setting a proxy icon is unavailable …
     if $TERM ==# 'screen-256color'
-      " Set tmux window name to vim filename (not entire path to file because that
-      " is often too long for a tab name) in conjunction with the name of the
-      " program being run ((n)vim).
+      " Set tmux window name to vim filename (not entire path to file because
+      " that is often too long for a tab name) in conjunction with the name of
+      " the program being run ((n)vim).
       autocmd vimrc BufReadPost,FileReadPost,BufNewFile *
-            \ call system("tmux rename-window $(echo " . expand("%:t") . " — vim")
+            \ call system("tmux rename-window
+            \ $(echo " . expand("%:t") . " — vim")
     else
       " Same format as tmux, but for system window title
       set title
