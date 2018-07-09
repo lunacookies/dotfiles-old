@@ -69,6 +69,28 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
+" Align more easily using <Space> and the character you want to align
+nmap <Space>" mz<Plug>(EasyAlign)ip*"`z
+nmap <Space># mz<Plug>(EasyAlign)ip*#`z
+nmap <Space>% mz<Plug>(EasyAlign)ip*%`z
+nmap <Space>& mz<Plug>(EasyAlign)ip*&`z
+nmap <Space>' mz<Plug>(EasyAlign)ip*"`z
+nmap <Space>, mz<Plug>(EasyAlign)ip*,`z
+nmap <Space>. mz<Plug>(EasyAlign)ip*.`z
+nmap <Space>: mz<Plug>(EasyAlign)ip*:`z
+nmap <Space>= mz<Plug>(EasyAlign)ip*=`z
+nmap <Space>t mz<Plug>(EasyAlign)ip*\|`z
+xmap <Space>" mz<Plug>(EasyAlign)*"`z
+xmap <Space># mz<Plug>(EasyAlign)*#`z
+xmap <Space>% mz<Plug>(EasyAlign)*%`z
+xmap <Space>& mz<Plug>(EasyAlign)*&`z
+xmap <Space>' mz<Plug>(EasyAlign)*"`z
+xmap <Space>, mz<Plug>(EasyAlign)*,`z
+xmap <Space>. mz<Plug>(EasyAlign)*.`z
+xmap <Space>: mz<Plug>(EasyAlign)*:`z
+xmap <Space>= mz<Plug>(EasyAlign)*=`z
+xmap <Space>t mz<Plug>(EasyAlign)*\|`z
+
 " Goyo
 
 let g:goyo_width = 68 " Leave a few extra chars more than textwidth
@@ -89,10 +111,18 @@ endfunction
 autocmd! vimrc User GoyoEnter nested call <sid>goyo_enter()
 autocmd! vimrc User GoyoLeave nested call <sid>goyo_leave()
 
+" Enter distractioon-free mode using goyo
+" 'd' for distraction-free mode
+nnoremap <Space>d :Goyo<CR>
+
 " Limelight
 
 let g:limelight_default_coefficient = 0.6 " Set dimmed paragraph colour
 let g:limelight_priority            = -1  " Don't overrule hlsearch
+
+" Toggle paragraph focus mode using limelight
+" 'l' for limelight
+nnoremap <Space>l :Limelight!!<CR>
 
 " Polyglot
 
@@ -125,6 +155,18 @@ let g:mucomplete#chains = {
       \ 'vim' : [ 'path', 'omni', 'cmd', 'keyn' ],
       \ 'markdown' : [ 'dict', 'c-p' ],
       \ }
+
+" Sayonara
+
+" Close a window while retaining the layout
+" 'x' for close icon
+nnoremap <Space>x :Sayonara<CR>
+
+" Dispatch
+
+" Make using dispatch
+" 'm' for make
+nnoremap <Space>m :update<CR>:Make<CR>
 
 
 ""
@@ -326,6 +368,13 @@ set ignorecase " Ignore
 set incsearch  " Jump to search results as you type
 set smartcase  " Smarter capitalisation when searching
 
+" Do not jump to the next match automatically when searching for the current
+" word
+nnoremap * *N
+nnoremap # #N
+nnoremap g* g*N
+nnoremap g# g#N
+
 " Jump through incsearch matches with <Tab>
 cnoremap <expr> <Tab>   getcmdtype()
       \ == "/" \|\| getcmdtype()
@@ -388,6 +437,13 @@ set wildcharm=<C-z> " Send <C-z> when tab completing (for incsearch tab mapping)
 set wildmenu        " Better command-line completion
 set wildmode=full   " Complete the next full match
 
+" Enter command-line mode with <CR> (apart from command-line window and
+" quickfix)
+nnoremap <CR> :
+autocmd vimrc BufWinEnter quickfix nnoremap <buffer> <CR> <CR>
+autocmd vimrc CmdwinEnter * nnoremap <buffer> <CR> <CR>
+xnoremap <CR> :
+
 
 ""
 "" Statusline
@@ -411,23 +467,10 @@ let &statusline = s:statusline_expr()
 "" Mappings
 ""
 
-" Command-line mode with <CR> (apart from command-line window and quickfix)
-nnoremap <CR> :
-autocmd vimrc BufWinEnter quickfix nnoremap <buffer> <CR> <CR>
-autocmd vimrc CmdwinEnter * nnoremap <buffer> <CR> <CR>
-xnoremap <CR> :
-
 " Escape from modes easily
 inoremap jk <Esc>`^
 xnoremap fd <Esc>
 cnoremap jk <C-c>
-
-" Do not jump to the next match automatically when searching for the current
-" word
-nnoremap * *N
-nnoremap # #N
-nnoremap g* g*N
-nnoremap g# g#N
 
 " Autoexpansion
 inoremap (<CR> (<CR>)<Esc>O
@@ -448,28 +491,6 @@ nnoremap <expr> k v:count ? 'k' : 'gk'
 " I being cynical?).
 nnoremap Y y$
 
-" Alignment mappings using easy_align
-nmap <Space>" mz<Plug>(EasyAlign)ip*"`z
-nmap <Space># mz<Plug>(EasyAlign)ip*#`z
-nmap <Space>% mz<Plug>(EasyAlign)ip*%`z
-nmap <Space>& mz<Plug>(EasyAlign)ip*&`z
-nmap <Space>' mz<Plug>(EasyAlign)ip*"`z
-nmap <Space>, mz<Plug>(EasyAlign)ip*,`z
-nmap <Space>. mz<Plug>(EasyAlign)ip*.`z
-nmap <Space>: mz<Plug>(EasyAlign)ip*:`z
-nmap <Space>= mz<Plug>(EasyAlign)ip*=`z
-nmap <Space>t mz<Plug>(EasyAlign)ip*\|`z
-xmap <Space>" mz<Plug>(EasyAlign)*"`z
-xmap <Space># mz<Plug>(EasyAlign)*#`z
-xmap <Space>% mz<Plug>(EasyAlign)*%`z
-xmap <Space>& mz<Plug>(EasyAlign)*&`z
-xmap <Space>' mz<Plug>(EasyAlign)*"`z
-xmap <Space>, mz<Plug>(EasyAlign)*,`z
-xmap <Space>. mz<Plug>(EasyAlign)*.`z
-xmap <Space>: mz<Plug>(EasyAlign)*:`z
-xmap <Space>= mz<Plug>(EasyAlign)*=`z
-xmap <Space>t mz<Plug>(EasyAlign)*\|`z
-
 " LaTeX + pandoc compilation mappings
 nnoremap <Space>a :call aramis#functions#pandocconvertarticle()<CR>
 nnoremap <Space>c :call aramis#functions#pandocclean()<CR>
@@ -482,13 +503,6 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" Close a window while retaining the layout
-nnoremap <Space>x :Sayonara<CR>
-
-" Distraction-free writing mappings
-nnoremap <Space>d :Goyo<CR>
-nnoremap <Space>l :Limelight!!<CR>
-
 " Auto-indent the whole file
 nnoremap <Space>i mzgg=G`zzz
 
@@ -498,9 +512,6 @@ nnoremap <Space>s mzvip:sort<CR>`z
 " Search in all currently opened buffers
 command! -nargs=1 Vim call aramis#functions#vimgrepall(<f-args>)
 nnoremap <Space>v :Vim<Space>
-
-" Make using dispatch
-nnoremap <Space>m :update<CR>:Make<CR>
 
 
 ""
