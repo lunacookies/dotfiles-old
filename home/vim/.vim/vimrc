@@ -425,10 +425,6 @@ nnoremap ,e :edit<Space>
 " Project-wide search
 nnoremap <silent> ,g :Grep<Space>
 
-" Search in all currently opened buffers
-command! -nargs=1 Vim call aramis#functions#vimgrepall(<f-args>)
-nnoremap <Space>v :Vim<Space>
-
 " Space
 
 " Align more easily using <Space> and the character you want to align

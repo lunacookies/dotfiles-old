@@ -26,17 +26,3 @@ function! aramis#functions#pandocclean() abort
   normal! `z
 endfunction
 
-
-""
-"" Search in open buffers
-""
-
-function! aramis#functions#clearquickfixList() abort
-  call setqflist([])
-endfunction
-
-function! aramis#functions#vimgrepall(pattern) abort
-  call aramis#functions#clearquickfixList()
-  exe 'bufdo vimgrepadd ' . a:pattern . ' %'
-  cnext
-endfunction
