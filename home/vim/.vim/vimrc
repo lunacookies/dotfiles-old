@@ -70,28 +70,6 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
-" Align more easily using <Space> and the character you want to align
-nmap <Space>" mz<Plug>(EasyAlign)ip*"`z
-nmap <Space># mz<Plug>(EasyAlign)ip*#`z
-nmap <Space>% mz<Plug>(EasyAlign)ip*%`z
-nmap <Space>& mz<Plug>(EasyAlign)ip*&`z
-nmap <Space>' mz<Plug>(EasyAlign)ip*"`z
-nmap <Space>, mz<Plug>(EasyAlign)ip*,`z
-nmap <Space>. mz<Plug>(EasyAlign)ip*.`z
-nmap <Space>: mz<Plug>(EasyAlign)ip*:`z
-nmap <Space>= mz<Plug>(EasyAlign)ip*=`z
-nmap <Space>t mz<Plug>(EasyAlign)ip*\|`z
-xmap <Space>" mz<Plug>(EasyAlign)*"`z
-xmap <Space># mz<Plug>(EasyAlign)*#`z
-xmap <Space>% mz<Plug>(EasyAlign)*%`z
-xmap <Space>& mz<Plug>(EasyAlign)*&`z
-xmap <Space>' mz<Plug>(EasyAlign)*"`z
-xmap <Space>, mz<Plug>(EasyAlign)*,`z
-xmap <Space>. mz<Plug>(EasyAlign)*.`z
-xmap <Space>: mz<Plug>(EasyAlign)*:`z
-xmap <Space>= mz<Plug>(EasyAlign)*=`z
-xmap <Space>t mz<Plug>(EasyAlign)*\|`z
-
 " Goyo
 
 let g:goyo_width = 68 " Leave a few extra chars more than textwidth
@@ -112,18 +90,10 @@ endfunction
 autocmd! vimrc User GoyoEnter nested call <sid>goyo_enter()
 autocmd! vimrc User GoyoLeave nested call <sid>goyo_leave()
 
-" Enter distractioon-free mode using goyo
-" 'd' for distraction-free mode
-nnoremap <Space>d :Goyo<CR>
-
 " Limelight
 
 let g:limelight_default_coefficient = 0.6 " Set dimmed paragraph colour
 let g:limelight_priority            = -1  " Don't overrule hlsearch
-
-" Toggle paragraph focus mode using limelight
-" 'l' for limelight
-nnoremap <Space>l :Limelight!!<CR>
 
 " Polyglot
 
@@ -159,15 +129,7 @@ let g:mucomplete#chains = {
 
 " Sayonara
 
-" Close a window while retaining the layout
-" 'x' for close icon
-nnoremap <Space>x :Sayonara<CR>
-
 " Dispatch
-
-" Make using dispatch
-" 'm' for make
-nnoremap <Space>m :update<CR>:Make<CR>
 
 " Hardtime
 
@@ -231,10 +193,6 @@ if !has('nvim') && &ttimeoutlen == -1
   set ttimeout
   set ttimeoutlen=100
 endif
-
-" Redraw the screen
-" 'r' for redraw
-nnoremap <Space>r :redraw!<CR>
 
 " Dynamic cursor shape that does not blink
 if has('nvim')
@@ -319,14 +277,6 @@ set autoread     " Read a file again if it has been modified outside of vim
 set hidden       " A buffer becomes hidden when abandoned
 set path=$PWD/** " Recursively search directories
 
-" Juggling with buffers
-nnoremap <Space>b :ls<CR>:buffer<Space>
-nnoremap <Space><Space> :bnext<CR>
-
-" Juggling with files
-nnoremap <Space>f :find<Space>
-nnoremap <Space>e :edit<Space>
-
 " Viminfo
 
 set viminfo+=! " Save uppercase variables into viminfo (default behavoiur)
@@ -387,15 +337,6 @@ nnoremap # #N
 nnoremap g* g*N
 nnoremap g# g#N
 
-" Jump through incsearch matches with <Tab>
-cnoremap <expr> <Tab>   getcmdtype()
-      \ == "/" \|\| getcmdtype()
-      \ == "?" ? "<CR>/<C-r>/" : "<C-z>"
-
-cnoremap <expr> <S-Tab> getcmdtype()
-      \ == "/" \|\| getcmdtype()
-      \ == "?" ? "<CR>?<C-r>/" : "<S-Tab>"
-
 " Live preview of substitute command
 if has('nvim')
   set inccommand=split
@@ -413,10 +354,6 @@ endif
 " Smarter grep command
 command! -nargs=+ -complete=file_in_path -bar Grep
       \ silent! grep! <args> | redraw!
-
-" Project-wide search
-nnoremap <silent> <Space>G :Grep <C-r><C-w><CR>
-nnoremap <silent> <Space>g :Grep<Space>
 
 " Wrapping and scrolling
 
@@ -451,14 +388,6 @@ set wildmenu         " Better command-line completion
 set wildmode=longest " Complete the longest common string
 set wildmode+=full   " … then each full match
 
-" Enter command-line mode with <CR> (apart from command-line window and
-" quickfix)
-nnoremap <CR> :
-autocmd vimrc BufWinEnter quickfix nnoremap <buffer> <CR> <CR>
-autocmd vimrc CmdwinEnter * nnoremap <buffer> <CR> <CR>
-xnoremap <CR> :
-
-
 ""
 "" Statusline
 ""
@@ -478,8 +407,110 @@ let &statusline = s:statusline_expr()
 
 
 ""
-"" Mappings
+"" Structured mappings
 ""
+
+" Comma is for finding stuff (buffers, files), space is for everything else
+
+" Comma
+
+" Juggling with buffers
+nnoremap ,b :ls<CR>:buffer<Space>
+nnoremap ,, :bnext<CR>
+
+" Juggling with files
+nnoremap ,f :find<Space>
+nnoremap ,e :edit<Space>
+
+" Project-wide search
+nnoremap <silent> ,g :Grep<Space>
+
+" Search in all currently opened buffers
+command! -nargs=1 Vim call aramis#functions#vimgrepall(<f-args>)
+nnoremap <Space>v :Vim<Space>
+
+" Space
+
+" Align more easily using <Space> and the character you want to align
+nmap <Space>" mz<Plug>(EasyAlign)ip*"`z
+nmap <Space># mz<Plug>(EasyAlign)ip*#`z
+nmap <Space>% mz<Plug>(EasyAlign)ip*%`z
+nmap <Space>& mz<Plug>(EasyAlign)ip*&`z
+nmap <Space>' mz<Plug>(EasyAlign)ip*"`z
+nmap <Space>, mz<Plug>(EasyAlign)ip*,`z
+nmap <Space>. mz<Plug>(EasyAlign)ip*.`z
+nmap <Space>: mz<Plug>(EasyAlign)ip*:`z
+nmap <Space>= mz<Plug>(EasyAlign)ip*=`z
+nmap <Space>t mz<Plug>(EasyAlign)ip*\|`z
+xmap <Space>" mz<Plug>(EasyAlign)*"`z
+xmap <Space># mz<Plug>(EasyAlign)*#`z
+xmap <Space>% mz<Plug>(EasyAlign)*%`z
+xmap <Space>& mz<Plug>(EasyAlign)*&`z
+xmap <Space>' mz<Plug>(EasyAlign)*"`z
+xmap <Space>, mz<Plug>(EasyAlign)*,`z
+xmap <Space>. mz<Plug>(EasyAlign)*.`z
+xmap <Space>: mz<Plug>(EasyAlign)*:`z
+xmap <Space>= mz<Plug>(EasyAlign)*=`z
+xmap <Space>t mz<Plug>(EasyAlign)*\|`z
+
+" LaTeX + pandoc compilation mappings
+" 'c' for compile
+" 'a' for article
+" 'c' for clean
+" 'p' for presentation
+" 'r' for report
+nnoremap <Space>ca :call aramis#functions#pandocconvertarticle()<CR>
+nnoremap <Space>cc :call aramis#functions#pandocclean()<CR>
+nnoremap <Space>cp :call aramis#functions#pandocconvertpres()<CR>
+nnoremap <Space>cr :call aramis#functions#pandocconvertreport()<CR>
+
+" Auto-indent the whole file
+" 'i' for indent
+nnoremap <Space>i mzgg=G`zzz
+
+" Sort the current paragraph alphabetically
+nnoremap <Space>s mzvip:sort<CR>`z
+
+" Enter distractioon-free mode using goyo
+" 'w' for writing
+nnoremap <Space>g :Goyo<CR>
+
+" Close a window while retaining the layout
+" 'x' for close icon
+nnoremap <Space>x :Sayonara<CR>
+
+" Toggle paragraph focus mode using limelight
+" 'l' for limelight
+nnoremap <Space>l :Limelight!!<CR>
+
+" Redraw the screen
+" 'r' for redraw
+nnoremap <Space>r :redraw!<CR>
+
+
+""
+"" Misc mappings
+""
+
+" Jump through incsearch matches with <Tab>
+cnoremap <expr> <Tab>   getcmdtype()
+      \ == "/" \|\| getcmdtype()
+      \ == "?" ? "<CR>/<C-r>/" : "<C-z>"
+
+cnoremap <expr> <S-Tab> getcmdtype()
+      \ == "/" \|\| getcmdtype()
+      \ == "?" ? "<CR>?<C-r>/" : "<S-Tab>"
+
+" Make using dispatch
+" 'm' for make
+nnoremap <Space>m :update<CR>:Make<CR>
+
+" Enter command-line mode with <CR> (apart from command-line window and
+" quickfix)
+nnoremap <CR> :
+autocmd vimrc BufWinEnter quickfix nnoremap <buffer> <CR> <CR>
+autocmd vimrc CmdwinEnter * nnoremap <buffer> <CR> <CR>
+xnoremap <CR> :
 
 " Escape from modes easily
 inoremap jk <Esc>`^
@@ -505,27 +536,11 @@ nnoremap <expr> k v:count ? 'k' : 'gk'
 " I being cynical?).
 nnoremap Y y$
 
-" LaTeX + pandoc compilation mappings
-nnoremap <Space>ca :call aramis#functions#pandocconvertarticle()<CR>
-nnoremap <Space>cc :call aramis#functions#pandocclean()<CR>
-nnoremap <Space>cp :call aramis#functions#pandocconvertpres()<CR>
-nnoremap <Space>cr :call aramis#functions#pandocconvertreport()<CR>
-
 " Move more quickly between splits
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
-
-" Auto-indent the whole file
-nnoremap <Space>i mzgg=G`zzz
-
-" Sort the current paragraph alphabetically
-nnoremap <Space>s mzvip:sort<CR>`z
-
-" Search in all currently opened buffers
-command! -nargs=1 Vim call aramis#functions#vimgrepall(<f-args>)
-nnoremap <Space>v :Vim<Space>
 
 
 ""
