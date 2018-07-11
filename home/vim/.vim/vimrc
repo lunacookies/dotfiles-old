@@ -409,6 +409,7 @@ nnoremap ,b :ls<CR>:buffer<Space>
 nnoremap ,sb :ls<CR>:sbuffer<Space>
 nnoremap ,vb :ls<CR>:vert sbuffer<Space>
 nnoremap ,tb :tabnew<CR>:ls<CR>:buffer<Space>
+nnoremap ,, :bnext<CR>
 
 " Juggling with files
 " Same for opening new files, just replace b with f
@@ -469,6 +470,29 @@ nnoremap <Space>m :update<CR>:make<CR>
 " Quick 'n' easy find-and-replace
 nnoremap <Space><Space> :'{,'}s/\<<C-r>=expand("<cword>")<CR>\>/
 nnoremap <Space>%       :%s/\<<C-r>=expand("<cword>")<CR>\>/
+
+" Unimpaired imitation
+
+" Hopping around the quickfix list
+" 'q' for quickfix
+nnoremap [q :cprev<CR>
+nnoremap ]q :cnext<CR>
+nnoremap [Q :cfirst<CR>
+nnoremap ]Q :clast<CR>
+
+" Adding blank lines
+nnoremap [<Space> o<Esc>``
+nnoremap ]<Space> O<Esc>``
+
+" Cycling through tabs
+" 't' for tab
+nnoremap [t :tabprev<CR>
+nnoremap ]t :tabnext<CR>
+
+" Moving through the jumplist
+" 'd' for done (i.e. things that have already been done; history)
+nnoremap [d <C-o>
+nnoremap ]d <C-i>
 
 
 ""
