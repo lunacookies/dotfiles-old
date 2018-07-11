@@ -489,12 +489,9 @@ cnoremap <expr> <S-Tab> getcmdtype()
       \ == "/" \|\| getcmdtype()
       \ == "?" ? "<CR>?<C-r>/" : "<S-Tab>"
 
-" Enter command-line mode with <CR> (apart from command-line window and
-" quickfix)
-nnoremap <CR> :
-autocmd vimrc BufWinEnter quickfix nnoremap <buffer> <CR> <CR>
-autocmd vimrc CmdwinEnter * nnoremap <buffer> <CR> <CR>
-xnoremap <CR> :
+" Enter command-line mode with <BS>
+nnoremap <BS> :
+xnoremap <BS> :
 
 " Escape from modes easily
 inoremap jk <Esc>`^
