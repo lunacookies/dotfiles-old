@@ -61,7 +61,7 @@ I have spent a considerable amount of time perfecting the window
 and tab titles used throughout my dotfiles. Presented here is an 
 explanation of how they work.
 
-### macoS's Terminal.app
+### macOS's Terminal.app
 
 Terminal.app supports an escape code that tells the terminal what 
 file or directory is currently being used/viewed/worked on. Once 
@@ -82,7 +82,7 @@ mimicking Terminal.app's output as much as possible.
 
 ### `tmux`
 
-In addition, if you are in tmux, the window title will also 
+In addition, if you are in `tmux`, the window title will also 
 contain the name of the currently running program, the session 
 name, and also the current filename or directory. Again, if you 
 are running in Terminal.app, a proxy icon will appear.
