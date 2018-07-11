@@ -11,6 +11,7 @@ start=(
 AndrewRadev/splitjoin.vim
 adriaanzon/vim-textobj-matchit
 aramisgithub/vim-ruby
+christoomey/vim-tmux-navigator
 junegunn/goyo.vim
 junegunn/limelight.vim
 junegunn/vim-easy-align
