@@ -9,11 +9,13 @@ fi
 # The plugins that will always be loaded
 start=(
 AndrewRadev/splitjoin.vim
+adriaanzon/vim-textobj-matchit
 aramisgithub/vim-ruby
 junegunn/goyo.vim
 junegunn/limelight.vim
 junegunn/vim-easy-align
 justinmk/vim-sneak
+kana/vim-textobj-user
 lifepillar/vim-mucomplete
 romainl/Apprentice
 romainl/vim-cool
