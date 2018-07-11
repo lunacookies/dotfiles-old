@@ -473,6 +473,10 @@ nnoremap <Space>l :Limelight!!<CR>
 " 'r' for redraw
 nnoremap <Space>r :redraw!<CR>
 
+" Make using dispatch
+" 'm' for make
+nnoremap <Space>m :update<CR>:Make<CR>
+
 
 ""
 "" Misc mappings
@@ -486,10 +490,6 @@ cnoremap <expr> <Tab>   getcmdtype()
 cnoremap <expr> <S-Tab> getcmdtype()
       \ == "/" \|\| getcmdtype()
       \ == "?" ? "<CR>?<C-r>/" : "<S-Tab>"
-
-" Make using dispatch
-" 'm' for make
-nnoremap <Space>m :update<CR>:Make<CR>
 
 " Enter command-line mode with <CR> (apart from command-line window and
 " quickfix)
