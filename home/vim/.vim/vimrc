@@ -471,6 +471,10 @@ nnoremap <Space>r :redraw!<CR>
 " 'm' for make
 nnoremap <Space>m :update<CR>:Make<CR>
 
+" Quick 'n' easy find-and-replace
+nnoremap <Space><Space> :'{,'}s/\<<C-r>=expand("<cword>")<CR>\>/
+nnoremap <Space>%       :%s/\<<C-r>=expand("<cword>")<CR>\>/
+
 
 ""
 "" Misc mappings
