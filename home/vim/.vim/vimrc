@@ -353,7 +353,7 @@ endif
 
 " Smarter grep command
 command! -nargs=+ -complete=file_in_path -bar Grep
-      \ silent! grep! <args> | redraw!
+      \ silent! grep! <q-args> | redraw!
 
 " Wrapping and scrolling
 
@@ -415,15 +415,26 @@ let &statusline = s:statusline_expr()
 " Comma
 
 " Juggling with buffers
+" Comma, how you want to view the buffer, then b
+" 'b' for buffer
 nnoremap ,b :ls<CR>:buffer<Space>
+nnoremap ,sb :ls<CR>:sbuffer<Space>
+nnoremap ,vb :ls<CR>:vert sbuffer<Space>
+nnoremap ,tb :tabnew<CR>:ls<CR>:buffer<Space>
 nnoremap ,, :bnext<CR>
 
 " Juggling with files
+" Same for opening new files, just replace b with f
+" 'f' for find
 nnoremap ,f :find<Space>
 nnoremap ,e :edit<Space>
+nnoremap ,sf :sfind<Space>
+nnoremap ,vf :vert sfind<Space>
+nnoremap ,tf :tabfind<Space>
 
 " Project-wide search
-nnoremap <silent> ,g :Grep<Space>
+" 'g' for grep
+nnoremap ,g :Grep<Space>
 
 " Space
 
@@ -465,6 +476,7 @@ nnoremap <Space>cr :call aramis#functions#pandocconvertreport()<CR>
 nnoremap <Space>i mzgg=G`zzz
 
 " Sort the current paragraph alphabetically
+" 's' for sort
 nnoremap <Space>s mzvip:sort<CR>`z
 
 " Enter distractioon-free mode using goyo
