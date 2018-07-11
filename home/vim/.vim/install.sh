@@ -9,7 +9,6 @@ fi
 # The plugins that will always be loaded
 start=(
 AndrewRadev/splitjoin.vim
-andymass/vim-matchup
 aramisgithub/vim-ruby
 junegunn/goyo.vim
 junegunn/limelight.vim
