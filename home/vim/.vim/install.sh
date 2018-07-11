@@ -15,7 +15,6 @@ christoomey/vim-tmux-navigator
 junegunn/goyo.vim
 junegunn/limelight.vim
 junegunn/vim-easy-align
-justinmk/vim-sneak
 kana/vim-textobj-user
 lifepillar/vim-mucomplete
 romainl/Apprentice
