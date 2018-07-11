@@ -16,7 +16,6 @@ junegunn/limelight.vim
 junegunn/vim-easy-align
 justinmk/vim-sneak
 lifepillar/vim-mucomplete
-mhinz/vim-sayonara
 romainl/Apprentice
 romainl/vim-cool
 romainl/vim-qf

@@ -127,10 +127,6 @@ let g:mucomplete#chains = {
       \ 'markdown' : [ 'dict', 'c-p' ],
       \ }
 
-" Sayonara
-
-" Dispatch
-
 " Hardtime
 
 let g:hardtime_default_on = 1      " Enable hardtime by default
@@ -410,8 +406,6 @@ let &statusline = s:statusline_expr()
 "" Structured mappings
 ""
 
-" Comma is for finding stuff (buffers, files), space is for everything else
-
 " Comma
 
 " Juggling with buffers
@@ -435,6 +429,22 @@ nnoremap ,tf :tabfind<Space>
 " Project-wide search
 " 'g' for grep
 nnoremap ,g :Grep<Space>
+
+" Saving, closing, etc
+" 'ds' for delete split
+nnoremap ,ds :close<CR>
+" 'db' for delete buffer
+nnoremap ,db :bdelete<CR>
+" 'dt' for delete tab
+nnoremap ,dt :tabclose<CR>
+" 'qa' for quit all
+nnoremap ,qa :quitall<CR>
+" 'wa' for write all
+nnoremap ,wa :writeall<CR>
+" 'w' for write
+nnoremap ,w :write<CR>
+" 'wqa' for write and then quit all
+nnoremap ,wq :wqa<CR>
 
 " Space
 
@@ -460,10 +470,6 @@ nnoremap <Space>s mzvip:sort<CR>`z
 " Enter distractioon-free mode using goyo
 " 'w' for writing
 nnoremap <Space>g :Goyo<CR>
-
-" Close a window while retaining the layout
-" 'x' for close icon
-nnoremap <Space>x :Sayonara<CR>
 
 " Toggle paragraph focus mode using limelight
 " 'l' for limelight
