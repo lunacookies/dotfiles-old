@@ -402,7 +402,7 @@ let &statusline = s:statusline_expr()
 
 
 ""
-"" Structured mappings
+"" 'Leader' mappings
 ""
 
 " Comma
@@ -414,7 +414,6 @@ nnoremap ,b :ls<CR>:buffer<Space>
 nnoremap ,sb :ls<CR>:sbuffer<Space>
 nnoremap ,vb :ls<CR>:vert sbuffer<Space>
 nnoremap ,tb :tabnew<CR>:ls<CR>:buffer<Space>
-nnoremap ,, :bnext<CR>
 
 " Juggling with files
 " Same for opening new files, just replace b with f
@@ -428,6 +427,12 @@ nnoremap ,tf :tabfind<Space>
 " Project-wide search
 " 'g' for grep
 nnoremap ,g :Grep<Space>
+
+" Close stuff
+" 'c' for close
+nnoremap ,c :close<CR>
+" 'tc' for tabclose
+nnoremap ,tc :tabclose<CR>
 
 " Space
 
