@@ -481,8 +481,8 @@ nnoremap [Q :cfirst<CR>
 nnoremap ]Q :clast<CR>
 
 " Adding blank lines
-nnoremap [<Space> o<Esc>``
-nnoremap ]<Space> O<Esc>``
+nnoremap [<Space> O<Esc>``
+nnoremap ]<Space> o<Esc>``
 
 " Cycling through tabs
 " 't' for tab
@@ -493,6 +493,11 @@ nnoremap ]t :tabnext<CR>
 " 'd' for done (i.e. things that have already been done; history)
 nnoremap [d <C-o>
 nnoremap ]d <C-i>
+
+" Exchanging lines
+" 'e' for exchange
+nnoremap [e ddkP``
+nnoremap ]e ddp``
 
 
 ""
