@@ -430,22 +430,6 @@ nnoremap ,tf :tabfind<Space>
 " 'g' for grep
 nnoremap ,g :Grep<Space>
 
-" Saving, closing, etc
-" 'ds' for delete split
-nnoremap ,ds :close<CR>
-" 'db' for delete buffer
-nnoremap ,db :bdelete<CR>
-" 'dt' for delete tab
-nnoremap ,dt :tabclose<CR>
-" 'qa' for quit all
-nnoremap ,qa :quitall<CR>
-" 'wa' for write all
-nnoremap ,wa :writeall<CR>
-" 'w' for write
-nnoremap ,w :write<CR>
-" 'wqa' for write and then quit all
-nnoremap ,wq :wqa<CR>
-
 " Space
 
 " LaTeX + pandoc compilation mappings
