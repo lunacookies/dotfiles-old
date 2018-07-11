@@ -438,28 +438,6 @@ nnoremap ,g :Grep<Space>
 
 " Space
 
-" Align more easily using <Space> and the character you want to align
-nmap <Space>" mz<Plug>(EasyAlign)ip*"`z
-nmap <Space># mz<Plug>(EasyAlign)ip*#`z
-nmap <Space>% mz<Plug>(EasyAlign)ip*%`z
-nmap <Space>& mz<Plug>(EasyAlign)ip*&`z
-nmap <Space>' mz<Plug>(EasyAlign)ip*"`z
-nmap <Space>, mz<Plug>(EasyAlign)ip*,`z
-nmap <Space>. mz<Plug>(EasyAlign)ip*.`z
-nmap <Space>: mz<Plug>(EasyAlign)ip*:`z
-nmap <Space>= mz<Plug>(EasyAlign)ip*=`z
-nmap <Space>t mz<Plug>(EasyAlign)ip*\|`z
-xmap <Space>" mz<Plug>(EasyAlign)*"`z
-xmap <Space># mz<Plug>(EasyAlign)*#`z
-xmap <Space>% mz<Plug>(EasyAlign)*%`z
-xmap <Space>& mz<Plug>(EasyAlign)*&`z
-xmap <Space>' mz<Plug>(EasyAlign)*"`z
-xmap <Space>, mz<Plug>(EasyAlign)*,`z
-xmap <Space>. mz<Plug>(EasyAlign)*.`z
-xmap <Space>: mz<Plug>(EasyAlign)*:`z
-xmap <Space>= mz<Plug>(EasyAlign)*=`z
-xmap <Space>t mz<Plug>(EasyAlign)*\|`z
-
 " LaTeX + pandoc compilation mappings
 " 'c' for compile
 " 'a' for article
