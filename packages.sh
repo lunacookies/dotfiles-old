@@ -13,13 +13,6 @@ brew update
 # Update brew packages
 brew upgrade
 
-# Update ruby packages (this includes bundler itself)
-bundler update
-
-# We now remove libyaml (a ruby dependency) temporarily because it conflicts
-# with PyYAML (required by vim-vint) during install. We install it again after
-# vim-vint has been installed.
-brew uninstall --ignore-dependencies libyaml
 # Update pip (and related software)
 pip3 install --upgrade setuptools wheel pip
 # Update all pip packages
@@ -32,16 +25,11 @@ rm tmp
 ## Install
 ##
 
-# Install all brew and ruby packages
+# Install all brew packages
 ./brew.sh
-bundle install
 
-# Uninstall libyaml in case it was just installed (from brew.sh)
-brew uninstall --ignore-dependencies libyaml
 # Install all pip packages
 pip3 install --user --install-option="--prefix=" -r Pipfile
-# Reinstate libyaml from before
-brew install libyaml
 
 
 ##

@@ -18,7 +18,6 @@ brew install python
 brew install ranger
 brew install rg
 brew install rmtrash
-brew install ruby
 brew install shellcheck
 brew install stow
 brew install the_silver_searcher
