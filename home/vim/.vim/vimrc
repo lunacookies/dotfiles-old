@@ -35,13 +35,6 @@ endif
 " Load plugins with packages if available; otherwise load them with pathogen
 if !has('packages')
   execute pathogen#infect('pack/aramis/start/{}')
-  if !has('nvim')
-    execute pathogen#infect('pack/aramis/opt/traces.vim')
-  endif
-else
-  if !has('nvim')
-    packadd traces.vim
-  endif
 endif
 
 " Allow syntax colouring, filetype detection, and built-in plugins

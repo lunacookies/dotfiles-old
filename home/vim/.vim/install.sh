@@ -32,11 +32,6 @@ tpope/vim-unimpaired
 wellle/targets.vim
 )
 
-# The plugins that can are loaded seperately (on a condition) in the vimrc
-opt=(
-markonm/traces.vim
-)
-
 # Remove any old plugins, clone plugins into their directories and remove any
 # git-related files from the plugin to stop git from getting confused
 install_plugins() {
@@ -52,7 +47,6 @@ install_plugins() {
 
 # Install them!
 install_plugins start
-install_plugins opt
 
 # Add gitignore for the plugins (this is done here because it is related and
 # neccesary for installing the plugins and also that I don't have to remember to
