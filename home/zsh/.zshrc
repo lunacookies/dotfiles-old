@@ -88,18 +88,6 @@ alias mv="mv -iv"
 alias rm="echo Use 'trs' or '/bin/rm'"
 alias trs="rmtrash"
 
-# Run pip install correctly (it would usually prompt you about permissions --
-# you go on to run as sudo, which is not recommended and just breaks things.
-# You then try the --user option, which homebrew breaks. The method presented
-# below is what is recommended by homebrew.)
-pip() {
-  if [ $1 = "install" ]; then
-    /usr/local/bin/pip3 install --user --install-option="--prefix=" $2
-  else
-    /usr/local/bin/pip3 $@
-  fi
-}
-
 # LaTeX shortcuts
 alias doc="e document.md"
 alias pdf="open *.pdf"
