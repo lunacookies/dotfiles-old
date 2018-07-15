@@ -154,27 +154,6 @@ export __CF_USER_TEXT_ENCODING=0x08000100:0x0
 
 
 ##
-## Fzf
-##
-
-# Fzf command
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
-export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
-export FZF_CTRL_T_COMMAND='fd --type f --type d --hidden --follow --exclude .git'
-
-# Setup fzf
-if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
-  export PATH="$PATH:/usr/local/opt/fzf/bin"
-fi
-
-# Auto-completion
-[[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
-
-# Key bindings
-source "/usr/local/opt/fzf/shell/key-bindings.zsh"
-
-
-##
 ## Window title
 ##
 

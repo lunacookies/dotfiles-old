@@ -25,7 +25,6 @@ brew install chunkwm
 brew install ctags
 brew install exa
 brew install fd
-brew install fzf
 brew install git
 brew install khd
 brew install neovim
