@@ -23,19 +23,13 @@ if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &runtimepath) =
   runtime! macros/matchit.vim
 endif
 
-" Install pathogen if necessary
-if !has('packages')
-  if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/pathogen.vim --create-dirs
-          \ https://raw.githubusercontent.com/
-          \ tpope/vim-pathogen/master/autoload/pathogen.vim
-  endif
+" Install pathogen if it hasn't been installed yet
+if empty(glob('~/.vim/autoload/pathogen.vim'))
+  silent !curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 endif
 
-" Load plugins with packages if available; otherwise load them with pathogen
-if !has('packages')
-  execute pathogen#infect('pack/aramis/start/{}')
-endif
+" Load plugins with pathogen
+execute pathogen#infect()
 
 " Allow syntax colouring, filetype detection, and built-in plugins
 filetype plugin indent on
