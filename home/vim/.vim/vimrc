@@ -222,8 +222,8 @@ else
   " emulators have implemented this feature)
   if $TERM_PROGRAM ==# 'Apple_Terminal'
 
-    " Tmux requires different escape codes, and because escape codes cannot be
-    " an argument for a function, I have ended up duplicating the code.
+    " Tmux requires different escape codes, so we check if we are in tmux and
+    " set which escape codes are called accordingly.
     if $TERM ==# 'screen-256color'
       " Refresh window title on BufEnter (when switching files) and on
       " FocusGained (when switching tmux panes)
