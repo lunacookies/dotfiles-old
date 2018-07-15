@@ -96,7 +96,7 @@ pip() {
   if [ $1 = "install" ]; then
     /usr/local/bin/pip3 install --user --install-option="--prefix=" $2
   else
-    /usr/local/bin/pip3 $1
+    /usr/local/bin/pip3 $@
   fi
 }
 
