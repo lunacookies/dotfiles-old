@@ -111,10 +111,10 @@ alias sc="e ~/.zshrc"
 alias wmc="e ~/.chunkwmrc"
 
 # List files/directories
-alias l="exa -l --git --git-ignore --group-directories-first -F --ignore-glob .git"
+alias l="exa -l --git --group-directories-first -F --ignore-glob .git"
 alias la="exa -l --git --group-directories-first -F --ignore-glob .git -a"
 alias lal="exa -l --git --group-directories-first -T -L 2 -F --ignore-glob .git -a"
-alias ll="exa -l --git --git-ignore --group-directories-first -T -L 2 -F --ignore-glob .git"
+alias ll="exa -l --git --group-directories-first -T -L 2 -F --ignore-glob .git"
 
 # Daemons
 alias nhd="brew services stop khd"
