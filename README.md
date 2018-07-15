@@ -74,13 +74,14 @@ the name of the file that is currently being edited in `(n)vim` or
 the working directory in `zsh`. This all works inside `tmux` as 
 well!
 
-## Other terminal emulators
+### Other terminal emulators
 
 If you are running in a terminal emulator different from 
 Terminal.app, my configuration will still work just fine, 
-mimicking Terminal.app's output as much as possible.
+mimicking Terminal.app's output as much as possible. However, the 
+proxy icon will not show up.
 
-### `tmux`
+### tmux
 
 In addition, if you are in `tmux`, the window title will also 
 contain the name of the currently running program, the session 
