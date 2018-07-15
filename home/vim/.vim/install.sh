@@ -24,7 +24,6 @@ tmux-plugins/vim-tmux-focus-events
 toyamarinyon/vim-swift
 tpope/vim-commentary
 tpope/vim-endwise
-tpope/vim-eunuch
 tpope/vim-repeat
 tpope/vim-surround
 tpope/vim-unimpaired
