@@ -11,13 +11,8 @@ if [ ! -e /usr/local/bin/git ]; then
 fi
 
 # If dotfiles directory does not exist then clone it
-if [ -e $HOME/dotfiles ] && [ -e $HOME/.config ] && [ -e $HOME/bin ]; then
-  echo "Remove or back up your existing configuration files"
-  sleep 1
-  echo "Exiting script..."
-  exit 1
-else
-  /usr/local/bin/git clone https://github.com/aramisgithub/dotfiles.git ~/dotfiles
+if [ ! -e $HOME/dotfiles ]
+  git clone https://github.com/aramisgithub/dotfiles.git ~/dotfiles
 fi
 
 cd ~/dotfiles
