@@ -32,17 +32,16 @@ This will download an installer script (`install.sh`) which will:
 After the installer completes, it is recommended to reboot your 
 machine.
 
-## How to add a program (foo) to the dotfiles
+## How to add a program (`foo`) to the dotfiles
 
-1. Add the command to install foo to `brew.sh`.
+1. Add the command to install `foo` to `brew.sh`.
 
-1. If foo's configuration files follow the XDG Base Directory 
+1. If `foo`'s configuration files follow the XDG Base Directory 
    specification, then create a hierarchy like so:
 
    ```
    xdg
    └── foo
-      └── config
    ```
 
    If they do *not* follow XDG, then create a hierarchy like so:
@@ -50,8 +49,9 @@ machine.
    ```
    home
    └── foo
-      └── .foorc
    ```
+
+   Now you can place `foo`'s config files in `foo/`!
 
 1. Run `stow.sh`
 
