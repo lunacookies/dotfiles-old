@@ -3,7 +3,6 @@
 # Create neccesary plugin folders
 if [ ! -e ~/dotfiles/home/vim/.vim/pack ];then
   mkdir -p ~/dotfiles/home/vim/.vim/pack/aramis/start
-  mkdir -p ~/dotfiles/home/vim/.vim/pack/aramis/opt
 fi
 
 # The plugins that will always be loaded
