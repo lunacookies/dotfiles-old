@@ -21,7 +21,7 @@ fi
 
 # If dotfiles directory does not exist then clone it
 if [ ! -e $HOME/dotfiles ]; then
-  git clone -q https://github.com/aramisgithub/dotfiles.git ~/dotfiles
+  git clone https://github.com/aramisgithub/dotfiles.git ~/dotfiles
 fi
 
 cd ~/dotfiles
@@ -35,17 +35,10 @@ cd ~/dotfiles
 ./brew.sh
 
 # Install Fira Mono with Text Figures
-git clone --depth=1 -q https://github.com/aramisgithub/FiraMono_Text_Figures.git ~/fonttmp
+git clone https://github.com/aramisgithub/FiraMono_Text_Figures.git ~/fonttmp
 rm -rf ~/fonttmp/.git
 cp ~/fonttmp/*ttf ~/Library/Fonts/
 rm -rf ~/fonttmp
-
-# Install fast-syntax-highlighting for zsh
-if [ -e $HOME/dotfiles/xdg/f-sy-h ]; then
-  rm -rf ~/dotfiles/xdg/f-sy-h
-fi
-git clone --depth=1 -q https://github.com/zdharma/fast-syntax-highlighting.git ~/dotfiles/xdg/f-sy-h
-rm -rf ~/dotfiles/xdg/f-sy-h/.git*
 
 
 ##

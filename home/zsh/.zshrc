@@ -152,12 +152,6 @@ export EDITOR=nvim
 # Text encoding
 export __CF_USER_TEXT_ENCODING=0x08000100:0x0
 
-##
-## f-sy-h
-##
-
-# Load fast-syntax-highlighting for zsh
-source ~/.config/f-sy-h/fast-syntax-highlighting.plugin.zsh
 
 ##
 ## Window title
