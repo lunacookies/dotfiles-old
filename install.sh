@@ -20,7 +20,7 @@ fi
 ##
 
 # If dotfiles directory does not exist then clone it
-if [ ! -e $HOME/dotfiles ]
+if [ ! -e $HOME/dotfiles ]; then
   git clone https://github.com/aramisgithub/dotfiles.git ~/dotfiles
 fi
 
@@ -36,9 +36,8 @@ cd ~/dotfiles
 
 # Install Fira Mono with Text Figures
 git clone https://github.com/aramisgithub/FiraMono_Text_Figures.git ~/fonttmp
-cd ~/fonttmp
-rm -rf .git
-cp *ttf ~/Library/Fonts/
+rm -rf ~/fonttmp/.git
+cp ~/fonttmp/*ttf ~/Library/Fonts/
 rm -rf ~/fonttmp
 
 
