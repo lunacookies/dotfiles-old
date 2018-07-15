@@ -208,6 +208,6 @@ zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:git*' formats '%b'
 
 # Use Plan 9-inspired prompt
-PROMPT='%{$fg[white]%}%~%{$reset_color%}%{$fg_bold[white]%}%% %{$reset_color%}'
+PROMPT='%{$fg_bold[yellow]%}%~%{$reset_color%}$ '
 RPROMPT='%{$reset_color%}%{$fg[white]%}${vcs_info_msg_0_}%{$reset_color%}'
 
