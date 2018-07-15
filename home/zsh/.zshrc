@@ -1,4 +1,4 @@
-# aramis' config.fish
+# aramis' zshrc
 
 
 ##
@@ -78,11 +78,10 @@ zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-dir
 ##
 
 # System
-alias cb="chmod +x ~/bin/*"
 alias cp="cp -riv"
 alias cx="chmod +x"
+alias cxb="chmod +x ~/bin/*"
 alias e="nvim"
-alias ma="math --scale=7 --"
 alias mk="mkdir -pv"
 alias mv="mv -iv"
 alias rm="echo Use 'trs' or '/bin/rm'"
@@ -117,8 +116,8 @@ alias gc="git commit"
 alias gca="git add -A && git commit -a"
 alias gcl="git clone"
 alias gd="git diff"
-alias gi="git init && git add -A"
-alias gl="git log --color --graph --pretty format:' %Cgreen%s%Creset%nby %an%n%ar%n ' "
+alias gl="git log"
+alias gm="git mv"
 alias gpl="git pull"
 alias gps="git push"
 alias gr="git rm"
