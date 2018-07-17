@@ -25,6 +25,9 @@ if [ -e ~/Library/MinionPro-Regular.otf ]; then
   sudo ./scripts/install
   sudo updmap-sys --enable Map=MinionPro.map
 
+  # Allow ornaments
+  sed -i .bak 's/orn/bullet/g' ~/Library/texmf/fonts/enc/dvips/MinionPro/base-MinionPro-ad.enc
+
   echo
   echo
   echo "MinionPro LaTeX font installation complete!"
