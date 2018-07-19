@@ -31,14 +31,8 @@ cd ~/dotfiles
 ## Install software
 ##
 
-# Install and update brew packages
-./brew.sh
-
-# Install Fira Mono with Text Figures
-git clone https://github.com/aramisgithub/FiraMono_Text_Figures.git ~/fonttmp
-rm -rf ~/fonttmp/.git
-cp ~/fonttmp/*ttf ~/Library/Fonts/
-rm -rf ~/fonttmp
+# Install and update packages
+./packages.sh
 
 
 ##

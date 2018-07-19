@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+# vim: set ft=sh nomodeline:
 # aramis' shrc
 
 ##
@@ -27,6 +29,22 @@ alias mk="mkdir -pv"
 alias mv="mv -iv"
 alias rm="echo Use 'trs' or '/bin/rm'"
 alias trs="rmtrash"
+
+# Run pip install correctly (it would usually prompt you about permissions --
+# you go on to run as sudo, which is not recommended and just breaks things.
+# You then try the --user option, which homebrew breaks. The method presented
+# below is what is recommended by homebrew.). This function also checks if any
+# switches were passed to pip install -- if any were, then we do not run with
+# the special homebrew options.
+pip() {
+  if [ $1 = "install" ] && [ $# -eq 2 ]; then
+    /usr/local/bin/pip3 install --user --install-option="--prefix=" $2
+  elif [ $1 = "install" ] && [ $# -gt 2 ]; then
+    /usr/local/bin/pip3 $@
+  else
+    /usr/local/bin/pip3 $@
+  fi
+}
 
 # LaTeX shortcuts
 alias doc="e document.md"
@@ -116,15 +134,4 @@ regularwindowtitle () {
     printf "\e]0;$(echo $(basename $PWD) — zsh)\a"
   fi
 }
-
-
-##
-## Prompt
-##
-
-# Set prompt
-PROMPT='
-%{$fg[green]%}%~%{$reset_color%}
-%F{208}%m%{$reset_color%} %# '
-RPROMPT='%{$reset_color%}%{$fg[white]%}${vcs_info_msg_0_}%{$reset_color%}'
 
