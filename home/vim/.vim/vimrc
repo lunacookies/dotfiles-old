@@ -369,18 +369,25 @@ set wildmode+=full   " … then each full match
 "" Statusline
 ""
 
-function! s:statusline_expr()
-  let l:mod = "%{&modified ? '[+] ' : !&modifiable ? '[x] ' : ''}"
-  let l:ro  = "%{&readonly ? '[RO] ' : ''}"
-  let l:ft  = "%{len(&filetype) ? '['.&filetype.'] ' : ''}"
-  let l:fug = "%{exists('g:loaded_fugitive') ? fugitive#statusline() : ''}"
-  let l:sep = ' %= '
-  let l:pos = ' %-12(%l : %c%V%) '
-  let l:pct = ' %P'
+" The file
 
-  return ' [%n] %F %<'.l:mod.ro.ft.fug.sep.pos.'%*'.l:pct.' '
-endfunction
-let &statusline = s:statusline_expr()
+set statusline=\     " Add space to start us off
+set statusline+=%f\  " Filename relative to PWD
+set statusline+=%y\  " Filetype
+
+" Flags
+
+set statusline+=%m   " Modified flag
+set statusline+=%r   " Readonly flag
+set statusline+=%=   " Separator to jump to the other side
+
+" Position
+
+set statusline+=%l   " Current line
+set statusline+=\/   " Solidus
+set statusline+=%-6L " Total lines in file (plus 6 padding on the right)
+set statusline+=%3c  " Current column (padded for less than 4 chars)
+set statusline+=\    " Finish off with a space
 
 
 ""
