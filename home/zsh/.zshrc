@@ -105,8 +105,8 @@ zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:git*' formats '%b'
 
 # Set prompt
-PROMPT='
+PROMPT=$'
 %{$fg[green]%}%~%{$reset_color%}
-%F{208}%m%{$reset_color%} %# '
+%{\033[0;91m%}%m%{$reset_color%} %# '
 RPROMPT='%{$reset_color%}%{$fg[white]%}${vcs_info_msg_0_}%{$reset_color%}'
 
