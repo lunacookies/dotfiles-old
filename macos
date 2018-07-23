@@ -13,6 +13,7 @@ echo
 
 echo "Please provide password:"
 
+
 ##
 ## Security                                                                   #
 ##
@@ -86,6 +87,9 @@ defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
 # Disable Notification Center and remove the menu bar icon
 launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist > /dev/null 2>&1
+
+# Use #4b4b4b as wallpaper
+~/bin/setwp --color=4b4b4b
 
 
 ##
