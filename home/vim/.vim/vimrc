@@ -490,6 +490,12 @@ inoremap [<CR> [<CR>]<Esc>O
 inoremap [; [<CR>];<Esc>O
 inoremap [, [<CR>],<Esc>O
 
+" Move around splits more easily
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 " Move by screen lines, except when a count is given. This is for the relative
 " line numbers used for quick jumps around.
 nnoremap <expr> j v:count ? 'j' : 'gj'
