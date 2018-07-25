@@ -19,6 +19,7 @@ romainl/Apprentice
 romainl/vim-cool
 romainl/vim-qf
 sheerun/vim-polyglot
+terryma/vim-smooth-scroll
 tmux-plugins/vim-tmux-focus-events
 toyamarinyon/vim-swift
 tpope/vim-commentary
