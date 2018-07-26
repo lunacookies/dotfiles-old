@@ -567,7 +567,6 @@ autocmd vimrc ColorScheme * highlight! ModeMsg gui=reverse, cterm=reverse
 autocmd vimrc ColorScheme * highlight! link    ColorColumn  ErrorMsg
 
 " Better syntax highlighting
-autocmd vimrc ColorScheme * highlight! link rubyKeywordAsMethod rubyString
 autocmd vimrc ColorScheme * highlight! link vimAutoCmdSfxList   Type
 autocmd vimrc ColorScheme * highlight! link vimIsCommand        Statement
 
