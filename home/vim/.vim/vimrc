@@ -87,16 +87,6 @@ autocmd! vimrc User GoyoLeave nested call <sid>goyo_leave()
 let g:limelight_default_coefficient = 0.6 " Set dimmed paragraph colour
 let g:limelight_priority            = -1  " Don't overrule hlsearch
 
-" Polyglot
-
-let g:polyglot_disabled = [ 'markdown', 'ruby', 'swift', ]
-"                            |           |       |
-"                            |           |       +- Use toyamarinyon swift
-"                            |           |          instead
-"                            |           +- Use my fork of vim-ruby instead of
-"                            |              the official one
-"                            +- Replace plasticboy markdown with tpope markdown
-
 " Cool
 
 let g:CoolTotalMatches = 1 " Show number of matches in command line
