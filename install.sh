@@ -28,20 +28,22 @@ cd ~/dotfiles
 
 
 ##
-## Install software
-##
-
-# Install and update packages
-./packages.sh
-
-
-##
 ## Set up dotfiles
 ##
+
+# We do these things before the mass software installation becaus some parts of
+# packages.sh depend on configuration that is linked in stow.sh
 
 # Symlink all configuration
 ./stow.sh
 
 # Set settings
 ./macos
+
+##
+## Install software
+##
+
+# Install and update packages
+./packages.sh
 

@@ -30,22 +30,6 @@ alias mv="mv -iv"
 alias rm="echo Use 'trs' or '/bin/rm'"
 alias trs="rmtrash"
 
-# Run pip install correctly (it would usually prompt you about permissions --
-# you go on to run as sudo, which is not recommended and just breaks things.
-# You then try the --user option, which homebrew breaks. The method presented
-# below is what is recommended by homebrew.). This function also checks if any
-# switches were passed to pip install -- if any were, then we do not run with
-# the special homebrew options.
-pip() {
-  if [ $1 = "install" ] && [ $# -eq 2 ]; then
-    /usr/local/bin/pip3 install --user --install-option="--prefix=" $2
-  elif [ $1 = "install" ] && [ $# -gt 2 ]; then
-    /usr/local/bin/pip3 $@
-  else
-    /usr/local/bin/pip3 $@
-  fi
-}
-
 # LaTeX shortcuts
 alias doc="e document.md"
 alias pdf="open *.pdf"
@@ -95,7 +79,7 @@ export PATH=/usr/local:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/texlive/20*/bin:$PATH
 export PATH=/Library/TeX/texbin:$PATH
-export PATH=$HOME/Library/Python/3.7/bin:$PATH
+export PATH=$HOME/.gem/ruby/2.5.0/bin:$PATH
 
 # ConTeXt
 export OSFONTDIR="/Library/Fonts//;/System/Library/Fonts;$HOME/Library/Fonts"

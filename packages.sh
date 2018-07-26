@@ -24,7 +24,6 @@ git
 khd
 neovim
 pandoc
-python
 ranger
 rg
 rmtrash
@@ -53,28 +52,19 @@ soundflower
 soundflowerbed
 )
 
-pippackages=(
-vim-vint
+rubygems=(
 neovim
 )
+
 
 
 ##
 ## Update
 ##
 
-# Brew
-
 brew update  # Update brew itself
 brew upgrade # Update brew packages
-
-# Pip
-
-# Update all packages (including pip itself)
-pip3 install --upgrade setuptools wheel pip
-pip3 freeze --local > tmp
-pip3 install -r tmp --upgrade
-rm tmp
+gem update   # Update gems
 
 
 ##
@@ -89,20 +79,10 @@ installinarray() {
   done
 }
 
-# Brew
-
-# Formulae
-installinarray 'brewformulae' 'brew install'
-
-# Taps
-installinarray 'brewtaps' 'brew tap'
-
-# Casks
-installinarray 'brewcasks' 'brew cask install'
-
-# Pip
-
-installinarray 'pippackages' 'pip3 install --user --install-option="--prefix="'
+installinarray 'brewformulae' 'brew install'   # Formulae
+installinarray 'brewtaps' 'brew tap'           # Taps
+installinarray 'brewcasks' 'brew cask install' # Casks
+installinarray 'rubygems' 'gem install'        # Gems
 
 
 ##
