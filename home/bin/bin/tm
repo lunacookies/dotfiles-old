@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Disable ^C to exit to stop me from being lazy and not using tmux (I run this
+# script on every new terminal window automatically).
+trap '' 2
+
 # abort if we're already inside a TMUX session
 [ "$TMUX" == "" ] || exit 0
 # startup a "default" session if non currently exists
