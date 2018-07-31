@@ -4,17 +4,17 @@
 # script on every new terminal window automatically).
 trap '' 2
 
-# abort if we're already inside a TMUX session
+# Abort if we're already inside a tmux session
 [ "$TMUX" == "" ] || exit 0
-# startup a "default" session if non currently exists
-# tmux has-session -t _default || tmux new-session -s _default -d
 
-# present menu for user to choose which workspace to open
+# Present menu for user to choose which session to open
 PS3="Please choose your session: "
 options=($(tmux list-sessions -F "#S" 2>/dev/null) "New Session")
 echo "Available sessions"
 echo "------------------"
 echo " "
+
+# Selector to either create a new session or attach to an existing one
 select opt in "${options[@]}"
 do
   case $opt in
@@ -29,4 +29,8 @@ do
       ;;
   esac
 done
+
+# Close current window
+echo -n -e "\033]0;tmp_window_name\007"
+osascript -e 'tell application "Terminal" to close (every window whose name contains "tmp_window_name")' & exit
 
