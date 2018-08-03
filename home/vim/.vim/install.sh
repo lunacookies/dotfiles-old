@@ -8,16 +8,12 @@ fi
 # What plugins we install
 plugins=(
 AndrewRadev/splitjoin.vim
-adriaanzon/vim-textobj-matchit
 aramisgithub/vim-ruby
 ericpruitt/tmux.vim
-igrep/vim-latex-omnifunc
 junegunn/goyo.vim
 junegunn/limelight.vim
 junegunn/vim-easy-align
-kana/vim-textobj-user
 lifepillar/vim-mucomplete
-othree/html5.vim
 romainl/Apprentice
 romainl/vim-cool
 romainl/vim-qf
