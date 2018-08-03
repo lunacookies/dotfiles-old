@@ -26,15 +26,15 @@ rm $doc.pdf
 sed -E 's/([A-Za-z0-9.,:?;\)\"\x27}|#-] )([A-Z][A-Z]+)/\1\\abbr{\2}/g' $doc > $doc.mod1
 
 # Matches abbreviation at the start of a line
-sed -E 's/^([A-Z][A-Z]+)/\\abbr{\1}/g' $doc.mod2 > $doc.mod3
+sed -E 's/^([A-Z][A-Z]+)/\\abbr{\1}/g' $doc.mod1 > $doc.mod2
 
 # Matches abbreviation after parentheses
-sed -E 's/\(([A-Z][A-Z]+)/\(\\abbr{\1}/g' $doc.mod3 > $doc.mod4
+sed -E 's/\(([A-Z][A-Z]+)/\(\\abbr{\1}/g' $doc.mod2 > $doc.mod3
 
 # Misc
 
 # Use the best ampersand for titling (in this context, headings)
-sed -E 's/^(#+)(.*)&(.*)/\1\2\\oldand{}\3/g' $doc.mod4 > $doc.finalmod
+sed -E 's/^(#+)(.*)&(.*)/\1\2\\oldand{}\3/g' $doc.mod3 > $doc.finalmod
 
 
 ##
