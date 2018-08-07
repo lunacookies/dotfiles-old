@@ -10,7 +10,7 @@ and understanding what everything contained within them does.
 
 If you do still wish to install the dotfiles, take note that it is 
 **highly** recommended to remove all configuration, fonts, and 
-non-system applications from your machine first -- after all, the 
+non-system applications from your machine first – after all, the 
 provided installer is meant for fresh **macs**. The dotfiles will 
 **not** work on other operating systems. To install the dotfiles 
 automatically, run this command:
