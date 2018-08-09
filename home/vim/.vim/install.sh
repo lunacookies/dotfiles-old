@@ -19,6 +19,7 @@ romainl/vim-cool
 romainl/vim-qf
 terryma/vim-smooth-scroll
 tmux-plugins/vim-tmux-focus-events
+tommcdo/vim-exchange
 tpope/vim-commentary
 tpope/vim-endwise
 tpope/vim-git
