@@ -8,6 +8,7 @@ fi
 # What plugins we install
 plugins=(
 AndrewRadev/splitjoin.vim
+NLKNguyen/c-syntax.vim
 aramisgithub/vim-ruby
 ericpruitt/tmux.vim
 junegunn/goyo.vim
