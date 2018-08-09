@@ -93,10 +93,6 @@ let g:CoolTotalMatches = 1 " Show number of matches in command line
 
 " MUComplete
 
-" Fix MUComplete incompatibility with endwise
-imap <Plug>MyCR <Plug>(MUcompleteCR)
-imap <cr> <Plug>MyCR
-
 " Complete dictionary words first before looking for similar words in markdown
 " files.
 let g:mucomplete#chains = {
