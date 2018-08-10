@@ -61,6 +61,9 @@ unsetopt flowcontrol
 # Do not autoselect the first completion entry
 unsetopt menu_complete
 
+# Use emacs keybindings
+bindkey -e
+
 # Highlight completion
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
