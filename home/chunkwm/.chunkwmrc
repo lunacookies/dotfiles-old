@@ -96,6 +96,13 @@ chunkc set focused_border_skip_floating 1
 # Move windows using mouse modifier more smoothly
 chunkc set window_use_cgs_move 1
 
+# Fade inactive windows so that their transparency is 85 percent
+chunkc set window_fade_inactive 1
+chunkc set window_fade_alpha 0.85
+
+# Let the animation of the fade of inactive windows take 0.3 seconds
+chunkc set window_fade_duration 0.3
+
 
 ##
 ## Load plugins
@@ -111,7 +118,7 @@ chunkc core::load ffm.so
 ## Rules
 ##
 
-# Float
+# Float some windows that would be better off not being tiled
 chunkc tiling::rule --owner Finder --name Copy --state float
 chunkc tiling::rule --owner \"App Store\" --state float
 
