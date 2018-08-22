@@ -24,15 +24,15 @@ chunkc core::hotload 0
 ## Tiling
 ##
 
-# Set desktop mode
+# Use bsp mode everywhere -- i.e. tile everything
 chunkc set global_desktop_mode bsp
 
-# Global padding
-chunkc set global_desktop_offset_top 50
-chunkc set global_desktop_offset_bottom 50
-chunkc set global_desktop_offset_left 50
-chunkc set global_desktop_offset_right 50
-chunkc set global_desktop_offset_gap 25
+# Disable padding
+chunkc set global_desktop_offset_top 0
+chunkc set global_desktop_offset_bottom 0
+chunkc set global_desktop_offset_left 0
+chunkc set global_desktop_offset_right 0
+chunkc set global_desktop_offset_gap 0
 
 # Padding step size
 chunkc set desktop_padding_step_size 10.0
