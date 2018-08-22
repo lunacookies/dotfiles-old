@@ -38,11 +38,18 @@ chunkc set global_desktop_offset_gap 0
 chunkc set desktop_padding_step_size 10.0
 chunkc set desktop_gap_step_size 5.0
 
-# Tiling behaviour
-chunkc set bsp_spawn_left 1
+# Split horizontally if the window is taller than it is wide, and vice versa
 chunkc set bsp_optimal_ratio 1.5
+
+# Always split based on the above principal
 chunkc set bsp_split_mode optimal
-chunkc set bsp_split_ratio 0.5
+
+# Set the ratio of the split window to be the golden ratio. This means that the
+# ratio of the new window to the old window is 0.618:1
+chunkc set bsp_split_ratio 0.618
+
+# Spawn new windows to the right and to the bottom
+chunkc set bsp_spawn_left 0
 
 
 ##
