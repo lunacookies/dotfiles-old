@@ -36,7 +36,7 @@ alias pdf="open *.pdf"
 
 # Quick dotfile access
 alias ec="e ~/.vim/vimrc ~/.vim/install.sh ~/.vim/autoload/aramis/* ~/.vim/ftplugin/*"
-alias hdc="e ~/.khdrc"
+alias hdc="e ~/.skhdrc"
 alias sc="e ~/.zshrc ~/.bashrc ~/.shrc"
 alias wmc="e ~/.chunkwmrc"
 
@@ -47,9 +47,9 @@ alias lal="exa -l --git --group-directories-first -T -L 2 -F --ignore-glob .git 
 alias ll="exa -l --git --group-directories-first -T -L 2 -F --ignore-glob .git"
 
 # Daemons
-alias nhd="brew services stop khd"
+alias nhd="brew services stop skhd"
 alias nwm="brew services stop chunkwm"
-alias yhd="brew services restart khd"
+alias yhd="brew services restart skhd"
 alias ywm="brew services restart chunkwm"
 
 # Git
