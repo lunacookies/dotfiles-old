@@ -3,17 +3,14 @@
 # Get me into the dotfiles folder
 cd ~/dotfiles
 
-# Update
 brew update                 # Update brew itself
-brew upgrade                # Update brew packages
-
-# Install and delete
 brew bundle cleanup --force # Remove anything not present in the Brewfile
-brew bundle install         # Install everything from the Brewfile
+brew bundle                 # Install and update everything from the Brewfile
+brew upgrade                # Update any dependencies of formulae
 
 # Clean up as necessary
 brew cleanup                # Delete caches
-brew cask cleanup           # Delete cask caches
+brew cleanup                # Delete cask caches
 brew prune                  # Remove unused symlinks
 brew doctor                 # Check if anything is broken
 
