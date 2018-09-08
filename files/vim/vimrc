@@ -477,15 +477,6 @@ cnoremap <expr> <S-Tab> getcmdtype()
       \ == "/" \|\| getcmdtype()
       \ == "?" ? "<CR>?<C-r>/" : "<S-Tab>"
 
-" Enter command-line mode with <BS>
-nnoremap <BS> :
-xnoremap <BS> :
-
-" Escape from modes easily
-inoremap jk <Esc>`^
-xnoremap fd <Esc>
-cnoremap jk <C-c>
-
 " Autoexpansion
 inoremap (<CR> (<CR>)<Esc>O
 inoremap {<CR> {<CR>}<Esc>O
