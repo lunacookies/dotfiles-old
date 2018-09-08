@@ -1,11 +1,24 @@
 [user]
   name = Aramis Razzaghipour
   email = aramisnoah@gmail.com
+
 [core]
   editor = nvim
   pager = less
 
+[alias]
+  co = checkout
+  br = branch
+  ci = commit
+  st = status
+  hist = log --oneline --decorate --graph --all
+
+[status]
+  short = true
+
+# Git hosting stuff
 [url "https://github.com/"]
   insteadOf = git@github.com:
 [url "https://gitlab.com/"]
   insteadOf = git@gitlab.com:
+
