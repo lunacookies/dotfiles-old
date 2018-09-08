@@ -64,10 +64,10 @@ alias doc="nvim document.md"
 alias pdf="open *.pdf"
 
 # Quick dotfile access
-alias ec="nvim ~/.vim/vimrc ~/.vim/install.sh ~/.vim/autoload/aramis/* ~/.vim/ftplugin/*"
-alias hdc="nvim ~/.skhdrc"
-alias sc="nvim ~/.bashrc"
-alias wmc="nvim ~/.chunkwmrc"
+alias ec="nvim $HOME/.vim/vimrc $HOME/.vim/install.sh $HOME/.vim/autoload/aramis/* $HOME/.vim/ftplugin/*"
+alias hdc="nvim $HOME/.skhdrc"
+alias sc="nvim $HOME/.bashrc"
+alias wmc="nvim $HOME/.chunkwmrc"
 
 # Daemons
 alias nhd="brew services stop skhd"
@@ -97,7 +97,7 @@ alias gsl="git status"
 ##
 
 # Path
-export PATH=~/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 export PATH=/usr/local:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/texlive/20*/bin:$PATH
@@ -160,7 +160,7 @@ bind '"\e[C": forward-char'
 bind '"\e[D": backward-char'
 
 # Save a lot of history
-HISTFILE=~/.zhist
+HISTFILE=$HOME/.zhist
 HISTSIZE=10000
 SAVEHIST=1000000
 
