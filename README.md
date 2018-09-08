@@ -71,7 +71,7 @@ is configurable in Preferences>Your Profile>Window>Title).
 
 I have exploited this functionality to set the window title to be 
 the name of the file that is currently being edited in `(n)vim` or 
-the working directory in `zsh`. This all works inside `tmux` as 
+the working directory in `bash`. This all works inside `tmux` as 
 well!
 
 ### Other terminal emulators

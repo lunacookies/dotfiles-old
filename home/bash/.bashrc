@@ -21,7 +21,7 @@ alias pdf="open *.pdf"
 # Quick dotfile access
 alias ec="e ~/.vim/vimrc ~/.vim/install.sh ~/.vim/autoload/aramis/* ~/.vim/ftplugin/*"
 alias hdc="e ~/.skhdrc"
-alias sc="e ~/.zshrc ~/.bashrc ~/.shrc"
+alias sc="e ~/.bashrc"
 alias wmc="e ~/.chunkwmrc"
 
 # List files/directories
@@ -65,9 +65,6 @@ export PATH=/usr/local/texlive/20*/bin:$PATH
 export PATH=/Library/TeX/texbin:$PATH
 export PATH=$HOME/.gem/ruby/2.5.0/bin:$PATH
 
-# ConTeXt
-export OSFONTDIR="/Library/Fonts//;/System/Library/Fonts;$HOME/Library/Fonts"
-
 # Editor
 export EDITOR=nvim
 
@@ -88,7 +85,7 @@ tmuxwindowtitle () {
     local PWD_URL="file://$HOSTNAME${PWD//$SEARCH/$REPLACE}"
     printf '\ePtmux;\e\e]6;%s\a\e\\' "$PWD_URL"
   else
-    tmux rename-window -t $(tmux display-message -p '#I') $(echo $(basename $PWD) — zsh)
+    tmux rename-window -t $(tmux display-message -p '#I') $(echo $(basename $PWD) — bash)
   fi
 }
 
@@ -99,7 +96,7 @@ regularwindowtitle () {
     local PWD_URL="file://$HOSTNAME${PWD//$SEARCH/$REPLACE}"
     printf '\e]6;%s\a' "$PWD_URL"
   else
-    printf "\e]0;$(echo $(basename $PWD) — zsh)\a"
+    printf "\e]0;$(echo $(basename $PWD) — bash)\a"
   fi
 }
 
