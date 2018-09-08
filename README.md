@@ -1,7 +1,7 @@
 # My dotfiles
 
-These are my dotfiles. They are managed through a combination of 
-`stow` and a small bash script (`stow.sh`).
+These are my dotfiles. They are managed through a small bash 
+script (`link.sh`).
 
 ## A word of warning
 
@@ -34,26 +34,27 @@ machine.
 
 ## How to add a program (`foo`) to the dotfiles
 
-1. Add the command to install `foo` to `brew.sh`.
+1. Add `foo` to the `Brewfile`.
 
 1. If `foo`'s configuration files follow the XDG Base Directory 
    specification, then create a hierarchy like so:
 
    ```
-   xdg
-   └── foo
+   files
+   └── config
+       └── foo
    ```
 
    If they do *not* follow XDG, then create a hierarchy like so:
 
    ```
-   home
+   files
    └── foo
    ```
 
    Now you can place `foo`'s config files in `foo/`!
 
-1. Run `stow.sh`
+1. Run `link.sh`
 
 ## My smart window title config
 

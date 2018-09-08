@@ -32,10 +32,10 @@ cd ~/dotfiles
 ##
 
 # We do these things before the mass software installation becaus some parts of
-# packages.sh depend on configuration that is linked in stow.sh
+# packages.sh depend on configuration that is linked in link.sh
 
 # Symlink all configuration
-./stow.sh
+./link.sh
 
 # Set settings
 ./macos
