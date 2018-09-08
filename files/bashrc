@@ -60,14 +60,14 @@ customls() {
 alias ls="customls"
 
 # LaTeX shortcuts
-alias doc="e document.md"
+alias doc="nvim document.md"
 alias pdf="open *.pdf"
 
 # Quick dotfile access
-alias ec="e ~/.vim/vimrc ~/.vim/install.sh ~/.vim/autoload/aramis/* ~/.vim/ftplugin/*"
-alias hdc="e ~/.skhdrc"
-alias sc="e ~/.bashrc"
-alias wmc="e ~/.chunkwmrc"
+alias ec="nvim ~/.vim/vimrc ~/.vim/install.sh ~/.vim/autoload/aramis/* ~/.vim/ftplugin/*"
+alias hdc="nvim ~/.skhdrc"
+alias sc="nvim ~/.bashrc"
+alias wmc="nvim ~/.chunkwmrc"
 
 # Daemons
 alias nhd="brew services stop skhd"
