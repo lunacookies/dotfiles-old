@@ -1,11 +1,11 @@
 [user]
-	name = Aramis Razzaghipour
-	email = aramisnoah@gmail.com
+  name = Aramis Razzaghipour
+  email = aramisnoah@gmail.com
 [core]
-	editor = nvim
+  editor = nvim
   pager = less
 
 [url "https://github.com/"]
-	insteadOf = git@github.com:
+  insteadOf = git@github.com:
 [url "https://gitlab.com/"]
-	insteadOf = git@gitlab.com:
+  insteadOf = git@gitlab.com:
