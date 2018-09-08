@@ -24,11 +24,8 @@ alias hdc="e ~/.skhdrc"
 alias sc="e ~/.bashrc"
 alias wmc="e ~/.chunkwmrc"
 
-# List files/directories
-alias l="exa -l --git --group-directories-first -F --ignore-glob .git"
-alias la="exa -l --git --group-directories-first -F --ignore-glob .git -a"
-alias lal="exa -l --git --group-directories-first -T -L 2 -F --ignore-glob .git -a"
-alias ll="exa -l --git --group-directories-first -T -L 2 -F --ignore-glob .git"
+# Colour  ls  by default
+alias ls="ls -G"
 
 # Daemons
 alias nhd="brew services stop skhd"
