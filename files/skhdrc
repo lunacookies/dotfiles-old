@@ -89,8 +89,8 @@ shift + alt - 0 : chunkc tiling::desktop --equalize
 cmd + alt + ctrl - r : khd -e "reload"
 
 # Open apps
-cmd - return : osascript ~/bin/newchrome.scpt
-alt - return : osascript ~/bin/newterminal.scpt
+cmd - return : osascript $HOME/.local/bin/newchrome.scpt
+alt - return : osascript $HOME/.local/bin/newterminal.scpt
 
 # Toggle desktop offset
 alt - a : chunkc tiling::desktop --toggle offset
