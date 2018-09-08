@@ -14,6 +14,7 @@ ericpruitt/tmux.vim
 junegunn/goyo.vim
 junegunn/limelight.vim
 junegunn/vim-easy-align
+lifepillar/vim-colortemplate
 lifepillar/vim-mucomplete
 romainl/Apprentice
 romainl/vim-cool
