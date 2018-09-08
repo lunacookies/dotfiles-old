@@ -6,13 +6,11 @@
 
 # System
 alias cp="cp -riv"
-alias cx="chmod +x"
-alias cxb="chmod +x ~/bin/*"
-alias e="nvim"
-alias mk="mkdir -pv"
+alias vim="nvim"
+alias mkdir="mkdir -pv"
 alias mv="mv -iv"
-alias rm="echo Use 'trs' or '/bin/rm'"
-alias trs="rmtrash"
+alias rm="rmtrash"
+alias ls="ls -G"
 
 # LaTeX shortcuts
 alias doc="e document.md"
@@ -23,9 +21,6 @@ alias ec="e ~/.vim/vimrc ~/.vim/install.sh ~/.vim/autoload/aramis/* ~/.vim/ftplu
 alias hdc="e ~/.skhdrc"
 alias sc="e ~/.bashrc"
 alias wmc="e ~/.chunkwmrc"
-
-# Colour  ls  by default
-alias ls="ls -G"
 
 # Daemons
 alias nhd="brew services stop skhd"
