@@ -11,6 +11,7 @@ alias mkdir="mkdir -pv"
 alias mv="mv -iv"
 alias rm="rmtrash"
 alias ls="ls -G"
+alias ls -a="ls -AG"
 
 # LaTeX shortcuts
 alias doc="e document.md"
