@@ -117,6 +117,12 @@ export LESS_TERMCAP_so=$(printf "\033[01;31;33m")
 export LESS_TERMCAP_ue=$(printf "\033[0m")
 export LESS_TERMCAP_us=$(printf "\033[01;32m")
 
+# Use arrows to navigate history
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+bind '"\e[C": forward-char'
+bind '"\e[D": backward-char'
+
 # Save a lot of history
 HISTFILE=~/.zhist
 HISTSIZE=10000
