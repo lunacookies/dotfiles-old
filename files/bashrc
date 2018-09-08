@@ -91,6 +91,17 @@ export PATH=$HOME/.gem/ruby/2.5.0/bin:$PATH
 # Editor
 export EDITOR=nvim
 
+# Pager
+export PAGER=less
+
+# Set default flags for less
+#
+# The F flag makes less quit if the entire file can be displayed without
+# scrolling
+#
+# The R flag makes less interpret colours
+export LESS="FR"
+
 # Text encoding
 export __CF_USER_TEXT_ENCODING=0x08000100:0x0
 
