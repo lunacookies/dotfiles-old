@@ -75,22 +75,6 @@ alias nwm="brew services stop chunkwm"
 alias yhd="brew services restart skhd"
 alias ywm="brew services restart chunkwm"
 
-# Git
-alias ga="git add"
-alias gap="git add --patch"
-alias gc="git commit"
-alias gca="git add -A && git commit -a"
-alias gcl="git clone"
-alias gd="git diff"
-alias gl="git log --oneline --decorate --graph --all"
-alias gm="git mv"
-alias gpl="git pull"
-alias gps="git push"
-alias gr="git rm"
-alias grc="git reset --hard"
-alias gs="git status -s"
-alias gsl="git status"
-
 
 ##
 ## Environment variables
