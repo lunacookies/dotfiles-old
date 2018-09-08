@@ -29,7 +29,6 @@ brew "stow"
 brew "the_silver_searcher"
 brew "tmux"
 brew "wget"
-brew "zsh"
 
 cask "adobe-acrobat-reader"
 cask "alfred"
