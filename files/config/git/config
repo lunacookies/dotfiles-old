@@ -1,11 +1,13 @@
+# User info
 [user]
   name = Aramis Razzaghipour
   email = aramisnoah@gmail.com
 
+# Use nvim for commit messages etc.
 [core]
   editor = nvim
-  pager = less
 
+# Some common aliases
 [alias]
   co = checkout
   br = branch
@@ -13,12 +15,46 @@
   st = status
   hist = log --oneline --decorate --graph --all
 
+# Use the short form of git status by default
 [status]
   short = true
+
+# Enable colour
+[color]
+  ui = true
 
 # Git hosting stuff
 [url "https://github.com/"]
   insteadOf = git@github.com:
 [url "https://gitlab.com/"]
   insteadOf = git@gitlab.com:
+
+
+##
+## Diff so fancy
+##
+
+# We set less to *not* clear the screen on exit when explicitly showing a diff
+# so that it is easier to reference the output in a later command.
+[pager]
+  diff = diff-so-fancy | less --tabs=2 -X
+  show = diff-so-fancy | less --tabs=2
+
+# Diff colours
+[color "diff-highlight"]
+  oldNormal = red
+  oldHighlight = red bold 94
+  newNormal = green
+  newHighlight = green bold 22
+[color "diff"]
+  meta = yellow
+  frag = magenta bold
+  commit = yellow bold
+  old = red
+  new = green
+  whitespace = red reverse
+
+# Show + and - at start of lines
+[diff-so-fancy]
+  tripLeadingSymbols = false
 
