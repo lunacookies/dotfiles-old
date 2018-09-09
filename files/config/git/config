@@ -2,6 +2,7 @@
 [user]
   name = Aramis Razzaghipour
   email = aramisnoah@gmail.com
+  username = aramisgithub
 
 # Use nvim for commit messages etc.
 [core]
