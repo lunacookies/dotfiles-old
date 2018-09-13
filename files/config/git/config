@@ -4,7 +4,7 @@
   email = aramisnoah@gmail.com
   username = aramisgithub
 
-# Use nvim for commit messages etc.
+# Use Nvim for commit messages etc.
 [core]
   editor = nvim
 

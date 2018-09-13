@@ -71,7 +71,7 @@ proxy icon, along with the full or partial name of the file (this
 is configurable in Preferences>Your Profile>Window>Title).
 
 I have exploited this functionality to set the window title to be 
-the name of the file that is currently being edited in `(n)vim` or 
+the name of the file that is currently being edited in `(N)vim` or 
 the working directory in `bash`. This all works inside `tmux` as 
 well!
 

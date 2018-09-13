@@ -1,6 +1,5 @@
 " aramis' vimrc
 
-
 ""
 "" Basics
 ""
@@ -11,11 +10,11 @@ if !has('nvim')
   let &termencoding = &encoding " Keyboard and terminal both  use utf-8
 endif
 if !has('nvim')
-  set encoding=utf-8            " Use utf-8 internally (nvim always does this)
+  set encoding=utf-8            " Use utf-8 internally (Nvim always does this)
 endif
 setglobal fileencoding=utf-8    " Set default file encoding
 scriptencoding utf-8            " This file uses some utf-8 symbols
-set fileencodings=ucs-bom,utf-8 " Sets how (n)vim detects the current encoding
+set fileencodings=ucs-bom,utf-8 " Sets how (N)vim detects the current encoding
 set fileformat=unix             " Unix file format
 
 " Load matchit.vim if it hasn't already been loaded
@@ -207,16 +206,16 @@ function! ProxyIconTitle(prefix,suffix) abort
   let filenameurl = 'file://' . hostname() . expand('%:p')
 
   " This is how the command used to specify the window title is structured in
-  " both vim and nvim, so we specify it here
+  " both Vim and Nvim, so we specify it here
   let args = a:prefix . filenameurl . a:suffix
 
   if has('nvim')
-    " We use nvim's chansend to send the escape codes because it is more direct
+    " We use Nvim's chansend to send the escape codes because it is more direct
     " than printf
     let cmd = 'call chansend(2, "' . args . '")'
     execute cmd
   else
-    " Use printf to call escape sequence because chansend() is unique to nvim
+    " Use printf to call escape sequence because chansend() is unique to Nvim
     let cmd = 'silent !printf "' . args . '"'
     execute cmd
     execute 'redraw!'
@@ -247,9 +246,9 @@ else
   else
     " If setting a proxy icon is unavailable …
     if $TERM ==# 'screen-256color'
-      " Set tmux window name to vim filename (not entire path to file because
+      " Set tmux window name to Vim filename (not entire path to file because
       " that is often too long for a tab name) in conjunction with the name of
-      " the program being run ((n)vim).
+      " the program being run ((N)vim).
       autocmd vimrc BufReadPost,FileReadPost,BufNewFile *
             \ call system("tmux rename-window
             \ $(echo " . expand("%:t") . " — vim")
@@ -267,7 +266,7 @@ endif
 
 " Buffers and files
 
-set autoread     " Read a file again if it has been modified outside of vim
+set autoread     " Read a file again if it has been modified outside of Vim
 set hidden       " A buffer becomes hidden when abandoned
 set path=$PWD/** " Recursively search directories
 
@@ -277,7 +276,7 @@ set viminfo+=! " Save uppercase variables into viminfo (default behavoiur)
 
 " Undo
 
-" Only use persistent undo if vim has it compiled in
+" Only use persistent undo if Vim has it compiled in
 if has('persistent_undo')
   set undodir=~/.vim/undo " Save undo history here
   set undofile            " Keep undo history between sessions
@@ -298,7 +297,7 @@ inoremap ? ?<C-g>u
 
 " Backup
 
-set backup                  " Make a backup of every file you open in vim
+set backup                  " Make a backup of every file you open in Vim
 set backupdir=~/.vim/backup " Save backups here
 
 " Automatically create directory for backups if it does not exist
