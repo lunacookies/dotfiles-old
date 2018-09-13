@@ -573,13 +573,22 @@ autocmd vimrc FileType sh   setlocal makeprg=shellcheck\ --format=gcc\ %
 "" Colourscheme
 ""
 
-" Custom vim interface
-autocmd vimrc ColorScheme * highlight! ModeMsg gui=reverse, cterm=reverse
-autocmd vimrc ColorScheme * highlight! link    ColorColumn  ErrorMsg
+" Custom Vim interface
+
+" As colourcolumn has been hijacked for highlighting lines that go over
+" textwidth, there is no need for its colouring to be subtle. It is because of
+" this that we link colourcolumn to ErrorMsg -- to make it more prominent.
+autocmd vimrc ColorScheme * highlight! link ColorColumn ErrorMsg
+
+" Reset the colour of the vertical split divider to what it was in older
+" versions of solarized8.
+autocmd vimrc ColorScheme * highlight! link VertSplit StatusLineNC
 
 " Better syntax highlighting
-autocmd vimrc ColorScheme * highlight! link vimAutoCmdSfxList   Type
-autocmd vimrc ColorScheme * highlight! link vimIsCommand        Statement
+
+" These are just some custom linkings to make Vim highlight Vimscript better
+autocmd vimrc ColorScheme * highlight! link vimAutoCmdSfxList Type
+autocmd vimrc ColorScheme * highlight! link vimIsCommand      Statement
 
 " Set colourscheme
 colorscheme solarized8
