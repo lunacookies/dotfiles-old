@@ -16,6 +16,7 @@ junegunn/limelight.vim
 junegunn/vim-easy-align
 lifepillar/vim-colortemplate
 lifepillar/vim-mucomplete
+lifepillar/vim-solarized8
 romainl/Apprentice
 romainl/vim-cool
 romainl/vim-qf
