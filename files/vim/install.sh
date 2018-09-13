@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # Create neccesary plugin folders
-if [ ! -e ~/dotfiles/home/vim/.vim/bundle ];then
-  mkdir -p ~/dotfiles/home/vim/.vim/bundle
+if [ ! -e ~/dotfiles/files/vim/bundle ];then
+  mkdir -p ~/dotfiles/files/vim/bundle
 fi
 
 # What plugins we install
