@@ -22,7 +22,6 @@ curl -sL --proto-redir -all,https https://git.io/fAaCY | bash
 This will download an installer script (`install.sh`) which will:
 
 1. Install homebrew if it does not exist
-1. Install homebrew git if it does not exist
 1. If dotfiles directories already exist, end script. Otherwise, 
    clone repository to `~/dotfiles`.
 1. Install all packages and software

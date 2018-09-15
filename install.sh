@@ -1,17 +1,12 @@
 #!/usr/bin/env bash
 
 ##
-## Basic pre-requisites
+## Homebrew
 ##
 
 # If homebrew is not installed then install it
 if ! type "brew" > /dev/null; then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
-
-# If git from homebrew is not installed then install it
-if [ ! -e /usr/local/bin/git ]; then
-  brew install git
 fi
 
 
