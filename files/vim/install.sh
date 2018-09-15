@@ -34,14 +34,14 @@ wellle/targets.vim
 )
 
 # Remove any old plugins
-rm -rf ~/dotfiles/home/vim/.vim/bundle/*
+rm -rf ~/dotfiles/files/vim/bundle/*
 
 # Clone plugins into their directories and remove any git-related files from the
 # plugin to stop git from getting confused
 for repo in ${plugins[@]}; do
   plugin="$(echo "$repo" | sed -e 's/.*[\/]//')"
-  git clone --depth=1 -q https://github.com/$repo.git ~/dotfiles/home/vim/.vim/bundle/$plugin
-  rm -rf ~/dotfiles/home/vim/.vim/bundle/$plugin/.git*
+  git clone --depth=1 -q https://github.com/$repo.git ~/dotfiles/files/vim/bundle/$plugin
+  rm -rf ~/dotfiles/files/vim/bundle/$plugin/.git*
   echo $plugin installed!
 done
 
@@ -54,5 +54,5 @@ undo
 backup
 swap
 .netrwhist
-" > ~/dotfiles/home/vim/.vim/.gitignore
+" > ~/dotfiles/files/vim/.gitignore
 
