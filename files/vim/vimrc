@@ -147,6 +147,7 @@ set laststatus=2          " Always display statusline
 set lazyredraw            " Don't redraw during macros
 set list                  " Show invisibles
 set listchars=trail:•     " Display a bullet point on trailing spaces
+set pumheight=7           " Show 7 completion items before showing a scrollbar
 set shortmess=acIT        " Abbreviate error messages
 set showcmd               " Tells you if you press a non-alphabetic key
 set splitbelow            " Create new splits to the bottom
