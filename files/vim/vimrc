@@ -111,25 +111,6 @@ noremap <silent> <c-d> :call smooth_scroll#down(&scroll,   g:scrolltime,   2)<CR
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2,   2*g:scrolltime, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 2*g:scrolltime, 4)<CR>
 
-" Solarized8
-
-" Required by solarized8 to use the light version, despite it being bad practice
-" (this setting is meant for helping Vim set readable colours in the default
-" colour scheme).
-set background=light
-
-" Source colours from the terminal's 16 colour palette because Terminal.app
-" doesn't support 24-bit colour or changing colours in the 256 namespace via
-" escape codes.
-let g:solarized_use16 = 1
-
-" Make colours the same as the original solarized
-"
-" I use this despite it having side effects after switching colour schemes
-" because I prefer the original colours, also because I don't switch colour
-" schemes often enough for it to matter.
-let g:solarized_extra_hi_groups = 1
-
 
 ""
 "" Options
@@ -581,10 +562,6 @@ autocmd vimrc FileType sh   setlocal makeprg=shellcheck\ --format=gcc\ %
 " this that we link colourcolumn to ErrorMsg -- to make it more prominent.
 autocmd vimrc ColorScheme * highlight! link ColorColumn ErrorMsg
 
-" Reset the colour of the vertical split divider to what it was in older
-" versions of solarized8.
-autocmd vimrc ColorScheme * highlight! link VertSplit StatusLineNC
-
 " Better syntax highlighting
 
 " These are just some custom linkings to make Vim highlight Vimscript better
@@ -592,5 +569,5 @@ autocmd vimrc ColorScheme * highlight! link vimAutoCmdSfxList Type
 autocmd vimrc ColorScheme * highlight! link vimIsCommand      Statement
 
 " Set colourscheme
-colorscheme solarized8
+colorscheme apprentice
 
