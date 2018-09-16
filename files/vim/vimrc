@@ -140,6 +140,7 @@ set virtualedit=block                 " Better visual block mode
 
 set belloff=all       " Disable all bells
 set conceallevel=0    " Never conceal
+set cursorline        " Make the current line more prominent
 set display=lastline  " Show as much of partially-displayed lines as possible
 set fillchars+=vert:\ " Hide dashes on the vertical split dividing line
 set guioptions=       " Hide scrollbars in MacVim
