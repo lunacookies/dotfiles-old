@@ -120,9 +120,6 @@ noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 2*g:scrolltime, 4)<CR
 
 set backspace=2                       " Backspace over everything
 set clipboard^=unnamed                " Use macOS clipboard when available
-set completeopt=menuone               " Show completions when there is a match
-set completeopt+=noselect             " Required for MUComplete
-set completeopt+=preview              " Display extra info about the match
 set dictionary+=/usr/share/dict/words " Larger dictionary
 set formatoptions=1cjqr               " Wrap and join comments intelligently
 set mouse=nvc                         " Use mouse in all modes except insert
@@ -138,20 +135,23 @@ set virtualedit=block                 " Better visual block mode
 
 " User interface and interactions
 
-set belloff=all       " Disable all bells
-set conceallevel=0    " Never conceal
-set cursorline        " Make the current line more prominent
-set display=lastline  " Show as much of partially-displayed lines as possible
-set guioptions=       " Hide scrollbars in MacVim
-set laststatus=2      " Always display statusline
-set lazyredraw        " Don't redraw during macros
-set list              " Show invisibles
-set listchars=trail:• " Display a bullet point on trailing spaces
-set shortmess=acIT    " Abbreviate error messages
-set showcmd           " Tells you if you press a non-alphabetic key
-set splitbelow        " Create new splits to the bottom
-set splitright        " Create new splits to the right
-set tabpagemax=50     " Maximum number of tab pages
+set belloff=all           " Disable all bells
+set completeopt+=noselect " Required for MUComplete
+set completeopt+=preview  " Display extra info about the match
+set completeopt=menuone   " Show completions when there is a match
+set conceallevel=0        " Never conceal
+set cursorline            " Make the current line more prominent
+set display=lastline      " Show as much of partly-displayed lines as possible
+set guioptions=           " Hide scrollbars in MacVim
+set laststatus=2          " Always display statusline
+set lazyredraw            " Don't redraw during macros
+set list                  " Show invisibles
+set listchars=trail:•     " Display a bullet point on trailing spaces
+set shortmess=acIT        " Abbreviate error messages
+set showcmd               " Tells you if you press a non-alphabetic key
+set splitbelow            " Create new splits to the bottom
+set splitright            " Create new splits to the right
+set tabpagemax=50         " Maximum number of tab pages
 
 " Show colourcolumn on characters that go over textwidth
 autocmd vimrc winEnter,BufEnter * call clearmatches()
