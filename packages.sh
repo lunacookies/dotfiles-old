@@ -3,6 +3,11 @@
 # Get me into the dotfiles folder
 cd ~/dotfiles
 
+
+##
+## Brew
+##
+
 brew update                 # Update brew itself
 brew bundle cleanup --force # Remove anything not present in the Brewfile
 brew bundle                 # Install and update everything from the Brewfile
@@ -13,6 +18,14 @@ brew cleanup                # Delete caches
 brew cleanup                # Delete cask caches
 brew prune                  # Remove unused symlinks
 brew doctor                 # Check if anything is broken
+
+
+##
+## Gems
+##
+
+gem update                  # Update all gems
+gem install neovim          # Install the only global gem we want -- Neovim
 
 
 ##
