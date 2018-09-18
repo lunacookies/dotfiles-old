@@ -95,8 +95,9 @@ let g:CoolTotalMatches = 1 " Show number of matches in command line
 " Complete dictionary words first before looking for similar words in markdown
 " files.
 let g:mucomplete#chains = {
-      \ 'vim' : [ 'path', 'omni', 'cmd', 'keyn' ],
-      \ 'markdown' : [ 'dict', 'c-p' ],
+      \ 'vim':      [ 'path', 'omni', 'cmd', 'c-p' ],
+      \ 'markdown': [ 'dict', 'c-p' ],
+      \ 'default':  [ 'path', 'c-p', 'omni' ],
       \ }
 
 " Smooth-scroll
