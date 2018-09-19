@@ -110,4 +110,32 @@ html {
   font-family: "Inconsolata";
   src: local("Nexus Typewriter Pro") !important;
 }
+@font-face {
+  font-family: "Helvetica";
+  src: local("Avenir Next") !important;
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  src: local("Avenir Next") !important;
+}
+@font-face {
+  font-family: "BlinkMacSystemFont";
+  src: local("Fira Sans") !important;
+}
+@font-face {
+  font-family: "Roboto";
+  src: local("Fira Sans") !important;
+}
+@font-face {
+  font-family: "Roboto Slab";
+  src: local("Fira Sans") !important;
+}
+@font-face {
+  font-family: "Noto Sans";
+  src: local("Avenir Next") !important;
+}
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: local("Avenir Next") !important;
+}
 
