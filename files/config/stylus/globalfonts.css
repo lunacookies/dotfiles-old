@@ -50,4 +50,12 @@ html {
   font-family: "Gill Sans";
   src: local("Gill Sans Nova") !important;
 }
+@font-face {
+  font-family: "Times New Roman";
+  src: local("Minion 3") !important;
+}
+@font-face {
+  font-family: "Times";
+  src: local("Minion 3") !important;
+}
 
