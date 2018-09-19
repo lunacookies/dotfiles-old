@@ -66,4 +66,48 @@ html {
   font-family: "sans-serif";
   src: local("Fira Sans") !important;
 }
+@font-face {
+  font-family: "monospace";
+  src: local("Nexus Typewriter Pro") !important;
+}
+@font-face {
+  font-family: "Monaco";
+  src: local("Nexus Typewriter Pro") !important;
+}
+@font-face {
+  font-family: "Menlo";
+  src: local("Nexus Typewriter Pro") !important;
+}
+@font-face {
+  font-family: "SF Mono";
+  src: local("Nexus Typewriter Pro") !important;
+}
+@font-face {
+  font-family: "Consolas";
+  src: local("Nexus Typewriter Pro") !important;
+}
+@font-face {
+  font-family: "Courier";
+  src: local("Nexus Typewriter Pro") !important;
+}
+@font-face {
+  font-family: "Courier New";
+  src: local("Nexus Typewriter Pro") !important;
+}
+@font-face {
+  font-family: "Lucida Console";
+  src: local("Nexus Typewriter Pro") !important;
+}
+@font-face {
+  font-family: "Roboto Mono";
+  src: local("Nexus Typewriter Pro") !important;
+}
+@font-face {
+  font-family: "Source Code Pro";
+  src: local("Nexus Typewriter Pro") !important;
+}
+@font-face {
+  font-family: "Inconsolata";
+  src: local("Nexus Typewriter Pro") !important;
+}
 
