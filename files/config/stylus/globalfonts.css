@@ -1,0 +1,19 @@
+/* */
+/* OpenType features */
+/* */
+
+html {
+  -webkit-font-feature-settings:
+    "calt" 1, "kern" 1, "liga" 1, "onum" 1, "pnum" 1,
+    "tnum" 0, "lnum" 0, "dlig" 0;
+     -moz-font-feature-settings:
+    "calt" 1, "kern" 1, "liga" 1, "onum" 1, "pnum" 1,
+    "tnum" 0, "lnum" 0, "dlig" 0;
+      -ms-font-feature-settings:
+    "calt" 1, "kern" 1, "liga" 1, "onum" 1, "pnum" 1,
+    "tnum" 0, "lnum" 0, "dlig" 0;
+          font-feature-settings:
+    "calt" 1, "kern" 1, "liga" 1, "onum" 1, "pnum" 1,
+    "tnum" 0, "lnum" 0, "dlig" 0;
+}
+
