@@ -38,4 +38,16 @@ html {
   font-family: "Verdana";
   src: local("Fira Sans") !important;
 }
+@font-face {
+  font-family: "Tahoma";
+  src: local("Fira Sans") !important;
+}
+@font-face {
+  font-family: "Trebuchet MS";
+  src: local("Fira Sans") !important;
+}
+@font-face {
+  font-family: "Gill Sans";
+  src: local("Gill Sans Nova") !important;
+}
 
