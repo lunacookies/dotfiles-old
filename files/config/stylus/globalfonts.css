@@ -17,3 +17,17 @@ html {
     "tnum" 0, "lnum" 0, "dlig" 0;
 }
 
+
+/* */
+/* Font substitutions */
+/* */
+
+@font-face {
+  font-family: "Arial";
+  src: local("Fira Sans") !important;
+}
+@font-face {
+  font-family: arial;
+  src: local("Fira Sans") !important;
+}
+
