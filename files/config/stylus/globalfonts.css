@@ -59,6 +59,18 @@ html {
   src: local("Minion 3");
 }
 @font-face {
+  font-family: "Georgia";
+  src: local("Minion 3");
+}
+@font-face {
+  font-family: "Palatino";
+  src: local("Minion 3");
+}
+@font-face {
+  font-family: "Hoefler Text";
+  src: local("Arno Pro");
+}
+@font-face {
   font-family: "serif";
   src: local("Minion 3");
 }
