@@ -34,4 +34,8 @@ html {
   font-family: "Arial Narrow";
   src: local("Fira Sans") !important;
 }
+@font-face {
+  font-family: "Verdana";
+  src: local("Fira Sans") !important;
+}
 
