@@ -30,4 +30,8 @@ html {
   font-family: arial;
   src: local("Fira Sans") !important;
 }
+@font-face {
+  font-family: "Arial Narrow";
+  src: local("Fira Sans") !important;
+}
 
