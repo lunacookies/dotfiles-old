@@ -160,9 +160,6 @@ defaults delete NSGlobalDomain NSWindowResizeTime > /dev/null 2>&1
 ## Finder
 ##
 
-# Do not show icons on desktop
-defaults write com.apple.finder CreateDesktop false
-
 # Keep folders on top when sorting by name
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
 
