@@ -9,6 +9,7 @@ fi
 plugins=(
 AndrewRadev/splitjoin.vim
 NLKNguyen/c-syntax.vim
+arzg/vim-plan9
 arzg/vim-ruby
 ericpruitt/tmux.vim
 junegunn/goyo.vim
@@ -16,7 +17,6 @@ junegunn/limelight.vim
 junegunn/vim-easy-align
 lifepillar/vim-colortemplate
 lifepillar/vim-mucomplete
-romainl/Apprentice
 romainl/vim-cool
 romainl/vim-qf
 terryma/vim-smooth-scroll
