@@ -32,7 +32,7 @@ gem install neovim          # Install the only global gem we want -- Neovim
 ## Install Fira Mono with Text Figures
 ##
 
-fonturl=https://github.com/aramisgithub/FiraMono_Text_Figures.git
+fonturl=https://github.com/arzg/FiraMono_Text_Figures.git
 
 # Download the fonts
 git clone --depth=1 -q $fonturl ~/fonttmp
