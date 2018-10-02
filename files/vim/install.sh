@@ -11,6 +11,7 @@ AndrewRadev/splitjoin.vim
 NLKNguyen/c-syntax.vim
 arzg/vim-plan9
 arzg/vim-ruby
+dearrrfish/vim-applescript
 ericpruitt/tmux.vim
 junegunn/goyo.vim
 junegunn/limelight.vim
