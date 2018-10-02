@@ -16,7 +16,7 @@ fi
 
 # If dotfiles directory does not exist then clone it
 if [ ! -e $HOME/dotfiles ]; then
-  git clone https://github.com/aramisgithub/dotfiles.git ~/dotfiles
+  git clone https://github.com/arzg/dotfiles.git ~/dotfiles
 fi
 
 cd ~/dotfiles
