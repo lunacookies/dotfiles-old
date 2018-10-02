@@ -562,12 +562,20 @@ autocmd vimrc FileType sh   setlocal makeprg=shellcheck\ --format=gcc\ %
 " this that we link colourcolumn to ErrorMsg -- to make it more prominent.
 autocmd vimrc ColorScheme * highlight! link ColorColumn ErrorMsg
 
-" Better syntax highlighting
+" Set some stuff
 
-" These are just some custom linkings to make Vim highlight Vimscript better
-autocmd vimrc ColorScheme * highlight! link vimAutoCmdSfxList Type
-autocmd vimrc ColorScheme * highlight! link vimIsCommand      Statement
+" Decide whether to use true colour based on:
+"
+" 1. If a terminal that does not support true colours is running (on macOS the
+"    only notable terminal that does not support true colours is Terminal.app)
+"
+" 2. If a GUI is running (the vim GUI supports true colour by default -- this
+"    cannot be disabled. Plus, termguicolors relates to *term*inals and how
+"    they handle color.)
+if $TERM_PROGRAM != 'Apple_Terminal' && !has('gui_running')
+  set termguicolors
+endif
 
-" Set colourscheme
-colorscheme apprentice
+" Acually set the colourscheme
+colorscheme plan9
 
