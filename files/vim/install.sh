@@ -20,6 +20,7 @@ lifepillar/vim-colortemplate
 lifepillar/vim-mucomplete
 romainl/vim-cool
 romainl/vim-qf
+sgur/vim-editorconfig
 terryma/vim-smooth-scroll
 tmux-plugins/vim-tmux-focus-events
 tommcdo/vim-exchange
