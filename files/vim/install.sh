@@ -9,7 +9,7 @@ fi
 plugins=(
 AndrewRadev/splitjoin.vim
 NLKNguyen/c-syntax.vim
-aramisgithub/vim-ruby
+arzg/vim-ruby
 ericpruitt/tmux.vim
 junegunn/goyo.vim
 junegunn/limelight.vim
