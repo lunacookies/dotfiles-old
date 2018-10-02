@@ -349,11 +349,8 @@ set wrap                  " Soft wrap text
 " Indentation
 
 set autoindent   " Copy the previous line's indent to the current one
-set expandtab    " Insert spaces when tab is pressed
 set shiftround   " Always set indentation to a multiple of 2
-set shiftwidth=2 " 2 spaces for indentation
 set smarttab     " Indent and dedent in insert mode using <Tab>
-let &softtabstop = &shiftwidth
 
 " Command-line
 
