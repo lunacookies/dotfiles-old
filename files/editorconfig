@@ -1,0 +1,46 @@
+root = true
+
+# Just some basic settings that apply to everything
+#
+# This is where you can put your personal preference -- everything else cannot
+# be changed because it adheres to language standards.
+[*]
+  charset = utf-8
+  end_of_line = lf
+  indent_size = 2
+  indent_style = space
+  insert_final_newline = true
+  max_line_length = 80
+  trim_trailing_whitespace = true
+
+# https://www.python.org/dev/peps/pep-0008/
+[*.py]
+  indent_size = 4
+  indent_style = space
+  max_line_length = 79
+
+# https://www.gnu.org/software/make/manual/make.html
+[Makefile,*.mak]
+  indent_style = tab
+
+# https://developer.mozilla.org/en-US/docs/Mozilla/Developer_guide/Coding_Style#Naming_and_Formatting_code
+[*.html,*.css,*.js]
+  indent_size = 2
+  indent_style = space
+
+# http://www.yaml.org/spec/1.2/spec.html#Syntax
+[*.{yml,yaml}]
+  indent_size = 2
+  indent_style = space
+
+# Personal preference
+[*.{md,rmd,mkd,mkdn,mdwn,mdown,markdown}]
+  indent_size = 2
+  indent_style = space
+  max_line_length = 66
+  trim_trailing_whitespace = false
+
+# https://stackoverflow.com/questions/2678817/2-spaces-or-1-tab-whats-the-standard-for-indentation-in-the-rails-community/2678836#2678836
+[*.rb]
+  indent_size = 2
+  indent_style = space
