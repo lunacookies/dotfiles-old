@@ -298,7 +298,6 @@ endif
 
 " Searching, substitute, global, etc
 
-set gdefault   " Replace all instances on a line by default (use /g to disable)
 set hlsearch   " Highlight search matches
 set ignorecase " Ignore
 set incsearch  " Jump to search results as you type
