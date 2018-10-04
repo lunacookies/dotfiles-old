@@ -9,6 +9,7 @@ fi
 plugins=(
 AndrewRadev/splitjoin.vim
 NLKNguyen/c-syntax.vim
+arzg/vim-linelinenumbernine
 arzg/vim-plan9
 arzg/vim-ruby
 dearrrfish/vim-applescript
