@@ -7,4 +7,3 @@ if application "Google Chrome" is running then
 else
   activate application "Google Chrome"
 end if
-

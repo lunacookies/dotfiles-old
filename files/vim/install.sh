@@ -56,4 +56,3 @@ backup
 swap
 .netrwhist
 " > ~/dotfiles/files/vim/.gitignore
-

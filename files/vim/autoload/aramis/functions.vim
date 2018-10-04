@@ -1,6 +1,6 @@
-""
-"" Pandoc functions
-""
+"
+" Pandoc functions
+"
 
 function! aramis#functions#pandocconvertarticle() abort
   normal! mz
@@ -25,4 +25,3 @@ function! aramis#functions#pandocclean() abort
   call system('~/.local/bin/cleanit')
   normal! `z
 endfunction
-

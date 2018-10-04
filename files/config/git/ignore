@@ -47,7 +47,6 @@ tags*
 # NOTE: Two empty lines (\r\r) must follow the next one
 Icon
 
-
 # Thumbnails
 ._*
 
@@ -66,4 +65,3 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
-

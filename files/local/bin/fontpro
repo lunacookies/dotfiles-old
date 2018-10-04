@@ -40,4 +40,3 @@ else
   sleep 0.5
   echo "Exiting script ..."
 fi
-

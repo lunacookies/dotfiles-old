@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
-
-##
-## Greeting
-##
+#
+# Greeting
+#
 
 echo
 echo "This is arzg's macOS configuration script."
@@ -13,10 +12,9 @@ echo
 
 echo "Please provide password:"
 
-
-##
-## Security                                                                   #
-##
+#
+# Security
+#
 
 # Disable IR remote control
 sudo defaults write /Library/Preferences/com.apple.driver.AppleIRController DeviceEnabled -bool false
@@ -39,10 +37,9 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -boo
 # Disable Bonjour multicast advertisements
 sudo defaults write /Library/Preferences/com.apple.mDNSResponder.plist NoMulticastAdvertisements -bool true
 
-
-##
-## System
-##
+#
+# System
+#
 
 # Set computer name (as done via System Preferences → Sharing)
 sudo scutil --set ComputerName "macbox"
@@ -91,10 +88,9 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.
 # Use #4b4b4b as wallpaper
 ~/.local/bin/setwp --color=4b4b4b
 
-
-##
-## Input
-##
+#
+# Input
+#
 
 # Trackpad: enable tap to click for this user and for the login screen
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
@@ -119,10 +115,9 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
 
-
-##
-## Display
-##
+#
+# Display
+#
 
 # Require password immediately after sleep or screen saver begins
 defaults write com.apple.screensaver askForPassword -int 1
@@ -155,10 +150,9 @@ defaults delete com.apple.Mail DisableSendAnimations > /dev/null 2>&1
 defaults delete com.apple.Mail DisableReplyAnimations > /dev/null 2>&1
 defaults delete NSGlobalDomain NSWindowResizeTime > /dev/null 2>&1
 
-
-##
-## Finder
-##
+#
+# Finder
+#
 
 # Keep folders on top when sorting by name
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
@@ -199,10 +193,9 @@ defaults write com.apple.finder EmptyTrashSecurely -bool true
 # Show the ~/Library folder
 chflags nohidden ~/Library
 
-
-##
-## Activity Monitor
-##
+#
+# Activity Monitor
+#
 
 # Show the main window when launching Activity Monitor
 defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
@@ -217,10 +210,9 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
 defaults write com.apple.ActivityMonitor SortDirection -int 0
 
-
-##
-## Dock
-##
+#
+# Dock
+#
 
 # Reset dock
 defaults delete com.apple.dock
@@ -279,10 +271,9 @@ defaults write com.apple.dock showhidden -bool true
 # Reset Launchpad layout
 defaults write com.apple.dock ResetLaunchPad -bool true
 
-
-##
-## Hot corners
-##
+#
+# Hot corners
+#
 
 # Top left screen corner → Mission Control
 defaults write com.apple.dock wvous-tl-corner -int 2
@@ -296,23 +287,20 @@ defaults write com.apple.dock wvous-tr-modifier -int 0
 defaults write com.apple.dock wvous-br-corner -int 5
 defaults write com.apple.dock wvous-br-modifier -int 0
 
-
-##
-## Restart to apply
-##
+#
+# Restart to apply
+#
 
 killall Dock
 killall Finder
 killall "Activity Monitor"
 
-
-##
-## Epilogue
-##
+#
+# Epilogue
+#
 
 echo
 echo "Done!"
 echo "Restart to apply all changes"
 echo "Exiting script..."
 echo
-

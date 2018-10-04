@@ -8,4 +8,3 @@ if application "Terminal" is running then
 else
   do shell script "open -na /Applications/Utilities/Terminal.app"
 end if
-

@@ -1,6 +1,6 @@
-/* */
-/* OpenType features */
-/* */
+/*
+ * OpenType features
+ */
 
 html {
   -webkit-font-feature-settings:
@@ -17,10 +17,9 @@ html {
     "tnum" 0, "lnum" 0, "dlig" 0;
 }
 
-
-/* */
-/* Font substitutions */
-/* */
+/*
+ * Font substitutions
+ */
 
 @font-face {
   font-family: "Arial";
@@ -158,4 +157,3 @@ html {
   font-family: "IBM Plex Sans";
   src: local("Avenir Next");
 }
-

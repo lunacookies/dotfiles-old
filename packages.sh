@@ -3,10 +3,9 @@
 # Get me into the dotfiles folder
 cd ~/dotfiles
 
-
-##
-## Brew
-##
+#
+# Brew
+#
 
 brew update                 # Update brew itself
 brew bundle cleanup --force # Remove anything not present in the Brewfile
@@ -19,18 +18,16 @@ brew cleanup                # Delete cask caches
 brew prune                  # Remove unused symlinks
 brew doctor                 # Check if anything is broken
 
-
-##
-## Gems
-##
+#
+# Gems
+#
 
 gem update                  # Update all gems
 gem install neovim          # Install the only global gem we want -- Neovim
 
-
-##
-## Install Fira Mono with Text Figures
-##
+#
+# Install Fira Mono with Text Figures
+#
 
 fonturl=https://github.com/arzg/FiraMono_Text_Figures.git
 
@@ -42,4 +39,3 @@ cp ~/fonttmp/*ttf ~/Library/Fonts/
 
 # Clean up
 rm -rf ~/fonttmp
-

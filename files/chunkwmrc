@@ -2,10 +2,9 @@
 
 # aramis' chunkwmrc
 
-
-##
-## General
-##
+#
+# General
+#
 
 # Print errors to stdout
 chunkc core::log_file stdout
@@ -19,10 +18,9 @@ chunkc core::plugin_dir /usr/local/opt/chunkwm/share/chunkwm/plugins
 # Do not hotload plugins
 chunkc core::hotload 0
 
-
-##
-## Tiling
-##
+#
+# Tiling
+#
 
 # Use bsp mode everywhere -- i.e. tile everything
 chunkc set global_desktop_mode bsp
@@ -51,10 +49,9 @@ chunkc set bsp_split_ratio 0.618
 # Spawn new windows to the right and to the bottom
 chunkc set bsp_spawn_left 0
 
-
-##
-## Mouse
-##
+#
+# Mouse
+#
 
 # Cycle monitors
 chunkc set monitor_focus_cycle 1
@@ -72,10 +69,9 @@ chunkc set window_region_locked 1
 # Set mouse modifier
 chunkc set mouse_modifier fn
 
-
-##
-## Border
-##
+#
+# Border
+#
 
 # Preselect
 chunkc set preselect_border_color 0xffff9a00
@@ -88,10 +84,9 @@ chunkc set focused_border_width 5
 chunkc set focused_border_radius 5
 chunkc set focused_border_skip_floating 1
 
-
-##
-## chwm-sa
-##
+#
+# chwm-sa
+#
 
 # Move windows using mouse modifier more smoothly
 chunkc set window_use_cgs_move 1
@@ -104,22 +99,19 @@ chunkc set window_fade_alpha 0.85
 # Let the animation of the fade of inactive windows take 0.3 seconds
 chunkc set window_fade_duration 0.3
 
-
-##
-## Load plugins
-##
+#
+# Load plugins
+#
 
 # Load all plugins
 chunkc core::load border.so
 chunkc core::load tiling.so
 chunkc core::load ffm.so
 
-
-##
-## Rules
-##
+#
+# Rules
+#
 
 # Float some windows that would be better off not being tiled
 chunkc tiling::rule --owner Finder --name Copy --state float
 chunkc tiling::rule --owner \"App Store\" --state float
-

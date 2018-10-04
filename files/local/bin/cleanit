@@ -12,4 +12,3 @@ rm $(dirname $(cat $HOME/.currentfile))/*.log
 
 # Get PDF back
 mv $(cat $HOME/.currentfile)pdf $(cat $HOME/.currentfile).pdf
-

@@ -30,10 +30,9 @@
 [url "https://gitlab.com/"]
   insteadOf = git@gitlab.com:
 
-
-##
-## Diff so fancy
-##
+#
+# Diff so fancy
+#
 
 # We set less to *not* clear the screen on exit when explicitly showing a diff
 # so that it is easier to reference the output in a later command.
@@ -58,4 +57,3 @@
 # Show + and - at start of lines
 [diff-so-fancy]
   tripLeadingSymbols = false
-

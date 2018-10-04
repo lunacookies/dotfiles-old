@@ -24,4 +24,3 @@ Everything that can be done now has been done. If you have not already, disable
 SIP (if you don't know what that is or how to do it, you really shouldn't be
 running this script), and then restart again. Finally, to apply the changes, run
 the inject script found in ~/. Have fun!"
-

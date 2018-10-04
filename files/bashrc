@@ -1,8 +1,8 @@
 # aramis' bashrc
 
-##
-## Aliases
-##
+#
+# Aliases
+#
 
 # System
 alias cp="cp -riv"
@@ -75,10 +75,9 @@ alias nwm="brew services stop chunkwm"
 alias yhd="brew services restart skhd"
 alias ywm="brew services restart chunkwm"
 
-
-##
-## Environment variables
-##
+#
+# Environment variables
+#
 
 # Path
 export PATH=$HOME/.local/bin:$PATH
@@ -114,10 +113,9 @@ export __CF_USER_TEXT_ENCODING=0x08000100:0x0
 # I pick this because I find exa's colours more appealing
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
-
-##
-## Window title
-##
+#
+# Window title
+#
 
 # Set the window title to match the present working directory -- whether in
 # tmux or in a regular terminal.
@@ -143,10 +141,9 @@ regularwindowtitle () {
   fi
 }
 
-
-##
-## Options
-##
+#
+# Options
+#
 
 # Coloured man
 export LESS_TERMCAP_mb=$(printf "\033[01;31m")
@@ -211,10 +208,9 @@ bind "set show-all-if-ambiguous on"
 # Immediately add a trailing slash when autocompleting symlinks to directories
 bind "set mark-symlinked-directories on"
 
-
-##
-## Window title
-##
+#
+# Window title
+#
 
 # Set the window title to match the present working directory -- whether in
 # tmux or in a regular terminal. This also checks git status after every prompt.
@@ -228,10 +224,9 @@ case "$TERM" in
     PROMPT_COMMAND="regularwindowtitle"
 esac
 
-##
-## Prompt
-##
+#
+# Prompt
+#
 
 # Set prompt
 PS1='\[\e[34m\]\w\[\e[m\]\\$ '
-

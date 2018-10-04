@@ -22,4 +22,3 @@ sudo rm -rf /var/root/Library/Preferences/com.oracle.javadeployment.plist
 sudo rm -rf ~/.oracle_jre_usage
 sudo rm -rf ~/Library/Preferences/com.oracle.java.JavaAppletPlugin.plist
 sudo rm -rf ~/Library/Preferences/com.oracle.javadeployment.plist
-

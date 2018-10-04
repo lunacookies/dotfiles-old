@@ -2,10 +2,9 @@
 
 # aramis' khdrc
 
-
-##
-## Manipulate windows
-##
+#
+# Manipulate windows
+#
 
 # Cycle window
 alt - h : chunkc tiling::window --focus west
@@ -25,10 +24,9 @@ shift + cmd - j : chunkc tiling::window --warp south
 shift + cmd - k : chunkc tiling::window --warp north
 shift + cmd - l : chunkc tiling::window --warp east
 
-
-##
-## Desktops
-##
+#
+# Desktops
+#
 
 # Send window to desktop and switch desktop
 shift + alt - 1 : chunkc tiling::window -d 1; chunkc tiling::desktop --focus 1
@@ -42,10 +40,9 @@ shift + alt - 8 : chunkc tiling::window -d 8; chunkc tiling::desktop --focus 8
 shift + alt - 9 : chunkc tiling::window -d 9; chunkc tiling::desktop --focus 9
 shift + alt - 0 : chunkc tiling::window -d 10; chunkc tiling::desktop --focus 10
 
-
-##
-## Monitors
-##
+#
+# Monitors
+#
 
 # Focus monitor
 ctrl + alt - 1 : chunkc tiling::monitor -f 1
@@ -57,10 +54,9 @@ ctrl + cmd - 1 : chunkc tiling::window --send-to-monitor 1; chunkc tiling::monit
 ctrl + cmd - 2 : chunkc tiling::window --send-to-monitor 2; chunkc tiling::monitor -f 2
 ctrl + cmd - 3 : chunkc tiling::window --send-to-monitor 3; chunkc tiling::monitor -f 3
 
-
-##
-## Manipulate regions
-##
+#
+# Manipulate regions
+#
 
 # Increase region size
 shift + alt - a : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge west
@@ -80,10 +76,9 @@ alt - r : chunkc tiling::desktop --rotate 90
 # Equalize size of windows
 shift + alt - 0 : chunkc tiling::desktop --equalize
 
-
-##
-## Misc
-##
+#
+# Misc
+#
 
 # Reload config
 cmd + alt + ctrl - r : khd -e "reload"
@@ -110,4 +105,3 @@ alt - e : chunkc tiling::window --toggle split
 # Float / unfloat window and center on screen
 alt - t : chunkc tiling::window --toggle float;\
           chunkc tiling::window --grid-layout 4:4:1:1:2:2
-

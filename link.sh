@@ -12,4 +12,3 @@ for file in *; do
   # Link the file
   ln -s $PWD/$file $HOME/.$file
 done
-
