@@ -13,7 +13,7 @@ alias rm="rmtrash"
 
 # ls function that sets coloured output and following symlinks as the default,
 # and also does not display . and .. when showing hidden files.
-customls() {
+ls() {
   # Process options using getopts
   while getopts ":a" arg
   do
@@ -52,15 +52,15 @@ customls() {
     shift
   done)"
 
+  # Create a variable storing the command to be executed
+  local cmd="ls -$defaultargs$all$extraopt $file"
+
   # Now actually call the command
-  ls -$defaultargs$all$extraopt $file
+  command $cmd
 
   # Reset the argument index
   OPTIND=1
 }
-
-# Use customls by default
-alias ls="customls"
 
 # LaTeX shortcuts
 alias doc="nvim document.md"
