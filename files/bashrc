@@ -11,8 +11,7 @@ alias mkdir="mkdir -pv"
 alias mv="mv -iv"
 alias rm="rmtrash"
 
-# ls function that sets coloured output and following symlinks as the default,
-# and also does not display . and .. when showing hidden files.
+# ls function that uses a bunch of custom flags as default
 ls() {
   # Process options using getopts
   while getopts ":a" arg
