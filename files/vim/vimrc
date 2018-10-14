@@ -135,9 +135,9 @@ set virtualedit=block                 " Better visual block mode
 " User interface and interactions
 
 set belloff=all           " Disable all bells
+set completeopt+=menuone  " Show completions when there is a match
 set completeopt+=noselect " Required for MUComplete
 set completeopt+=preview  " Display extra info about the match
-set completeopt=menuone   " Show completions when there is a match
 set conceallevel=0        " Never conceal
 set cursorline            " Make the current line more prominent
 set display=lastline      " Show as much of partly-displayed lines as possible
