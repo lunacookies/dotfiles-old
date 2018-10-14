@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # Get the code
-cd ~
-git clone https://github.com/koekeishiya/chwm-sa ~/chwmsatmp
-cd ~/chwmsatmp
+cd
+git clone https://github.com/koekeishiya/chwm-sa $HOME/chwmsatmp
+cd $HOME/chwmsatmp
 
 # Compile the code
 ./build.sh
@@ -13,14 +13,22 @@ cd ..
 
 # Move the code to where it needs to go
 sudo mv bin/CHWMInjector.osax /System/Library/ScriptingAdditions/
-mv inject_test/bin/inject ~/bin/
+cp inject_test/bin/inject $HOME/inject
+
+if [ -e $HOME/.local/bin ]; then
+  cp $HOME/inject $HOME/.local/bin/inject
+elif [ -e $HOME/bin ]; then
+  cp $HOME/inject $HOME/bin/inject
+fi
 
 # Delete leftovers
-rm -rf ~/chwmsatmp
+rm -rf $HOME/chwmsatmp
 
 # What to do next
 echo "
-Everything that can be done now has been done. If you have not already, disable
-SIP (if you don't know what that is or how to do it, you really shouldn't be
-running this script), and then restart again. Finally, to apply the changes, run
-the inject script found in ~/. Have fun!"
+Everything that can be done now has been done. If you have not already,
+disable SIP (if you don't know what that is or how to do it, you really
+shouldn't be running this script), and then restart again. Finally, to apply
+the changes, run the inject script found in ~/. Note that if the ~/bin or
+~/.local/bin directories exist, the script will jave copied inject there as
+well Have fun!"
