@@ -315,13 +315,16 @@ if has('nvim')
   set inccommand=split
 endif
 
-" Use ripgrep if available, then fall back to the silver searcher for grepping
+" Use ripgrep if available, fall back to the silver searcher, then fall back to
+" the system grep for grepping
 if executable('rg')
-  set grepprg=rg\ --vimgrep
+  set grepprg=rg\ --vimgrep\ -i
   set grepformat^=%f:%l:%c:%m
 elseif executable('ag')
-  set grepprg=ag\ --vimgrep
+  set grepprg=ag\ --vimgrep\ -i
   set grepformat^=%f:%l:%c:%m
+else
+  set grepprg=grep\ -iR
 endif
 
 " Smarter grep command
