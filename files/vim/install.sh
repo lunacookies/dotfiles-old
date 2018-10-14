@@ -12,6 +12,7 @@ NLKNguyen/c-syntax.vim
 arzg/vim-linelinenumbernine
 arzg/vim-plan9
 arzg/vim-ruby
+arzg/vim-tabhelp
 dearrrfish/vim-applescript
 ericpruitt/tmux.vim
 junegunn/goyo.vim
