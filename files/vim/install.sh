@@ -40,20 +40,28 @@ rm -rf ~/dotfiles/files/vim/bundle/*
 
 # Clone plugins into their directories and remove any git-related files from the
 # plugin to stop git from getting confused
+#
+# We place an && after each line and a & at the end of the whole thing so that
+# plugins install asynchronously. This meant installation times went from circa
+# sixty seconds to three. That's a 20x improvement!
 for repo in ${plugins[@]}; do
-  plugin="$(echo "$repo" | sed -e 's/.*[\/]//')"
-  git clone --depth=1 -q https://github.com/$repo.git ~/dotfiles/files/vim/bundle/$plugin
-  rm -rf ~/dotfiles/files/vim/bundle/$plugin/.git*
-  echo $plugin installed!
+  plugin="$(echo "$repo" | sed -e 's/.*[\/]//')" && \
+  git clone --depth=1 -q https://github.com/$repo.git \
+    ~/dotfiles/files/vim/bundle/$plugin && \
+  rm -rf ~/dotfiles/files/vim/bundle/$plugin/.git* && \
+  echo $plugin installed! &
 done
 
-# Add bundle. gitignore for the plugins (this is done here because it is related and
-# neccesary for installing the plugins and also that I don't have to remember to
-# do it in future).
+# This makes the script wait for all the background jobs from installing all the
+# plugins above before continuing
+wait
+
+# Add bundle. gitignore for the plugins (this is done here because it is related
+# and neccesary for installing the plugins and also that I don't have to
+# remember to do it in future).
 echo "bundle
 spell
 undo
 backup
 swap
-.netrwhist
-" > ~/dotfiles/files/vim/.gitignore
+.netrwhist" > ~/dotfiles/files/vim/.gitignore
