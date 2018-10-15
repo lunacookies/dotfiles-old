@@ -142,7 +142,6 @@ set completeopt+=menuone  " Show completions when there is a match
 set completeopt+=noselect " Required for MUComplete
 set completeopt+=preview  " Display extra info about the match
 set conceallevel=0        " Never conceal
-set cursorline            " Make the current line more prominent
 set display=lastline      " Show as much of partly-displayed lines as possible
 set guioptions=           " Hide scrollbars in MacVim
 set laststatus=2          " Always display statusline
@@ -546,6 +545,12 @@ nnoremap <F10> :echo "hi<"
 " Set makeprg to the appropriate linter for a given filetype
 autocmd vimrc FileType ruby setlocal makeprg=ruby\ -c\ %
 autocmd vimrc FileType sh   setlocal makeprg=shellcheck\ --format=gcc\ %
+
+" Enable cursorline in the current Vim window, and disable it everywhere else
+"
+" This also applies to tmux panes
+autocmd vimrc VimEnter,WinEnter,FocusGained * set cursorline
+autocmd vimrc WinLeave,FocusLost * set nocursorline
 
 "
 " Colourscheme
