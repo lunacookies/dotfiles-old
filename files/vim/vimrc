@@ -66,6 +66,7 @@ let g:goyo_width = 68 " Leave a few extra chars more than textwidth
 
 function! s:goyo_enter() " On goyo enter:
   set noshowcmd          " Don't show last command
+  set noshowmode         " Don't show current mode
   set scrolloff=999      " Centre current line
   Limelight              " Enable paragraph focus mode
 endfunction
