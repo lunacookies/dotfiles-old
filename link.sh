@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Create ~/.config if it doesn't exist yet
+mkdir -p $HOME/.config
+
 # Get into the dotfiles repository
 cd ~/dotfiles/files
 
