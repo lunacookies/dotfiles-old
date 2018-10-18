@@ -35,7 +35,7 @@ root = true
 
 # Personal preference
 [*.{md,rmd,mkd,mkdn,mdwn,mdown,markdown}]
-  indent_size = 2
+  indent_size = 3
   indent_style = space
   max_line_length = 66
   trim_trailing_whitespace = false
