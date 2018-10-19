@@ -26,6 +26,25 @@ gem update                  # Update all gems
 gem install neovim          # Install the only global gem we want -- Neovim
 
 #
+# Mas
+#
+
+# A function that takes a Mac App Store application ID as input and installs the
+# application with that ID
+mas() {
+  command 'mas install $1'
+}
+
+# Installs all applications specified in the Masfile
+source 'Masfile'
+
+# Update Mac apps
+command mas upgrade
+
+# Creates an up-to-date Masfile
+echo -e "# vim: set ft=ruby nomodeline:\n\n$(mas list | sed 's/ /" \# /' | sed 's/^/mas "/' | sort)" > Masfile
+
+#
 # Install Fira Mono with Text Figures
 #
 
