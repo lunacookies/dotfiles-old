@@ -26,7 +26,8 @@ if [ -e ~/Library/MinionPro-Regular.otf ]; then
   sudo updmap-sys --enable Map=MinionPro.map
 
   # Allow ornaments
-  sed -i .bak 's/orn/bullet/g' ~/Library/texmf/fonts/enc/dvips/MinionPro/base-MinionPro-ad.enc
+  sed -i .bak 's/orn/bullet/g' \
+    '~/Library/texmf/fonts/enc/dvips/MinionPro/base-MinionPro-ad.enc'
 
   echo
   echo
@@ -34,8 +35,8 @@ if [ -e ~/Library/MinionPro-Regular.otf ]; then
   echo
 else
   echo
-  echo
-  echo "You do not have Minion Pro installed. Please purchase the font from Adobe before continuing."
+  echo "You do not have Minion Pro installed. Please purchase the font from"
+  echo "Adobe before continuing."
   echo
   sleep 0.5
   echo "Exiting script ..."
