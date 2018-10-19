@@ -39,3 +39,6 @@ cd ~/dotfiles
 
 # Install and update packages
 ./packages.sh
+
+# Install Vim plugins
+./files/vim/install.sh
