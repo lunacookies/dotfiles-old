@@ -20,16 +20,10 @@ echo "Please provide password:"
 sudo defaults write /Library/Preferences/com.apple.driver.AppleIRController DeviceEnabled -bool false
 
 # Disable remote apple events
-sudo systemsetup -setremoteappleevents off
-
-# Disable remote login
-sudo systemsetup -setremotelogin off
-
-# Disable wake-on modem
-sudo systemsetup -setwakeonmodem off
+sudo systemsetup -setremoteappleevents off &> /dev/null
 
 # Disable wake-on LAN
-sudo systemsetup -setwakeonnetworkaccess off
+sudo systemsetup -setwakeonnetworkaccess off &> /dev/null
 
 # Disable guest account login
 sudo defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool false
@@ -291,9 +285,9 @@ defaults write com.apple.dock wvous-br-modifier -int 0
 # Restart to apply
 #
 
-killall Dock
-killall Finder
-killall "Activity Monitor"
+killall Dock &> /dev/null
+killall Finder &> /dev/null
+killall "Activity Monitor" &> /dev/null
 
 #
 # Epilogue
