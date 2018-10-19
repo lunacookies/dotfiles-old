@@ -21,39 +21,22 @@ curl -sL --proto-redir -all,https https://git.io/fAaCY | bash
 
 This will download an installer script (`install.sh`) which will:
 
-1. Install homebrew if it does not exist
-1. If dotfiles directories already exist, end script. Otherwise, 
-   clone repository to `~/dotfiles`.
-1. Install all packages and software
+1. Install [homebrew][homebrew] if it has not been installed yet
+1. Clone this repository to `~/dotfiles` if it does not exist yet
+1. Install all packages and software (`packages.sh`)
 1. Set all settings to the way I like them (`macos`)
-1. Link all configuration files
+1. Link all configuration files (`link.sh`)
 
 After the installer completes, it is recommended to reboot your 
 machine.
 
-## How to add a program (`foo`) to the dotfiles
+## How this repo is structured
 
-1. Add `foo` to the `Brewfile`.
+- All configuration files go into `files/` with the leading dot 
+  removed.
 
-1. If `foo`'s configuration files follow the XDG Base Directory 
-   specification, then create a hierarchy like so:
-
-   ```
-   files
-   └── config
-       └── foo
-   ```
-
-   If they do *not* follow XDG, then create a hierarchy like so:
-
-   ```
-   files
-   └── foo
-   ```
-
-   Now you can place `foo`'s config files in `foo/`!
-
-1. Run `link.sh`
+- Everything else (README, LICENSE, dependency files, installation 
+  scripts) goes into the root of the repository
 
 ## My smart window title config
 
@@ -93,6 +76,7 @@ are running in Terminal.app, a proxy icon will appear.
 Feel free to have a poke around, and steal anything you may find 
 useful.
 
-I use an Early 2015 MacBook Pro 13in base model running macOS High 
-Sierra.
+I use an Early 2015 MacBook Pro 13in base model running macOS 
+Mojave.
 
+[homebrew]: brew.sh
