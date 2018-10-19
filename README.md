@@ -32,11 +32,12 @@ machine.
 
 ## How this repo is structured
 
-- All configuration files go into `files/` with the leading dot 
-  removed.
+- All configuration files go into `etc/` with the leading dot 
+  removed. Tools that follow the XDG Base Dir Spec are also placed 
+  in this directory.
 
 - Everything else (README, LICENSE, dependency files, installation 
-  scripts) goes into the root of the repository
+  scripts, binaries) goes into the root of the repository
 
 ## My smart window title config
 
