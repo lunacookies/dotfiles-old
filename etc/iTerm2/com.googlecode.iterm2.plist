@@ -37,7 +37,7 @@
 	<key>NSFontPanelAttributes</key>
 	<string>1, 4</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Drive/code/dotfiles/files/config/iTerm2</string>
+	<string>~/Drive/code/dotfiles/etc/config/iTerm2</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -932,7 +932,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/aramis/Drive/code/dotfiles/files/iTerm2</string>
+	<string>/Users/aramis/Drive/code/dotfiles/etc/iTerm2</string>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
