@@ -4,6 +4,13 @@
 " Basics
 "
 
+" Neovim config location setup
+
+if has('nvim')
+  set runtimepath^=~/.vim runtimepath+=~/.vim/after
+  let &packpath = &runtimepath
+endif
+
 " Encoding, UTF-8, other backend stuff
 
 if !has('nvim')
