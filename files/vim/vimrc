@@ -430,17 +430,6 @@ nnoremap ,tc :tabclose<CR>
 
 " Space
 
-" LaTeX + pandoc compilation mappings
-" 'c' for compile
-" 'a' for article
-" 'c' for clean
-" 'p' for presentation
-" 'r' for report
-nnoremap <Space>ca :call aramis#functions#pandocconvertarticle()<CR>
-nnoremap <Space>cc :call aramis#functions#pandocclean()<CR>
-nnoremap <Space>cp :call aramis#functions#pandocconvertpres()<CR>
-nnoremap <Space>cr :call aramis#functions#pandocconvertreport()<CR>
-
 " Auto-indent the whole file
 " 'i' for indent
 nnoremap <Space>i mzgg=G`zzz
@@ -537,11 +526,6 @@ nnoremap Y y$
 " Do not show whitespace in insert mode
 autocmd vimrc InsertEnter * set nolist
 autocmd vimrc InsertLeave * set list
-
-" Write name of current markdown file to ~/.currentfile for automatic LaTeX
-" compilation
-autocmd vimrc BufReadPost,BufWritePost,FileReadPost,BufNewFile *.md
-      \ call system('echo ' . expand('%:p') . ' > $HOME/.currentfile')
 
 " Show highlight group when pressing F10
 nnoremap <F10> :echo "hi<"
