@@ -15,6 +15,7 @@ arzg/vim-ruby
 arzg/vim-tabhelp
 dearrrfish/vim-applescript
 ericpruitt/tmux.vim
+fatih/vim-go
 junegunn/goyo.vim
 junegunn/limelight.vim
 junegunn/vim-easy-align
