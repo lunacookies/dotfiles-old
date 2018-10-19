@@ -35,11 +35,16 @@ sudo defaults write /Library/Preferences/com.apple.mDNSResponder.plist NoMultica
 # System
 #
 
-# Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "macbox"
-sudo scutil --set HostName "macbox"
-sudo scutil --set LocalHostName "macbox"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "macbox"
+# Set computer (host) name
+echo "What would you like to set your computer name to?"
+read computername
+sudo scutil --set ComputerName $computername
+sudo scutil --set HostName $computername
+sudo scutil --set LocalHostName $computername
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $computername
+
+# Enable remote login
+sudo systemsetup -setremotelogin On
 
 # Play charging sound on power connect
 defaults write com.apple.PowerChime ChimeOnAllHardware -bool true; open /System/Library/CoreServices/PowerChime.app &
