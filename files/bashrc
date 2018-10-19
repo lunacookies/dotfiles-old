@@ -66,7 +66,7 @@ alias doc="nvim document.md"
 alias pdf="open *.pdf"
 
 # Quick dotfile access
-alias ec="nvim $HOME/.vim/vimrc $HOME/.vim/install.sh $HOME/.vim/autoload/aramis/* $HOME/.vim/ftplugin/*"
+alias ec="nvim $HOME/.vim/vimrc $HOME/.vim/install.sh $HOME/.vim/autoload/aramis/* $HOME/.vim/after/ftplugin/*"
 alias hdc="nvim $HOME/.skhdrc"
 alias sc="nvim $HOME/.bashrc"
 alias wmc="nvim $HOME/.chunkwmrc"
