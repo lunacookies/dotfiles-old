@@ -84,8 +84,8 @@ shift + alt - 0 : chunkc tiling::desktop --equalize
 cmd + alt + ctrl - r : khd -e "reload"
 
 # Open apps
-cmd - return : osascript $HOME/.local/bin/newchrome.applescript
-alt - return : osascript $HOME/.local/bin/newterminal.applescript
+cmd - return : osascript $HOME/bin/newchrome.applescript
+alt - return : osascript $HOME/bin/newterminal.applescript
 
 # Toggle desktop offset
 alt - a : chunkc tiling::desktop --toggle offset

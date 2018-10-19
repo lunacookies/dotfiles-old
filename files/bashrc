@@ -82,7 +82,7 @@ alias ywm="brew services restart chunkwm"
 #
 
 # Path
-export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/bin:$PATH
 export PATH=/usr/local:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/texlive/20*/bin:$PATH
