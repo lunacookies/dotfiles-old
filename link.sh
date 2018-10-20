@@ -46,3 +46,20 @@ cd ..
 
 # Link my scripts to $HOME
 rmandlink "bin" "$HOME/"
+
+#
+# Shell files
+#
+
+# Create some empty files that make the shell quieter
+#
+# .hushlogin hides the login message
+#
+# .bash_sessions_disable disables bash sessions -- a feature of Terminal.app
+# that, as far as I can tell has something to do with restoring terminal
+# sessions. I'm not really sure _what_ it does, but I use tmux so I'm pretty
+# sure it's useless to me.
+touch $HOME/.hushlogin ~/.bash_sessions_disable
+
+# Source bashrc even in login shell
+printf '%s' 'if [ -f ~/.bashrc ]; then . ~/.bashrc; fi' > $HOME/.bash_profile
