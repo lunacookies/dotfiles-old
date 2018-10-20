@@ -183,14 +183,14 @@ defaults write NSGlobalDomain com.apple.springing.delay -float 0
 # Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
-# Use list view in all Finder windows by default
-defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
-
 # Empty Trash securely by default
 defaults write com.apple.finder EmptyTrashSecurely -bool true
 
 # Show the ~/Library folder
 chflags nohidden ~/Library
+
+# Allow quitting Finder
+defaults write com.apple.finder QuitMenuItem -bool true
 
 #
 # Activity Monitor
@@ -287,11 +287,29 @@ defaults write com.apple.dock wvous-br-corner -int 5
 defaults write com.apple.dock wvous-br-modifier -int 0
 
 #
+# Finder views
+#
+
+# Restart Finder to apply changes
+killall Finder
+
+# Quit Finder so no .DS_Store files are created while we remove them
+osascript -e 'tell application "Finder" to quit'
+
+# Remove all .DS_Store files
+sudo find / -name ".DS_Store" -depth -exec rm {} \;
+
+# Use column view in all Finder windows by default
+defaults write com.apple.finder FXPreferredViewStyle -string "Clmv"
+
+# Open Finder again
+open -a 'Finder.app'
+
+#
 # Restart to apply
 #
 
 killall Dock &> /dev/null
-killall Finder &> /dev/null
 killall "Activity Monitor" &> /dev/null
 
 #
@@ -302,4 +320,3 @@ echo
 echo "Done!"
 echo "Restart to apply all changes"
 echo "Exiting script..."
-echo
