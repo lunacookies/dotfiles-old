@@ -30,6 +30,7 @@ brew "ruby"
 brew "shellcheck"
 brew "stow"
 brew "the_silver_searcher"
+brew "tldr"
 brew "tmux"
 brew "wget"
 
