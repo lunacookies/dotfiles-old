@@ -163,7 +163,7 @@ bind '"\e[C": forward-char'
 bind '"\e[D": backward-char'
 
 # Save a lot of history
-HISTFILE=$HOME/.zhist
+HISTFILE=$HOME/.bash_history
 HISTSIZE=10000
 SAVEHIST=1000000
 
