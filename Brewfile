@@ -34,7 +34,6 @@ brew "tldr"
 brew "tmux"
 brew "wget"
 
-cask "adobe-acrobat-reader"
 cask "alfred"
 cask "android-file-transfer"
 cask "appcleaner"
