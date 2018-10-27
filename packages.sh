@@ -43,18 +43,3 @@ command mas upgrade
 
 # Creates an up-to-date Masfile
 echo -e "# vim: set ft=ruby nomodeline:\n\n$(/usr/local/bin/mas list | sed 's/ /" \# /' | sed 's/^/mas "/' | sort)" > Masfile
-
-#
-# Install Fira Mono with Text Figures
-#
-
-fonturl=https://github.com/arzg/FiraMono_Text_Figures.git
-
-# Download the fonts
-git clone --depth=1 -q $fonturl ~/fonttmp
-
-# Copy them to the user's font directory
-cp ~/fonttmp/*ttf ~/Library/Fonts/
-
-# Clean up
-rm -rf ~/fonttmp
