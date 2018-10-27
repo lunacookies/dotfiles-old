@@ -43,3 +43,13 @@ command mas upgrade
 
 # Creates an up-to-date Masfile
 echo -e "$(/usr/local/bin/mas list | sed 's/ /" \# /' | sed 's/^/mas "/' | sort)" > Masfile
+
+#
+# Misc
+#
+
+# Place all commands to be run right after installation of software here
+
+# Make Preview the default application for PDFs (because Adobe Acrobat DC
+# changes this)
+duti -s com.apple.Preview pdf all
