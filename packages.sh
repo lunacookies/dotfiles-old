@@ -42,4 +42,4 @@ source 'Masfile'
 command mas upgrade
 
 # Creates an up-to-date Masfile
-echo -e "# vim: set ft=ruby nomodeline:\n\n$(/usr/local/bin/mas list | sed 's/ /" \# /' | sed 's/^/mas "/' | sort)" > Masfile
+echo -e "$(/usr/local/bin/mas list | sed 's/ /" \# /' | sed 's/^/mas "/' | sort)" > Masfile

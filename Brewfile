@@ -1,5 +1,3 @@
-# vim: set ft=ruby nomodeline:
-
 tap "crisidev/chunkwm"
 tap "homebrew/bundle"
 tap "homebrew/cask"
