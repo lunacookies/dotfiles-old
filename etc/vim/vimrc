@@ -420,6 +420,16 @@ nnoremap ,sf :sfind<Space>
 nnoremap ,vf :vert sfind<Space>
 nnoremap ,tf :tabfind<Space>
 
+" Juggling with windows
+" Same bindings for split/vsplit/tab as above, just double the letter *or* wait
+" for the timeout
+nnoremap ,s :split<CR>
+nnoremap ,ss :split<CR>
+nnoremap ,t :tabnew<CR>
+nnoremap ,tt :tabnew<CR>
+nnoremap ,v :vsplit<CR>
+nnoremap ,vv :vsplit<CR>
+
 " Project-wide search
 " 'g' for grep
 nnoremap ,g :Grep<Space>
