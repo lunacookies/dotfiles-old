@@ -381,7 +381,6 @@ set wildmode+=full   " … then each full match
 
 set statusline=\     " Add space to start us off
 set statusline+=%f\  " Filename relative to PWD
-set statusline+=%y\  " Filetype
 
 " Flags
 
