@@ -25,7 +25,8 @@ set fileencodings=ucs-bom,utf-8 " Sets how (N)vim detects the current encoding
 set fileformat=unix             " Unix file format
 
 " Load matchit.vim if it hasn't already been loaded
-if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &runtimepath) ==# ''
+if !exists('g:loaded_matchit')
+      \ && findfile('plugin/matchit.vim', &runtimepath) ==# ''
   runtime! macros/matchit.vim
 endif
 
@@ -116,10 +117,14 @@ let g:mucomplete#completion_delay = 250
 let g:scrolltime = 20
 
 " Map the animated scrolls to their respective keys
-noremap <silent> <c-u> :call smooth_scroll#up(&scroll,     g:scrolltime,   2)<CR>
-noremap <silent> <c-d> :call smooth_scroll#down(&scroll,   g:scrolltime,   2)<CR>
-noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2,   2*g:scrolltime, 4)<CR>
-noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 2*g:scrolltime, 4)<CR>
+noremap <silent> <c-u>
+      \ :call smooth_scroll#up(&scroll,     g:scrolltime,   2)<CR>
+noremap <silent> <c-d>
+      \ :call smooth_scroll#down(&scroll,   g:scrolltime,   2)<CR>
+noremap <silent> <c-b>
+      \ :call smooth_scroll#up(&scroll*2,   2*g:scrolltime, 4)<CR>
+noremap <silent> <c-f>
+      \ :call smooth_scroll#down(&scroll*2, 2*g:scrolltime, 4)<CR>
 
 "
 " Options
