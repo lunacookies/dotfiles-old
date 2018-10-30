@@ -412,13 +412,18 @@ nnoremap ,tb :tabnew<CR>:ls<CR>:buffer<Space>
 nnoremap ,, :bnext<CR>
 
 " Juggling with files
-" Same for opening new files, just replace b with f
+" Same for opening new files, just replace b with f (for recursive, just like
+" :find) or e (for non-recursive, just like :edit)
 " 'f' for find
+" 'e' for edit
 nnoremap ,f :find<Space>
 nnoremap ,e :edit<Space>
 nnoremap ,sf :sfind<Space>
 nnoremap ,vf :vert sfind<Space>
 nnoremap ,tf :tabfind<Space>
+nnoremap ,se :split<Space>
+nnoremap ,ve :vsplit<Space>
+nnoremap ,te :tabnew<Space>
 
 " Juggling with windows
 " Same bindings for split/vsplit/tab as above, just double the letter *or* wait
