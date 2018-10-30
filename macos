@@ -17,7 +17,8 @@ echo "Please provide password:"
 #
 
 # Disable IR remote control
-sudo defaults write /Library/Preferences/com.apple.driver.AppleIRController DeviceEnabled -bool false
+sudo defaults write /Library/Preferences/com.apple.driver.AppleIRController \
+  DeviceEnabled -bool false
 
 # Disable remote apple events
 sudo systemsetup -setremoteappleevents off &> /dev/null
@@ -26,10 +27,12 @@ sudo systemsetup -setremoteappleevents off &> /dev/null
 sudo systemsetup -setwakeonnetworkaccess off &> /dev/null
 
 # Disable guest account login
-sudo defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool false
+sudo defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled \
+  -bool false
 
 # Disable Bonjour multicast advertisements
-sudo defaults write /Library/Preferences/com.apple.mDNSResponder.plist NoMulticastAdvertisements -bool true
+sudo defaults write /Library/Preferences/com.apple.mDNSResponder.plist \
+  NoMulticastAdvertisements -bool true
 
 #
 # System
@@ -41,13 +44,16 @@ read computername
 sudo scutil --set ComputerName $computername
 sudo scutil --set HostName $computername
 sudo scutil --set LocalHostName $computername
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $computername
+sudo defaults write \
+  /Library/Preferences/SystemConfiguration/com.apple.smb.server \
+  NetBIOSName -string $computername
 
 # Enable remote login
 sudo systemsetup -setremotelogin On
 
 # Play charging sound on power connect
-defaults write com.apple.PowerChime ChimeOnAllHardware -bool true; open /System/Library/CoreServices/PowerChime.app &
+defaults write com.apple.PowerChime ChimeOnAllHardware -bool true; \
+  open /System/Library/CoreServices/PowerChime.app &
 
 # Always boot in verbose mode (not MacOS GUI mode)
 sudo nvram boot-args="-v"
@@ -82,7 +88,9 @@ sudo systemsetup -setrestartfreeze on
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
 # Disable Notification Center and remove the menu bar icon
-launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist > /dev/null 2>&1
+launchctl unload -w \
+  /System/Library/LaunchAgents/com.apple.notificationcenterui.plist > \
+  /dev/null 2>&1
 
 # Use #4b4b4b as wallpaper
 $HOME/bin/setwp --color=4b4b4b
@@ -92,11 +100,13 @@ $HOME/bin/setwp --color=4b4b4b
 #
 
 # Trackpad: enable tap to click for this user and for the login screen
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking \
+  -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
-# Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)
+# Enable full keyboard access for all controls (e.g. enable Tab in modal
+# dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # Use scroll gesture with the Ctrl (^) modifier key to zoom
