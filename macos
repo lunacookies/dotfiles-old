@@ -307,6 +307,9 @@ killall Finder
 osascript -e 'tell application "Finder" to quit'
 
 # Remove all .DS_Store files
+
+echo 'Removing all .DS_Store files. This may take some time, so please be
+patient. Thank you.'
 sudo find / -name ".DS_Store" -depth -exec rm {} \;
 
 # Use column view in all Finder windows by default
