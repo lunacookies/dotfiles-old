@@ -43,9 +43,9 @@
 # Diff colours
 [color "diff-highlight"]
   oldNormal = red
-  oldHighlight = red bold 9
+  oldHighlight = white bold 88
   newNormal = green
-  newHighlight = green bold 10
+  newHighlight = white 22
 [color "diff"]
   meta = yellow
   frag = magenta bold
