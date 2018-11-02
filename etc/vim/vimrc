@@ -232,6 +232,7 @@ else
       " FocusGained (when switching tmux panes)
       autocmd vimrc BufEnter,FocusGained *
             \ call ProxyIconTitle('\ePtmux;\e\e]6;','\e\\')
+            \ | call system("tmux rename-window $(echo " . expand("%:t") . ")")
     else
       autocmd vimrc BufEnter,FocusGained *
             \ call ProxyIconTitle('\e]6;','')
@@ -242,9 +243,8 @@ else
       " Set tmux window name to Vim filename (not entire path to file because
       " that is often too long for a tab name) in conjunction with the name of
       " the program being run ((N)vim).
-      autocmd vimrc BufReadPost,FileReadPost,BufNewFile *
-            \ call system("tmux rename-window
-            \ $(echo " . expand("%:t") . " — vim")
+      autocmd vimrc BufEnter,FocusGained *
+            \ call system("tmux rename-window $(echo " . expand("%:t") . ")")
     else
       " Same format as tmux, but for system window title
       set title
