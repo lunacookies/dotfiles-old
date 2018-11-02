@@ -227,7 +227,7 @@ else
 
     " Tmux requires different escape codes, so we check if we are in tmux and
     " set which escape codes are called accordingly.
-    if $TERM ==# 'screen-256color'
+    if $TERM ==# 'tmux-256color-italic'
       " Refresh window title on BufEnter (when switching files) and on
       " FocusGained (when switching tmux panes)
       autocmd vimrc BufEnter,FocusGained *
@@ -238,7 +238,7 @@ else
     endif
   else
     " If setting a proxy icon is unavailable …
-    if $TERM ==# 'screen-256color'
+    if $TERM ==# 'tmux-256color-italic'
       " Set tmux window name to Vim filename (not entire path to file because
       " that is often too long for a tab name) in conjunction with the name of
       " the program being run ((N)vim).
