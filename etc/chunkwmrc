@@ -25,7 +25,7 @@ chunkc core::hotload 0
 # Use bsp mode everywhere -- i.e. tile everything
 chunkc set global_desktop_mode bsp
 
-# Disable padding
+# Huge padding
 chunkc set global_desktop_offset_top    140
 chunkc set global_desktop_offset_bottom 140
 chunkc set global_desktop_offset_left   240
