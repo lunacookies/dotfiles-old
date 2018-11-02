@@ -10,15 +10,14 @@ plugins=(
 AndrewRadev/splitjoin.vim
 NLKNguyen/c-syntax.vim
 arzg/vim-linelinenumbernine
-arzg/vim-plan9
 arzg/vim-ruby
 arzg/vim-tabhelp
 dearrrfish/vim-applescript
 ericpruitt/tmux.vim
 fatih/vim-go
 junegunn/goyo.vim
-junegunn/seoul256.vim
 junegunn/limelight.vim
+junegunn/seoul256.vim
 junegunn/vim-easy-align
 lifepillar/vim-colortemplate
 lifepillar/vim-mucomplete
