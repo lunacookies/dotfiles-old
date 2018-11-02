@@ -4,25 +4,16 @@
 " Basics
 "
 
-" Neovim config location setup
-
+" Load the proper directories if this file is loaded by Nvim
 if has('nvim')
   set runtimepath^=~/.vim runtimepath+=~/.vim/after
   let &packpath = &runtimepath
 endif
 
-" Encoding, UTF-8, other backend stuff
-
+" Use UTF-8 internally (Nvim always does this)
 if !has('nvim')
-  let &termencoding = &encoding " Keyboard and terminal both  use utf-8
+  set encoding=utf-8
 endif
-if !has('nvim')
-  set encoding=utf-8            " Use utf-8 internally (Nvim always does this)
-endif
-setglobal fileencoding=utf-8    " Set default file encoding
-scriptencoding utf-8            " This file uses some utf-8 symbols
-set fileencodings=ucs-bom,utf-8 " Sets how (N)vim detects the current encoding
-set fileformat=unix             " Unix file format
 
 " Load matchit.vim if it hasn't already been loaded
 if !exists('g:loaded_matchit')
@@ -30,26 +21,55 @@ if !exists('g:loaded_matchit')
   runtime! macros/matchit.vim
 endif
 
-" Install pathogen if it hasn't been installed yet
-if empty(glob('~/.vim/autoload/pathogen.vim'))
-  silent !curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-endif
-
-" Load plugins with pathogen
-execute pathogen#infect()
-
-" Allow syntax colouring, filetype detection, and built-in plugins
-filetype plugin indent on
-
-" Enable syntax colouring
-if !exists('g:syntax_on')
-  syntax enable
-endif
-
-" Create autocmd group used by all my autocmds (cleared when sourcing vimrc)
+" Create the autocmd group used by all my autocmds (cleared when sourcing vimrc)
 augroup vimrc
   autocmd!
 augroup END
+
+"
+" vim-plug
+"
+
+" Install vim-plug if it hasn't been installed yet
+"
+" This has to be before everything else because the rest only works if vim-plug
+" is installed
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'NLKNguyen/c-syntax.vim'
+Plug 'arzg/vim-linelinenumbernine'
+Plug 'arzg/vim-ruby'
+Plug 'arzg/vim-tabhelp'
+Plug 'dearrrfish/vim-applescript'
+Plug 'ericpruitt/tmux.vim'
+Plug 'fatih/vim-go'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/seoul256.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'lifepillar/vim-colortemplate'
+Plug 'lifepillar/vim-mucomplete'
+Plug 'romainl/vim-cool'
+Plug 'romainl/vim-qf'
+Plug 'sgur/vim-editorconfig'
+Plug 'terryma/vim-smooth-scroll'
+Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'tommcdo/vim-exchange'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'wellle/targets.vim'
+call plug#end()
 
 "
 " Plug options
