@@ -150,6 +150,7 @@ set virtualedit=block                 " Better visual block mode
 " User interface and interactions
 
 set belloff=all           " Disable all bells
+set colorcolumn=+1        " Show a marker one char after textwidth
 set completeopt+=menuone  " Show completions when there is a match
 set completeopt+=noselect " Required for MUComplete
 set completeopt+=preview  " Display extra info about the match
@@ -164,10 +165,6 @@ set showcmd               " Tells you if you press a non-alphabetic key
 set splitbelow            " Create new splits to the bottom
 set splitright            " Create new splits to the right
 set tabpagemax=50         " Maximum number of tab pages
-
-" Show colourcolumn on characters that go over textwidth
-autocmd vimrc winEnter,BufEnter * call clearmatches()
-      \ | call matchadd('ColorColumn', '\%81v', 100)
 
 " Make redrawing smoother
 if !has('nvim')
@@ -554,18 +551,6 @@ autocmd vimrc FileType sh   setlocal makeprg=shellcheck\ --format=gcc\ %
 " Colourscheme
 "
 
-" Custom Vim interface
-
-" As colourcolumn has been hijacked for highlighting lines that go over
-" textwidth, there is no need for its colouring to be subtle. It is because of
-" this that we link colourcolumn to ErrorMsg -- to make it more prominent.
-autocmd vimrc ColorScheme * highlight! link ColorColumn ErrorMsg
-
-" Set some stuff
-
-" Acually set the colourscheme
-colorscheme seoul256
-
 " Decide whether to use true colour based on:
 "
 " 1. If a terminal that does not support true colours is running (on macOS the
@@ -579,4 +564,4 @@ if $TERM_PROGRAM != 'Apple_Terminal' && !has('gui_running')
 endif
 
 " Acually set the colourscheme
-colorscheme plan9
+colorscheme seoul256
