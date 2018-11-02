@@ -569,6 +569,9 @@ autocmd vimrc ColorScheme * highlight! link ColorColumn ErrorMsg
 
 " Set some stuff
 
+" Acually set the colourscheme
+colorscheme seoul256
+
 " Decide whether to use true colour based on:
 "
 " 1. If a terminal that does not support true colours is running (on macOS the

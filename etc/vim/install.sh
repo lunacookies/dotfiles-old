@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Create neccesary plugin folders
-if [ ! -e ~/dotfiles/etc/vim/bundle ];then
+if [ ! -e ~/dotfiles/etc/vim/bundle ]; then
   mkdir -p ~/dotfiles/etc/vim/bundle
 fi
 
@@ -17,6 +17,7 @@ dearrrfish/vim-applescript
 ericpruitt/tmux.vim
 fatih/vim-go
 junegunn/goyo.vim
+junegunn/seoul256.vim
 junegunn/limelight.vim
 junegunn/vim-easy-align
 lifepillar/vim-colortemplate
