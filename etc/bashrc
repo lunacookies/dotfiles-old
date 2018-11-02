@@ -217,7 +217,7 @@ bind "set mark-symlinked-directories on"
 # Set the window title to match the present working directory -- whether in
 # tmux or in a regular terminal. This also checks git status after every prompt.
 case "$TERM" in
-  screen*)
+  tmux*)
     PROMPT_COMMAND="tmuxwindowtitle"
 esac
 
