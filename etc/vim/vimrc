@@ -218,6 +218,7 @@ if has('gui_running')
   set title
   set titlestring=%t\ —\ gvim
 else
+
   " Only run proxy icon code if we are in Terminal.app (no other terminal
   " emulators have implemented this feature)
   if $TERM_PROGRAM ==# 'Apple_Terminal'
@@ -225,25 +226,32 @@ else
     " Tmux requires different escape codes, so we check if we are in tmux and
     " set which escape codes are called accordingly.
     if $TERM ==# 'tmux-256color-italic'
+
       " Refresh window title on BufEnter (when switching files) and on
       " FocusGained (when switching tmux panes)
+      "
+      " This also sets the current window's name to the current filename
       autocmd vimrc BufEnter,FocusGained *
             \ call ProxyIconTitle('\ePtmux;\e\e]6;','\e\\')
             \ | call system("tmux rename-window $(echo " . expand("%:t") . ")")
     else
+
       autocmd vimrc BufEnter,FocusGained *
             \ call ProxyIconTitle('\e]6;','')
     endif
   else
-    " If setting a proxy icon is unavailable …
+
+    " If setting a proxy icon is unavailable ...
     if $TERM ==# 'tmux-256color-italic'
-      " Set tmux window name to Vim filename (not entire path to file because
-      " that is often too long for a tab name) in conjunction with the name of
-      " the program being run ((N)vim).
+
+      " Set the current tmux window's name to the file currently being edited in
+      " Vim
       autocmd vimrc BufEnter,FocusGained *
             \ call system("tmux rename-window $(echo " . expand("%:t") . ")")
     else
-      " Same format as tmux, but for system window title
+
+      " If we are not in tmux or in Terminal.app then set the window title to
+      " the current filename and the current program (Vim or Nvim)
       set title
       if has('nvim')
         set titlestring=%t\ —\ nvim
