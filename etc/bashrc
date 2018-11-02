@@ -47,18 +47,18 @@ ls() {
 
   # Return all operands
   local file="$(while test $# -gt 0; do
-    echo $1
-    shift
-  done)"
+  echo $1
+  shift
+done)"
 
-  # Create a variable storing the command to be executed
-  local cmd="ls -$defaultargs$all$extraopt $file"
+# Create a variable storing the command to be executed
+local cmd="ls -$defaultargs$all$extraopt $file"
 
-  # Now actually call the command
-  command $cmd
+# Now actually call the command
+command $cmd
 
-  # Reset the argument index
-  OPTIND=1
+# Reset the argument index
+OPTIND=1
 }
 
 # LaTeX shortcuts
@@ -127,8 +127,18 @@ tmuxwindowtitle () {
     local REPLACE='%20'
     local PWD_URL="file://$HOSTNAME${PWD//$SEARCH/$REPLACE}"
     printf '\ePtmux;\e\e]6;%s\a\e\\' "$PWD_URL"
+
+    if [[ $(basename $PWD) == $(basename $HOME) ]]; then
+      tmux rename-window "~"
+    else
+      tmux rename-window $(basename $PWD)
+    fi
   else
-    tmux rename-window -t $(tmux display-message -p '#I') $(echo $(basename $PWD) — bash)
+    if [[ $(basename $PWD) == $(basename $HOME) ]]; then
+      tmux rename-window "~"
+    else
+      tmux rename-window $(basename $PWD)
+    fi
   fi
 }
 
@@ -139,7 +149,11 @@ regularwindowtitle () {
     local PWD_URL="file://$HOSTNAME${PWD//$SEARCH/$REPLACE}"
     printf '\e]6;%s\a' "$PWD_URL"
   else
-    printf "\e]0;$(echo $(basename $PWD) — bash)\a"
+    if [[ $(basename $PWD) == $(basename $HOME) ]]; then
+      printf "\e]0;$(echo '~ — bash')\a"
+    else
+      printf "\e]0;$(echo $(basename $PWD) — bash)\a"
+    fi
   fi
 }
 
