@@ -26,11 +26,11 @@ chunkc core::hotload 0
 chunkc set global_desktop_mode bsp
 
 # Disable padding
-chunkc set global_desktop_offset_top 0
-chunkc set global_desktop_offset_bottom 0
-chunkc set global_desktop_offset_left 0
-chunkc set global_desktop_offset_right 0
-chunkc set global_desktop_offset_gap 0
+chunkc set global_desktop_offset_top    140
+chunkc set global_desktop_offset_bottom 140
+chunkc set global_desktop_offset_left   240
+chunkc set global_desktop_offset_right  240
+chunkc set global_desktop_offset_gap    50
 
 # Padding step size
 chunkc set desktop_padding_step_size 10.0
@@ -44,7 +44,7 @@ chunkc set bsp_split_mode optimal
 
 # Set the ratio of the split window to be the golden ratio. This means that the
 # ratio of the new window to the old window is 0.618:1
-chunkc set bsp_split_ratio 0.618
+chunkc set bsp_split_ratio 0.5
 
 # Spawn new windows to the right and to the bottom
 chunkc set bsp_spawn_left 0
