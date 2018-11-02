@@ -550,12 +550,6 @@ nnoremap <F10> :echo "hi<"
 autocmd vimrc FileType ruby setlocal makeprg=ruby\ -c\ %
 autocmd vimrc FileType sh   setlocal makeprg=shellcheck\ --format=gcc\ %
 
-" Enable cursorline in the current Vim window, and disable it everywhere else
-"
-" This also applies to tmux panes
-autocmd vimrc VimEnter,WinEnter,FocusGained * set cursorline
-autocmd vimrc WinLeave,FocusLost * set nocursorline
-
 "
 " Colourscheme
 "
