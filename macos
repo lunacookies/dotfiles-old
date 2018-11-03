@@ -92,8 +92,8 @@ launchctl unload -w \
   /System/Library/LaunchAgents/com.apple.notificationcenterui.plist > \
   /dev/null 2>&1
 
-# Use #4b4b4b as wallpaper
-$HOME/bin/setwp --color=4b4b4b
+# Use seoul256-light's background colour as wallpaper
+$HOME/bin/setwp --color=e1e1e1
 
 #
 # Input
@@ -158,6 +158,10 @@ defaults delete com.apple.finder DisableAllAnimations > /dev/null 2>&1
 defaults delete com.apple.Mail DisableSendAnimations > /dev/null 2>&1
 defaults delete com.apple.Mail DisableReplyAnimations > /dev/null 2>&1
 defaults delete NSGlobalDomain NSWindowResizeTime > /dev/null 2>&1
+
+# Use seoul256-light's highlight colour
+defaults write NSGlobalDomain AppleHighlightColor \
+  -string "0.484000 0.929000 0.929000"
 
 #
 # Finder
