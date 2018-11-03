@@ -46,6 +46,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+Plug '/usr/local/opt/fzf'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'NLKNguyen/c-syntax.vim'
 Plug 'arzg/vim-linelinenumbernine'
@@ -54,6 +55,7 @@ Plug 'arzg/vim-tabhelp'
 Plug 'dearrrfish/vim-applescript'
 Plug 'ericpruitt/tmux.vim'
 Plug 'fatih/vim-go'
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/seoul256.vim'
