@@ -560,12 +560,6 @@ nnoremap <right> :vertical resize -2<cr>
 nnoremap <up>    :resize   -2<cr>
 nnoremap <down>  :resize   +2<cr>
 
-" Make 0 behave like ^ (i.e. not acting upon whitespace at the beginning of
-" a line)
-nnoremap 0 ^
-xnoremap 0 ^
-onoremap 0 ^
-
 " Make Y behave like other capitals (why does everyone use this exact comment
 " for this option? Because we all steal our vimrcs from other people? Or am
 " I being cynical?).
