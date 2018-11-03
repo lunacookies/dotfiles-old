@@ -1,8 +1,12 @@
-" aramis' vimrc
+" vim: set foldmethod=marker foldlevel=0 nomodeline:
+" ==============================================================================
+" aramis' vimrc {{{
+" ==============================================================================
 
-"
-" Basics
-"
+" }}}
+" ==============================================================================
+" Basics {{{
+" ==============================================================================
 
 " Load the proper directories if this file is loaded by Nvim
 if has('nvim')
@@ -26,9 +30,10 @@ augroup vimrc
   autocmd!
 augroup END
 
-"
-" vim-plug
-"
+" }}}
+" ==============================================================================
+" vim-plug {{{
+" ==============================================================================
 
 " Install vim-plug if it hasn't been installed yet
 "
@@ -71,9 +76,10 @@ Plug 'tpope/vim-unimpaired'
 Plug 'wellle/targets.vim'
 call plug#end()
 
-"
-" Plug options
-"
+" }}}
+" ==============================================================================
+" Plug options {{{
+" ==============================================================================
 
 " Easy align
 
@@ -146,9 +152,10 @@ noremap <silent> <c-b>
 noremap <silent> <c-f>
       \ :call smooth_scroll#down(&scroll*2, 2*g:scrolltime, 4)<CR>
 
-"
-" Options
-"
+" }}}
+" ==============================================================================
+" Options {{{
+" ==============================================================================
 
 " Editing
 
@@ -398,9 +405,10 @@ set wildmenu         " Better command-line completion
 set wildmode=longest " Complete the longest common string
 set wildmode+=full   " … then each full match
 
-"
-" Statusline
-"
+" }}}
+" ==============================================================================
+" Statusline {{{
+" ==============================================================================
 
 " The file
 
@@ -421,9 +429,10 @@ set statusline+=%-6L " Total lines in file (plus 6 padding on the right)
 set statusline+=%3c  " Current column (padded for less than 4 chars)
 set statusline+=\    " Finish off with a space
 
-"
-" 'Leader' mappings
-"
+" }}}
+" ==============================================================================
+" 'Leader' mappings {{{
+" ==============================================================================
 
 " Comma
 
@@ -500,9 +509,10 @@ nnoremap <Space>m :update<CR>:make<CR>
 nnoremap <Space><Space> :'{,'}s/\<<C-r>=expand("<cword>")<CR>\>/
 nnoremap <Space>%       :%s/\<<C-r>=expand("<cword>")<CR>\>/
 
-"
-" Misc mappings
-"
+" }}}
+" ==============================================================================
+" Misc mappings {{{
+" ==============================================================================
 
 " Jump through incsearch matches with <Tab>
 cnoremap <expr> <Tab>   getcmdtype()
@@ -561,9 +571,10 @@ onoremap 0 ^
 " I being cynical?).
 nnoremap Y y$
 
-"
-" Autocmds
-"
+" }}}
+" ==============================================================================
+" Autocmds {{{
+" ==============================================================================
 
 " Show highlight group when pressing F10
 nnoremap <F10> :echo "hi<"
@@ -575,9 +586,10 @@ nnoremap <F10> :echo "hi<"
 autocmd vimrc FileType ruby setlocal makeprg=ruby\ -c\ %
 autocmd vimrc FileType sh   setlocal makeprg=shellcheck\ --format=gcc\ %
 
-"
-" Colourscheme
-"
+" }}}
+" ==============================================================================
+" Colourscheme {{{
+" ==============================================================================
 
 " Decide whether to use true colour based on:
 "
@@ -593,3 +605,6 @@ endif
 
 " Acually set the colourscheme
 colorscheme seoul256
+
+" }}}
+" ==============================================================================
