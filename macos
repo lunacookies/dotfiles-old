@@ -161,7 +161,7 @@ defaults delete NSGlobalDomain NSWindowResizeTime > /dev/null 2>&1
 
 # Use seoul256-light's highlight colour
 defaults write NSGlobalDomain AppleHighlightColor \
-  -string "0.484000 0.929000 0.929000"
+  -string "0.733000 0.870000 0.870000"
 
 #
 # Finder
