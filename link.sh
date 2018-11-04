@@ -27,11 +27,9 @@ cd etc
 # Link every file in the etc/ directory to $HOME, apart from the ones that
 # follow the XDG Base Directory Spec -- link those to $HOME/.config
 for rc in *; do
-  if [ $rc = "Apple_Terminal" ] \
-    || [ $rc = "git" ] \
+  if [ $rc = "git" ] \
     || [ $rc = "iTerm2" ] \
-    || [ $rc = "nvim" ] \
-    || [ $rc = "stylus" ]; then
+    || [ $rc = "nvim" ]; then
     rmandlink $rc "$HOME/.config/"
   else
     rmandlink $rc "$HOME/."
