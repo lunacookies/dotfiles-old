@@ -205,13 +205,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.44705882668495178</real>
+				<real>0.29411765933036804</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.44313725829124451</real>
+				<real>0.29411765933036804</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.29411765933036804</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
@@ -231,13 +231,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.29247307777404785</real>
+				<real>0.29411765933036804</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.29247722029685974</real>
+				<real>0.29411765933036804</real>
 				<key>Red Component</key>
-				<real>0.29246953129768372</real>
+				<real>0.29411765933036804</real>
 			</dict>
 			<key>Badge Color</key>
 			<dict>
@@ -546,13 +546,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.87058824300765991</real>
+				<real>0.88235294818878174</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.87058824300765991</real>
+				<real>0.88235294818878174</real>
 				<key>Red Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.88235294818878174</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
@@ -730,7 +730,7 @@
 	<key>NSFontPanelAttributes</key>
 	<string>1, 4</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Documents</string>
+	<string>~/Drive/code/vim/seoul256.vim/iterm2</string>
 	<key>NSNavLastUserSetHideExtensionButtonState</key>
 	<false/>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -776,7 +776,7 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>298 33 445 77 0 0 1280 800 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>244 127 918 566 0 0 1280 777 </string>
+	<string>142 275 814 486 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>361 154 710 455 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -979,13 +979,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.44705882668495178</real>
+				<real>0.29411765933036804</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.44313725829124451</real>
+				<real>0.29411765933036804</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.29411765933036804</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
@@ -1007,13 +1007,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.29247307777404785</real>
+				<real>0.29411765933036804</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.29247722029685974</real>
+				<real>0.29411765933036804</real>
 				<key>Red Component</key>
-				<real>0.29246953129768372</real>
+				<real>0.29411765933036804</real>
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
@@ -1699,7 +1699,7 @@
 	<key>iTerm Version</key>
 	<string>3.3.20181018-nightly</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
-	<integer>0</integer>
+	<integer>6</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
 	<false/>
 	<key>metalMaximizeThroughput</key>
