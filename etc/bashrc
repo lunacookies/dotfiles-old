@@ -116,6 +116,13 @@ export __CF_USER_TEXT_ENCODING=0x08000100:0x0
 # I pick this because I find exa's colours more appealing
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
+# fzf
+#
+# This makes fzf take some more of its colours from the terminal's colour scheme
+export FZF_DEFAULT_OPTS='
+--color spinner:2,pointer:9,prompt:4
+'
+
 #
 # Options
 #
