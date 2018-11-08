@@ -87,10 +87,14 @@ sudo systemsetup -setrestartfreeze on
 # Check for software updates daily, not just once per week
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
-# Disable Notification Center and remove the menu bar icon
+# Disable Notification Center
 launchctl unload -w \
   /System/Library/LaunchAgents/com.apple.notificationcenterui.plist > \
   /dev/null 2>&1
+
+# Hide Notification Center icon
+sudo rm /System/Library/CoreServices/\
+  SystemUIServer.app/Contents/Resources/menuitemNormal.pdf
 
 # Use seoul256-light's background colour as wallpaper
 $HOME/bin/setwp --color=e1e1e1
