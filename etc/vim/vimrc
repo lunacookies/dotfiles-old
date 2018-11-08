@@ -192,6 +192,8 @@ set display=lastline      " Show as much of partly-displayed lines as possible
 set guioptions=           " Hide scrollbars in MacVim
 set laststatus=2          " Always display statusline
 set lazyredraw            " Don't redraw during macros
+set number                " Show line numbers
+set numberwidth=5         " Make enough space for triple-digit line numbers
 set pumheight=7           " Show 7 completion items before showing a scrollbar
 set shortmess=acIT        " Abbreviate error messages
 set showcmd               " Tells you if you press a non-alphabetic key
