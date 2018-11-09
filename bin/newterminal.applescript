@@ -1,10 +1,10 @@
 #!/usr/bin/env osascript
 
-if application "Terminal" is running then
-  tell application "Terminal"
-    do script ""
+if application "iTerm" is not running then
+  activate application "iTerm"
+else
+  tell application "iTerm"
+    create window with default profile
     activate
   end tell
-else
-  do shell script "open -na /Applications/Utilities/Terminal.app"
 end if
