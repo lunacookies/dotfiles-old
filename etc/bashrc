@@ -249,15 +249,15 @@ esac
 #
 
 # Set the base prompt
-PS1='\w\[\e[1;31m\]> \[\e[0m\]'
+# PS1='\w\[\e[1;31m\]> \[\e[0m\]'
 
 # Show the user- and hostnames if we are in SSH or if the username is not 'me'
-if [[ -n $SSH_CLIENT || -n $SSH_CONNECTION ]] ; then
-  PS1='\[\e[34m\]\u\[\e[1;32m\]@\[\e[0;33m\]\h\[\e[35m\]:\[\e[m\]'$PS1
-elif [ ! "$USER" = "aramis" ]; then
-  PS1='\[\e[34m\]\u\[\e[1;32m\]:\[\e[0;33m\]'$PS1
-fi
+# if [[ -n $SSH_CLIENT || -n $SSH_CONNECTION ]] ; then
+#   PS1='\[\e[34m\]\u\[\e[1;32m\]@\[\e[0;33m\]\h\[\e[35m\]:\[\e[m\]'$PS1
+# elif [ ! "$USER" = "aramis" ]; then
+#   PS1='\[\e[34m\]\u\[\e[1;32m\]:\[\e[0;33m\]'$PS1
+# fi
 
 # Long prompt stolen from @junegunn. Probably will not use, but I want to keep
 # it here anyway
-# PS1='\[\e[34m\]\u\[\e[1;32m\]@\[\e[0;33m\]\h\[\e[35m\]:\[\e[m\]\w\[\e[1;31m\]> \[\e[0m\]'
+PS1='\[\e[34m\]\u\[\e[1;32m\]@\[\e[0;33m\]\h\[\e[35m\]:\[\e[m\]\w\[\e[1;31m\]> \[\e[0m\]'
