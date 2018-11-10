@@ -184,6 +184,9 @@ bind "set completion-ignore-case on"
 # Treat hyphens and underscores as equivalent
 bind "set completion-map-case on"
 
+# Tab through completion matches like zsh
+bind 'TAB:menu-complete'
+
 # Display matches for ambiguous patterns at first tab press
 bind "set show-all-if-ambiguous on"
 
