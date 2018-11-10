@@ -260,4 +260,8 @@ esac
 
 # Long prompt stolen from @junegunn. Probably will not use, but I want to keep
 # it here anyway
-PS1='\[\e[34m\]\u\[\e[1;32m\]@\[\e[0;33m\]\h\[\e[35m\]:\[\e[m\]\w\[\e[1;31m\]> \[\e[0m\]'
+if [ -e ~/.git-prompt.sh ]; then
+  source ~/.git-prompt.sh
+fi
+
+PS1='\[\e[34m\]\u\[\e[1;32m\]@\[\e[0;33m\]\h\[\e[35m\]:\[\e[m\]\w\[\e[1;30m\]$(__git_ps1)\[\e[1;31m\]> \[\e[0m\]'
