@@ -79,8 +79,11 @@ Plug 'tpope/vim-unimpaired'
 Plug 'wellle/targets.vim'
 call plug#end()
 
-" Easy command to update and clean out all plugins
-command! Plug PlugUpgrade | PlugClean | PlugInstall | PlugUpdate
+" Install missing plugins automatically on startup
+autocmd vimrc VimEnter *
+      \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+      \|   PlugInstall --sync | q | runtime vimrc
+      \| endif
 
 " }}}
 " ==============================================================================
