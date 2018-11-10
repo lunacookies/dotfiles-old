@@ -63,6 +63,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-peekaboo'
 Plug 'lifepillar/vim-colortemplate'
 Plug 'lifepillar/vim-mucomplete'
+Plug 'mhinz/vim-signify'
 Plug 'romainl/vim-cool'
 Plug 'romainl/vim-qf'
 Plug 'sgur/vim-editorconfig'
@@ -160,6 +161,13 @@ noremap <silent> <c-b>
       \ :call smooth_scroll#up(&scroll*2,   2*g:scrolltime, 4)<CR>
 noremap <silent> <c-f>
       \ :call smooth_scroll#down(&scroll*2, 2*g:scrolltime, 4)<CR>
+
+" Signify
+
+" Show changes with a simple coloured line along the side
+let g:signify_sign_add          = '│'
+let g:signify_sign_change       = '│'
+let g:signify_sign_changedelete = '│'
 
 " Fzf
 
