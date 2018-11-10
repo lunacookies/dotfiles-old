@@ -574,7 +574,7 @@ inoremap [; [<CR>];<Esc>O
 inoremap [, [<CR>],<Esc>O
 
 " Mapping to search in the current screen
-nnoremap <silent> \ :set scrolloff=0<CR>VHoL<Esc>:set scrolloff=1<CR>``/\%V
+nnoremap <silent> \ :set scrolloff=0<CR>VHoL<Esc>:set scrolloff=1<CR>``<C-y>/\%V
 
 " Code                 | Purpose
 " ---                  | ---
@@ -582,6 +582,7 @@ nnoremap <silent> \ :set scrolloff=0<CR>VHoL<Esc>:set scrolloff=1<CR>``/\%V
 " VHol<Esc>            | Select everything on screen, then exit visual mode
 " :set scrolloff=1<CR> | Enable scrolloff again
 " ``                   | Jump back to the last position
+" <C-y>                | Scroll up one line to correct for scrolloff changes
 " /\%V                 | Start a search in the last visual selection
 
 " Move around splits more easily
