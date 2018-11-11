@@ -116,7 +116,9 @@ function! s:goyo_enter() " On goyo enter:
 endfunction
 
 function! s:goyo_leave() " On goyo exit:
-  runtime vimrc          " Source vimrc to reset all settings back to default
+  set showcmd            " Show last command
+  set showmode           " Show current mode
+  set scrolloff=1        " Always show one line of context around the cursor
   Limelight!             " Disable paragraph focus mode
 endfunction
 
