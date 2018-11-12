@@ -49,7 +49,7 @@ call plug#begin('~/.vim/plugged')
 Plug '/usr/local/opt/fzf'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'NLKNguyen/c-syntax.vim'
-Plug 'arzg/seoul256.vim'
+Plug 'arzg/seoul8'
 Plug 'arzg/vim-linelinenumbernine'
 Plug 'arzg/vim-ruby'
 Plug 'arzg/vim-tabhelp'
@@ -661,7 +661,7 @@ if $TERM_PROGRAM != 'Apple_Terminal' && !has('gui_running')
 endif
 
 " Acually set the colourscheme
-colorscheme seoul256
+colorscheme seoul8
 
 " }}}
 " ==============================================================================
