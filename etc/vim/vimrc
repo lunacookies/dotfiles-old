@@ -113,7 +113,15 @@ function! s:goyo_enter()   " On goyo enter:
   set noshowmode           " Don't show current mode
   set scrolloff=999        " Centre current line
   Limelight                " Enable paragraph focus mode
+  if has('gui_running')
+    set fullscreen         " Enter fullscreen (don't use Mac native fullscreen for this)
+    colo seoul8_light      " Light colours
+    set linespace=7        " Extra leading is better for prose
+  elseif exists('$TMUX')   " Hide tmux bar
+    silent !tmux set status off
+  endif
   let &l:statusline = '%M' " Show modified state on the bottom of the screen
+                           " This automatically disables on Goyo leave
   hi StatusLine
         \ ctermfg=137
         \ guifg=#be9873
@@ -126,6 +134,13 @@ function! s:goyo_leave() " On goyo exit:
   set showmode           " Show current mode
   set scrolloff=1        " Always show one line of context around the cursor
   Limelight!             " Disable paragraph focus mode
+  if has('gui_running')
+    set nofullscreen     " Exit fullscreen
+    colo seoul8          " Dark colours
+    set linespace=3      " Standard leading
+  elseif exists('$TMUX') " Enable tmux bar
+    silent !tmux set status on
+  endif
 endfunction
 
 " Activate respective function on goyo enter and leave
