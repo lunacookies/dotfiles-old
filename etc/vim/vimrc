@@ -201,10 +201,11 @@ autocmd vimrc FileType fzf set laststatus=0 noshowmode noruler
 
 " Editorconfig
 
-" Don't use editorconfig settings for markdown files that I write in
+" Don't use editorconfig settings for polytextum files; allow me to set
+" indentation settings by myself
 let g:editorconfig_blacklist = {
-      \ 'filetype': [],
-      \ 'pattern': ['document\.md']}
+      \ 'filetype': ['markdown.polytextum'],
+      \ 'pattern': []}
 
 " }}}
 " ==============================================================================
@@ -636,6 +637,11 @@ nnoremap <F10> :echo "hi<"
 " Set makeprg to the appropriate linter for a given filetype
 autocmd vimrc FileType ruby setlocal makeprg=ruby\ -c\ %
 autocmd vimrc FileType sh   setlocal makeprg=shellcheck\ --format=gcc\ %
+
+" All the files I write in using polytextum are called document.md. This autocmd
+" allows me to apply specific settings to these files
+autocmd vimrc BufNewFile,BufFilePre,BufRead
+      \ *document.md set filetype=markdown.polytextum
 
 " }}}
 " ==============================================================================

@@ -33,11 +33,13 @@ root = true
   indent_size = 2
   indent_style = space
 
-# Personal preference
+# Make the indentation in both ordered and unordered lists line up
+#
+# Many markdown documents use trailing spaces to denote which paragraphs wrap
+# and which don't, so avoid trimming these
 [*.{md,rmd,mkd,mkdn,mdwn,mdown,markdown}]
   indent_size = 3
   indent_style = space
-  max_line_length = 66
   trim_trailing_whitespace = false
 
 # https://stackoverflow.com/questions/2678817/2-spaces-or-1-tab-whats-the-standard-for-indentation-in-the-rails-community/2678836#2678836
