@@ -193,6 +193,13 @@ let g:fzf_colors =
 autocmd vimrc FileType fzf set laststatus=0 noshowmode noruler
       \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
+" Editorconfig
+
+" Don't use editorconfig settings for markdown files that I write in
+let g:editorconfig_blacklist = {
+      \ 'filetype': [],
+      \ 'pattern': ['document\.md']}
+
 " }}}
 " ==============================================================================
 " Options {{{
