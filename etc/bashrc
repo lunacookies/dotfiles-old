@@ -62,8 +62,16 @@ OPTIND=1
 }
 
 # LaTeX shortcuts
-alias doc="nvim document.md"
 alias pdf="open *.pdf"
+doc() {
+  # Open document in GUI if we are going to be writing for a while; otherwise open
+  # in terminal Nvim
+  if [ "$1" = "--long" ]; then
+    mvim -c "Goyo" document.md
+  else
+    nvim document.md
+  fi
+}
 
 # Quick dotfile access
 alias ec="nvim $HOME/.vim/vimrc"
