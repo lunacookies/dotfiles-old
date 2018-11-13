@@ -65,6 +65,7 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'junegunn/vim-pseudocl'
 Plug 'lifepillar/vim-colortemplate'
 Plug 'lifepillar/vim-mucomplete'
+Plug 'markonm/traces.vim'
 Plug 'mhinz/vim-signify'
 Plug 'romainl/vim-cool'
 Plug 'romainl/vim-qf'
@@ -429,11 +430,6 @@ nnoremap * *N
 nnoremap # #N
 nnoremap g* g*N
 nnoremap g# g#N
-
-" Live preview of substitute command
-if has('nvim')
-  set inccommand=split
-endif
 
 " Use ripgrep if available, fall back to the silver searcher, then fall back to
 " the system grep for grepping
