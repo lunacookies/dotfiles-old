@@ -63,11 +63,11 @@ Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-fnr'
 Plug 'junegunn/vim-peekaboo'
 Plug 'junegunn/vim-pseudocl'
+Plug 'junegunn/vim-slash'
 Plug 'lifepillar/vim-colortemplate'
 Plug 'lifepillar/vim-mucomplete'
 Plug 'markonm/traces.vim'
 Plug 'mhinz/vim-signify'
-Plug 'romainl/vim-cool'
 Plug 'romainl/vim-qf'
 Plug 'sgur/vim-editorconfig'
 Plug 'terryma/vim-smooth-scroll'
@@ -154,10 +154,6 @@ autocmd! vimrc User GoyoLeave nested call <sid>goyo_leave()
 
 let g:limelight_paragraph_span = 1  " Don't dim one par around the current one
 let g:limelight_priority       = -1 " Don't overrule hlsearch
-
-" Cool
-
-let g:CoolTotalMatches = 1 " Show number of matches in command line
 
 " MUComplete
 
