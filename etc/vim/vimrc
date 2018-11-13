@@ -420,13 +420,6 @@ set ignorecase " Ignore
 set incsearch  " Jump to search results as you type
 set smartcase  " Smarter capitalisation when searching
 
-" Do not jump to the next match automatically when searching for the current
-" word
-nnoremap * *N
-nnoremap # #N
-nnoremap g* g*N
-nnoremap g# g#N
-
 " Use ripgrep if available, fall back to the silver searcher, then fall back to
 " the system grep for grepping
 if executable('rg')
