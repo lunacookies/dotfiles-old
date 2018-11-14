@@ -95,8 +95,8 @@ launchctl unload -w \
 # Hide Notification Center icon
 sudo rm /System/Library/CoreServices/SystemUIServer.app/Contents/Resources/menuitemNormal.pdf
 
-# Use seoul256-light's background colour as wallpaper
-$HOME/bin/setwp --color=e1e1e1
+# Use a slightly brown grey background
+$HOME/bin/setwp --color=504a44
 
 #
 # Input
