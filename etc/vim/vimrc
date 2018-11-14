@@ -226,6 +226,17 @@ let g:editorconfig_blacklist = {
       \ 'filetype': ['markdown.polytextum'],
       \ 'pattern': []}
 
+" Asterisk
+
+" Don't move after using *
+map *  <Plug>(asterisk-z*)
+map #  <Plug>(asterisk-z#)
+map g* <Plug>(asterisk-gz*)
+map g# <Plug>(asterisk-gz#)
+
+" Stay in the same position on the match as from where you started
+let g:asterisk#keeppos = 1
+
 " }}}
 " ==============================================================================
 " Options {{{
@@ -424,13 +435,6 @@ set hlsearch   " Highlight search matches
 set ignorecase " Ignore
 set incsearch  " Jump to search results as you type
 set smartcase  " Smarter capitalisation when searching
-
-" Do not jump to the next match automatically when searching for the current
-" word
-nnoremap * *N
-nnoremap # #N
-nnoremap g* g*N
-nnoremap g# g#N
 
 " Use ripgrep if available, fall back to the silver searcher, then fall back to
 " the system grep for grepping
