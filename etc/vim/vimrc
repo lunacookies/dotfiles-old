@@ -237,6 +237,15 @@ map g# <Plug>(asterisk-gz#)
 " Stay in the same position on the match as from where you started
 let g:asterisk#keeppos = 1
 
+" FNR
+
+" Make FNR, by default:
+"
+"       case-Insensitive
+" substitute Globally (all matches)
+"            Confirm each substitution
+let g:fnr_flags = 'igc'
+
 " }}}
 " ==============================================================================
 " Options {{{
