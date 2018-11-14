@@ -27,14 +27,9 @@ rmandlink() {
 
 cd etc
 
-# Link every file in the etc/ directory to $HOME, apart from the ones that
-# follow the XDG Base Directory Spec -- link those to $HOME/.config
-for rc in *; do
-  if [ $rc = "iTerm2" ]; then
-    rmandlink $rc "$HOME/.config/"
-  else
+# Link [every file in the etc/ directory that needs to be in $HOME] to $HOME
+for rc in *rc *.conf git* vim editorconfig ; do
     rmandlink $rc "$HOME/."
-  fi
 done
 
 cd ..
