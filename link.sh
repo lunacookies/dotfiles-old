@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-# Create ~/.config if it doesn't exist yet
+# Clear out, then create ~/.config
+if [ -e $HOME/.config ]; then
+  rm -rf $HOME/.config
+fi
 mkdir -p $HOME/.config
 
 # Get into the dotfiles repository
@@ -28,8 +31,7 @@ cd etc
 # follow the XDG Base Directory Spec -- link those to $HOME/.config
 for rc in *; do
   if [ $rc = "git" ] \
-    || [ $rc = "iTerm2" ] \
-    || [ $rc = "nvim" ]; then
+    || [ $rc = "iTerm2" ]; then
     rmandlink $rc "$HOME/.config/"
   else
     rmandlink $rc "$HOME/."
@@ -46,7 +48,7 @@ cd ..
 rmandlink "bin" "$HOME/"
 
 #
-# Shell files
+# Miscellaneous
 #
 
 # Create some empty files that make the shell quieter
@@ -61,3 +63,7 @@ touch $HOME/.hushlogin ~/.bash_sessions_disable
 
 # Source bashrc even in login shell
 printf '%s' 'if [ -f ~/.bashrc ]; then . ~/.bashrc; fi' > $HOME/.bash_profile
+
+# Link Nvim config to Vim config
+mkdir -pv $HOME/.config/nvim
+ln -s $PWD/etc/vim/vimrc $HOME/.config/nvim/init.vim

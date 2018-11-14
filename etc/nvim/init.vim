@@ -1,1 +1,0 @@
-/Users/aramis/.vim/vimrc
