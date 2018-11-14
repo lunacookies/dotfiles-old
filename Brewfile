@@ -1,3 +1,5 @@
+# vim: set filetype=ruby nomodeline:
+
 tap "crisidev/chunkwm"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -15,6 +17,7 @@ brew "duti"
 brew "fd"
 brew "fzf"
 brew "go"
+brew "highlight"
 brew "koekeishiya/formulae/skhd"
 brew "mas"
 brew "neovim"
