@@ -21,29 +21,15 @@ rmandlink() {
   ln -s $PWD/$1 $rcpath
 }
 
-#
-# etc
-#
-
-cd etc
-
 # Link [every file in the etc/ directory that needs to be in $HOME] to $HOME
 for rc in *rc *.conf git* vim editorconfig ; do
     rmandlink $rc "$HOME/."
 done
 
-cd ..
-
-#
-# bin
-#
-
 # Link my scripts to $HOME
 rmandlink "bin" "$HOME/"
 
-#
 # Miscellaneous
-#
 
 # Create some empty files that make the shell quieter
 #
@@ -60,4 +46,4 @@ printf '%s' 'if [ -f ~/.bashrc ]; then . ~/.bashrc; fi' > $HOME/.bash_profile
 
 # Link Nvim config to Vim config
 mkdir -pv $HOME/.config/nvim
-ln -s $PWD/etc/vim/vimrc $HOME/.config/nvim/init.vim
+ln -s $PWD/vim/vimrc $HOME/.config/nvim/init.vim

@@ -30,15 +30,6 @@ This will download an installer script (`install.sh`) which will:
 After the installer completes, it is recommended to reboot your 
 machine.
 
-## How this repo is structured
-
-- All configuration files go into `etc/` with the leading dot 
-  removed. Tools that follow the XDG Base Dir Spec are also placed 
-  in this directory.
-
-- Everything else (README, LICENSE, dependency files, installation 
-  scripts, binaries) goes into the root of the repository
-
 ## My smart window title config
 
 I have spent a considerable amount of time perfecting the window 
