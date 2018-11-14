@@ -591,9 +591,23 @@ nnoremap <Space>r :redraw!<CR>
 " 'm' for make
 nnoremap <Space>m :update<CR>:make<CR>
 
-" Quick 'n' easy find-and-replace
-nnoremap <Space><Space> :'{,'}FNR<CR><C-r>=expand("<cword>")<CR><CR>
-nnoremap <Space>%       :%FNR<CR><C-r>=expand("<cword>")<CR><CR>
+" Quick 'n' easy find-and-replace using vim-fnr
+"
+" Repeat previous keystroke for current paragraph
+" d for whole document
+
+" The current word/selection
+" No prefix
+nnoremap <Space><Space> :'{,'}FNR<CR><C-r>=expand("<cword>")<CR>
+nnoremap <Space>d       :%FNR<CR><C-r>=expand("<cword>")<CR>
+xnoremap <Space><Space> y:'{,'}FNR<CR><C-r>=@<CR>
+xnoremap <Space>d       y:%FNR<CR><C-r>=@<CR>
+
+" Type a word
+" f for FNR
+nnoremap <Space>ff :'{,'}FNR<CR>
+nnoremap <Space>fd       :%FNR<CR>
+xnoremap <Space>ff :'<,'>FNR<CR>
 
 " }}}
 " ==============================================================================
