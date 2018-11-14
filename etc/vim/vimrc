@@ -244,8 +244,7 @@ let g:asterisk#keeppos = 1
 "
 "       case-Insensitive
 " substitute Globally (all matches)
-"            Confirm each substitution
-let g:fnr_flags = 'igc'
+let g:fnr_flags = 'ig'
 
 " Highlighted Yank
 
