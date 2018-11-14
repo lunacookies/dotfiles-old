@@ -579,8 +579,8 @@ nnoremap <Space>r :redraw!<CR>
 nnoremap <Space>m :update<CR>:make<CR>
 
 " Quick 'n' easy find-and-replace
-nnoremap <Space><Space> :'{,'}FNR<C-r>=expand("<cword>")<CR>
-nnoremap <Space>%       :%FNR<C-r>=expand("<cword>")<CR>
+nnoremap <Space><Space> :'{,'}FNR<CR><C-r>=expand("<cword>")<CR><CR>
+nnoremap <Space>%       :%FNR<CR><C-r>=expand("<cword>")<CR><CR>
 
 " }}}
 " ==============================================================================
