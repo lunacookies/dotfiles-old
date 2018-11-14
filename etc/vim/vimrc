@@ -66,6 +66,7 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'junegunn/vim-pseudocl'
 Plug 'lifepillar/vim-colortemplate'
 Plug 'lifepillar/vim-mucomplete'
+Plug 'machakann/vim-highlightedyank'
 Plug 'markonm/traces.vim'
 Plug 'mhinz/vim-signify'
 Plug 'romainl/vim-cool'
@@ -245,6 +246,16 @@ let g:asterisk#keeppos = 1
 " substitute Globally (all matches)
 "            Confirm each substitution
 let g:fnr_flags = 'igc'
+
+" Highlighted Yank
+
+" Make Highlighted Yank highlight for a shorter period of time
+"
+" I have done this because I found the original version annoying, and this
+" version draws attention better, for me at least, by creating an almost
+" 'flashing' effect, rather than just switching ... waiting ... then going back
+" again.
+let g:highlightedyank_highlight_duration = 300
 
 " }}}
 " ==============================================================================
