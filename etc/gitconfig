@@ -5,8 +5,10 @@
   username = arzg
 
 # Use Nvim for commit messages etc.
+# Make ~/.gitignore the global gitignore that will apply to all repos
 [core]
   editor = nvim
+	excludesfile = ~/.gitignore
 
 # Some common aliases
 [alias]

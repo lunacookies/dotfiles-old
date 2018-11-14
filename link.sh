@@ -30,8 +30,7 @@ cd etc
 # Link every file in the etc/ directory to $HOME, apart from the ones that
 # follow the XDG Base Directory Spec -- link those to $HOME/.config
 for rc in *; do
-  if [ $rc = "git" ] \
-    || [ $rc = "iTerm2" ]; then
+  if [ $rc = "iTerm2" ]; then
     rmandlink $rc "$HOME/.config/"
   else
     rmandlink $rc "$HOME/."
