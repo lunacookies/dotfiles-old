@@ -39,8 +39,8 @@
 # We set less to *not* clear the screen on exit when explicitly showing a diff
 # so that it is easier to reference the output in a later command.
 [pager]
-  diff = diff-so-fancy | less --tabs=2 -X
-  show = diff-so-fancy | less --tabs=2
+  diff = diff-so-fancy | less --tabs=4 -X
+  show = diff-so-fancy | less --tabs=4
 
 # Diff colours
 [color "diff-highlight"]
