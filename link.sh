@@ -48,4 +48,4 @@ printf '%s' 'if [ -f ~/.bashrc ]; then . ~/.bashrc; fi' > $HOME/.bash_profile
 
 # Link Nvim config to Vim config
 mkdir -pv $HOME/.config/nvim
-ln -s $PWD/vim/vimrc $HOME/.config/nvim/init.vim
+ln -s $PWD/vimrc $HOME/.config/nvim/init.vim
