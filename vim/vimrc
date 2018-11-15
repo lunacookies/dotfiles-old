@@ -86,6 +86,7 @@ Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'wellle/targets.vim'
+Plug 'wellle/visual-split.vim'
 call plug#end()
 
 " Install missing plugins automatically on startup
