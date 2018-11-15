@@ -10,24 +10,26 @@ mkdir -p $HOME/.config
 cd ~/dotfiles
 
 # Define a function that links a given file to a given location and
-# automatically removes the target file
-rmandlink() {
+# automatically removes the target file if it exists
+linkrc() {
   local rcpath="$2$1"
 
-  # Delete old links
-  rm -rf $rcpath
-
   # Link the rc
-  ln -s $PWD/$1 $rcpath
+  #
+  # -s: Make symbolic link
+  # -v: Confirm linking through output
+  # -h: Do not follow a symlink that may be present at the target
+  # -F: Overwrite target
+  ln -svhF $PWD/$1 $rcpath
 }
 
 # Link [every file in the etc/ directory that needs to be in $HOME] to $HOME
 for rc in *rc *.conf git* vim editorconfig ; do
-    rmandlink $rc "$HOME/."
+    linkrc $rc "$HOME/."
 done
 
 # Link my scripts to $HOME
-rmandlink "bin" "$HOME/"
+linkrc "bin" "$HOME/"
 
 # Miscellaneous
 
