@@ -46,19 +46,21 @@ ls() {
   local extraopt=$([ ! -z "$ifextraopt" ] && echo "$ifextraopt")
 
   # Return all operands
-  local file="$(while test $# -gt 0; do
-  echo $1
-  shift
-done)"
+  local file="$(
+  while test $# -gt 0; do
+    echo $1
+    shift
+  done
+  )"
 
-# Create a variable storing the command to be executed
-local cmd="ls -$defaultargs$all$extraopt $file"
+  # Create a variable storing the command to be executed
+  local cmd="ls -$defaultargs$all$extraopt $file"
 
-# Now actually call the command
-command $cmd
+  # Now actually call the command
+  command $cmd
 
-# Reset the argument index
-OPTIND=1
+  # Reset the argument index
+  OPTIND=1
 }
 
 # LaTeX shortcuts
