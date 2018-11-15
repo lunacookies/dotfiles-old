@@ -57,6 +57,7 @@ Plug 'dearrrfish/vim-applescript'
 Plug 'ericpruitt/tmux.vim'
 Plug 'fatih/vim-go'
 Plug 'haya14busa/vim-asterisk'
+Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
@@ -633,15 +634,6 @@ cnoremap <expr> <Tab>   getcmdtype()
 cnoremap <expr> <S-Tab> getcmdtype()
       \ == "/" \|\| getcmdtype()
       \ == "?" ? "<CR>?<C-r>/" : "<S-Tab>"
-
-" Autoexpansion
-inoremap (<CR> (<CR>)<Esc>O
-inoremap {<CR> {<CR>}<Esc>O
-inoremap {; {<CR>};<Esc>O
-inoremap {, {<CR>},<Esc>O
-inoremap [<CR> [<CR>]<Esc>O
-inoremap [; [<CR>];<Esc>O
-inoremap [, [<CR>],<Esc>O
 
 " Mapping to search in the current screen
 nnoremap <silent> \ :set scrolloff=0<CR>VHoL<Esc>:set scrolloff=1<CR>``<C-y>/\%V
