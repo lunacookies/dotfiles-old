@@ -1,1 +1,6 @@
-gem: --no-document --user-install
+# vim: set filetype=yaml nomodeline:
+---
+# Don't save documentation, install into $HOME, and give the user suggestions
+# during installation
+gem: --no-document --user-install  --suggestions
+---
