@@ -5,61 +5,61 @@ root = true
 # This is where you can put your personal preference -- everything else cannot
 # be changed because it adheres to language standards.
 [*]
-  charset = utf-8
-  end_of_line = lf
-  indent_size = 2
-  indent_style = space
-  insert_final_newline = true
-  max_line_length = 80
-  trim_trailing_whitespace = true
+charset = utf-8
+end_of_line = lf
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+max_line_length = 80
+trim_trailing_whitespace = true
 
 # https://www.python.org/dev/peps/pep-0008/
 [*.py]
-  indent_size = 4
-  indent_style = space
-  max_line_length = 79
+indent_size = 4
+indent_style = space
+max_line_length = 79
 
 # https://www.gnu.org/software/make/manual/make.html
 [Makefile,*.mak]
-  indent_style = tab
+indent_style = tab
 
 # https://developer.mozilla.org/en-US/docs/Mozilla/Developer_guide/Coding_Style#Naming_and_Formatting_code
 [*.html,*.css,*.js]
-  indent_size = 2
-  indent_style = space
+indent_size = 2
+indent_style = space
 
 # http://www.yaml.org/spec/1.2/spec.html#Syntax
 [*.{yml,yaml}]
-  indent_size = 2
-  indent_style = space
+indent_size = 2
+indent_style = space
 
 # Make the indentation in both ordered and unordered lists line up
 #
 # Many markdown documents use trailing spaces to denote which paragraphs wrap
 # and which don't, so avoid trimming these
 [*.{md,rmd,mkd,mkdn,mdwn,mdown,markdown}]
-  indent_size = 3
-  indent_style = space
-  trim_trailing_whitespace = false
+indent_size = 3
+indent_style = space
+trim_trailing_whitespace = false
 
 # https://stackoverflow.com/questions/2678817/2-spaces-or-1-tab-whats-the-standard-for-indentation-in-the-rails-community/2678836#2678836
 [*.rb]
-  indent_size = 2
-  indent_style = space
+indent_size = 2
+indent_style = space
 
 [*.sh]
-  indent_size = 2
-  indent_style = space
+indent_size = 2
+indent_style = space
 
 [package.json]
-  indent_size = 2
-  indent_style = space
+indent_size = 2
+indent_style = space
 
 [*.go]
-  indent_size = 4
-  indent_style = tab
+indent_size = 4
+indent_style = tab
 
 [*.rs]
-  indent_size = 4
-  indent_style = spaces
-  max_line_length = 100
+indent_size = 4
+indent_style = spaces
+max_line_length = 100
