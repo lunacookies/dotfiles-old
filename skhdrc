@@ -41,20 +41,6 @@ shift + alt - 9 : chunkc tiling::window -d 9; chunkc tiling::desktop --focus 9
 shift + alt - 0 : chunkc tiling::window -d 10; chunkc tiling::desktop --focus 10
 
 #
-# Monitors
-#
-
-# Focus monitor
-ctrl + alt - 1 : chunkc tiling::monitor -f 1
-ctrl + alt - 2 : chunkc tiling::monitor -f 2
-ctrl + alt - 3 : chunkc tiling::monitor -f 3
-
-# Send window to monitor and follow focus
-ctrl + cmd - 1 : chunkc tiling::window --send-to-monitor 1; chunkc tiling::monitor -f 1
-ctrl + cmd - 2 : chunkc tiling::window --send-to-monitor 2; chunkc tiling::monitor -f 2
-ctrl + cmd - 3 : chunkc tiling::window --send-to-monitor 3; chunkc tiling::monitor -f 3
-
-#
 # Manipulate regions
 #
 
