@@ -49,6 +49,7 @@ call plug#begin('~/.vim/plugged')
 Plug '/usr/local/opt/fzf'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'NLKNguyen/c-syntax.vim'
+Plug 'Yggdroot/indentLine'
 Plug 'arzg/seoul8'
 Plug 'arzg/vim-linelinenumbernine'
 Plug 'arzg/vim-ruby', { 'for': 'ruby' }
@@ -262,6 +263,30 @@ let g:highlightedyank_highlight_duration = 300
 let ruby_space_errors       = 1 " Highlight whitespace errors
 let ruby_fold               = 1 " Enable ruby syntax folding
 let ruby_spellcheck_strings = 1 " Check for spelling errors in strings
+
+" Indent Line
+
+" Show indent guides at the first level as well
+let g:indentLine_showFirstIndentLevel = 1
+
+" Enable indent guides by default
+let g:indentLine_enabled = 1
+
+" Don't show indent guides in Markdown files or when fuzzy-finding
+let g:indentLine_fileTypeExclude = ['markdown', 'fzf']
+
+" Set indent guide colour for terminal
+let g:indentLine_color_term = 239
+
+" Set indent guide colour for MacVim
+let g:indentLine_color_gui = '#616161'
+
+" Stop indentLine from slowing Vim down
+let g:indentLine_faster = 1
+
+" Make indent guides a solid line
+let g:indentLine_char       = '│'
+let g:indentLine_first_char = '│'
 
 " }}}
 " ==============================================================================
