@@ -257,6 +257,12 @@ let g:fnr_flags = 'ig'
 " again.
 let g:highlightedyank_highlight_duration = 300
 
+" Ruby
+
+let ruby_space_errors       = 1 " Highlight whitespace errors
+let ruby_fold               = 1 " Enable ruby syntax folding
+let ruby_spellcheck_strings = 1 " Check for spelling errors in strings
+
 " }}}
 " ==============================================================================
 " Options {{{
