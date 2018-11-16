@@ -175,9 +175,6 @@ let g:mucomplete#chains = {
       \ 'default':  [ 'path', 'c-p', 'omni' ],
       \ }
 
-let g:mucomplete#enable_auto_at_startup = 1
-let g:mucomplete#completion_delay = 250
-
 " Smooth-scroll
 
 " We use a variable for this so that the duration of animations can be
