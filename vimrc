@@ -266,9 +266,6 @@ let ruby_spellcheck_strings = 1 " Check for spelling errors in strings
 
 " Indent Line
 
-" Show indent guides at the first level as well
-let g:indentLine_showFirstIndentLevel = 1
-
 " Enable indent guides by default
 let g:indentLine_enabled = 1
 
