@@ -316,6 +316,7 @@ set completeopt+=noselect " Required for MUComplete
 set completeopt+=preview  " Display extra info about the match
 set conceallevel=0        " Never conceal
 set display=lastline      " Show as much of partly-displayed lines as possible
+set foldlevel=99          " Don't fold anything up by default
 set guifont=Menlo:h14     " Use Menlo 14pt if running in MacVim
 set guioptions=           " Hide scrollbars in MacVim
 set laststatus=2          " Always display statusline
