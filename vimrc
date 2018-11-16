@@ -51,11 +51,11 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'NLKNguyen/c-syntax.vim'
 Plug 'arzg/seoul8'
 Plug 'arzg/vim-linelinenumbernine'
-Plug 'arzg/vim-ruby'
+Plug 'arzg/vim-ruby', { 'for': 'ruby' }
 Plug 'arzg/vim-tabhelp'
 Plug 'dearrrfish/vim-applescript'
 Plug 'ericpruitt/tmux.vim'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'haya14busa/vim-asterisk'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim'
