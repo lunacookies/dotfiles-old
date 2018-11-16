@@ -76,7 +76,7 @@ doc() {
 }
 
 # Quick dotfile access
-alias ec="nvim $HOME/.vim/vimrc"
+alias ec="nvim $HOME/.vimrc"
 alias hdc="nvim $HOME/.skhdrc"
 alias sc="nvim $HOME/.bashrc"
 alias tec="nvim $HOME/.tmux.conf"
