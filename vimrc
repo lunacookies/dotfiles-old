@@ -1,12 +1,10 @@
 " vim: set foldmethod=marker foldlevel=0 nomodeline:
-" ==============================================================================
-" aramis' vimrc {{{
-" ==============================================================================
 
-" }}}
-" ==============================================================================
-" Basics {{{
-" ==============================================================================
+" aramis' vimrc
+
+"
+" Basics
+"
 
 " Load the proper directories if this file is loaded by Nvim
 if has('nvim')
@@ -30,10 +28,9 @@ augroup vimrc
   autocmd!
 augroup END
 
-" }}}
-" ==============================================================================
-" vim-plug {{{
-" ==============================================================================
+"
+" vim-plug
+"
 
 " Install vim-plug if it hasn't been installed yet
 "
@@ -98,10 +95,9 @@ autocmd vimrc VimEnter *
       \|   PlugInstall --sync | q | runtime vimrc
       \| endif
 
-" }}}
-" ==============================================================================
-" Plug options {{{
-" ==============================================================================
+"
+" Plug options
+"
 
 " Easy align
 
@@ -189,10 +185,9 @@ let ruby_space_errors       = 1 " Highlight whitespace errors
 let ruby_fold               = 1 " Enable ruby syntax folding
 let ruby_spellcheck_strings = 1 " Check for spelling errors in strings
 
-" }}}
-" ==============================================================================
-" Options {{{
-" ==============================================================================
+"
+" Options
+"
 
 " Editing
 
@@ -434,10 +429,9 @@ set wildmenu         " Better command-line completion
 set wildmode=longest " Complete the longest common string
 set wildmode+=full   " … then each full match
 
-" }}}
-" ==============================================================================
-" Statusline {{{
-" ==============================================================================
+"
+" Statusline
+"
 
 " The file
 
@@ -458,10 +452,9 @@ set statusline+=%-6L " Total lines in file (plus 6 padding on the right)
 set statusline+=%3c  " Current column (padded for less than 4 chars)
 set statusline+=\    " Finish off with a space
 
-" }}}
-" ==============================================================================
-" 'Leader' mappings {{{
-" ==============================================================================
+"
+" 'Leader' mappings
+"
 
 " Comma
 
@@ -544,10 +537,9 @@ nnoremap <Space>ff :'{,'}FNR<CR>
 nnoremap <Space>fd       :%FNR<CR>
 xnoremap <Space>ff :'<,'>FNR<CR>
 
-" }}}
-" ==============================================================================
-" Misc mappings {{{
-" ==============================================================================
+"
+" Misc mappings
+"
 
 " Jump through incsearch matches with <Tab>
 cnoremap <expr> <Tab>   getcmdtype()
@@ -595,10 +587,9 @@ nnoremap Y y$
 " Add a command that allows you to reindent a range without moving the cursor
 command! -range=% Equal let b:wv = winsaveview() | silent execute <line1> . ',' . <line2> . 'normal! ==' | call winrestview(b:wv)
 
-" }}}
-" ==============================================================================
-" Autocmds {{{
-" ==============================================================================
+"
+" Autocmds
+"
 
 " Show highlight group when pressing F10
 nnoremap <F10> :echo "hi<"
@@ -610,10 +601,9 @@ nnoremap <F10> :echo "hi<"
 autocmd vimrc FileType ruby setlocal makeprg=ruby\ -c\ %
 autocmd vimrc FileType sh   setlocal makeprg=shellcheck\ --format=gcc\ %
 
-" }}}
-" ==============================================================================
-" Colourscheme {{{
-" ==============================================================================
+"
+" Colourscheme
+"
 
 " Colourscheme modifications
 
@@ -633,6 +623,3 @@ autocmd vimrc ColorScheme * hi! htmlArg cterm=italic gui=italic
 
 " Acually set the colourscheme
 colorscheme apprentice
-
-" }}}
-" ==============================================================================
