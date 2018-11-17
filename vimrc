@@ -661,6 +661,22 @@ autocmd vimrc BufNewFile,BufFilePre,BufRead
 " Colourscheme {{{
 " ==============================================================================
 
+" Colourscheme modifications
+
+" Better syntax highlighting for VimScript
+autocmd vimrc ColorScheme * hi! link vimAutoCmdSfxList Type
+autocmd vimrc ColorScheme * hi! link vimFunction       Function
+autocmd vimrc ColorScheme * hi! link vimIsCommand      Statement
+autocmd vimrc ColorScheme * hi! link vimUserFunc       Function
+
+" Un-reversed mode marker, in bold now
+autocmd vimrc ColorScheme * hi! ModeMsg cterm=bold,reverse gui=bold,reverse
+
+" Operator Mono-style italics
+autocmd vimrc ColorScheme * hi! Comment cterm=italic gui=italic
+autocmd vimrc ColorScheme * hi! Type    cterm=italic gui=italic
+autocmd vimrc ColorScheme * hi! htmlArg cterm=italic gui=italic
+
 " Acually set the colourscheme
 colorscheme apprentice
 
