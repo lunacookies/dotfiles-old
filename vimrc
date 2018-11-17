@@ -54,8 +54,6 @@ Plug 'ericpruitt/tmux.vim'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'haya14busa/vim-asterisk'
 Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-fnr'
 Plug 'junegunn/vim-pseudocl'
@@ -105,52 +103,6 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
-
-" Goyo
-
-let g:goyo_width = 68 " Leave a few extra chars more than textwidth
-
-function! s:goyo_enter()   " On goyo enter:
-  set noshowcmd            " Don't show last command
-  set noshowmode           " Don't show current mode
-  set scrolloff=999        " Centre current line
-  Limelight                " Enable paragraph focus mode
-  if has('gui_running')
-    set fullscreen         " Enter fullscreen (don't use Mac native fullscreen for this)
-    set linespace=7        " Extra leading is better for prose
-  elseif exists('$TMUX')   " Hide tmux bar
-    silent !tmux set status off
-  endif
-  let &l:statusline = '%M' " Show modified state on the bottom of the screen
-                           " This automatically disables on Goyo leave
-  hi StatusLine
-        \ ctermfg=137
-        \ guifg=#be9873
-        \ cterm=NONE
-        \ gui=NONE
-endfunction
-
-function! s:goyo_leave() " On goyo exit:
-  set showcmd            " Show last command
-  set showmode           " Show current mode
-  set scrolloff=1        " Always show one line of context around the cursor
-  Limelight!             " Disable paragraph focus mode
-  if has('gui_running')
-    set nofullscreen     " Exit fullscreen
-    set linespace=3      " Standard leading
-  elseif exists('$TMUX') " Enable tmux bar
-    silent !tmux set status on
-  endif
-endfunction
-
-" Activate respective function on goyo enter and leave
-autocmd! vimrc User GoyoEnter nested call <sid>goyo_enter()
-autocmd! vimrc User GoyoLeave nested call <sid>goyo_leave()
-
-" Limelight
-
-let g:limelight_paragraph_span = 1  " Don't dim one par around the current one
-let g:limelight_priority       = -1 " Don't overrule hlsearch
 
 " Cool
 
@@ -554,14 +506,6 @@ nnoremap <Space>i mzgg=G`zzz
 " 's' for sort
 nnoremap <Space>s mzvip:sort<CR>`z
 
-" Enter distractioon-free mode using goyo
-" 'w' for writing
-nnoremap <Space>g :Goyo<CR>
-
-" Toggle paragraph focus mode using limelight
-" 'l' for limelight
-nnoremap <Space>l :Limelight!!<CR>
-
 " Redraw the screen
 " 'r' for redraw
 nnoremap <Space>r :redraw!<CR>
@@ -650,11 +594,6 @@ nnoremap <F10> :echo "hi<"
 " Set makeprg to the appropriate linter for a given filetype
 autocmd vimrc FileType ruby setlocal makeprg=ruby\ -c\ %
 autocmd vimrc FileType sh   setlocal makeprg=shellcheck\ --format=gcc\ %
-
-" All the files I write in using polytextum are called document.md. This autocmd
-" allows me to apply specific settings to these files
-autocmd vimrc BufNewFile,BufFilePre,BufRead
-      \ *document.md set filetype=markdown.polytextum
 
 " }}}
 " ==============================================================================
