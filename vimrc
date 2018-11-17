@@ -512,7 +512,7 @@ nnoremap ,tc :tabclose<CR>
 
 " Auto-indent the whole file
 " 'i' for indent
-nnoremap <Space>i mzgg=G`zzz
+nnoremap <Space>i :Equal<CR>
 
 " Sort the current paragraph alphabetically
 " 's' for sort
@@ -591,6 +591,9 @@ nnoremap <down>  :resize   +2<cr>
 " for this option? Because we all steal our vimrcs from other people? Or am
 " I being cynical?).
 nnoremap Y y$
+
+" Add a command that allows you to reindent a range without moving the cursor
+command! -range=% Equal let b:wv = winsaveview() | silent execute <line1> . ',' . <line2> . 'normal! ==' | call winrestview(b:wv)
 
 " }}}
 " ==============================================================================
