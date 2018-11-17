@@ -661,30 +661,6 @@ autocmd vimrc BufNewFile,BufFilePre,BufRead
 " Colourscheme {{{
 " ==============================================================================
 
-" Decide whether to use true colour based on:
-"
-" 1. If a terminal that does not support true colours is running (on macOS the
-"    only notable terminal that does not support true colours is Terminal.app)
-"
-" 2. If a GUI is running (the vim GUI supports true colour by default -- this
-"    cannot be disabled. Plus, termguicolors relates to *term*inals and how
-"    they handle color.)
-"
-" 3. If the version of Vim that is running even is able to display true colour
-"    in a terminal emulator in the first place
-if $TERM_PROGRAM != 'Apple_Terminal' &&
-      \ !has('gui_running') &&
-      \ has('termguicolors')
-
-  " Vim 8 true colour does not work in tmux without this (I don't know why)
-  if !has('nvim')
-    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  endif
-
-  set termguicolors
-endif
-
 " Acually set the colourscheme
 colorscheme apprentice
 
