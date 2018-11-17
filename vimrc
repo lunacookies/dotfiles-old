@@ -322,7 +322,6 @@ set guioptions=           " Hide scrollbars in MacVim
 set laststatus=2          " Always display statusline
 set lazyredraw            " Don't redraw during macros
 set linespace=3           " Add a little bit of extra leading to tight Menlo
-set number                " Show line numbers
 set numberwidth=5         " Make enough space for triple-digit line numbers
 set pumheight=7           " Show 7 completion items before showing a scrollbar
 set shortmess=acIT        " Abbreviate error messages
