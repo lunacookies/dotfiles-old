@@ -65,14 +65,13 @@ ls() {
 
 # LaTeX shortcuts
 alias pdf="open *.pdf"
+
 doc() {
-  # Open document in GUI if we are going to be writing for a while; otherwise open
-  # in terminal Nvim
-  if [ "$1" = "--long" ]; then
-    mvim -c "Goyo" document.md
-  else
-    nvim document.md
-  fi
+  # Create empty document if it doesn't exist yet
+  [ ! -e 'document.md' ] && touch 'document.md'
+
+  # Open document in iA Writer
+  open -a "iA Writer.app" document.md
 }
 
 # Quick dotfile access
