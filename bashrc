@@ -265,9 +265,33 @@ if [ -e ~/.git-prompt.sh ]; then
   source ~/.git-prompt.sh
 fi
 
-# Set the base prompt, which shows:
-#
-# * PWD (foreground colour)
-# * Git prompt (bold dark grey to make it fade into the background)
-# * > prompt character (bold red, which is actually bright orange in Apprentice)
-PS1='\w\[\e[1;30m\]$(__git_ps1)\[\e[1;31m\]> \[\e[0m\]'
+setprompt() {
+  # Save exit code of last command
+  local EXIT="$?"
+
+  # Set the base prompt, which shows:
+  #
+  # * PWD (foreground colour)
+  # * Git prompt (bold dark grey to make it fade into the background)
+  PS1='\w\[\e[1;30m\]$(__git_ps1)'
+
+  # Show the prompt character in bold red (actually orange in Apprentice) if the
+  # last command failed; otherwise show it in bold blue
+  if [ $EXIT = 0 ]; then
+    PS1+='\[\e[1;34m\]'
+  else
+    PS1+='\[\e[1;31m\]'
+  fi
+
+  # * Set the prompt character to be > with a space afterwards
+  # * Reset colours after the prompt to make sure the commands we type after the
+  #   prompt are in the terminal's foreground colour
+  PS1+='> \[\e[0m\]'
+}
+
+# Set the prompt, and therefore check the exist status of the last command,
+# every time after a command finishes running
+PROMPT_COMMAND="setprompt; $PROMPT_COMMAND"
+
+# Set the continued line prompt to a green >
+PS2='\[\e[32m\]> \[\e[0m\]'
