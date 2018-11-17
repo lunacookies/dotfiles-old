@@ -591,6 +591,11 @@ nnoremap <F10> :echo "hi<"
 autocmd vimrc FileType ruby setlocal makeprg=ruby\ -c\ %
 autocmd vimrc FileType sh   setlocal makeprg=shellcheck\ --format=gcc\ %
 
+" Only show the cursorline in the current window, but still display it once
+" focus has been lost to make it easier to find the cursor
+autocmd vimrc VimEnter,WinEnter * set cursorline
+autocmd vimrc WinLeave * set nocursorline
+
 "
 " Colourscheme
 "
