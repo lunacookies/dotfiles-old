@@ -619,6 +619,7 @@ autocmd vimrc ColorScheme * hi! PmenuThumb ctermbg=238 guibg=#444444
 
 " Operator Mono-style italics
 autocmd vimrc ColorScheme * hi! Comment cterm=italic gui=italic
+autocmd vimrc ColorScheme * hi! String  cterm=italic gui=italic
 autocmd vimrc ColorScheme * hi! Type    cterm=italic gui=italic
 autocmd vimrc ColorScheme * hi! htmlArg cterm=italic gui=italic
 
