@@ -50,6 +50,15 @@ echo -e "$(/usr/local/bin/mas list | sed 's/ /" \# /' | sed 's/^/mas "/' | sort)
 
 # Place all commands to be run right after installation of software here
 
+# Get bundle identifier (app name format that duti uses) with:
+#   $ osascript -e 'id of app "<AppName>"'
+#
+# Get UTI (Mac filetype name) with:
+#  $ mdls <FileOfYourType> | grep -i "contenttype " | sed 's/^.*= "//' | sed 's/"//g'
+
 # Make Preview the default application for PDFs (because Adobe Acrobat DC
 # changes this)
 duti -s com.apple.Preview pdf all
+
+# Open markdown files in iA Writer
+duti -s pro.writer.mac net.daringfireball.markdown all
