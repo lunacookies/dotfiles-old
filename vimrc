@@ -46,30 +46,23 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-Plug '/usr/local/opt/fzf'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'NLKNguyen/c-syntax.vim'
-Plug 'Yggdroot/indentLine'
-Plug 'arzg/vim-linelinenumbernine'
 Plug 'arzg/vim-ruby', { 'for': 'ruby' }
-Plug 'arzg/vim-tabhelp'
 Plug 'dearrrfish/vim-applescript'
 Plug 'ericpruitt/tmux.vim'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'haya14busa/vim-asterisk'
 Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-fnr'
-Plug 'junegunn/vim-peekaboo'
 Plug 'junegunn/vim-pseudocl'
 Plug 'lifepillar/vim-colortemplate'
 Plug 'lifepillar/vim-mucomplete'
 Plug 'machakann/vim-highlightedyank'
 Plug 'markonm/traces.vim'
-Plug 'mhinz/vim-signify'
 Plug 'romainl/Apprentice'
 Plug 'romainl/vim-cool'
 Plug 'romainl/vim-qf'
@@ -79,7 +72,6 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tommcdo/vim-exchange'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-repeat'
@@ -190,35 +182,6 @@ noremap <silent> <c-b>
 noremap <silent> <c-f>
       \ :call smooth_scroll#down(&scroll*2, 2*g:scrolltime, 4)<CR>
 
-" Signify
-
-" Show changes with a simple coloured line along the side
-let g:signify_sign_add          = '│'
-let g:signify_sign_change       = '│'
-let g:signify_sign_changedelete = '│'
-
-" Fzf
-
-" Take colours from colour scheme
-let g:fzf_colors =
-      \ { 'fg':      ['fg', 'Normal'],
-      \ 'bg':      ['bg', 'Normal'],
-      \ 'hl':      ['fg', 'Comment'],
-      \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-      \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-      \ 'hl+':     ['fg', 'Statement'],
-      \ 'info':    ['fg', 'PreProc'],
-      \ 'border':  ['fg', 'Ignore'],
-      \ 'prompt':  ['fg', 'Conditional'],
-      \ 'pointer': ['fg', 'Exception'],
-      \ 'marker':  ['fg', 'Keyword'],
-      \ 'spinner': ['fg', 'Label'],
-      \ 'header':  ['fg', 'Comment'] }
-
-" Hide statusline and mode indicator in fzf
-autocmd vimrc FileType fzf set laststatus=0 noshowmode noruler
-      \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
-
 " Editorconfig
 
 " Don't use editorconfig settings for polytextum files; allow me to set
@@ -261,27 +224,6 @@ let g:highlightedyank_highlight_duration = 300
 let ruby_space_errors       = 1 " Highlight whitespace errors
 let ruby_fold               = 1 " Enable ruby syntax folding
 let ruby_spellcheck_strings = 1 " Check for spelling errors in strings
-
-" Indent Line
-
-" Enable indent guides by default
-let g:indentLine_enabled = 1
-
-" Don't show indent guides in Markdown files or when fuzzy-finding
-let g:indentLine_fileTypeExclude = ['markdown', 'fzf']
-
-" Set indent guide colour for terminal
-let g:indentLine_color_term = 239
-
-" Set indent guide colour for MacVim
-let g:indentLine_color_gui = '#616161'
-
-" Stop indentLine from slowing Vim down
-let g:indentLine_faster = 1
-
-" Make indent guides a solid line
-let g:indentLine_char       = '│'
-let g:indentLine_first_char = '│'
 
 " }}}
 " ==============================================================================
