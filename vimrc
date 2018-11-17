@@ -65,8 +65,6 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 
 " Completely new features
 Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/vim-fnr'
-Plug 'junegunn/vim-pseudocl'
 Plug 'lifepillar/vim-mucomplete'
 Plug 'sgur/vim-editorconfig'
 Plug 'tpope/vim-endwise'
@@ -160,14 +158,6 @@ map g# <Plug>(asterisk-gz#)
 
 " Stay in the same position on the match as from where you started
 let g:asterisk#keeppos = 1
-
-" FNR
-
-" Make FNR, by default:
-"
-"       case-Insensitive
-" substitute Globally (all matches)
-let g:fnr_flags = 'ig'
 
 " Highlighted Yank
 
@@ -519,23 +509,23 @@ nnoremap <Space>r :redraw!<CR>
 " 'm' for make
 nnoremap <Space>m :update<CR>:make<CR>
 
-" Quick 'n' easy find-and-replace using vim-fnr
+" Quick 'n' easy find-and-replace
 "
 " Repeat previous keystroke for current paragraph
 " d for whole document
 
 " The current word/selection
 " No prefix
-nnoremap <Space><Space> :'{,'}FNR<CR><C-r>=expand("<cword>")<CR>
-nnoremap <Space>d       :%FNR<CR><C-r>=expand("<cword>")<CR>
-xnoremap <Space><Space> y:'{,'}FNR<CR><C-r>=@<CR>
-xnoremap <Space>d       y:%FNR<CR><C-r>=@<CR>
+nnoremap <Space><Space> :'{,'}s/<C-r>=expand("<cword>")<CR>/
+nnoremap <Space>d       :%s/<C-r>=expand("<cword>")<CR>/
+xnoremap <Space><Space> y:'{,'}s/<C-r>=@<CR>/
+xnoremap <Space>d       y:%s/<C-r>=@<CR>/
 
 " Type a word
 " f for FNR
-nnoremap <Space>ff :'{,'}FNR<CR>
-nnoremap <Space>fd       :%FNR<CR>
-xnoremap <Space>ff :'<,'>FNR<CR>
+nnoremap <Space>ff :'{,'}s/
+nnoremap <Space>fd       :%s/
+xnoremap <Space>ff :'<,'>s/
 
 "
 " Misc mappings
