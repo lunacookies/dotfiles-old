@@ -95,9 +95,6 @@ launchctl unload -w \
 # Hide Notification Center icon
 sudo rm /System/Library/CoreServices/SystemUIServer.app/Contents/Resources/menuitemNormal.pdf
 
-# Use a slightly brown grey background
-$HOME/bin/setwp --color=504a44
-
 #
 # Input
 #
@@ -133,6 +130,17 @@ defaults write NSGlobalDomain AppleMetricUnits -bool true
 
 # Reduce transparency
 defaults write com.apple.universalaccess reduceTransparency -bool true
+
+# Enable dark mode
+osascript -e 'tell application "System Events"
+tell appearance preferences
+set dark mode to dark mode
+end tell
+end tell'
+
+# Use a dark grey background that matches the colour of the menu bar when dark
+# mode and reduce transparency are enabled
+$HOME/bin/setwp --color=161616
 
 # Require password immediately after sleep or screen saver begins
 defaults write com.apple.screensaver askForPassword -int 1
