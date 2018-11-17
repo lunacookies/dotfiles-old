@@ -6,62 +6,11 @@
 
 # System
 alias cp="cp -riv"
-alias vim="nvim"
+alias ls="exa --git"
 alias mkdir="mkdir -pv"
 alias mv="mv -iv"
 alias rm="rmtrash"
-
-# ls function that uses a bunch of custom flags as default
-ls() {
-  # Process options using getopts
-  while getopts ":a" arg
-  do
-    case $arg in
-      a)
-        local ifall=true
-        ;;
-      \?)
-        local ifextraopt=$OPTARG
-        ;;
-    esac
-  done
-
-  # Shift the argument index so that we have access to the operands, also known
-  # as the mass arguments (those that are not specific to any argument)
-  shift $(expr $OPTIND - 1 )
-
-  # Return all default arguments for ls.
-
-  #   * The F flag shows symbols after the filenames of certain filetypes --
-  #     e.g. an astersik after executables, and a slash after directories
-  #   * The G flag makes colour output default
-  #   * The H flag makes ls follow symlinks and show where they lead
-  local defaultargs=$(echo "FGH")
-
-  # Return the option  A  instead of  a  when showing hidden items. This means
-  # that . and .. are not displayed.
-  local all=$([ "$ifall" = true ] && echo "A")
-
-  # Return any other flags that may have been passed
-  local extraopt=$([ ! -z "$ifextraopt" ] && echo "$ifextraopt")
-
-  # Return all operands
-  local file="$(
-  while test $# -gt 0; do
-    echo $1
-    shift
-  done
-  )"
-
-  # Create a variable storing the command to be executed
-  local cmd="ls -$defaultargs$all$extraopt $file"
-
-  # Now actually call the command
-  command $cmd
-
-  # Reset the argument index
-  OPTIND=1
-}
+alias vim="nvim"
 
 # LaTeX shortcuts
 alias pdf="open *.pdf"
