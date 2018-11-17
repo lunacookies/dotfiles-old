@@ -268,30 +268,7 @@ fi
 
 # Set the base prompt, which shows:
 #
-# * PWD (absorbing any previous colour because, if we only show a different user
-#   and are not in SSH, the prompt looks a little bland. Making the PWD yellow
-#   in this case makes it look better. All other cases show the PWD as white.)
-#
+# * PWD (foreground colour)
 # * Git prompt (bold dark grey to make it fade into the background)
-#
-# * > prompt character (red)
+# * > prompt character (bold red, which is actually bright orange in Apprentice)
 PS1='\w\[\e[1;30m\]$(__git_ps1)\[\e[1;31m\]> \[\e[0m\]'
-
-# Show the user- and hostnames if we are in SSH or if the username is not 'me'
-#
-# If we are in SSH:
-#   * Username (blue)
-#   * @ (green, bold)
-#   * Hostname (yellow)
-#   * Colon (yellow)
-#
-# If we are not 'me':
-#   * Username (blue)
-#   * Colon (green, bold)
-#   * Beginning of yellow colouring for PWD
-
-if [[ -n $SSH_CLIENT || -n $SSH_CONNECTION ]] ; then
-  PS1='\[\e[34m\]\u\[\e[1;32m\]@\[\e[0;33m\]\h\[\e[35m\]:\[\e[m\]'$PS1
-elif [ ! "$USER" = "aramis" ]; then
-  PS1='\[\e[34m\]\u\[\e[1;32m\]:\[\e[0;33m\]'$PS1
-fi
