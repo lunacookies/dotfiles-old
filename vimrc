@@ -46,39 +46,50 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+
+" Operators, textobjects, and mappings that fit with Vim
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'tommcdo/vim-exchange'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-rsi'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'wellle/targets.vim'
+
+" Light extensions to built-in features
+Plug 'haya14busa/vim-asterisk'
+Plug 'machakann/vim-highlightedyank'
+Plug 'markonm/traces.vim'
+Plug 'romainl/vim-cool'
+Plug 'romainl/vim-qf'
+Plug 'terryma/vim-smooth-scroll'
+Plug 'tmux-plugins/vim-tmux-focus-events'
+
+" Completely new features
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/vim-fnr'
+Plug 'junegunn/vim-pseudocl'
+Plug 'lifepillar/vim-mucomplete'
+Plug 'sgur/vim-editorconfig'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-repeat'
+Plug 'wellle/visual-split.vim'
+
+" Language support
 Plug 'NLKNguyen/c-syntax.vim'
 Plug 'arzg/vim-ruby', { 'for': 'ruby' }
 Plug 'dearrrfish/vim-applescript'
 Plug 'ericpruitt/tmux.vim'
 Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'haya14busa/vim-asterisk'
-Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/vim-fnr'
-Plug 'junegunn/vim-pseudocl'
 Plug 'lifepillar/vim-colortemplate'
-Plug 'lifepillar/vim-mucomplete'
-Plug 'machakann/vim-highlightedyank'
-Plug 'markonm/traces.vim'
 Plug 'pangloss/vim-javascript'
-Plug 'romainl/Apprentice'
-Plug 'romainl/vim-cool'
-Plug 'romainl/vim-qf'
-Plug 'sgur/vim-editorconfig'
-Plug 'terryma/vim-smooth-scroll'
-Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'tommcdo/vim-exchange'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-markdown'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-rsi'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-Plug 'wellle/targets.vim'
-Plug 'wellle/visual-split.vim'
+
+" Nice colours
+Plug 'romainl/Apprentice'
+
 call plug#end()
 
 " Install missing plugins automatically on startup
