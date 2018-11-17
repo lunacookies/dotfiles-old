@@ -50,7 +50,6 @@ Plug '/usr/local/opt/fzf'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'NLKNguyen/c-syntax.vim'
 Plug 'Yggdroot/indentLine'
-Plug 'arzg/seoul8'
 Plug 'arzg/vim-linelinenumbernine'
 Plug 'arzg/vim-ruby', { 'for': 'ruby' }
 Plug 'arzg/vim-tabhelp'
@@ -71,6 +70,7 @@ Plug 'lifepillar/vim-mucomplete'
 Plug 'machakann/vim-highlightedyank'
 Plug 'markonm/traces.vim'
 Plug 'mhinz/vim-signify'
+Plug 'romainl/Apprentice'
 Plug 'romainl/vim-cool'
 Plug 'romainl/vim-qf'
 Plug 'sgur/vim-editorconfig'
@@ -125,7 +125,6 @@ function! s:goyo_enter()   " On goyo enter:
   Limelight                " Enable paragraph focus mode
   if has('gui_running')
     set fullscreen         " Enter fullscreen (don't use Mac native fullscreen for this)
-    colo seoul8_light      " Light colours
     set linespace=7        " Extra leading is better for prose
   elseif exists('$TMUX')   " Hide tmux bar
     silent !tmux set status off
@@ -146,7 +145,6 @@ function! s:goyo_leave() " On goyo exit:
   Limelight!             " Disable paragraph focus mode
   if has('gui_running')
     set nofullscreen     " Exit fullscreen
-    colo seoul8          " Dark colours
     set linespace=3      " Standard leading
   elseif exists('$TMUX') " Enable tmux bar
     silent !tmux set status on
@@ -746,7 +744,7 @@ if $TERM_PROGRAM != 'Apple_Terminal' &&
 endif
 
 " Acually set the colourscheme
-colorscheme seoul8
+colorscheme apprentice
 
 " }}}
 " ==============================================================================
