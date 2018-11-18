@@ -613,14 +613,12 @@ autocmd vimrc ColorScheme * hi! ModeMsg cterm=bold,reverse gui=bold,reverse
 
 " Make the selected completion entry grey and bold, retheming the rest of the
 " completion menu to match better
-autocmd vimrc ColorScheme * hi! PmenuSel   ctermbg=238 guibg=#444444
+autocmd vimrc ColorScheme * hi! PmenuSel   ctermbg=240 guibg=#585858
       \ ctermfg=250 guifg=#bcbcbc cterm=bold gui=bold
-autocmd vimrc ColorScheme * hi! Pmenu      ctermbg=236 guibg=#303030
-      \ ctermfg=250 guifg=#bcbcbc cterm=NONE gui=NONE
-autocmd vimrc ColorScheme * hi! PmenuSbar  ctermbg=234 guibg=#1c1c1c
+autocmd vimrc ColorScheme * hi! PmenuSbar  ctermbg=236 guibg=#303030
       \ cterm=NONE  gui=NONE
-autocmd vimrc ColorScheme * hi! PmenuThumb ctermbg=238 guibg=#444444
-      \ cterm=bold  gui=bold
+autocmd vimrc ColorScheme * hi! PmenuThumb ctermbg=240 guibg=#585858
+      \ cterm=NONE  gui=NONE
 
 " Operator Mono-style italics
 autocmd vimrc ColorScheme * hi! Comment cterm=italic gui=italic
