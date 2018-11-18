@@ -564,10 +564,10 @@ nnoremap <expr> j v:count ? 'j' : 'gj'
 nnoremap <expr> k v:count ? 'k' : 'gk'
 
 " Use arrow keys to resize splits
-nnoremap <left>  :vertical resize +2<cr>
-nnoremap <right> :vertical resize -2<cr>
-nnoremap <up>    :resize   -2<cr>
-nnoremap <down>  :resize   +2<cr>
+nnoremap <left>  :vertical resize +2<CR>
+nnoremap <right> :vertical resize -2<CR>
+nnoremap <up>    :resize   -2<CR>
+nnoremap <down>  :resize   +2<CR>
 
 " Make Y behave like other capitals (why does everyone use this exact comment
 " for this option? Because we all steal our vimrcs from other people? Or am
