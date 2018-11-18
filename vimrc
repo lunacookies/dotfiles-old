@@ -621,10 +621,14 @@ autocmd vimrc ColorScheme * hi! PmenuThumb ctermbg=240 guibg=#585858
       \ cterm=NONE  gui=NONE
 
 " Operator Mono-style italics
-autocmd vimrc ColorScheme * hi! Comment cterm=italic gui=italic
-autocmd vimrc ColorScheme * hi! String  cterm=italic gui=italic
-autocmd vimrc ColorScheme * hi! Type    cterm=italic gui=italic
-autocmd vimrc ColorScheme * hi! htmlArg cterm=italic gui=italic
+autocmd vimrc ColorScheme * hi! Comment      cterm=italic gui=italic
+autocmd vimrc ColorScheme * hi! String       cterm=italic gui=italic
+autocmd vimrc ColorScheme * hi! Type         cterm=italic gui=italic
+autocmd vimrc ColorScheme * hi! htmlArg      cterm=italic gui=italic
+autocmd vimrc ColorScheme * hi! vimNotation  cterm=italic gui=italic
+      \ ctermfg=65 guifg=#5f875f
+autocmd vimrc ColorScheme * hi! vimMapModKey cterm=italic gui=italic
+      \ ctermfg=65 guifg=#5f875f
 
 " Acually set the colourscheme
 colorscheme apprentice
