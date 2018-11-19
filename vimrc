@@ -49,14 +49,12 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'tommcdo/vim-exchange'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'wellle/targets.vim'
 
 " Light extensions to built-in features
 Plug 'haya14busa/vim-asterisk'
-Plug 'machakann/vim-highlightedyank'
 Plug 'markonm/traces.vim'
 Plug 'romainl/vim-cool'
 Plug 'romainl/vim-qf'
@@ -64,7 +62,6 @@ Plug 'terryma/vim-smooth-scroll'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
 " Completely new features
-Plug 'jiangmiao/auto-pairs'
 Plug 'lifepillar/vim-mucomplete'
 Plug 'sgur/vim-editorconfig'
 Plug 'tpope/vim-endwise'
