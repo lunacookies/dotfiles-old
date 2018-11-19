@@ -480,8 +480,8 @@ nnoremap <Space>m :update<CR>:make<CR>
 
 " The current word/selection
 " No prefix
-nnoremap <Space><Space> :'{,'}s/<C-r>=expand("<cword>")<CR>/
-nnoremap <Space>d       :%s/<C-r>=expand("<cword>")<CR>/
+nnoremap <Space><Space> :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>/
+nnoremap <Space>d       :%s/\<<C-r>=expand('<cword>')<CR>\>/
 xnoremap <Space><Space> y:'{,'}s/<C-r>=@<CR>/
 xnoremap <Space>d       y:%s/<C-r>=@<CR>/
 
