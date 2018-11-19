@@ -532,6 +532,15 @@ nnoremap <expr> k v:count ? 'k' : 'gk'
 " I being cynical?).
 nnoremap Y y$
 
+" Autoexpansion
+inoremap (<CR> (<CR>)<Esc>O
+inoremap {<CR> {<CR>}<Esc>O
+inoremap {; {<CR>};<Esc>O
+inoremap {, {<CR>},<Esc>O
+inoremap [<CR> [<CR>]<Esc>O
+inoremap [; [<CR>];<Esc>O
+inoremap [, [<CR>],<Esc>O
+
 "
 " Autocmds
 "
