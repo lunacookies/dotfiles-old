@@ -573,26 +573,22 @@ autocmd vimrc ColorScheme * hi! link vimIsCommand      Statement
 autocmd vimrc ColorScheme * hi! link vimUserFunc       Function
 
 " Un-reversed mode marker, in bold now
-autocmd vimrc ColorScheme * hi! ModeMsg cterm=bold,reverse gui=bold,reverse
+autocmd vimrc ColorScheme apprentice hi! ModeMsg cterm=bold,reverse gui=bold,reverse
 
 " Make the selected completion entry grey and bold, retheming the rest of the
 " completion menu to match better
-autocmd vimrc ColorScheme * hi! PmenuSel   ctermbg=240 guibg=#585858
+autocmd vimrc ColorScheme apprentice hi! PmenuSel   ctermbg=240 guibg=#585858
       \ ctermfg=250 guifg=#bcbcbc cterm=bold gui=bold
-autocmd vimrc ColorScheme * hi! PmenuSbar  ctermbg=236 guibg=#303030
+autocmd vimrc ColorScheme apprentice hi! PmenuSbar  ctermbg=236 guibg=#303030
       \ cterm=NONE  gui=NONE
-autocmd vimrc ColorScheme * hi! PmenuThumb ctermbg=240 guibg=#585858
+autocmd vimrc ColorScheme apprentice hi! PmenuThumb ctermbg=240 guibg=#585858
       \ cterm=NONE  gui=NONE
 
 " Operator Mono-style italics
-autocmd vimrc ColorScheme * hi! Comment      cterm=italic gui=italic
-autocmd vimrc ColorScheme * hi! String       cterm=italic gui=italic
-autocmd vimrc ColorScheme * hi! Type         cterm=italic gui=italic
-autocmd vimrc ColorScheme * hi! htmlArg      cterm=italic gui=italic
-autocmd vimrc ColorScheme * hi! vimNotation  cterm=italic gui=italic
-      \ ctermfg=65 guifg=#5f875f
-autocmd vimrc ColorScheme * hi! vimMapModKey cterm=italic gui=italic
-      \ ctermfg=65 guifg=#5f875f
+autocmd vimrc ColorScheme * hi! Comment cterm=italic gui=italic
+autocmd vimrc ColorScheme * hi! String  cterm=italic gui=italic
+autocmd vimrc ColorScheme * hi! Type    cterm=italic gui=italic
+autocmd vimrc ColorScheme * hi! htmlArg cterm=italic gui=italic
 
 " Acually set the colourscheme
 colorscheme apprentice
