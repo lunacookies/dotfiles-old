@@ -454,6 +454,9 @@ nnoremap ,tc :tabclose<CR>
 
 " Space
 
+" Add a command that allows you to reindent a range without moving the cursor
+command! -range=% Equal let b:wv = winsaveview() | silent execute <line1> . ',' . <line2> . 'normal! ==' | call winrestview(b:wv)
+
 " Auto-indent the whole file
 " 'i' for indent
 nnoremap <Space>i :Equal<CR>
@@ -534,9 +537,6 @@ nnoremap <down>  :resize   +2<CR>
 " for this option? Because we all steal our vimrcs from other people? Or am
 " I being cynical?).
 nnoremap Y y$
-
-" Add a command that allows you to reindent a range without moving the cursor
-command! -range=% Equal let b:wv = winsaveview() | silent execute <line1> . ',' . <line2> . 'normal! ==' | call winrestview(b:wv)
 
 "
 " Autocmds
