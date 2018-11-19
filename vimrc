@@ -73,7 +73,7 @@ Plug 'dearrrfish/vim-applescript'
 Plug 'ericpruitt/tmux.vim'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'lifepillar/vim-colortemplate'
-Plug 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-markdown'
 
