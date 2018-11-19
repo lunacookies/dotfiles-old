@@ -119,14 +119,6 @@ let g:mucomplete#chains = {
       \ 'default':  [ 'path', 'c-p', 'omni' ],
       \ }
 
-" Editorconfig
-
-" Don't use editorconfig settings for polytextum files; allow me to set
-" indentation settings by myself
-let g:editorconfig_blacklist = {
-      \ 'filetype': ['markdown.polytextum'],
-      \ 'pattern': []}
-
 " Asterisk
 
 " Don't move after using *
@@ -137,16 +129,6 @@ map g# <Plug>(asterisk-gz#)
 
 " Stay in the same position on the match as from where you started
 let g:asterisk#keeppos = 1
-
-" Highlighted Yank
-
-" Make Highlighted Yank highlight for a shorter period of time
-"
-" I have done this because I found the original version annoying, and this
-" version draws attention better, for me at least, by creating an almost
-" 'flashing' effect, rather than just switching ... waiting ... then going back
-" again.
-let g:highlightedyank_highlight_duration = 300
 
 " Ruby
 
