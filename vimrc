@@ -45,7 +45,6 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " Operators, textobjects, and mappings that fit with Vim
-Plug 'AndrewRadev/splitjoin.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'tommcdo/vim-exchange'
 Plug 'tpope/vim-commentary'
@@ -58,7 +57,6 @@ Plug 'haya14busa/vim-asterisk'
 Plug 'markonm/traces.vim'
 Plug 'romainl/vim-cool'
 Plug 'romainl/vim-qf'
-Plug 'terryma/vim-smooth-scroll'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
 " Completely new features
@@ -120,22 +118,6 @@ let g:mucomplete#chains = {
       \ 'markdown': [ 'dict', 'c-p' ],
       \ 'default':  [ 'path', 'c-p', 'omni' ],
       \ }
-
-" Smooth-scroll
-
-" We use a variable for this so that the duration of animations can be
-" controlled more esaily
-let g:scrolltime = 20
-
-" Map the animated scrolls to their respective keys
-noremap <silent> <c-u>
-      \ :call smooth_scroll#up(&scroll,     g:scrolltime,   2)<CR>
-noremap <silent> <c-d>
-      \ :call smooth_scroll#down(&scroll,   g:scrolltime,   2)<CR>
-noremap <silent> <c-b>
-      \ :call smooth_scroll#up(&scroll*2,   2*g:scrolltime, 4)<CR>
-noremap <silent> <c-f>
-      \ :call smooth_scroll#down(&scroll*2, 2*g:scrolltime, 4)<CR>
 
 " Editorconfig
 
