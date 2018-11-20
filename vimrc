@@ -134,6 +134,11 @@ let ruby_space_errors       = 1 " Highlight whitespace errors
 let ruby_fold               = 1 " Enable ruby syntax folding
 let ruby_spellcheck_strings = 1 " Check for spelling errors in strings
 
+" netrw
+
+let g:netrw_banner    = 0 " Hide 'help' banner
+let g:netrw_liststyle = 3 " Use tree view
+
 "
 " Options
 "
