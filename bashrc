@@ -11,6 +11,9 @@ alias mkdir="mkdir -pv"
 alias mv="mv -iv"
 alias rm="rmtrash"
 alias vim="nvim"
+alias vimdiff="nvim -d"
+alias vim8="/Applications/MacVim.app/Contents/bin/vim"
+alias vim8diff="/Applications/MacVim.app/Contents/bin/vimdiff"
 
 # LaTeX shortcuts
 alias pdf="open *.pdf"
