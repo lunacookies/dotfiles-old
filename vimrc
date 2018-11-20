@@ -162,26 +162,26 @@ set virtualedit=block                 " Better visual block mode
 
 " User interface and interactions
 
-set belloff=all           " Disable all bells
-set colorcolumn=+1        " Show a marker one char after textwidth
-set completeopt+=menuone  " Show completions when there is a match
-set completeopt+=noselect " Required for MUComplete
-set completeopt+=preview  " Display extra info about the match
-set conceallevel=0        " Never conceal
-set display=lastline      " Show as much of partly-displayed lines as possible
-set foldlevel=99          " Don't fold anything up by default
-set guifont=Menlo:h14     " Use Menlo 14pt if running in MacVim
-set guioptions=           " Hide scrollbars in MacVim
-set laststatus=2          " Always display statusline
-set lazyredraw            " Don't redraw during macros
-set linespace=3           " Add a little bit of extra leading to tight Menlo
-set numberwidth=5         " Make enough space for triple-digit line numbers
-set pumheight=7           " Show 7 completion items before showing a scrollbar
-set shortmess=acIT        " Abbreviate error messages
-set showcmd               " Tells you if you press a non-alphabetic key
-set splitbelow            " Create new splits to the bottom
-set splitright            " Create new splits to the right
-set tabpagemax=50         " Maximum number of tab pages
+set belloff=all            " Disable all bells
+set colorcolumn=+1         " Show a marker one char after textwidth
+set completeopt+=menuone   " Show completions when there is a match
+set completeopt+=noselect  " Required for MUComplete
+set completeopt+=preview   " Display extra info about the match
+set conceallevel=0         " Never conceal
+set display=lastline       " Show as much of partly-displayed lines as possible
+set foldlevel=99           " Don't fold anything up by default
+set guifont=Fira\ Mono:h12 " Use Fira Mono 12pt if running in MacVim
+set guioptions=            " Hide scrollbars in MacVim
+set laststatus=2           " Always display statusline
+set lazyredraw             " Don't redraw during macros
+set linespace=3            " Add a little bit of extra leading to tight Menlo
+set numberwidth=5          " Make enough space for triple-digit line numbers
+set pumheight=7            " Show 7 completion items before showing a scrollbar
+set shortmess=acIT         " Abbreviate error messages
+set showcmd                " Tells you if you press a non-alphabetic key
+set splitbelow             " Create new splits to the bottom
+set splitright             " Create new splits to the right
+set tabpagemax=50          " Maximum number of tab pages
 
 " Make redrawing smoother
 if !has('nvim')
