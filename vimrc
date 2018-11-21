@@ -106,6 +106,16 @@ autocmd vimrc BufReadPost *
 autocmd vimrc FocusLost * update
 
 "
+" Plugin config
+"
+
+" Netrw
+
+let g:netrw_banner    = 0    " Hide annoying 'help' banner
+let g:netrw_liststyle = 3    " Use tree view
+let g:netrw_winsize   = '30' " Smaller default window size
+
+"
 " Colours
 "
 
