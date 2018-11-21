@@ -68,6 +68,13 @@ if !has('nvim')
   set ttyfast
 endif
 
+" Place annoying swap files in /tmp
+set backupdir=/tmp//,.
+set directory=/tmp//,.
+if has('persistent_undo')
+  set undodir=/tmp//,.
+endif
+
 "
 " Mappings
 "
