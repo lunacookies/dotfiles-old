@@ -34,7 +34,6 @@ brew "ruby"
 brew "shellcheck"
 brew "the_silver_searcher"
 brew "tldr"
-brew "tmux"
 brew "wget"
 
 cask "alfred"

@@ -30,7 +30,6 @@ doc() {
 alias ec="nvim $HOME/.vimrc"
 alias hdc="nvim $HOME/.skhdrc"
 alias sc="nvim $HOME/.bashrc"
-alias tec="nvim $HOME/.tmux.conf"
 alias wmc="nvim $HOME/.chunkwmrc"
 
 # Daemons
@@ -158,30 +157,7 @@ bind "set mark-symlinked-directories on"
 # Window title
 #
 
-# Set the window title to match the present working directory -- whether in
-# tmux or in a regular terminal. The tmux function also sets the current
-# window's name to ~ if in $HOME, or to the tail of the PWD
-tmuxwindowtitle () {
-  if [ "$TERM_PROGRAM" = "Apple_Terminal" ]; then
-    local SEARCH=' '
-    local REPLACE='%20'
-    local PWD_URL="file://$HOSTNAME${PWD//$SEARCH/$REPLACE}"
-    printf '\ePtmux;\e\e]6;%s\a\e\\' "$PWD_URL"
-
-    if [[ $(basename $PWD) == $(basename $HOME) ]]; then
-      tmux rename-window "~"
-    else
-      tmux rename-window $(basename $PWD)
-    fi
-  else
-    if [[ $(basename $PWD) == $(basename $HOME) ]]; then
-      tmux rename-window "~"
-    else
-      tmux rename-window $(basename $PWD)
-    fi
-  fi
-}
-
+# Set the window title to match the present working directory
 regularwindowtitle () {
   if [ "$TERM_PROGRAM" = "Apple_Terminal" ]; then
     local SEARCH=' '
@@ -197,16 +173,8 @@ regularwindowtitle () {
   fi
 }
 
-# Call the appropriate window title function before every prompt
-case "$TERM" in
-  tmux*)
-    PROMPT_COMMAND="tmuxwindowtitle"
-esac
-
-case "$TERM" in
-  xterm*)
-    PROMPT_COMMAND="regularwindowtitle"
-esac
+# Call the window title function before every prompt
+PROMPT_COMMAND="regularwindowtitle"
 
 #
 # Prompt

@@ -55,7 +55,6 @@ Plug 'haya14busa/vim-asterisk'
 Plug 'markonm/traces.vim'
 Plug 'romainl/vim-cool'
 Plug 'romainl/vim-qf'
-Plug 'tmux-plugins/vim-tmux-focus-events'
 
 " Completely new features
 Plug 'lifepillar/vim-mucomplete'
@@ -68,7 +67,6 @@ Plug 'wellle/visual-split.vim'
 Plug 'NLKNguyen/c-syntax.vim'
 Plug 'arzg/vim-ruby', { 'for': 'ruby' }
 Plug 'dearrrfish/vim-applescript'
-Plug 'ericpruitt/tmux.vim'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'lifepillar/vim-colortemplate'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
