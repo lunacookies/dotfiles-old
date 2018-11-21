@@ -31,6 +31,7 @@ augroup END
 set clipboard=unnamed
 set hidden
 set laststatus=2
+set path& | let &path .= "**"
 set wildmenu
 
 " Fixing Vim's crazy defaults
