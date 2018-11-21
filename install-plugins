@@ -3,6 +3,9 @@
 # What plugins we install
 plugins=(
 romainl/Apprentice
+tpope/vim-commentary
+tpope/vim-surround
+tpope/vim-unimpaired
 )
 
 # Remove any old plugins
