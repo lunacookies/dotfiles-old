@@ -59,6 +59,10 @@ set linebreak
 set sidescroll=1
 set sidescrolloff=5
 
+" Splits
+set splitbelow
+set splitright
+
 " Misc
 set autoread
 set history=10000
