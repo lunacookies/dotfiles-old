@@ -12,4 +12,6 @@ and make sure Vim is sourcing this repo’s `vimrc`:
 
     echo "runtime vimrc" > $HOME/.vimrc
 
-Done!
+Done! Note that if you’re using Nvim you will have to run this one-liner, which deletes your Nvim config and replaces it with a symlink to the regular Vim config:
+
+    mkdir -p $HOME/.config/nvim; rm -r $HOME/.config/nvim && mkdir $HOME/.config/nvim && ln -shF $HOME/.vim/vimrc $HOME/.config/nvim/init.vim
