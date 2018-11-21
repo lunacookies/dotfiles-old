@@ -24,7 +24,7 @@ linkrc() {
 }
 
 # Link [every file in the etc/ directory that needs to be in $HOME] to $HOME
-for rc in *rc *.conf git* vim editorconfig ; do
+for rc in *rc *.conf git* editorconfig ; do
     linkrc $rc "$HOME/."
 done
 
@@ -39,13 +39,8 @@ linkrc "bin" "$HOME/"
 #
 # .bash_sessions_disable disables bash sessions -- a feature of Terminal.app
 # that, as far as I can tell has something to do with restoring terminal
-# sessions. I'm not really sure _what_ it does, but I use tmux so I'm pretty
-# sure it's useless to me.
+# sessions. I'm not really sure _what_ it does, however.
 touch $HOME/.hushlogin ~/.bash_sessions_disable
 
 # Source bashrc even in login shell
 printf '%s' 'if [ -f ~/.bashrc ]; then . ~/.bashrc; fi' > $HOME/.bash_profile
-
-# Link Nvim config to Vim config
-mkdir -pv $HOME/.config/nvim
-ln -s $PWD/vimrc $HOME/.config/nvim/init.vim
