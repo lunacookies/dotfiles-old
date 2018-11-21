@@ -27,7 +27,7 @@ doc() {
 }
 
 # Quick dotfile access
-alias ec="nvim $HOME/.vimrc"
+alias ec="cd ~/.vim && nvim vimrc && cd - > /dev/null"
 alias hdc="nvim $HOME/.skhdrc"
 alias sc="nvim $HOME/.bashrc"
 alias wmc="nvim $HOME/.chunkwmrc"
