@@ -108,7 +108,9 @@ set statusline+=\    " Finish off with a space
 " Mappings
 "
 
-" Basic and subtle Vim improvement
+" I aim to make these mappings subtly and slight improvements upon Vim defaults,
+" meaning that if I try to use them on a vanilla Vim, there will only be a small
+" annoyance, and a similar behaviour will occur.
 
 " Make Y consistent with how the other capital commands work
 nnoremap Y y$
@@ -123,16 +125,20 @@ nnoremap <expr> <Down> v:count == 0 ? 'gj' : 'j'
 xnoremap > >gv
 xnoremap < <gv
 
-" Comma
-
+"
 " Juggling with buffers
+"
+
 nnoremap ,b :ls<CR>:buffer<Space>
 nnoremap ,sb :ls<CR>:sbuffer<Space>
 nnoremap ,vb :ls<CR>:vert sbuffer<Space>
 nnoremap ,tb :tabnew<CR>:ls<CR>:buffer<Space>
 nnoremap ,, :bnext<CR>
 
+"
 " Juggling with files
+"
+
 nnoremap ,f :find<Space>
 nnoremap ,e :edit<Space>
 nnoremap ,sf :sfind<Space>
@@ -142,13 +148,51 @@ nnoremap ,se :split<Space>
 nnoremap ,ve :vsplit<Space>
 nnoremap ,te :tabnew<Space>
 
+"
 " Juggling with windows
+"
+
 nnoremap ,s :split<CR>
 nnoremap ,ss :split<CR>
 nnoremap ,t :tabnew<CR>
 nnoremap ,tt :tabnew<CR>
 nnoremap ,v :vsplit<CR>
 nnoremap ,vv :vsplit<CR>
+
+"
+" Juggling with searches
+"
+
+" Jump through incsearch matches with <Tab>
+cnoremap <expr> <Tab>   getcmdtype()
+      \ == "/" \|\| getcmdtype()
+      \ == "?" ? "<CR>/<C-r>/" : "<C-z>"
+cnoremap <expr> <S-Tab> getcmdtype()
+      \ == "/" \|\| getcmdtype()
+      \ == "?" ? "<CR>?<C-r>/" : "<S-Tab>"
+
+" NOTE: This is required because the above mappings remap <Tab> to jump to the
+" next incsearch match, but if we press <Tab> while _not_ searching they return
+" <C-z>, which we now map to go to the next wildmode completion item.
+set wildcharm=<C-z>
+
+" Use ripgrep if available, fall back to the silver searcher, then fall back to
+" the system grep for grepping
+if executable('rg')
+  set grepprg=rg\ --vimgrep\ --ignore-case\ --column
+  set grepformat^=%f:%l:%c:%m
+elseif executable('ag')
+  set grepprg=ag\ --vimgrep\ --ignore-case\ --column
+  set grepformat^=%f:%l:%c:%m
+else
+  set grepprg=grep\ --recursive\ --ignore-case
+endif
+
+" Smarter grep command
+command! -nargs=+ -complete=file_in_path -bar Grep
+      \ silent! grep! <q-args> | redraw!
+
+nnoremap ,g :Grep<Space>
 
 "
 " Autocmds
