@@ -233,5 +233,5 @@ export GIT_PS1_SHOWUPSTREAM=1
 # * hostname (light yellow)
 # * dollar (dark grey)
 PS1='
-\[\e[94m\]\w\[\e[37m\]$(__git_ps1)
+\[\e[94m\]\w\[\e[37m\]$(__git_ps1 &)
 \[\e[93m\]\h \[\e[90m\]$ \[\e[m\]'
