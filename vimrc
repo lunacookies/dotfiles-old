@@ -29,6 +29,7 @@ augroup END
 
 " Basic
 set clipboard=unnamed
+set cursorline
 set hidden
 set laststatus=2
 set path& | let &path .= "**"
