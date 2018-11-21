@@ -3,6 +3,7 @@
 # What plugins we install
 plugins=(
 romainl/Apprentice
+sgur/vim-editorconfig
 tpope/vim-commentary
 tpope/vim-surround
 tpope/vim-unimpaired
