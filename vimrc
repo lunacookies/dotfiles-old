@@ -80,6 +80,8 @@ endif
 " Mappings
 "
 
+" Basic and subtle Vim improvement
+
 " Make Y consistent with how the other capital commands work
 nnoremap Y y$
 
@@ -92,6 +94,33 @@ nnoremap <expr> <Down> v:count == 0 ? 'gj' : 'j'
 " Reselect visual selection after modifying its indentation
 xnoremap > >gv
 xnoremap < <gv
+
+" Comma
+
+" Juggling with buffers
+nnoremap ,b :ls<CR>:buffer<Space>
+nnoremap ,sb :ls<CR>:sbuffer<Space>
+nnoremap ,vb :ls<CR>:vert sbuffer<Space>
+nnoremap ,tb :tabnew<CR>:ls<CR>:buffer<Space>
+nnoremap ,, :bnext<CR>
+
+" Juggling with files
+nnoremap ,f :find<Space>
+nnoremap ,e :edit<Space>
+nnoremap ,sf :sfind<Space>
+nnoremap ,vf :vert sfind<Space>
+nnoremap ,tf :tabfind<Space>
+nnoremap ,se :split<Space>
+nnoremap ,ve :vsplit<Space>
+nnoremap ,te :tabnew<Space>
+
+" Juggling with windows
+nnoremap ,s :split<CR>
+nnoremap ,ss :split<CR>
+nnoremap ,t :tabnew<CR>
+nnoremap ,tt :tabnew<CR>
+nnoremap ,v :vsplit<CR>
+nnoremap ,vv :vsplit<CR>
 
 "
 " Autocmds
