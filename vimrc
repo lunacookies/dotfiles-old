@@ -39,6 +39,7 @@ set wildmenu
 set backspace=indent,eol,start
 set belloff=all
 set display=lastline
+set nostartofline
 set nrformats-=octal
 set sessionoptions-=options
 
