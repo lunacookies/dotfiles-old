@@ -126,8 +126,13 @@ xnoremap > >gv
 xnoremap < <gv
 
 "
-" Juggling with buffers
+" Juggling
 "
+
+" A few cstom setting/commands/mappings that aim to lightly augument Vim through
+" common patterns (e.g. comma mappings)
+
+" Juggling with buffers
 
 nnoremap ,b :ls<CR>:buffer<Space>
 nnoremap ,sb :ls<CR>:sbuffer<Space>
@@ -135,9 +140,7 @@ nnoremap ,vb :ls<CR>:vert sbuffer<Space>
 nnoremap ,tb :tabnew<CR>:ls<CR>:buffer<Space>
 nnoremap ,, :bnext<CR>
 
-"
 " Juggling with files
-"
 
 nnoremap ,f :find<Space>
 nnoremap ,e :edit<Space>
@@ -148,9 +151,7 @@ nnoremap ,se :split<Space>
 nnoremap ,ve :vsplit<Space>
 nnoremap ,te :tabnew<Space>
 
-"
 " Juggling with windows
-"
 
 nnoremap ,s :split<CR>
 nnoremap ,ss :split<CR>
@@ -159,9 +160,7 @@ nnoremap ,tt :tabnew<CR>
 nnoremap ,v :vsplit<CR>
 nnoremap ,vv :vsplit<CR>
 
-"
 " Juggling with searches
-"
 
 " Jump through incsearch matches with <Tab>
 cnoremap <expr> <Tab>   getcmdtype()
