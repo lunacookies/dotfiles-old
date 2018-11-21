@@ -1,3 +1,13 @@
+" Make Nvim source the normal Vim directories so that this config can be used
+" with it too
+if has('nvim')
+  set runtimepath^=~/.vim runtimepath+=~/.vim/after
+  let &packpath = &runtimepath
+endif
+
+" Load plugins
+call pathogen#infect()
+
 " Filetype detection
 filetype plugin indent on
 
@@ -12,11 +22,6 @@ endif
 augroup vimrc
   autocmd!
 augroup END
-
-" Make Nvim source the normal Vim directories so that this config can be used
-" with it too
-set runtimepath^=~/.vim runtimepath+=~/.vim/after
-let &packpath = &runtimepath
 
 "
 " Options
