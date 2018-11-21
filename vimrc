@@ -192,10 +192,7 @@ elseif $TERM_PROGRAM ==# 'Apple_Terminal'
     set t_ts=]6;
     set t_fs=
 
-    set titlestring=
-          \ %{bufname('%')==''?'':'file://' .
-          \ hostname() .
-          \ expand('%:p:gs/\ /%20/')}
+    set titlestring=%{bufname('%')==''?'':'file://'.hostname().expand('%:p:gs/\ /%20/')}
     set titlelen=0
   endif
 
