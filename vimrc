@@ -104,3 +104,9 @@ autocmd vimrc BufReadPost *
 
 " Save on focus lost
 autocmd vimrc FocusLost * update
+
+"
+" Colours
+"
+
+colorscheme apprentice

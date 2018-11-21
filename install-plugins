@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+# What plugins we install
+plugins=(
+romainl/Apprentice
+)
+
+# Remove any old plugins
+rm -rf ~/.vim/bundle/*
+
+# Clone plugins into their directories and remove any git-related files from the
+# plugin to stop git from getting confused
+#
+# We place an && after each line and a & at the end of the whole thing so that
+# plugins install asynchronously.
+for repo in ${plugins[@]}; do
+  plugin="$(echo "$repo" | sed -e 's/.*[\/]//')" && \
+  git clone --depth=1 -q https://github.com/$repo.git \
+    ~/.vim/bundle/$plugin && \
+  rm -rf ~/.vim/bundle/$plugin/.git* && \
+  echo $plugin installed! &
+done
+
+# This makes the script wait for all the background jobs from installing all the
+# plugins above before continuing
+wait
