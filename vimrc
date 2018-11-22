@@ -223,4 +223,3 @@ let g:netrw_winsize   = '30' " Smaller default window size
 "
 
 colorscheme apprentice
-
