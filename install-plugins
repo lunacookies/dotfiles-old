@@ -3,6 +3,7 @@
 # What plugins we install
 plugins=(
 romainl/Apprentice
+romainl/vim-cool
 romainl/vim-qf
 sgur/vim-editorconfig
 tpope/vim-commentary
