@@ -16,6 +16,11 @@ if has('syntax') && !exists('g:syntax_on')
   syntax enable
 endif
 
+" Load matchit.vim
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+  runtime! macros/matchit.vim
+endif
+
 " Create a base autogroup that resets itself upon sourcing of the vimrc. This
 " means all autocmds that are in this group are cleared when the vimrc is
 " sourced, preventing them from piling up and slowing Vim down.
