@@ -2,8 +2,8 @@
 
 # What plugins we install
 plugins=(
-arzg/vim-cool
 romainl/Apprentice
+romainl/vim-cool
 romainl/vim-qf
 sgur/vim-editorconfig
 tpope/vim-commentary

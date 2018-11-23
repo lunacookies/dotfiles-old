@@ -218,6 +218,10 @@ let g:netrw_banner    = 0    " Hide annoying 'help' banner
 let g:netrw_liststyle = 3    " Use tree view
 let g:netrw_winsize   = '30' " Smaller default window size
 
+" Cool
+
+let g:CoolTotalMatches = 1 " Show total of matches in the command line
+
 "
 " Colours
 "
