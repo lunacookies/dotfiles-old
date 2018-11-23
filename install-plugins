@@ -10,6 +10,11 @@ sgur/vim-editorconfig
 tpope/vim-commentary
 tpope/vim-surround
 tpope/vim-unimpaired
+
+cakebaker/scss-syntax.vim
+hail2u/vim-css3-syntax
+othree/html5.vim
+pangloss/vim-javascript
 )
 
 # Remove any old plugins
