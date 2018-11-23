@@ -28,15 +28,7 @@ doc() {
 
 # Quick dotfile access
 alias ec="cd ~/.vim && nvim vimrc && cd - > /dev/null"
-alias hdc="nvim $HOME/.skhdrc"
 alias sc="nvim $HOME/.bashrc"
-alias wmc="nvim $HOME/.chunkwmrc"
-
-# Daemons
-alias nhd="brew services stop skhd"
-alias nwm="brew services stop chunkwm"
-alias yhd="brew services restart skhd"
-alias ywm="brew services restart chunkwm"
 
 #
 # Environment variables
