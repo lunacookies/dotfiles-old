@@ -198,6 +198,13 @@ command! -nargs=+ -complete=file_in_path -bar Grep
 
 nnoremap ,g :Grep<Space>
 
+" Juggling with formatting
+
+" Keep cursor position when reformatting
+command! -range=% Equal let b:wv = winsaveview() | silent execute <line1> . ',' . <line2> . 'normal! ==' | call winrestview(b:wv)
+
+nnoremap ,i :Equal<CR>
+
 "
 " Autocmds
 "
