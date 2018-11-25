@@ -132,8 +132,8 @@ xnoremap < <gv
 
 " Use <F10> to display the highlight group under the cursor
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+      \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+      \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 "
 " Juggling
@@ -222,6 +222,13 @@ autocmd vimrc BufReadPost *
 
 " Save on focus lost
 autocmd vimrc FocusLost * update
+
+" Use completion based on the syntax highlighting in the current file if a
+" smarter method of completion has not yet been defined.
+autocmd vimrc FileType *
+      \	if &omnifunc == "" |
+      \	  setlocal omnifunc=syntaxcomplete#Complete |
+      \	endif
 
 "
 " Plugin config
