@@ -80,10 +80,11 @@ if !has('nvim')
   set ttyfast
 endif
 
-" Place annoying swap files in /tmp
+" Undo and annoying temporary files
 set backupdir=/tmp//,.
 set directory=/tmp//,.
 if has('persistent_undo')
+  set undofile
   set undodir=/tmp//,.
 endif
 
@@ -217,7 +218,7 @@ nnoremap ,i :Equal<CR>
 " Jump to the last known cursor position upon opening a file
 autocmd vimrc BufReadPost *
       \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
-      \ |   exe "normal! g`\""
+      \ |   execute "normal! g`\""
       \ | endif
 
 " Save on focus lost
