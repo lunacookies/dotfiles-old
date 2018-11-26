@@ -26,7 +26,7 @@ elseif $TERM_PROGRAM ==# 'Apple_Terminal'
     " Otherwise just hook into the 'title' option and apply the escape codes there
   else
     set title
-    set t_ts=6;
+    set t_ts=]6;
     set t_fs=
 
     set titlestring=%{bufname('%')==''?'':'file://'.hostname().expand('%:p:gs/\ /%20/')}
