@@ -13,6 +13,7 @@ tpope/vim-unimpaired
 
 cakebaker/scss-syntax.vim
 hail2u/vim-css3-syntax
+lifepillar/vim-colortemplate
 othree/html5.vim
 pangloss/vim-javascript
 )
