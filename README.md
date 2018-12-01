@@ -8,13 +8,12 @@ To install, just clone this repo into `~/.vim`:
 
     git clone -q https://github.com/arzg/dotvim.git $HOME/.vim
 
-and make sure Vim is sourcing this repo’s `vimrc`:
+and run the included install script:
 
-    echo "runtime vimrc" > $HOME/.vimrc
+    bash install
 
-Done! Note that if you’re using Nvim you will have to run this one-liner, which deletes your Nvim config and replaces it with a symlink to the regular Vim config:
-
-    mkdir -p $HOME/.config/nvim; rm -r $HOME/.config/nvim && mkdir $HOME/.config/nvim && ln -shF $HOME/.vim/vimrc $HOME/.config/nvim/init.vim
+Done! Note that either a Homebrew Vim, MacVim (console or GUI), or Nvim is
+required for this configuration.
 
 ## TODO
 
