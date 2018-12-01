@@ -1,14 +1,9 @@
 #!/usr/bin/env bash
 
-# Clear out old configuration
-rm -r $HOME/.vim
-mkdir -p $HOME/.config/nvim &> /dev/null
-rm -r $HOME/.config/nvim
-mkdir $HOME/.config/nvim
+# Clear out old Nvim configuration
+[ -e $HOME/.config/nvim ] && rm -r $HOME/.config/nvim
+mkdir -p $HOME/.config/nvim
 rm -r $HOME/.local/share/nvim/swap
-
-# Download the config files from GitHub
-git clone -q https://github.com/arzg/dotvim $HOME/.vim
 
 # Make sure the vimrc is sourced even on old version that don't search ~/.vim
 # for vimrc
