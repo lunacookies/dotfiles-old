@@ -1,13 +1,18 @@
 #!/usr/bin/env bash
 
+cd $HOME/.vim
+
 # Clear out old Nvim configuration
 [ -e $HOME/.config/nvim ] && rm -r $HOME/.config/nvim
 mkdir -p $HOME/.config/nvim
 rm -r $HOME/.local/share/nvim/swap
 
-# Make sure the vimrc is sourced even on old version that don't search ~/.vim
+# Make sure the vimrc is sourced even on old versions that don't search ~/.vim
 # for vimrc
 echo "runtime vimrc" > $HOME/.vimrc
 
 # Link the vimrc to Nvim's config location
 ln -shF $HOME/.vim/vimrc $HOME/.config/nvim/init.vim
+
+# Install plugins
+./install-plugins
