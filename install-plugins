@@ -2,7 +2,6 @@
 
 # What plugins we install
 plugins=(
-msanders/snipmate.vim
 romainl/Apprentice
 romainl/vim-cool
 romainl/vim-qf
