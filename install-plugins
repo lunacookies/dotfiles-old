@@ -15,6 +15,7 @@ hail2u/vim-css3-syntax
 lifepillar/vim-colortemplate
 othree/html5.vim
 pangloss/vim-javascript
+tpope/vim-git
 )
 
 # Remove any old plugins
