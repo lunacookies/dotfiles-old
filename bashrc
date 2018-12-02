@@ -187,18 +187,10 @@ export GIT_PS1_SHOWCOLORHINTS=1
 export GIT_PS1_SHOWUPSTREAM=1
 
 # Set prompt
-#
-# It shows:
-# * A Newline
-# * PWD (light blue)
-# * git prompt (light grey)
-# * A newline
-# * hostname (light yellow)
-# * dollar (dark grey)
-PS1='
-\[\e[32m\]\w\[\e[94m\]$(__git_ps1 &)
-\[\e[33m\]\h \[\e[90m\]$ \[\e[m\]'
+PS1='\[\e[90m\]\h@\[\e[37m\]\w\[\e[90m\]$(__git_ps1 &)> \[\e[m\]'
 
-# Keep the prompt at the last line of the screen
-TOLASTLINE=$(tput cup "$LINES")
-PS1="\[$TOLASTLINE\]$PS1"
+# Always keep the prompt at the bottom of the screen
+PS1='\[$(tput cup "$LINES")\]'$PS1
+
+# Use a vertical bar cursor
+PS1='[5 q'$PS1
