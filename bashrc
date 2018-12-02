@@ -145,6 +145,9 @@ bind "set show-all-if-ambiguous on"
 # Immediately add a trailing slash when autocompleting symlinks to directories
 bind "set mark-symlinked-directories on"
 
+# Enable bash-completion
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
 #
 # Window title
 #
