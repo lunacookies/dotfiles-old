@@ -195,3 +195,7 @@ export GIT_PS1_SHOWUPSTREAM=1
 PS1='
 \[\e[32m\]\w\[\e[94m\]$(__git_ps1 &)
 \[\e[33m\]\h \[\e[90m\]$ \[\e[m\]'
+
+# Keep the prompt at the last line of the screen
+TOLASTLINE=$(tput cup "$LINES")
+PS1="\[$TOLASTLINE\]$PS1"
