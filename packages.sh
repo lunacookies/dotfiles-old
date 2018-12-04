@@ -62,3 +62,17 @@ duti -s com.apple.Preview pdf all
 
 # Open markdown files in iA Writer
 duti -s pro.writer.mac net.daringfireball.markdown all
+
+# Get Consolas if it isn't installed yet
+
+# We check fir the bold italic version (Consolaz) because, if this variant is
+# available, all four styles are most likely to also be there.
+existpath="/Applications/Microsoft Word.app/Contents/Resources/Fonts"
+installpath="$HOME/Library/Fonts"
+existcheckpath="$existpath/Consolaz.ttf"
+installcheckpath="$installpath/Consolaz.ttf"
+
+if [ ! -e "$installcheckpath" ] && [ -e "$existcheckpath" ]; then
+  cp "$existpath/Consola"* "$installpath"
+fi
+
