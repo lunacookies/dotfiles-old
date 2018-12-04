@@ -193,4 +193,4 @@ PS1='\[\e[90m\]\h@\[\e[37m\]\w\[\e[90m\]$(__git_ps1 &)> \[\e[m\]'
 PS1='\[$(tput cup "$LINES")\]'$PS1
 
 # Use a vertical bar cursor
-PS1='[5 q'$PS1
+PS1='\[\e[5 q\]'$PS1
