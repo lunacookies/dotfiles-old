@@ -187,10 +187,21 @@ export GIT_PS1_SHOWCOLORHINTS=1
 export GIT_PS1_SHOWUPSTREAM=1
 
 # Set prompt
-PS1='\[\e[90m\]\h@\[\e[37m\]\w\[\e[90m\]$(__git_ps1 &)> \[\e[m\]'
 
-# Always keep the prompt at the bottom of the screen
-PS1='\[$(tput cup "$LINES")\]'$PS1
+# Clear out prompt
+PS1=''
+
+# Hostname at
+PS1=$PS1'\[\e[92m\]\h'
+PS1=$PS1'\[\e[37m\]@'
+# PWD
+PS1=$PS1'\[\e[34m\]\w'
+# Git prompt
+PS1=$PS1'\[\e[94m\]$(__git_ps1 &)'
+# Prompt character
+PS1=$PS1'\[\e[90m\]>'
+# Clear colour
+PS1=$PS1' \[\e[m\]'
 
 # Use a vertical bar cursor
 PS1='\[\e[5 q\]'$PS1
