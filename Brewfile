@@ -35,7 +35,6 @@ brew "vim"
 brew "wget"
 brew "youtube-dl"
 
-cask "alfred"
 cask "android-file-transfer"
 cask "appcleaner"
 cask "bartender"
