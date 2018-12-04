@@ -6,7 +6,7 @@
 
 # System
 alias cp="cp -riv"
-alias ls="exa --git --group-directories-first"
+alias ls="exa -1 --git --group-directories-first"
 alias mkdir="mkdir -pv"
 alias mv="mv -iv"
 alias trs="rmtrash"
