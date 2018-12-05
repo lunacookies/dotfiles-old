@@ -54,7 +54,6 @@ set shiftround
 set smarttab
 
 " Search and patterns
-set hlsearch
 set ignorecase
 set incsearch
 set smartcase
