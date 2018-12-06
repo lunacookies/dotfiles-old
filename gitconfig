@@ -22,6 +22,10 @@
 [status]
   short = true
 
+# Show the change the commit will be making when editing the commit message
+[commit]
+	verbose = true
+
 # Enable colour
 [color]
   ui = true
