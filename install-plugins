@@ -2,11 +2,15 @@
 
 # What plugins we install
 plugins=(
-romainl/Apprentice
+
+alvan/vim-closetag
 romainl/vim-cool
 romainl/vim-qf
+rstacruz/vim-closer
 sgur/vim-editorconfig
 tpope/vim-commentary
+tpope/vim-endwise
+tpope/vim-fugitive
 tpope/vim-surround
 tpope/vim-unimpaired
 
@@ -17,6 +21,9 @@ lifepillar/vim-colortemplate
 othree/html5.vim
 pangloss/vim-javascript
 tpope/vim-git
+
+romainl/Apprentice
+
 )
 
 # Remove any old plugins
