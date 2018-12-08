@@ -14,4 +14,4 @@ rm $HOME/.vimrc
 ln -shF $PWD/vimrc $HOME/.config/nvim/init.vim
 
 # Install plugins
-./install-plugins
+bash get-plugins.sh
