@@ -192,15 +192,16 @@ export GIT_PS1_SHOWUPSTREAM=1
 # Clear out prompt
 PS1=''
 
-# Hostname at
-PS1=$PS1'\[\e[92m\]\h'
-PS1=$PS1'\[\e[37m\]@'
+# Arrow
+PS1=$PS1'\[\e[33m\]» '
 # PWD
-PS1=$PS1'\[\e[34m\]\w'
+PS1=$PS1'\[\e[34m\]\w '
 # Git prompt
-PS1=$PS1'\[\e[94m\]$(__git_ps1 &)'
+PS1=$PS1'\[\e[35m\]$(__git_ps1 '%s' &)'
+# Newline
+PS1=$PS1"\n"
 # Prompt character
-PS1=$PS1'\[\e[90m\]>'
+PS1=$PS1'\[\e[33m\]\$'
 # Clear colour
 PS1=$PS1' \[\e[m\]'
 
