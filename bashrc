@@ -187,21 +187,31 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWCOLORHINTS=1
 export GIT_PS1_SHOWUPSTREAM=1
 
+# Custom function for git prompt
+customgitprompt() {
+  if git rev-parse --git-dir > /dev/null 2>&1; then
+    printf '\e[mon \e[36m'
+    __git_ps1 '%s'
+  fi
+}
+
 # Set prompt
 
 # Clear out prompt
 PS1=''
 
-# Arrow
-PS1=$PS1'\[\e[33m\]» '
+# Newline
+PS1=$PS1"\n"
+# Hostname
+PS1=$PS1'\[\e[35m\]\h '
 # PWD
-PS1=$PS1'\[\e[34m\]\w '
+PS1=$PS1'\[\e[m\]in \[\e[1;92m\]\w '
 # Git prompt
-PS1=$PS1'\[\e[35m\]$(__git_ps1 '%s' &)'
+PS1=$PS1'\[\e[36m\]$(customgitprompt &)'
 # Newline
 PS1=$PS1"\n"
 # Prompt character
-PS1=$PS1'\[\e[33m\]\$'
+PS1=$PS1'\[\e[94m\]\$'
 # Clear colour
 PS1=$PS1' \[\e[m\]'
 
