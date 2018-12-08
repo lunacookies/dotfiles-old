@@ -31,7 +31,6 @@ augroup END
 
 " Basic
 set clipboard=unnamed
-set cursorline
 set hidden
 set laststatus=2
 set path& | let &path .= "**"
@@ -229,6 +228,12 @@ autocmd vimrc FileType *
       \	if &omnifunc == "" |
       \	  setlocal omnifunc=syntaxcomplete#Complete |
       \	endif
+
+" Hide cursorline in insert mode and all windows apart from the current one
+autocmd vimrc InsertEnter       * setlocal nocursorline
+autocmd vimrc InsertLeave       * setlocal cursorline
+autocmd vimrc VimEnter,WinEnter * setlocal cursorline
+autocmd vimrc WinLeave          * setlocal nocursorline
 
 "
 " Plugin config
