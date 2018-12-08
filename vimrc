@@ -5,9 +5,6 @@ if has('nvim')
   let &packpath = &runtimepath
 endif
 
-" Load plugins
-call pathogen#infect()
-
 " Filetype detection
 filetype plugin indent on
 

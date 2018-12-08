@@ -27,7 +27,8 @@ romainl/Apprentice
 )
 
 # Remove any old plugins
-rm -rf ~/.vim/bundle/*
+rm -rf $HOME/.vim/pack/bundle/*
+mkdir $HOME/.vim/pack/bundle/start
 
 # Clone plugins into their directories and remove any git-related files from the
 # plugin to stop git from getting confused
@@ -37,8 +38,8 @@ rm -rf ~/.vim/bundle/*
 for repo in ${plugins[@]}; do
   plugin="$(echo "$repo" | sed -e 's/.*[\/]//')" && \
   git clone --depth=1 -q https://github.com/$repo.git \
-    ~/.vim/bundle/$plugin && \
-  rm -rf ~/.vim/bundle/$plugin/.git* && \
+    $HOME/.vim/pack/bundle/start/$plugin && \
+  rm -rf $HOME/.vim/pack/bundle/start/$plugin/.git* && \
   echo $plugin installed! &
 done
 
