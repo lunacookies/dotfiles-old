@@ -36,5 +36,5 @@ elseif $TERM_PROGRAM ==# 'Apple_Terminal'
   " Ignore all these proxy icon shenanigans if we're not running in Terminal.app
 else
   set title
-  set titlestring=%f
+  set titlestring=%f\ —\ Vim
 endif
