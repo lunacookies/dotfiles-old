@@ -191,7 +191,7 @@ export GIT_PS1_SHOWUPSTREAM=1
 customgitprompt() {
   if git rev-parse --git-dir > /dev/null 2>&1; then
     printf 'on \e[94m'
-    __git_ps1 '%s' | sed 's/=//g' | sed 's/\*%/*/g' | sed 's/ \*/*/g' | sed 's/>/ ⇡/g' | sed 's/</ ⇣/g'
+    __git_ps1 '%s' | sed 's/=//g' | sed 's/%/*/g' | sed 's/\*\*/*/g' | sed 's/ \*/*/g' | sed 's/>/ ⇡/g' | sed 's/</ ⇣/g'
   fi
 }
 
