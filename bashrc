@@ -190,8 +190,8 @@ export GIT_PS1_SHOWUPSTREAM=1
 # Custom function for git prompt
 customgitprompt() {
   if git rev-parse --git-dir > /dev/null 2>&1; then
-    printf '\e[mon \e[36m'
-    __git_ps1 '%s'
+    printf 'on \e[94m'
+    __git_ps1 '%s' | sed 's/=//g' | sed 's/\*%/*/g' | sed 's/ \*/*/g' | sed 's/>/ ⇡/g' | sed 's/</ ⇣/g'
   fi
 }
 
@@ -203,15 +203,15 @@ PS1=''
 # Newline
 PS1=$PS1"\n"
 # Hostname
-PS1=$PS1'\[\e[35m\]\h '
+PS1=$PS1'\[\e[32m\]\h '
 # PWD
-PS1=$PS1'\[\e[m\]in \[\e[1;92m\]\w '
+PS1=$PS1'\[\e[37m\]in \[\e[34m\]\w '
 # Git prompt
-PS1=$PS1'\[\e[36m\]$(customgitprompt &)'
+PS1=$PS1'\[\e[37m\]$(customgitprompt &)'
 # Newline
 PS1=$PS1"\n"
 # Prompt character
-PS1=$PS1'\[\e[94m\]\$'
+PS1=$PS1'\[\e[93m\]\$'
 # Clear colour
 PS1=$PS1' \[\e[m\]'
 
