@@ -32,15 +32,18 @@ mkdir $HOME/.vim/pack/bundle/start
 
 # Clone plugins into their directories and remove any git-related files from the
 # plugin to stop git from getting confused
-#
-# We place an && after each line and a & at the end of the whole thing so that
-# plugins install asynchronously.
+installplugin() {
+  plugin="$(echo "$1" | sed -e 's/.*[\/]//')"
+  git clone --depth=1 -q https://github.com/$1.git \
+    $HOME/.vim/pack/bundle/start/$plugin
+  rm -rf $HOME/.vim/pack/bundle/start/$plugin/.git*
+  echo $plugin installed!
+}
+
+# The & is so that bash sets the installation as a background job, allowing for
+# asynchronous installation (all plugins being installed at the same time).
 for repo in ${plugins[@]}; do
-  plugin="$(echo "$repo" | sed -e 's/.*[\/]//')" && \
-  git clone --depth=1 -q https://github.com/$repo.git \
-    $HOME/.vim/pack/bundle/start/$plugin && \
-  rm -rf $HOME/.vim/pack/bundle/start/$plugin/.git* && \
-  echo $plugin installed! &
+  installplugin "$repo" &
 done
 
 # This makes the script wait for all the background jobs from installing all the
