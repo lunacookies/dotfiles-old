@@ -262,4 +262,39 @@ let g:CoolTotalMatches = 1 " Show total of matches in the command line
 " Colours
 "
 
+" Colourscheme modifications
+
+" Better syntax highlighting for VimScript
+autocmd vimrc ColorScheme * hi! link vimAutoCmdSfxList Type
+autocmd vimrc ColorScheme * hi! link vimAutoEventList  Identifier
+autocmd vimrc ColorScheme * hi! link vimFunction       Function
+autocmd vimrc ColorScheme * hi! link vimIsCommand      Statement
+autocmd vimrc ColorScheme * hi! link vimUserFunc       Function
+
+" Fade unimportant elements into delimiters
+autocmd vimrc ColorScheme * hi! link Noise             Delimiter
+autocmd vimrc ColorScheme * hi! link htmlEndTag        Delimiter
+autocmd vimrc ColorScheme * hi! link htmlTag           Delimiter
+
+" Un-reversed mode marker, in bold now
+autocmd vimrc ColorScheme apprentice hi! ModeMsg cterm=bold,reverse gui=bold,reverse
+
+" Make the selected completion entry grey and bold, retheming the rest of the
+" completion menu to match better
+autocmd vimrc ColorScheme apprentice hi! Pmenu      ctermbg=236 guibg=#303030
+      \ ctermfg=250 guifg=#bcbcbc cterm=NONE gui=NONE
+autocmd vimrc ColorScheme apprentice hi! PmenuSel   ctermbg=238 guibg=#444444
+      \ ctermfg=250 guifg=#bcbcbc cterm=bold gui=bold
+autocmd vimrc ColorScheme apprentice hi! PmenuSbar  ctermbg=234 guibg=#1c1c1c
+      \ cterm=NONE  gui=NONE
+autocmd vimrc ColorScheme apprentice hi! PmenuThumb ctermbg=240 guibg=#585858
+      \ cterm=NONE  gui=NONE
+
+" Operator Mono-style italics
+autocmd vimrc ColorScheme * hi! Comment cterm=italic gui=italic
+autocmd vimrc ColorScheme * hi! Type    cterm=italic gui=italic
+autocmd vimrc ColorScheme * hi! htmlArg cterm=italic gui=italic
+
+" Set colourscheme
+
 colorscheme apprentice
