@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Enable extended globbing
+shopt -s extglob
+
 # What plugins we install
 plugins=(
 
@@ -34,14 +37,19 @@ installplugin() {
   # This removes the GitHub username and two common Vim plugin name
   # prefix/suffixes
   local plugin="$(echo "$1" | sed -e 's/.*[\/]//' -e 's/^vim-//' -e 's/\.vim//')"
+  local pluginpath="$HOME/.vim/pack/bundle/start/$plugin"
 
   # Don't clone the plugin's history to make download faster
   # All Vim plugins I use are on GitHub
-  git clone --depth=1 -q https://github.com/$1.git \
-    $HOME/.vim/pack/bundle/start/$plugin
+  git clone --depth=1 -q https://github.com/$1.git "$pluginpath"
 
   # Remove git-related files to prevent nested git repositories
-  rm -rf $HOME/.vim/pack/bundle/start/$plugin/.git*
+  rm -rf "$pluginpath"/.git*
+
+  # Remove any non-essential files that are not needed for the plugin to run
+  rm -rf "$pluginpath"/README*
+  rm -f "$pluginpath"/*.@(md|mdown|mkdown|markdown)
+  rm -rf "$pluginpath"/test
 
   printf "Installed $plugin\n"
 }
