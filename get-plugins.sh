@@ -31,7 +31,7 @@ romainl/Apprentice
 
 # Remove any old plugins
 rm -rf $HOME/.vim/pack/bundle/*
-mkdir $HOME/.vim/pack/bundle/start
+mkdir -p $HOME/.vim/pack/bundle/start
 
 installplugin() {
   # This removes the GitHub username and two common Vim plugin name
