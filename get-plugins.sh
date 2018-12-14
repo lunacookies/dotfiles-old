@@ -30,14 +30,20 @@ romainl/Apprentice
 rm -rf $HOME/.vim/pack/bundle/*
 mkdir $HOME/.vim/pack/bundle/start
 
-# Clone plugins into their directories and remove any git-related files from the
-# plugin to stop git from getting confused
 installplugin() {
-  plugin="$(echo "$1" | sed -e 's/.*[\/]//')"
+  # This removes the GitHub username and two common Vim plugin name
+  # prefix/suffixes
+  local plugin="$(echo "$1" | sed -e 's/.*[\/]//' -e 's/^vim-//' -e 's/\.vim//')"
+
+  # Don't clone the plugin's history to make download faster
+  # All Vim plugins I use are on GitHub
   git clone --depth=1 -q https://github.com/$1.git \
     $HOME/.vim/pack/bundle/start/$plugin
+
+  # Remove git-related files to prevent nested git repositories
   rm -rf $HOME/.vim/pack/bundle/start/$plugin/.git*
-  echo $plugin installed!
+
+  printf "Installed $plugin\n"
 }
 
 # The & is so that bash sets the installation as a background job, allowing for
