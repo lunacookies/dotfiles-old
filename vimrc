@@ -86,6 +86,15 @@ if has('persistent_undo')
   set undodir=/tmp//,.
 endif
 
+" Dynamic cursor shape
+if has('nvim')
+  set guicursor=n-v:block,i-ve-c-ci:ver25,r-cr:hor20,o:hor50,n:blinkon0
+else
+  let &t_SI.="\e[5 q"
+  let &t_SR.="\e[4 q"
+  let &t_EI.="\e[1 q"
+endif
+
 "
 " Statusline
 "
