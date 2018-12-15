@@ -211,6 +211,15 @@ command! -nargs=+ -complete=file_in_path -bar Grep
 
 nnoremap ,g :Grep<Space>
 
+" Search in the current screen with \
+nnoremap <silent> \ VHoL<Esc>``/\%V
+
+" Code                 | Purpose
+" ---                  | ---
+" VHol<Esc>            | Select everything on screen, then exit visual mode
+" ``                   | Jump back to the last position
+" /\%V                 | Start a search in the last visual selection
+
 " Juggling with formatting
 
 " Keep cursor position when reformatting
