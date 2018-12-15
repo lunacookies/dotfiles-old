@@ -41,12 +41,12 @@ sudo defaults write /Library/Preferences/com.apple.mDNSResponder.plist \
 # Set computer (host) name
 echo "What would you like to set your computer name to?"
 read computername
-sudo scutil --set ComputerName $computername
-sudo scutil --set HostName $computername
-sudo scutil --set LocalHostName $computername
+sudo scutil --set ComputerName "$computername"
+sudo scutil --set HostName "$computername"
+sudo scutil --set LocalHostName "$computername"
 sudo defaults write \
   /Library/Preferences/SystemConfiguration/com.apple.smb.server \
-  NetBIOSName -string $computername
+  NetBIOSName -string "$computername"
 
 # Enable remote login
 sudo systemsetup -setremotelogin On
