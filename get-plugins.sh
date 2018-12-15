@@ -51,7 +51,10 @@ installplugin() {
   rm -f "$pluginpath"/*.@(md|mdown|mkdown|markdown)
   rm -rf "$pluginpath"/test
 
-  printf "Installed $plugin\n"
+  # Print a line announcing installation of the plugin on top of any previous
+  # announcements. We do this to provide visual feedback to show the script is
+  # working, but does not take up space.
+  printf "\r\e[0KInstalled $plugin"
 }
 
 # The & is so that bash sets the installation as a background job, allowing for
@@ -63,3 +66,6 @@ done
 # This makes the script wait for all the background jobs from installing all the
 # plugins above before continuing
 wait
+
+# Clear away all output from the script
+printf "\r\e[0K"
