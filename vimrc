@@ -299,11 +299,6 @@ autocmd vimrc ColorScheme apprentice hi! PmenuSbar  ctermbg=234 guibg=#1c1c1c
 autocmd vimrc ColorScheme apprentice hi! PmenuThumb ctermbg=240 guibg=#585858
       \ cterm=NONE  gui=NONE
 
-" Operator Mono-style italics
-autocmd vimrc ColorScheme * hi! Comment cterm=italic gui=italic
-autocmd vimrc ColorScheme * hi! Type    cterm=italic gui=italic
-autocmd vimrc ColorScheme * hi! htmlArg cterm=italic gui=italic
-
 " Set colourscheme
 
 colorscheme apprentice
