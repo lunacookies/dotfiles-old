@@ -282,20 +282,32 @@ autocmd vimrc ColorScheme * hi! link Noise             Delimiter
 autocmd vimrc ColorScheme * hi! link htmlEndTag        Delimiter
 autocmd vimrc ColorScheme * hi! link htmlTag           Delimiter
 
-" Un-reversed mode marker, in bold now
-autocmd vimrc ColorScheme apprentice hi! ModeMsg cterm=bold,reverse gui=bold,reverse
+" Use the completion menu from the flat variant
+autocmd vimrc ColorScheme solarized8 hi! Pmenu      cterm=reverse ctermfg=7
+      \ ctermbg=11 gui=reverse guifg=#eee8d5 guibg=#657b83
+autocmd vimrc ColorScheme solarized8 hi! PmenuSel   cterm=reverse ctermfg=14
+      \ ctermbg=15 gui=reverse guifg=#93a1a1 guibg=#fdf6e3
+autocmd vimrc ColorScheme solarized8 hi! PmenuSbar  cterm=reverse ctermfg=7
+      \ ctermbg=14 gui=reverse guifg=#eee8d5 guibg=#93a1a1
+autocmd vimrc ColorScheme solarized8 hi! PmenuThumb cterm=reverse ctermfg=12
+      \ ctermbg=15 gui=reverse guifg=#839496 guibg=#fdf6e3
 
-" Make the selected completion entry grey and bold, retheming the rest of the
-" completion menu to match better
-autocmd vimrc ColorScheme apprentice hi! Pmenu      ctermbg=236 guibg=#303030
-      \ ctermfg=250 guifg=#bcbcbc cterm=NONE gui=NONE
-autocmd vimrc ColorScheme apprentice hi! PmenuSel   ctermbg=238 guibg=#444444
-      \ ctermfg=250 guifg=#bcbcbc cterm=bold gui=bold
-autocmd vimrc ColorScheme apprentice hi! PmenuSbar  ctermbg=234 guibg=#1c1c1c
-      \ cterm=NONE  gui=NONE
-autocmd vimrc ColorScheme apprentice hi! PmenuThumb ctermbg=240 guibg=#585858
-      \ cterm=NONE  gui=NONE
+" More prominent MatchParen
+autocmd vimrc ColorScheme solarized8 hi! MatchParen cterm=NONE ctermfg=15
+      \ ctermbg=14 gui=NONE guifg=#fdf6e3 guibg=#93A1A1
 
 " Set colourscheme
 
-colorscheme apprentice
+" As Terminal.app doesn't support 24-bit colour, make sure we're getting
+" Solarized's colours from the terminal palette.
+let g:solarized_use16 = 1
+
+" Use all the language-specific colours from the original Solarized
+let g:solarized_extra_hi_groups = 1
+
+" Unfortunately Solarized 8 uses &background to figure out whether to use the
+" dark or light variant, instead of using two separate colourschemes. I prefer
+" the light version of Solarized, so we specify it here.
+set background=light
+
+colorscheme solarized8

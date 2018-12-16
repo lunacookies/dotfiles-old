@@ -26,7 +26,7 @@ othree/html5.vim
 pangloss/vim-javascript
 tpope/vim-git
 
-romainl/Apprentice
+lifepillar/vim-solarized8
 
 )
 
