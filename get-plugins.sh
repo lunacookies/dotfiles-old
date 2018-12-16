@@ -17,6 +17,7 @@ tpope/vim-fugitive
 tpope/vim-surround
 tpope/vim-unimpaired
 
+arzg/vim-ruby
 cakebaker/scss-syntax.vim
 hail2u/vim-css3-syntax
 kchmck/vim-coffee-script
