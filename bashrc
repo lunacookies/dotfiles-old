@@ -199,8 +199,10 @@ customgitprompt() {
 # Clear out prompt
 PS1=''
 
-# PWD
-PS1=$PS1'\[\e[32m\]\w '
+# PWD (shows as much of each directory name as is necessary to be unambiguous.
+# It shows the last directory in full)
+# TODO: Switch from a zsh script to a compiled binary
+PS1=$PS1'\[\e[32m\]$(zsh ~/bin/disambiguate-keeplast.zsh) '
 # Git prompt
 PS1=$PS1'\[\e[35m\]$(customgitprompt &)'
 # Prompt character
