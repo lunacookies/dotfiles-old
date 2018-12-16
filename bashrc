@@ -190,7 +190,7 @@ export GIT_PS1_SHOWUPSTREAM=1
 # Custom function for git prompt
 customgitprompt() {
   if git rev-parse --git-dir > /dev/null 2>&1; then
-    __git_ps1 '%s ' | sed 's/=//g' | sed 's/%/*/g' | sed 's/\*\*/*/g' | sed 's/\*+\*/*+/g' | sed 's/ \*/*/g' | sed 's/>/ ⇡/g' | sed 's/</ ⇣/g'
+    __git_ps1 ' %s ' | sed 's/=//g' | sed 's/%/*/g' | sed 's/ +/+/g' | sed 's/\*\*/*/g' | sed 's/\*+\*/*+/g' | sed 's/ \*/*/g' | sed 's/>/ ⇡/g' | sed 's/</ ⇣/g'
   fi
 }
 
@@ -202,7 +202,7 @@ PS1=''
 # PWD (shows as much of each directory name as is necessary to be unambiguous.
 # It shows the last directory in full)
 # TODO: Switch from a zsh script to a compiled binary
-PS1=$PS1'\[\e[32m\]$(zsh ~/bin/disambiguate-keeplast.zsh) '
+PS1=$PS1'\[\e[32m\]$(zsh ~/bin/disambiguate-keeplast.zsh)'
 # Git prompt
 PS1=$PS1'\[\e[35m\]$(customgitprompt &)'
 # Prompt character
