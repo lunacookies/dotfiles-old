@@ -55,6 +55,7 @@ if exists('*minpac#init')
 
   " Subtle enhancements
   call minpac#add('alvan/vim-closetag')
+  call minpac#add('machakann/vim-highlightedyank')
   call minpac#add('romainl/vim-cool')
   call minpac#add('romainl/vim-qf')
   call minpac#add('rstacruz/vim-closer')
@@ -63,6 +64,7 @@ if exists('*minpac#init')
   call minpac#add('tpope/vim-endwise')
   call minpac#add('tpope/vim-surround')
   call minpac#add('tpope/vim-unimpaired')
+  call minpac#add('wellle/targets.vim')
 
   " Big, new features
   call minpac#add('tpope/vim-fugitive')
