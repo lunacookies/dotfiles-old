@@ -68,6 +68,7 @@ if exists('*minpac#init')
 
   " Big, new features
   call minpac#add('junegunn/vim-easy-align')
+  call minpac#add('lifepillar/vim-mucomplete')
   call minpac#add('tpope/vim-fugitive')
 
   " Language support
@@ -342,6 +343,28 @@ let g:highlightedyank_highlight_duration = 500
 " Base mappings required by easy align
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+
+" µcomplete
+
+" Required for µcomplete:
+set completeopt=menuone,noselect,preview
+
+" This variable stores which completion methods µcomplete will try to use first.
+"
+" For all files we want to complete file paths, and we want them to override any
+" other completion methods. It is convenient for most languages to have previous
+" words (e.g. variable names and keywords you have already used) override smart
+" omnicompletion (most likely keywords you haven't used yet). However, as the
+" majority of my VimL writing is my vimrc, and as there is little word reusage
+" in a vimrc, we set Ex commands to override previous words.
+let g:mucomplete#chains = {
+      \ 'vim':      [ 'path', 'cmd', 'c-p' ],
+      \ 'default':  [ 'path', 'c-p', 'omni' ],
+      \ }
+
+" NOTE: When I refer to 'previous words' in the above paragraph I am actually
+" referring to keywords that match &complete
+set complete=.,w,b
 
 "
 " Colours
