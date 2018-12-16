@@ -33,6 +33,7 @@ augroup END
 set clipboard=unnamed
 set hidden
 set laststatus=2
+set number
 set path& | let &path .= "**"
 set wildmenu
 
@@ -42,6 +43,7 @@ set belloff=all
 set display=lastline
 set nostartofline
 set nrformats-=octal
+set numberwidth=5
 set sessionoptions-=options
 
 " Indentation
