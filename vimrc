@@ -67,6 +67,7 @@ if exists('*minpac#init')
   call minpac#add('wellle/targets.vim')
 
   " Big, new features
+  call minpac#add('junegunn/vim-easy-align')
   call minpac#add('tpope/vim-fugitive')
 
   " Language support
@@ -335,6 +336,12 @@ endif
 " Make the time the yanked area stays highlighted much shorter than the
 " default of 1000 milliseconds
 let g:highlightedyank_highlight_duration = 500
+
+" Easy align
+
+" Base mappings required by easy align
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 "
 " Colours
