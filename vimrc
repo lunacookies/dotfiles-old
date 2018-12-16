@@ -44,7 +44,7 @@ command! Pack
       \ packadd minpac |
       \ source $MYVIMRC |
       \ call minpac#clean() |
-      \ call minpac#update('', {'do': 'call minpac#status()'})
+      \ call minpac#update()
 
 " Only run minpac code if minpac has been loaded
 if exists('*minpac#init')
