@@ -323,6 +323,19 @@ let g:netrw_winsize   = '30' " Smaller default window size
 
 let g:CoolTotalMatches = 1 " Show total of matches in the command line
 
+" Highlighted yank
+
+" The autocommand event needed for highlighted yank to work is not present
+" in some early versions of Vim 8, so we define a custom mapping that that
+" imitates TextYankPost if it isn't present.
+if !exists('##TextYankPost')
+  map y <Plug>(highlightedyank)
+endif
+
+" Make the time the yanked area stays highlighted much shorter than the
+" default of 1000 milliseconds
+let g:highlightedyank_highlight_duration = 500
+
 "
 " Colours
 "
