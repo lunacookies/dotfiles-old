@@ -331,7 +331,6 @@ let g:CoolTotalMatches = 1 " Show total of matches in the command line
 autocmd vimrc ColorScheme * hi! link vimAutoCmdSfxList Type
 autocmd vimrc ColorScheme * hi! link vimAutoEventList  Identifier
 autocmd vimrc ColorScheme * hi! link vimFunction       Function
-autocmd vimrc ColorScheme * hi! link vimIsCommand      Statement
 autocmd vimrc ColorScheme * hi! link vimUserFunc       Function
 
 " Fade unimportant elements into delimiters
