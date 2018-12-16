@@ -250,12 +250,6 @@ autocmd vimrc FileType *
       \	  setlocal omnifunc=syntaxcomplete#Complete |
       \	endif
 
-" Hide cursorline in insert mode and all windows apart from the current one
-autocmd vimrc InsertEnter       * setlocal nocursorline
-autocmd vimrc InsertLeave       * setlocal cursorline
-autocmd vimrc VimEnter,WinEnter * setlocal cursorline
-autocmd vimrc WinLeave          * setlocal nocursorline
-
 "
 " Plugin config
 "
