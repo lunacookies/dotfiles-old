@@ -165,21 +165,12 @@ endif
 
 set statusline=\     " Add space to start us off
 set statusline+=%f\  " Filename relative to PWD
-set statusline+=%y\  " Filetype
+set statusline+=%w   " If we are in a preview window
 
 " Flags
 
-set statusline+=%m   " Modified flag
 set statusline+=%r   " Readonly flag
-set statusline+=%=   " Separator to jump to the other side
-
-" Position
-
-set statusline+=%l   " Current line
-set statusline+=\/   " Solidus
-set statusline+=%-6L " Total lines in file (plus 6 padding on the right)
-set statusline+=%3c  " Current column (padded for less than 4 chars)
-set statusline+=\    " Finish off with a space
+set statusline+=%m   " Modified flag
 
 "
 " Mappings
