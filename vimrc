@@ -198,6 +198,11 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
       \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
       \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
+" Smarter [g]<C-g> that omits some less useful information (e.g. how many
+" characters or bytes there are in the current file)
+nnoremap <C-g> :echo functions#smartgctrlg()<CR>
+nnoremap g<C-g> :echo functions#smartgctrlg()<CR>
+
 "
 " Juggling
 "
