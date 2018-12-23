@@ -368,16 +368,14 @@ set complete=.,w,b
 
 " Colourscheme modifications
 
-" Better syntax highlighting for VimScript
+" Better syntax highlighting
+autocmd vimrc ColorScheme * hi! link Noise             Delimiter
+autocmd vimrc ColorScheme * hi! link shDerefSimple     Identifier
 autocmd vimrc ColorScheme * hi! link vimAutoCmdSfxList Type
 autocmd vimrc ColorScheme * hi! link vimAutoEventList  Identifier
 autocmd vimrc ColorScheme * hi! link vimFunction       Function
+autocmd vimrc ColorScheme * hi! link vimHighlight      Statement
 autocmd vimrc ColorScheme * hi! link vimUserFunc       Function
-
-" Fade unimportant elements into delimiters
-autocmd vimrc ColorScheme * hi! link Noise             Delimiter
-autocmd vimrc ColorScheme * hi! link htmlEndTag        Delimiter
-autocmd vimrc ColorScheme * hi! link htmlTag           Delimiter
 
 " Use the completion menu from the flat variant
 autocmd vimrc ColorScheme solarized8 hi! Pmenu      cterm=reverse ctermfg=7
