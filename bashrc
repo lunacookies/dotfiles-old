@@ -195,31 +195,32 @@ fi
 # Show more information in git prompt
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWDIRTYSTATE=1
-export GIT_PS1_SHOWCOLORHINTS=1
-export GIT_PS1_SHOWUPSTREAM=1
 
 # Custom function for git prompt
 customgitprompt() {
   if git rev-parse --git-dir > /dev/null 2>&1; then
-    __git_ps1 ' %s ' | sed 's/=//g' | sed 's/%/*/g' | sed 's/ +/+/g' | sed 's/\*\*/*/g' | sed 's/\*+\*/*+/g' | sed 's/ \*/*/g' | sed 's/>/ ⇡/g' | sed 's/</ ⇣/g'
+    printf '\e[0m on \e[36m'
+    __git_ps1 '%s'
   fi
 }
 
 # Set prompt
 
-# Clear out prompt
-PS1=''
+# Clear out prompt, apart from an initial newline
+PS1='\n'
 
-# PWD (shows as much of each directory name as is necessary to be unambiguous.
-# It shows the last directory in full)
-# TODO: Switch from a zsh script to a compiled binary
-PS1=$PS1'\[\e[32m\]$(zsh ~/bin/disambiguate-keeplast.zsh)'
+# Username
+PS1=$PS1'\[\e[35m\]\u'
+# Hostname
+PS1=$PS1'\[\e[0m\] at \[\e[33m\]\h'
+# PWD
+PS1=$PS1'\[\e[0m\] in \[\e[93m\]\w'
+
 # Git prompt
-PS1=$PS1'\[\e[35m\]$(customgitprompt &)'
-# Prompt character
-PS1=$PS1'\[\e[32m\]›'
+# PS1=$PS1'$(customgitprompt &)'
+
+# Prompt character on the next line
+PS1=$PS1'\n\[\e[96m\]\$'
+
 # Clear colour
 PS1=$PS1' \[\e[m\]'
-
-# Use a vertical bar cursor
-PS1='\[\e[5 q\]'$PS1
