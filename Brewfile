@@ -1,11 +1,13 @@
 # vim: set filetype=ruby nomodeline:
 
+tap "getantibody/tap"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
 
+brew "antibody"
 brew "bash"
 brew "bash-completion"
 brew "coffeescript"
