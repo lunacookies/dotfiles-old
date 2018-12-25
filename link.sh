@@ -10,15 +10,14 @@ linkrc() {
   # Link the rc
   #
   # -s: Make symbolic link
-  # -v: Confirm linking through output
   # -h: Do not follow a symlink that may be present at the target
   # -F: Overwrite target
-  ln -svhF $PWD/$1 $rcpath
+  ln -shF $PWD/$1 $rcpath
 }
 
 # Link [every file in the etc/ directory that needs to be in $HOME] to $HOME
 for rc in *rc git* editorconfig ; do
-    linkrc $rc "$HOME/."
+    linkrc $rc "$HOME/." &
 done
 
 # Link my scripts to $HOME
