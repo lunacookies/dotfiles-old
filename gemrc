@@ -3,4 +3,8 @@
 # Don't save documentation, install into $HOME, and give the user suggestions
 # during installation
 gem: --no-document --user-install  --suggestions
+
+# Download gems from rubygems.org
+sources:
+- http://rubygems.org/
 ---
