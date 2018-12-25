@@ -62,4 +62,4 @@
 
 # Show + and - at start of lines
 [diff-so-fancy]
-  tripLeadingSymbols = false
+  stripLeadingSymbols = false
