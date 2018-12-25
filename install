@@ -8,7 +8,7 @@ mkdir -p $HOME/.config/nvim
 rm -r $HOME/.local/share/nvim/swap
 
 # Remove existing configuration outside of this repo
-rm $HOME/.vimrc
+[ -e $HOME/.vimrc ] && rm $HOME/.vimrc
 
 # Link the vimrc to Nvim's config location
 ln -shF $PWD/vimrc $HOME/.config/nvim/init.vim
