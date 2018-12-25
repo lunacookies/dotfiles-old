@@ -1,0 +1,69 @@
+#!/usr/bin/env bash
+
+if command -v foo >/dev/null 2>&1; then
+  echo "betterls requires exa <https://the.exa.website/>, which is not installed.
+  Aborting."
+  exit 1
+fi
+
+# Nicer colours
+export EXA_COLORS=di=36:ex=31:ln=35
+
+# Process options using getopts
+while getopts ":l" arg
+do
+  case $arg in
+    l)
+      iflong=true
+      ;;
+    \?)
+      extraopt=$OPTARG
+      ;;
+  esac
+done
+
+# Shift the argument index so that we have access to the operands, also known
+# as the mass arguments (those that are not specific to any argument)
+shift $(expr $OPTIND - 1 )
+
+# Return all default arguments
+#
+# * --git shows a git status flag next to each file
+# * --oneline shows each item on its own line
+args=(
+'--git'
+'--oneline'
+)
+
+# Process long option
+if [ "$iflong" = true ]; then
+  args+=('--long')
+
+  # --oneline from the default arguments conflicts with --long, so we remove
+  # it from the argument list
+  args=( "${args[@]/'--oneline'}" )
+fi
+
+# Return any other flags that may have been passed
+if [ ! -z "$extraopt" ]; then
+  args+=(
+  "-$extraopt"
+  )
+fi
+
+# Return all operands
+file="$(
+while test $# -gt 0; do
+  echo $1
+  shift
+done
+)"
+
+# Create a variable storing the command to be executed
+cmd="exa ${args[@]} $file"
+
+# Now actually call the command
+command $cmd
+
+# Reset the argument index
+OPTIND=1
