@@ -82,6 +82,10 @@ export FZF_DEFAULT_OPTS='
 --color fg:10,bg:8,hl:3,fg+:12,bg+:0,hl+:5
 --color info:2,prompt:6,spinner:4,pointer:10,marker:2
 '
+#
+# Source fzf shell integration files
+[[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.bash" 2> /dev/null
+source "/usr/local/opt/fzf/shell/key-bindings.bash"
 
 #
 # Options
