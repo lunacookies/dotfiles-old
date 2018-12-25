@@ -4,10 +4,20 @@
 # Init
 #
 
+# Load all needed zsh modules
 autoload -U compinit && compinit
 autoload -U colors && colors
 autoload -U promptinit && promptinit
 zmodload -i zsh/complist
+
+# Path
+export PATH=$HOME/bin:$PATH
+export PATH=/usr/local:$PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/texlive/20*/bin:$PATH
+export PATH=/Library/TeX/texbin:$PATH
+export PATH=$HOME/.gem/ruby/2.5.0/bin:$PATH
+export PATH=$HOME/code/go/bin:$PATH
 
 #
 # Plugins
@@ -153,15 +163,6 @@ unsetopt flowcontrol
 #
 # Environment variables
 #
-
-# Path
-export PATH=$HOME/bin:$PATH
-export PATH=/usr/local:$PATH
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/texlive/20*/bin:$PATH
-export PATH=/Library/TeX/texbin:$PATH
-export PATH=$HOME/.gem/ruby/2.5.0/bin:$PATH
-export PATH=$HOME/code/go/bin:$PATH
 
 # Gopath
 export GOPATH=$HOME/code/go
