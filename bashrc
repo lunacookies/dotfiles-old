@@ -71,9 +71,16 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 
 # fzf
 #
-# This makes fzf take some more of its colours from the terminal's colour scheme
+# This makes fzf much faster and makes it scan hidden files too, as well as
+# making it exclude .git from the search
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
+export FZF_CTRL_T_COMMAND='fd --type f --type d --hidden --follow --exclude .git'
+#
+# Use Solarized dark colours
 export FZF_DEFAULT_OPTS='
---color spinner:2,pointer:9,prompt:4
+--color fg:10,bg:8,hl:3,fg+:12,bg+:0,hl+:5
+--color info:2,prompt:6,spinner:4,pointer:10,marker:2
 '
 
 #
