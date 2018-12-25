@@ -14,4 +14,4 @@ rm -r $HOME/.local/share/nvim/swap
 ln -shF $PWD/vimrc $HOME/.config/nvim/init.vim
 
 # Install plugins
-bash get-plugins.sh
+vim --headless +PackAndQuit
