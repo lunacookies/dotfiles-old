@@ -45,6 +45,12 @@ command! Pack
       \ source $MYVIMRC |
       \ call minpac#clean() |
       \ call minpac#update()
+" Same as above, just quit when done
+command! PackAndQuit
+      \ packadd minpac |
+      \ source $MYVIMRC |
+      \ call minpac#clean() |
+      \ call minpac#update('', {'do': 'quitall'})
 
 " Only run minpac code if minpac has been loaded
 if exists('*minpac#init')
