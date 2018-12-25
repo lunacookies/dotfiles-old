@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-# Get me into the dotfiles folder
 cd ~/dotfiles
 
 #
