@@ -6,7 +6,7 @@
 
 # System
 alias cp="cp -riv"
-alias ls="exa --git --group-directories-first"
+alias ls="betterls"
 alias mkdir="mkdir -pv"
 alias mv="mv -iv"
 alias rm="echo 'Use trs instead, or /bin/rm if you want to delete permanently'"
