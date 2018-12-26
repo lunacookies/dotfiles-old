@@ -10,6 +10,11 @@ if [ ! -e $HOME/dotfiles ]; then
   git clone https://github.com/arzg/dotfiles.git ~/dotfiles
 fi
 
+# Make sure to set up custom git hooks
+echo '#!/usr/bin/env bash
+antibody bundle < ~/.antibodyrc > ~/.antibodyrc.sh
+' > $HOME/dotfiles/.git/hooks/pre-commit
+
 cd ~/dotfiles
 
 # We do these things before the mass software installation becaus some parts of
