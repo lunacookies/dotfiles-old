@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+
+# As this script is meant to be run upon opening a new terminal emulator window,
+# we make sure the window is closed again after detaching or aborting the script
+closecurrentwindow() {
+  echo -n -e "\033]0;tmp_window_name\007"
+  osascript -e '
+    tell application "iTerm2"
+      tell current session of current window
+        close
+      end tell
+    end tell
+  '
+}
+trap closecurrentwindow EXIT
+
+# Abort if we're already inside a tmux session
+[ "$TMUX" == "" ] || exit 0
+
+# A function that allows the user to select a tmux session to attach to, or
+# create a new one on a given socket
+picksession() {
+  local socket=$1
+
+  # Present menu for user to choose which session to open
+  PS3="Please choose your session: "
+  options=($(tmux -L $socket list-sessions -F "#S" 2>/dev/null) "New Session")
+  echo "Available sessions"
+  echo "------------------"
+  echo " "
+
+  # Selector to either create a new session or attach to an existing one
+  select opt in "${options[@]}"
+  do
+    case $opt in
+      "New Session")
+        read -p "Enter new session name: " SESSION_NAME
+        tmux -L $socket new -s "$SESSION_NAME"
+        break
+        ;;
+      *)
+        tmux -L $socket attach-session -t $opt
+        break
+        ;;
+    esac
+  done
+}
+
+# Let the user pick whether they want a dark or light theme
+PS3="Light or dark? "
+bg=(
+  "light"
+  "dark"
+)
+
+# Create a selector to pick between the dark and light theme that sets the
+# appropriate iTerm theme, exports the THEME variable for zsh, tmux, and Vim to
+# hook into, and finally opens a second selector for the user to pick a session
+# to connect to.
+select choice in "${bg[@]}"
+do
+  printf "\e]50;SetProfile=$choice\a"
+  export THEME="$choice"
+  picksession $choice
+  closecurrentwindow
+done
