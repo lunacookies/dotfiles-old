@@ -16,7 +16,7 @@ linkrc() {
 }
 
 # Link [every file in the etc/ directory that needs to be in $HOME] to $HOME
-for rc in *rc git* editorconfig ; do
+for rc in *rc *.conf git* editorconfig ; do
     linkrc $rc "$HOME/." &
 done
 
