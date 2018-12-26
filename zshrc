@@ -23,8 +23,7 @@ export PATH=$HOME/code/go/bin:$PATH
 # Plugins
 #
 
-source <(antibody init)
-antibody bundle < ~/.antibodyrc
+source ~/.antibodyrc.sh
 
 #
 # Aliases
