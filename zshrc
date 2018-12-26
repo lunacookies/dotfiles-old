@@ -205,3 +205,49 @@ export FZF_DEFAULT_OPTS='
 # Source fzf shell integration files
 [[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
 source "/usr/local/opt/fzf/shell/key-bindings.zsh"
+
+#
+# Window title
+#
+
+# Set the window title to match the present working directory -- whether in
+# tmux or in a regular terminal. The tmux function also sets the current
+# window's name to ~ if in $HOME, or to the tail of the PWD
+tmuxwindowtitle () {
+  if [ "$TERM_PROGRAM" = "Apple_Terminal" ]; then
+    local SEARCH=' '
+    local REPLACE='%20'
+    local PWD_URL="file://$HOSTNAME${PWD//$SEARCH/$REPLACE}"
+    printf '\ePtmux;\e\e]6;%s\a\e\\' "$PWD_URL"
+  fi
+  if [[ $(basename $PWD) == $(basename $HOME) ]]; then
+    tmux rename-window "~"
+  else
+    tmux rename-window $(basename $PWD)
+  fi
+}
+
+regularwindowtitle () {
+  if [ "$TERM_PROGRAM" = "Apple_Terminal" ]; then
+    local SEARCH=' '
+    local REPLACE='%20'
+    local PWD_URL="file://$HOSTNAME${PWD//$SEARCH/$REPLACE}"
+    printf '\e]6;%s\a' "$PWD_URL"
+  else
+    if [[ $(basename $PWD) == $(basename $HOME) ]]; then
+      printf "\e]0;$(echo '~ — zsh')\a"
+    else
+      printf "\e]0;$(echo $(basename $PWD) — zsh)\a"
+    fi
+  fi
+}
+
+# Call the appropriate window title function before every prompt
+case "$TERM" in
+  tmux*)
+    precmd() { tmuxwindowtitle }
+    ;;
+  xterm*)
+    precmd() { regularwindowtitle }
+    ;;
+esac
