@@ -74,4 +74,3 @@ installcheckpath="$installpath/Consolaz.ttf"
 if [ ! -e "$installcheckpath" ] && [ -e "$existcheckpath" ]; then
   cp "$existpath/Consola"* "$installpath"
 fi
-
