@@ -405,16 +405,20 @@ autocmd vimrc ColorScheme solarized8 hi! MatchParen cterm=NONE ctermfg=15
 
 " Set colourscheme
 
-" As Terminal.app doesn't support 24-bit colour, make sure we're getting
-" Solarized's colours from the terminal palette.
-let g:solarized_use16 = 1
-
 " Use all the language-specific colours from the original Solarized
 let g:solarized_extra_hi_groups = 1
 
 " Unfortunately Solarized 8 uses &background to figure out whether to use the
-" dark or light variant, instead of using two separate colourschemes. I prefer
-" the light version of Solarized, so we specify it here.
-set background=light
+" dark or light variant, instead of using two separate colourschemes.
+" Additionally, I use $THEME to store whether I'm using a light theme
+" or a dark theme, so we set &background based on this variable.
+if $THEME == 'light'
+  set background=light
+elseif $THEME == 'dark'
+  set background=dark
+else
+  set background=light
+endif
 
+set termguicolors
 colorscheme solarized8
