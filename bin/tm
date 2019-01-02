@@ -7,11 +7,20 @@
 # we make sure the window is closed again after detaching or aborting the script
 closecurrentwindow() {
   echo -n -e "\033]0;tmp_window_name\007"
-  osascript -e '
-    tell application "Terminal"
-      close (every window whose name contains "tmp_window_name")
-    end tell
-  '
+
+  if [ "$TERM_PROGRAM" = "Apple_Terminal" ]; then
+    osascript -e '
+      tell application "Terminal"
+        close (every window whose name contains "tmp_window_name")
+      end tell
+    '
+  elif [ "$TERM_PROGRAM" = "iTerm.app" ]; then
+    osascript -e '
+      tell application "iTerm2"
+        close (current session of current window)
+      end tell
+    '
+  fi
 }
 trap closecurrentwindow EXIT
 
