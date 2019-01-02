@@ -223,7 +223,7 @@ tmuxwindowtitle () {
   if [[ $(basename $PWD) == $(basename $HOME) ]]; then
     tmux rename-window "~"
   else
-    tmux rename-window $(basename $PWD)
+    tmux rename-window "$(basename $PWD)"
   fi
 }
 
