@@ -8,10 +8,8 @@
 closecurrentwindow() {
   echo -n -e "\033]0;tmp_window_name\007"
   osascript -e '
-    tell application "iTerm2"
-      tell current session of current window
-        close
-      end tell
+    tell application "Terminal"
+      close (every window whose name contains "tmp_window_name")
     end tell
   '
 }
