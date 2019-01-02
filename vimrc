@@ -382,12 +382,12 @@ autocmd vimrc ColorScheme * hi! link vimAutoEventList  Identifier
 autocmd vimrc ColorScheme * hi! link vimFunction       Function
 autocmd vimrc ColorScheme * hi! link vimHighlight      Statement
 autocmd vimrc ColorScheme * hi! link vimUserFunc       Function
-autocmd vimrc ColorScheme * hi! link zshBrackets       Delimiter
 autocmd vimrc ColorScheme * hi! link zshDeref          Identifier
-autocmd vimrc ColorScheme * hi! link zshFunction       Identifier
-autocmd vimrc ColorScheme * hi! link zshParentheses    Delimiter
+autocmd vimrc ColorScheme * hi! link zshFunction       Function
+autocmd vimrc ColorScheme * hi! link zshOperator       Operator
 autocmd vimrc ColorScheme * hi! link zshSubst          Identifier
 autocmd vimrc ColorScheme * hi! link zshSubstDelim     Delimiter
+autocmd vimrc ColorScheme * hi! link zshVariableDef    Identifier
 
 " Use the completion menu from the flat variant
 autocmd vimrc ColorScheme solarized8 hi! Pmenu      cterm=reverse ctermfg=7
