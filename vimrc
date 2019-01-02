@@ -98,6 +98,15 @@ else
   let &t_EI.="\e[1 q"
 endif
 
+" Fillchars
+
+set fillchars+=vert:⎸
+set fillchars+=fold:·
+" Vim 8 does not have the ability to change this yet
+if has('nvim')
+  set fillchars+=eob:-
+endif
+
 "
 " Statusline
 "
