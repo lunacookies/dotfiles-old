@@ -60,6 +60,7 @@ set smartcase
 let &showbreak = '››› '
 set breakindent
 set breakindentopt=sbr
+set colorcolumn=+1
 set linebreak
 set sidescroll=1
 set sidescrolloff=5
