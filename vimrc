@@ -100,7 +100,6 @@ endif
 set clipboard=unnamed
 set hidden
 set laststatus=2
-set number
 set path& | let &path .= "**"
 set wildmenu
 
