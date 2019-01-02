@@ -251,25 +251,3 @@ case "$TERM" in
     precmd() { regularwindowtitle }
     ;;
 esac
-
-#
-# Theme
-#
-
-# As environment variables in tmux do not propagate into tmux.conf, we source
-# the appropriate theme file here
-if [ -n "$TMUX" ]; then
-  if [ $THEME = 'dark' ]; then
-    tmux source $HOME/.tmux_dark.conf
-  elif [ $THEME = 'light' ]; then
-    tmux source $HOME/.tmux_light.conf
-  fi
-fi
-
-# zsh-autosuggestions' default colour is not visible in Solarized dark. and is
-# far too dark in Solarized light, so we correct it, based on THEME, here
-if [ "$THEME" = 'dark' ]; then
-  export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
-elif [ "$THEME" = 'light' ]; then
-  export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=14'
-fi
