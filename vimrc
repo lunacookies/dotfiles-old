@@ -314,8 +314,10 @@ set complete=.,w,b
 
 " Better syntax highlighting
 autocmd vimrc ColorScheme * hi! link Noise             Delimiter
+autocmd vimrc ColorScheme * hi! link StringDelimiter   Delimiter
 autocmd vimrc ColorScheme * hi! link shDerefSimple     Identifier
 autocmd vimrc ColorScheme * hi! link shFor             Identifier
+autocmd vimrc ColorScheme * hi! link shQuote           StringDelimiter
 autocmd vimrc ColorScheme * hi! link vimAutoCmdSfxList Type
 autocmd vimrc ColorScheme * hi! link vimAutoEventList  Identifier
 autocmd vimrc ColorScheme * hi! link vimFunction       Function
