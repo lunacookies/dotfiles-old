@@ -42,7 +42,7 @@ romainl/Apprentice
 )
 
 # Remove any old plugins
-rm -rf $HOME/.vim/pack/bundle/*
+rm -rf $HOME/.vim/pack
 mkdir -p $HOME/.vim/pack/bundle/start
 
 installplugin() {
