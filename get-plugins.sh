@@ -23,6 +23,7 @@ tpope/vim-endwise
 tpope/vim-surround
 tpope/vim-unimpaired
 wellle/targets.vim
+wincent/terminus
 
 junegunn/vim-easy-align
 lifepillar/vim-mucomplete
