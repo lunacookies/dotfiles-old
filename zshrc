@@ -206,6 +206,46 @@ export FZF_DEFAULT_OPTS='
 [[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
 source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 
+# f-sy-h
+#
+# Match highlighting with Apprentice
+FAST_HIGHLIGHT_STYLES[unknown-token]="fg=0,bg=red"
+FAST_HIGHLIGHT_STYLES[reserved-word]="fg=12"
+FAST_HIGHLIGHT_STYLES[subcommand]="fg=13"
+FAST_HIGHLIGHT_STYLES[alias]="fg=12"
+FAST_HIGHLIGHT_STYLES[suffix-alias]="fg=12"
+FAST_HIGHLIGHT_STYLES[global-alias]="fg=12"
+FAST_HIGHLIGHT_STYLES[builtin]="fg=12"
+FAST_HIGHLIGHT_STYLES[function]="fg=12"
+FAST_HIGHLIGHT_STYLES[command]="fg=12"
+FAST_HIGHLIGHT_STYLES[precommand]="fg=12"
+FAST_HIGHLIGHT_STYLES[commandseparator]="fg=12"
+FAST_HIGHLIGHT_STYLES[hashed-command]="fg=12"
+FAST_HIGHLIGHT_STYLES[path]="fg=14"
+FAST_HIGHLIGHT_STYLES[path-to-dir]="fg=14"
+FAST_HIGHLIGHT_STYLES[path_pathseparator]="fg=cyan"
+FAST_HIGHLIGHT_STYLES[globbing]="fg=blue"
+FAST_HIGHLIGHT_STYLES[globbing-ext]="fg=blue"
+FAST_HIGHLIGHT_STYLES[history-expansion]="fg=blue"
+FAST_HIGHLIGHT_STYLES[single-hyphen-option]="fg=cyan"
+FAST_HIGHLIGHT_STYLES[double-hyphen-option]="fg=cyan"
+FAST_HIGHLIGHT_STYLES[back-quoted-argument]="none"
+FAST_HIGHLIGHT_STYLES[single-quoted-argument]="fg=10"
+FAST_HIGHLIGHT_STYLES[double-quoted-argument]="fg=10"
+FAST_HIGHLIGHT_STYLES[dollar-quoted-argument]="fg=10"
+FAST_HIGHLIGHT_STYLES[redirection]="fg=12"
+FAST_HIGHLIGHT_STYLES[comment]="fg=8"
+FAST_HIGHLIGHT_STYLES[variable]="fg=blue"
+FAST_HIGHLIGHT_STYLES[assign-array-bracket]="fg=green"
+FAST_HIGHLIGHT_STYLES[for-loop-variable]="fg=blue"
+FAST_HIGHLIGHT_STYLES[for-loop-operator]="fg=12"
+FAST_HIGHLIGHT_STYLES[for-loop-number]="fg=9"
+FAST_HIGHLIGHT_STYLES[for-loop-separator]="fg=yellow,bold"
+FAST_HIGHLIGHT_STYLES[paired-bracket]="fg=11"
+FAST_HIGHLIGHT_STYLES[bracket-level-1]="fg=green"
+FAST_HIGHLIGHT_STYLES[bracket-level-2]="fg=green"
+FAST_HIGHLIGHT_STYLES[bracket-level-3]="fg=green"
+
 #
 # Window title
 #
