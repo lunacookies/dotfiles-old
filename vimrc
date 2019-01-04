@@ -235,9 +235,6 @@ autocmd vimrc BufReadPost *
       \ |   execute "normal! g`\""
       \ | endif
 
-" Save on focus lost
-autocmd vimrc FocusLost * update
-
 " Use completion based on the syntax highlighting in the current file if a
 " smarter method of completion has not yet been defined.
 autocmd vimrc FileType *
