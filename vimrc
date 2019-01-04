@@ -175,6 +175,7 @@ nnoremap ,t :tabnew<CR>
 nnoremap ,tt :tabnew<CR>
 nnoremap ,v :vsplit<CR>
 nnoremap ,vv :vsplit<CR>
+nnoremap ,c :close<CR>
 
 " Juggling with searches
 
