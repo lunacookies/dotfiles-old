@@ -73,7 +73,6 @@ set splitright
 set autoread
 set history=10000
 set lazyredraw
-set mouse=a
 set showcmd
 set tabpagemax=50
 if !has('nvim')
@@ -87,15 +86,6 @@ set directory=/tmp//,.
 if has('persistent_undo')
   set undofile
   set undodir=/tmp//,.
-endif
-
-" Dynamic cursor shape
-if has('nvim')
-  set guicursor=n-v:block,i-ve-c-ci:ver25,r-cr:hor20,o:hor50,n:blinkon0
-else
-  let &t_SI.="\e[5 q"
-  let &t_SR.="\e[4 q"
-  let &t_EI.="\e[1 q"
 endif
 
 " Fillchars
