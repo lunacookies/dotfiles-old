@@ -29,20 +29,18 @@ shift $(expr $OPTIND - 1 )
 # Return all default arguments
 #
 # * --git shows a git status flag next to each file
-# * --oneline shows each item on its own line
+# * --grid forces the output to show in columns
 args=(
 '--git'
-'--oneline'
+'--grid'
 )
 
-# Process long option
-if [ "$iflong" = true ]; then
-  args+=('--long')
+# Only show in grid mode if the output is more than four lines long. This is to
+# prevent output in which the grid does not provide any benefit.
+export EXA_GRID_ROWS=4
 
-  # --oneline from the default arguments conflicts with --long, so we remove
-  # it from the argument list
-  args=( "${args[@]/'--oneline'}" )
-fi
+# Process long option
+[ "$iflong" = true ] && args+=('--long')
 
 # Return any other flags that may have been passed
 if [ ! -z "$extraopt" ]; then
