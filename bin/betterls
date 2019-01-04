@@ -6,9 +6,6 @@ if command -v foo >/dev/null 2>&1; then
   exit 1
 fi
 
-# Nicer colours
-export EXA_COLORS=di=36:ex=31:ln=35
-
 # Process options using getopts
 while getopts ":l" arg
 do
