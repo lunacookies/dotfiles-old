@@ -196,10 +196,10 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --exclu
 export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git --exclude .gem --exclude .Trash --exclude Library'
 export FZF_CTRL_T_COMMAND='fd --type f --type d --hidden --follow --exclude .git --exclude .gem --exclude .Trash --exclude Library'
 #
-# Use Solarized dark colours
+# Use colours from Apprentice
 export FZF_DEFAULT_OPTS='
---color fg:10,bg:8,hl:3,fg+:12,bg+:0,hl+:5
---color info:2,prompt:6,spinner:4,pointer:10,marker:2
+--color fg:7,hl:4,fg+:250,bg+:0,hl+:12
+--color info:2,prompt:6,spinner:101,pointer:14,marker:2
 '
 #
 # Source fzf shell integration files
