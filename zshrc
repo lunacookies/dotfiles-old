@@ -191,10 +191,10 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 # fzf
 #
 # This makes fzf much faster and makes it scan hidden files too, as well as
-# making it exclude .git from the search
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
-export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
-export FZF_CTRL_T_COMMAND='fd --type f --type d --hidden --follow --exclude .git'
+# excluding several uninteresting folders from the search
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --exclude .gem --exclude .Trash --exclude Library'
+export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git --exclude .gem --exclude .Trash --exclude Library'
+export FZF_CTRL_T_COMMAND='fd --type f --type d --hidden --follow --exclude .git --exclude .gem --exclude .Trash --exclude Library'
 #
 # Use Solarized dark colours
 export FZF_DEFAULT_OPTS='
