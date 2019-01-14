@@ -195,13 +195,13 @@ set wildcharm=<C-z>
 " Use ripgrep if available, fall back to the silver searcher, then fall back to
 " the system grep for grepping
 if executable('rg')
-  set grepprg=rg\ --vimgrep\ --ignore-case\ --column
+  set grepprg=rg\ --vimgrep\ --ignore-case\ --column\ --fixed-strings
   set grepformat^=%f:%l:%c:%m
 elseif executable('ag')
-  set grepprg=ag\ --vimgrep\ --ignore-case\ --column
+  set grepprg=ag\ --vimgrep\ --ignore-case\ --column\ --fixed-strings
   set grepformat^=%f:%l:%c:%m
 else
-  set grepprg=grep\ --recursive\ --ignore-case
+  set grepprg=grep\ --recursive\ --ignore-case\ --fixed-strings
 endif
 
 " Smarter grep command
