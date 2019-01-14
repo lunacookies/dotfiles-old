@@ -28,7 +28,12 @@
 
 # Enable colour
 [color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
   ui = true
+  pager = true
 
 # Git hosting stuff
 [url "https://github.com/"]
