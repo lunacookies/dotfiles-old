@@ -8,6 +8,7 @@ tap "homebrew/core"
 tap "homebrew/services"
 
 brew "antibody"
+brew "asciinema"
 brew "bash"
 brew "bash-completion"
 brew "coffeescript"
