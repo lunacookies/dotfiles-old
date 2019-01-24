@@ -338,10 +338,6 @@ autocmd vimrc ColorScheme * hi! link htmlTag           Delimiter
 autocmd vimrc ColorScheme apprentice hi! ModeMsg cterm=bold,reverse
       \ gui=bold,reverse
 
-" Make the vertical split divider a vertical line
-autocmd vimrc ColorScheme apprentice hi! VertSplit ctermbg=NONE guibg=NONE
-      \ ctermfg=242 guifg=#6c6c6c cterm=NONE gui=NONE
-
 " Make the selected completion entry grey and bold, retheming the rest of the
 " completion menu to match better
 autocmd vimrc ColorScheme apprentice hi! Pmenu      ctermbg=236 guibg=#303030
