@@ -339,12 +339,12 @@ autocmd vimrc ColorScheme * hi! link htmlTag           Delimiter
 autocmd vimrc ColorScheme apprentice hi! ModeMsg cterm=bold,reverse
       \ gui=bold,reverse
 
-" Make the selected completion entry grey and bold, retheming the rest of the
-" completion menu to match better
+" Make the whole completion menu greyscale and closer in colour to the
+" background
 autocmd vimrc ColorScheme apprentice hi! Pmenu      ctermbg=236 guibg=#303030
       \ ctermfg=250 guifg=#bcbcbc cterm=NONE gui=NONE
 autocmd vimrc ColorScheme apprentice hi! PmenuSel   ctermbg=238 guibg=#444444
-      \ ctermfg=250 guifg=#bcbcbc cterm=bold gui=bold
+      \ ctermfg=231 guifg=#ffffff cterm=NONE gui=NONE
 autocmd vimrc ColorScheme apprentice hi! PmenuSbar  ctermbg=234 guibg=#1c1c1c
       \ cterm=NONE  gui=NONE
 autocmd vimrc ColorScheme apprentice hi! PmenuThumb ctermbg=240 guibg=#585858
