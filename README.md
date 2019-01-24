@@ -15,15 +15,12 @@ and run the included install script:
 Done! Note that either a Homebrew Vim, MacVim (console or GUI), or Nvim is
 required for this configuration.
 
-## TODO
+## Todo
 
-- Comfortable mappings for completion
 - Auto tags
 - Use tags more and learn good ways to make use of them
-- CCR function for smart prompts in the Vim command line
-- Smart CR function in insert mode for brace and XML tag expansion, canceling
-  comments
-- Make `grepprg` insensitive to regexen by default
-   - Add `,G` mapping that greps with regex
-   - Add family of grep mappings to visual mode, grepping for the selection
 - Add quick search and replace mappings
+- Highlight current search with IncSearch (with
+  [loupe](https://github.com/wincent/loupe)?)
+- Xcode-style search and pair highlighting
+   - Use [matchup](https://github.com/andymass/vim-matchup) to achieve this
