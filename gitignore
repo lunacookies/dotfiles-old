@@ -77,3 +77,10 @@ Session.vim
 
 # Auto-generated tag files
 tags*
+
+#
+# Misc
+#
+
+# npm
+node_modules/
