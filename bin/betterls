@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 
-if command -v foo >/dev/null 2>&1; then
-  echo "betterls requires exa <https://the.exa.website/>, which is not installed.
-  Aborting."
-  exit 1
-fi
+# Nicer colours
+export LSCOLORS=gxexcxdxbxegedabagacad
 
 # Process options using getopts
-while getopts ":l" arg
+while getopts ":la" arg
 do
   case $arg in
     l)
       iflong=true
+      ;;
+    a)
+      ifall=true
       ;;
     \?)
       extraopt=$OPTARG
@@ -25,19 +25,20 @@ shift $(expr $OPTIND - 1 )
 
 # Return all default arguments
 #
-# * --git shows a git status flag next to each file
-# * --grid forces the output to show in columns
+# * -G enables coloured output
+# * -h uses human-friendly values for sizes
 args=(
-'--git'
-'--grid'
+'-G'
+'-h'
 )
 
-# Only show in grid mode if the output is more than four lines long. This is to
-# prevent output in which the grid does not provide any benefit.
-export EXA_GRID_ROWS=4
-
 # Process long option
-[ "$iflong" = true ] && args+=('--long')
+# We use -o instead of -l because it omits the group id of the owner of the file
+[ "$iflong" = true ] && args+=('-o')
+
+# Process show hidden files option
+# We use -A instead of -a because it hides . and .. from the output
+[ "$ifall" = true ] && args+=('-A')
 
 # Return any other flags that may have been passed
 if [ ! -z "$extraopt" ]; then
@@ -49,13 +50,13 @@ fi
 # Return all operands
 file="$(
 while test $# -gt 0; do
-  echo $1
+  printf '%s' "$1"
   shift
 done
 )"
 
 # Create a variable storing the command to be executed
-cmd="exa ${args[@]} $file"
+cmd="ls ${args[@]} -- $file"
 
 # Now actually call the command
 command $cmd
