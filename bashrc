@@ -84,6 +84,9 @@ export LESS="FR"
 # Use UTF8 everywhere
 export __CF_USER_TEXT_ENCODING=0x08000100:0x0
 
+# Enable coloured output in some BSD utilities
+export CLICOLOR=1
+
 # fzf
 #
 # This makes fzf much faster and makes it scan hidden files too, as well as
