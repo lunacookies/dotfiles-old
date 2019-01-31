@@ -34,16 +34,6 @@ mkcd() {
   cd -- "$@"
 }
 
-# Go into parent directory of argument
-pd() {
-  cd -- "$@/.."
-}
-
-# Go into given sibling of current
-sd() {
-  cd -- "../$@"
-}
-
 # LaTeX shortcuts
 alias pdf="open *.pdf"
 
@@ -181,6 +171,9 @@ SAVEHIST=1000000
 
 # Words are separated using space
 WORDCHARS=''
+
+# See https://asciinema.org/a/5T5vODhu3TRnNzvghYprpA3xf
+export CDPATH=.:$HOME:$HOME/code:$HOME/School/2019..
 
 # Do not overwrite history file
 shopt -s histappend
