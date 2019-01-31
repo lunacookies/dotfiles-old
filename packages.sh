@@ -43,10 +43,18 @@ command mas upgrade
 # Creates an up-to-date Masfile
 echo -e "$(/usr/local/bin/mas list | sed 's/ /" \# /' | sed 's/^/mas "/' | sort)" > Masfile
 
-# TeX
+#
+# TeX Live
+#
 
 sudo tlmgr update --self    # Update tlmgr
 sudo tlmgr update --all     # Update TeX Live
+
+#
+# npm
+#
+
+npm install -g npm
 
 #
 # Misc
