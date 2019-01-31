@@ -173,7 +173,7 @@ SAVEHIST=1000000
 WORDCHARS=''
 
 # See https://asciinema.org/a/5T5vODhu3TRnNzvghYprpA3xf
-export CDPATH=.:$HOME:$HOME/code:$HOME/School/2019..
+export CDPATH=.:$HOME:$HOME/code:$HOME/School/2019:..
 
 # Do not overwrite history file
 shopt -s histappend
