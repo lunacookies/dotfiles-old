@@ -291,17 +291,21 @@ GIT_PS1_SHOWDIRTYSTATE=1
 # to three
 PROMPT_DIRTRIM=3
 
-# Clear out old prompt
-PS1=''
+# Clear out old prompt apart from a newline
+PS1='\n'
 
 # The colours in my prompt are designed to match the syntax highlighting of my
 # Vim colorscheme, Apprentice. In parentheses after each colour is listed the
 # syntax group that this element represents
 
 # Bright cyan (directory) working directory
-PS1=$PS1'\[\e[96m\]\w'
+PS1=$PS1'\[\e[96m\]\w '
 # Green (special) git prompt
-PS1=$PS1'\[\e[32m\]$(__git_ps1 " %s " &)'
+PS1=$PS1'\[\e[32m\]$(__git_ps1 "[%s]" &)'
+# Newline
+PS1=$PS1'\n'
+# Bright red (just to make it prominent) hostname
+PS1=$PS1'\[\e[91m\]\h '
 # Bright black (comment) dollar
 PS1=$PS1'\[\e[90m\]\$'
 # Reset colours and finish with a space
