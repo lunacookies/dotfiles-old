@@ -9,7 +9,7 @@ endif
 filetype plugin indent on
 
 " Syntax highlighting
-if has('syntax') && !exists('g:syntax_on')
+if !exists('g:syntax_on')
   syntax enable
 endif
 
