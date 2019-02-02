@@ -297,6 +297,8 @@ PS1=$PS1'\[\e[96m\]\w '
 PS1=$PS1'\[\e[32m\]$(__git_ps1 "[%s]" &)'
 # Newline
 PS1=$PS1'\n'
+# White indicator of how many shells deep you are
+PS1=$PS1'\[\e[37m\]$(((SHLVL>1)) && echo $SHLVL" ")'
 # Bright red (just to make it prominent) hostname
 PS1=$PS1'\[\e[91m\]\h '
 # Bright black (comment) dollar
