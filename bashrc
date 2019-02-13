@@ -184,11 +184,12 @@ shopt -s cmdhist
 # Automatically add  cd  when entering a path by itself
 shopt -s autocd
 
-# Correct spelling errors during tab-completion
+# Correct spelling errors
+shopt -s cdspell
 shopt -s dirspell
 
-# Correct spelling errors in arguments supplied to cd
-shopt -s cdspell
+# Expands e.g. environment variables in directory/file tab completion
+shopt -s direxpand
 
 # More globbing options!
 shopt -s extglob
@@ -209,11 +210,18 @@ bind "set completion-ignore-case on"
 # Treat hyphens and underscores as equivalent
 bind "set completion-map-case on"
 
-# Tab through completion matches like zsh
-bind 'TAB:menu-complete'
+# Don't assume a word with a @ in it is a hostname
+shopt -u hostcomplete
 
-# Display matches for ambiguous patterns at first tab press
-bind "set show-all-if-ambiguous on"
+# Complete prefix first, then press tab again for list of options
+bind "set show-all-if-unmodified on"
+bind 'set menu-complete-display-prefix on'
+
+# Don't complete when tab is pressed on an empty line
+shopt -s no_empty_cmd_completion
+
+# Colourful completion
+bind "set colored-stats on"
 
 # Immediately add a trailing slash when autocompleting symlinks to directories
 bind "set mark-symlinked-directories on"
