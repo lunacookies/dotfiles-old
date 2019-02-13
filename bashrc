@@ -220,9 +220,6 @@ bind 'set menu-complete-display-prefix on'
 # Don't complete when tab is pressed on an empty line
 shopt -s no_empty_cmd_completion
 
-# Colourful completion
-bind "set colored-stats on"
-
 # Immediately add a trailing slash when autocompleting symlinks to directories
 bind "set mark-symlinked-directories on"
 
