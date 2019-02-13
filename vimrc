@@ -191,7 +191,7 @@ cnoremap <expr> <S-Tab> getcmdtype()
 
 " NOTE: This is required because the above mappings remap <Tab> to jump to the
 " next incsearch match, but if we press <Tab> while _not_ searching they return
-" <C-z>, which we now map to go to the next wildmode completion item.
+" <C-z>, which we now map to go to the next wildmenu completion item.
 set wildcharm=<C-z>
 
 " Use ripgrep if available, fall back to the silver searcher, then fall back to
