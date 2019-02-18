@@ -80,6 +80,9 @@ if !has('nvim')
   set encoding=utf-8
   set ttyfast
 endif
+if has('inccommand')
+  set inccommand=split
+endif
 
 " Undo and annoying temporary files
 set backupdir=/tmp//,.
