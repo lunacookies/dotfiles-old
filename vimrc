@@ -231,6 +231,19 @@ command! -range=% Equal let b:wv = winsaveview() | silent execute <line1> . ',' 
 
 nnoremap ,i :Equal<CR>
 
+" Juggling with substitutions
+
+" Press gs after searching to substiture what you searched for with something
+" else. Pressing gs in visual mode will use the visual selection as the range to
+" substitute in.
+nnoremap gs :%s///g<Left><Left>
+xnoremap gs :s///g<Left><Left>
+
+" Double-tap space to replace the word under the cursor in the paragraph. Use
+" <Space>% to replace the word under the cursor in the whole file.
+nnoremap <Space><Space> :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>/
+nnoremap <Space>%       :%s/\<<C-r>=expand('<cword>')<CR>\>/
+
 "
 " Autocmds
 "
