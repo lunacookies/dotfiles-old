@@ -329,23 +329,27 @@ set complete=.,w,b
 " Colourscheme modifications
 
 " Better syntax highlighting
-autocmd vimrc ColorScheme * hi! link Noise              Delimiter
-autocmd vimrc ColorScheme * hi! link StringDelimiter    Delimiter
-autocmd vimrc ColorScheme * hi! link shDerefSimple      Identifier
-autocmd vimrc ColorScheme * hi! link shFor              Identifier
-autocmd vimrc ColorScheme * hi! link shQuote            StringDelimiter
-autocmd vimrc ColorScheme * hi! link vimAutoCmdSfxList  Type
-autocmd vimrc ColorScheme * hi! link vimAutoEventList   Identifier
-autocmd vimrc ColorScheme * hi! link vimFunction        Function
-autocmd vimrc ColorScheme * hi! link vimHighlight       Statement
-autocmd vimrc ColorScheme * hi! link vimUserFunc        Function
-autocmd vimrc ColorScheme * hi! link zshDeref           Identifier
-autocmd vimrc ColorScheme * hi! link zshFunction        Function
-autocmd vimrc ColorScheme * hi! link zshOperator        Operator
-autocmd vimrc ColorScheme * hi! link zshStringDelimiter StringDelimiter
-autocmd vimrc ColorScheme * hi! link zshSubst           Identifier
-autocmd vimrc ColorScheme * hi! link zshSubstDelim      Delimiter
-autocmd vimrc ColorScheme * hi! link zshVariableDef     Identifier
+autocmd vimrc ColorScheme * hi! link Noise                   Delimiter
+autocmd vimrc ColorScheme * hi! link StringDelimiter         Delimiter
+autocmd vimrc ColorScheme * hi! link rubyBlockParameter      Identifier
+autocmd vimrc ColorScheme * hi! link rubyBlockParameterList  Delimiter
+autocmd vimrc ColorScheme * hi! link rubyCurlyBlockDelimiter Delimiter
+autocmd vimrc ColorScheme * hi! link rubyStringDelimiter     StringDelimiter
+autocmd vimrc ColorScheme * hi! link shDerefSimple           Identifier
+autocmd vimrc ColorScheme * hi! link shFor                   Identifier
+autocmd vimrc ColorScheme * hi! link shQuote                 StringDelimiter
+autocmd vimrc ColorScheme * hi! link vimAutoCmdSfxList       Type
+autocmd vimrc ColorScheme * hi! link vimAutoEventList        Identifier
+autocmd vimrc ColorScheme * hi! link vimFunction             Function
+autocmd vimrc ColorScheme * hi! link vimHighlight            Statement
+autocmd vimrc ColorScheme * hi! link vimUserFunc             Function
+autocmd vimrc ColorScheme * hi! link zshDeref                Identifier
+autocmd vimrc ColorScheme * hi! link zshFunction             Function
+autocmd vimrc ColorScheme * hi! link zshOperator             Operator
+autocmd vimrc ColorScheme * hi! link zshStringDelimiter      StringDelimiter
+autocmd vimrc ColorScheme * hi! link zshSubst                Identifier
+autocmd vimrc ColorScheme * hi! link zshSubstDelim           Delimiter
+autocmd vimrc ColorScheme * hi! link zshVariableDef          Identifier
 
 " Fade unimportant elements into delimiters
 autocmd vimrc ColorScheme * hi! link htmlEndTag        Delimiter
