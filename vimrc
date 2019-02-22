@@ -80,7 +80,7 @@ if !has('nvim')
   set encoding=utf-8
   set ttyfast
 endif
-if has('inccommand')
+if has('nvim')
   set inccommand=split
 endif
 
