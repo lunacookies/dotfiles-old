@@ -351,10 +351,6 @@ autocmd vimrc ColorScheme * hi! link zshSubst                Identifier
 autocmd vimrc ColorScheme * hi! link zshSubstDelim           Delimiter
 autocmd vimrc ColorScheme * hi! link zshVariableDef          Identifier
 
-" Fade unimportant elements into delimiters
-autocmd vimrc ColorScheme * hi! link htmlEndTag        Delimiter
-autocmd vimrc ColorScheme * hi! link htmlTag           Delimiter
-
 " Un-reversed mode marker, in bold now
 autocmd vimrc ColorScheme apprentice hi! ModeMsg cterm=bold,reverse
       \ gui=bold,reverse
