@@ -38,7 +38,7 @@ tpope/vim-git
 tpope/vim-haml
 vim-ruby/vim-ruby
 
-romainl/Apprentice
+arzg/apprentice8
 
 )
 

@@ -368,4 +368,4 @@ autocmd vimrc ColorScheme apprentice hi! PmenuThumb ctermbg=240 guibg=#585858
 
 " Set colourscheme
 
-colorscheme apprentice
+colorscheme apprentice8
