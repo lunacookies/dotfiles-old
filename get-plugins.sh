@@ -19,6 +19,7 @@ romainl/vim-qf
 rstacruz/vim-closer
 sgur/vim-editorconfig
 tpope/vim-commentary
+tpope/vim-dispatch
 tpope/vim-endwise
 tpope/vim-surround
 tpope/vim-unimpaired
