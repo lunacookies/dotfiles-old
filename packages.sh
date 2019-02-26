@@ -11,9 +11,7 @@ brew bundle cleanup --force # Remove anything not present in the Brewfile
 brew bundle                 # Install and update everything from the Brewfile
 brew upgrade                # Update any dependencies of formulae
 
-# Clean up as necessary
-brew cleanup                # Delete caches
-brew cleanup                # Delete cask caches
+# A little bit of cleaning
 brew prune                  # Remove unused symlinks
 brew doctor                 # Check if anything is broken
 
