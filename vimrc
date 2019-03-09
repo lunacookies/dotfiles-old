@@ -310,7 +310,7 @@ set completeopt=menuone,noselect,preview
 " majority of my VimL writing is my vimrc, and as there is little word reusage
 " in a vimrc, we set Ex commands to override previous words.
 let g:mucomplete#chains = {
-      \ 'vim':      [ 'path', 'cmd', 'c-p' ],
+      \ 'vim':      [ 'path', 'cmd', 'c-p', 'omni' ],
       \ 'default':  [ 'path', 'c-p', 'omni' ],
       \ }
 
