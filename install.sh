@@ -12,11 +12,12 @@ fi
 
 cd ~/dotfiles
 
-# We do these things before the mass software installation becaus some parts of
-# packages.sh depend on configuration that is linked in link.sh
-
 # Symlink all configuration
 ./link.sh
+
+# Make sure to source bashrc because some programs that are added to the PATH
+# by it are needed for macos and packages.sh
+source $HOME/.bashrc
 
 # Set settings
 ./macos
