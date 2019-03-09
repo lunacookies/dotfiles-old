@@ -10,10 +10,7 @@ brew update                 # Update brew itself
 brew bundle cleanup --force # Remove anything not present in the Brewfile
 brew bundle                 # Install and update everything from the Brewfile
 brew upgrade                # Update any dependencies of formulae
-
-# A little bit of cleaning
-brew prune                  # Remove unused symlinks
-brew doctor                 # Check if anything is broken
+brew cleanup --prune-prefix # Remove unused symlinks
 
 #
 # Mas
