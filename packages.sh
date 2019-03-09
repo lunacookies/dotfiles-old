@@ -16,13 +16,6 @@ brew prune                  # Remove unused symlinks
 brew doctor                 # Check if anything is broken
 
 #
-# Gems
-#
-
-gem update                  # Update all gems
-gem install neovim          # Install the only global gem we want -- Neovim
-
-#
 # Mas
 #
 
