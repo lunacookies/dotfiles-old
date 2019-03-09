@@ -5,7 +5,7 @@ shopt -s extglob
 
 # What plugins we install
 #
-# Thy are grouped into three categories:
+# Thy are grouped into four categories:
 # 1. Small improvements
 # 2. Big, new features
 # 3. Language support
@@ -13,10 +13,10 @@ shopt -s extglob
 plugins=(
 
 alvan/vim-closetag
+jiangmiao/auto-pairs
 machakann/vim-highlightedyank
 romainl/vim-cool
 romainl/vim-qf
-rstacruz/vim-closer
 sgur/vim-editorconfig
 tpope/vim-commentary
 tpope/vim-dispatch
