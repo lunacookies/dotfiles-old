@@ -280,33 +280,18 @@ esac
 # Source git prompt provided by Homebrew
 source /usr/local/opt/git/etc/bash_completion.d/git-prompt.sh
 
-# More detailed git prompt
-GIT_PS1_SHOWUNTRACKEDFILES=1
-GIT_PS1_SHOWUPSTREAM=1
-GIT_PS1_SHOWDIRTYSTATE=1
-
 # Limit the number of segments displayed of the working directory in the prompt
 # to three
 PROMPT_DIRTRIM=3
 
-# Clear out old prompt apart from a newline
-PS1='\n'
+# Clear out old prompt
+PS1=''
 
-# The colours in my prompt are designed to match the syntax highlighting of my
-# Vim colorscheme, Apprentice. In parentheses after each colour is listed the
-# syntax group that this element represents
-
-# Bright cyan (directory) working directory
-PS1=$PS1'\[\e[96m\]\w '
-# Green (special) git prompt
-PS1=$PS1'\[\e[32m\]$(__git_ps1 "[%s]" &)'
-# Newline
-PS1=$PS1'\n'
-# White indicator of how many shells deep you are
-PS1=$PS1'\[\e[37m\]$(((SHLVL>1)) && echo $SHLVL" ")'
-# Bright blue (identifier) hostname
-PS1=$PS1'\[\e[94m\]\h '
-# Bright black (comment) dollar
+# Light brown working directory
+PS1=$PS1'\[\e[32m\]\w'
+# Brown git prompt
+PS1=$PS1'\[\e[35m\]$(__git_ps1 " %s" &)'
+# Faded dollar, just like a comment
 PS1=$PS1'\[\e[90m\]\$'
 # Reset colours and finish with a space
 PS1=$PS1'\[\e[0m\] '
