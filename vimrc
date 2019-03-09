@@ -213,7 +213,7 @@ endif
 
 " Smarter grep command
 command! -nargs=+ -complete=file_in_path -bar Grep
-      \ silent! grep! <q-args> | redraw!
+      \ cgetexpr system(&grepprg . ' <args>')
 
 nnoremap ,g :Grep<Space>
 
