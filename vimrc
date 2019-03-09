@@ -33,6 +33,7 @@ augroup END
 set clipboard=unnamed
 set hidden
 set laststatus=2
+set noshowcmd
 set path& | let &path .= "**"
 set wildignorecase
 set wildmenu
