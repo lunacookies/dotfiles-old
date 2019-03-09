@@ -41,7 +41,7 @@ tpope/vim-git
 tpope/vim-haml
 vim-ruby/vim-ruby
 
-arzg/apprentice8
+arzg/vim-oldbook8
 
 )
 
