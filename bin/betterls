@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# Nicer colours
-export LSCOLORS=gxexcxdxbxegedabagacad
-
 # Process options using getopts
 while getopts ":la" arg
 do
@@ -25,20 +22,18 @@ shift $(expr $OPTIND - 1 )
 
 # Return all default arguments
 #
-# * -G enables coloured output
-# * -h uses human-friendly values for sizes
+# * --git shows the git status of each file, if applicable
+# * --group-directories-first does what it says on the tin
 args=(
-'-G'
-'-h'
+'--git'
+'--group-directories-first'
 )
 
 # Process long option
-# We use -o instead of -l because it omits the group id of the owner of the file
-[ "$iflong" = true ] && args+=('-o')
+[ "$iflong" = true ] && args+=('--long')
 
 # Process show hidden files option
-# We use -A instead of -a because it hides . and .. from the output
-[ "$ifall" = true ] && args+=('-A')
+[ "$ifall" = true ] && args+=('--all')
 
 # Return any other flags that may have been passed
 if [ ! -z "$extraopt" ]; then
@@ -56,7 +51,7 @@ done
 )"
 
 # Create a variable storing the command to be executed
-cmd="ls ${args[@]} -- $file"
+cmd="exa ${args[@]} -- $file"
 
 # Now actually call the command
 command $cmd
