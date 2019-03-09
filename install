@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+cd $HOME/.vim
+
+# Clear out old Nvim configuration
+[ -e $HOME/.config/nvim ] && rm -r $HOME/.config/nvim
+mkdir -p $HOME/.config/nvim
+rm -r $HOME/.local/share/nvim/swap
+
+# Remove existing configuration outside of this repo
+[ -e $HOME/.vimrc ] && rm $HOME/.vimrc
+
+# Link the vimrc to Nvim's config location
+ln -shF $PWD/vimrc $HOME/.config/nvim/init.vim
+
+# Install plugins
+vim --headless +PackAndQuit
