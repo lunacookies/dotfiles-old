@@ -42,6 +42,13 @@ command mas upgrade
 echo -e "$(/usr/local/bin/mas list | sed 's/ /" \# /' | sed 's/^/mas "/' | sort)" > Masfile
 
 #
+# Vim
+#
+
+# Download, update, and clean all Vim plugins
+./vim/get-plugins.sh
+
+#
 # TeX Live
 #
 
