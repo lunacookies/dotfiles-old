@@ -39,7 +39,6 @@ pangloss/vim-javascript
 rust-lang/rust.vim
 tpope/vim-git
 tpope/vim-haml
-vim-ruby/vim-ruby
 
 arzg/vim-oldbook8
 
