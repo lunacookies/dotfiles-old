@@ -314,6 +314,11 @@ let g:mucomplete#chains = {
       \ 'default':  [ 'path', 'c-p', 'omni' ],
       \ }
 
+" Automatically open the popup menu with completions when typing, but only show
+" after a 100 millisecond pause to prevent flickering.
+let g:mucomplete#enable_auto_at_startup = 1
+let g:mucomplete#completion_delay       = 100
+
 " NOTE: When I refer to 'previous words' in the above paragraph I am actually
 " referring to keywords that match &complete
 set complete=.,w,b
@@ -322,46 +327,4 @@ set complete=.,w,b
 " Colours
 "
 
-" Colourscheme modifications
-
-" Better syntax highlighting
-autocmd vimrc ColorScheme * hi! link Noise                   Delimiter
-autocmd vimrc ColorScheme * hi! link StringDelimiter         Delimiter
-autocmd vimrc ColorScheme * hi! link rubyBlockParameter      Identifier
-autocmd vimrc ColorScheme * hi! link rubyBlockParameterList  Delimiter
-autocmd vimrc ColorScheme * hi! link rubyCurlyBlockDelimiter Delimiter
-autocmd vimrc ColorScheme * hi! link rubyStringDelimiter     StringDelimiter
-autocmd vimrc ColorScheme * hi! link shDerefSimple           Identifier
-autocmd vimrc ColorScheme * hi! link shFor                   Identifier
-autocmd vimrc ColorScheme * hi! link shQuote                 StringDelimiter
-autocmd vimrc ColorScheme * hi! link vimAutoCmdSfxList       Type
-autocmd vimrc ColorScheme * hi! link vimAutoEventList        Identifier
-autocmd vimrc ColorScheme * hi! link vimFunction             Function
-autocmd vimrc ColorScheme * hi! link vimHighlight            Statement
-autocmd vimrc ColorScheme * hi! link vimUserFunc             Function
-autocmd vimrc ColorScheme * hi! link zshDeref                Identifier
-autocmd vimrc ColorScheme * hi! link zshFunction             Function
-autocmd vimrc ColorScheme * hi! link zshOperator             Operator
-autocmd vimrc ColorScheme * hi! link zshStringDelimiter      StringDelimiter
-autocmd vimrc ColorScheme * hi! link zshSubst                Identifier
-autocmd vimrc ColorScheme * hi! link zshSubstDelim           Delimiter
-autocmd vimrc ColorScheme * hi! link zshVariableDef          Identifier
-
-" Un-reversed mode marker, in bold now
-autocmd vimrc ColorScheme apprentice hi! ModeMsg cterm=bold,reverse
-      \ gui=bold,reverse
-
-" Make the whole completion menu greyscale and closer in colour to the
-" background
-autocmd vimrc ColorScheme apprentice hi! Pmenu      ctermbg=236 guibg=#303030
-      \ ctermfg=250 guifg=#bcbcbc cterm=NONE gui=NONE
-autocmd vimrc ColorScheme apprentice hi! PmenuSel   ctermbg=238 guibg=#444444
-      \ ctermfg=231 guifg=#ffffff cterm=NONE gui=NONE
-autocmd vimrc ColorScheme apprentice hi! PmenuSbar  ctermbg=234 guibg=#1c1c1c
-      \ cterm=NONE  gui=NONE
-autocmd vimrc ColorScheme apprentice hi! PmenuThumb ctermbg=240 guibg=#585858
-      \ cterm=NONE  gui=NONE
-
-" Set colourscheme
-
-colorscheme apprentice8
+colorscheme oldbook8
