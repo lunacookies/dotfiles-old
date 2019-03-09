@@ -19,7 +19,6 @@ romainl/vim-cool
 romainl/vim-qf
 sgur/vim-editorconfig
 tpope/vim-commentary
-tpope/vim-dispatch
 tpope/vim-endwise
 tpope/vim-surround
 tpope/vim-unimpaired
