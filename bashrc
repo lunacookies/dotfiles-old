@@ -9,7 +9,6 @@ export PATH=/usr/local:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/texlive/20*/bin:$PATH
 export PATH=/Library/TeX/texbin:$PATH
-export PATH=$HOME/.gem/ruby/2.5.0/bin:$PATH
 export PATH=$HOME/code/go/bin:$PATH
 
 #
