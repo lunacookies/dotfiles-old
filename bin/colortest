@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+
+ansi_mappings=(
+  Black
+  Red
+  Green
+  Yellow
+  Blue
+  Magenta
+  Cyan
+  White
+  Bright_Black
+  Bright_Red
+  Bright_Green
+  Bright_Yellow
+  Bright_Blue
+  Bright_Magenta
+  Bright_Cyan
+  Bright_White
+)
+
+cols1="00 01 02 03 04 05 06 07"
+cols2="08 09 10 11 12 13 14 15"
+
+
+for padded_value in $cols1; do
+  non_padded_value=$((10#$padded_value))
+  foreground=$(printf "\x1b[38;5;${non_padded_value}m${padded_value}")
+  printf "%s " $foreground
+done;
+printf "\n"
+for padded_value in $cols2; do
+  non_padded_value=$((10#$padded_value))
+  foreground=$(printf "\x1b[38;5;${non_padded_value}m${padded_value}")
+  printf "%s " $foreground
+done;
+printf "\n"
+
+printf "\n"
+for padded_value in $cols1; do
+  non_padded_value=$((10#$padded_value))
+  foreground=$(printf "\x1b[38;5;${non_padded_value}m")
+  block=$(printf "\x1b[48;5;${non_padded_value}m___")
+  printf "%s%s\x1b[0m" $foreground $block
+done;
+printf "\n"
+for padded_value in $cols2; do
+  non_padded_value=$((10#$padded_value))
+  foreground=$(printf "\x1b[38;5;${non_padded_value}m")
+  block=$(printf "\x1b[48;5;${non_padded_value}m___")
+  printf "%s%s\x1b[0m" $foreground $block
+done;
+printf "\n"
