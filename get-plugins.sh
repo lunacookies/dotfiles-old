@@ -12,6 +12,7 @@ shopt -s extglob
 # 4. Colours
 plugins=(
 
+AndrewRadev/splitjoin.vim
 alvan/vim-closetag
 jiangmiao/auto-pairs
 machakann/vim-highlightedyank
