@@ -46,6 +46,7 @@ set nostartofline
 set nrformats-=octal
 set numberwidth=5
 set sessionoptions-=options
+set shortmess=asc
 
 " Indentation
 set autoindent
