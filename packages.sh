@@ -70,6 +70,10 @@ duti -s com.apple.Preview pdf all
 # Open markdown files in iA Writer
 duti -s pro.writer.mac net.daringfireball.markdown all
 
+# Optimise Self Control for Pomodoro timers
+defaults write org.eyebeam.SelfControl MaxBlockLength -int 120
+defaults write org.eyebeam.SelfControl BlockLengthInterval -int 5
+
 # Get Consolas if it isn't installed yet
 
 # We check fir the bold italic version (Consolaz) because, if this variant is
