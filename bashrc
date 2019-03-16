@@ -296,11 +296,15 @@ PROMPT_DIRTRIM=3
 # Clear out old prompt
 PS1=''
 
+# Cyan hostname
+PS1=$PS1'\[\e[36m\]\h'
+# White colon
+PS1=$PS1'\[\e[0m\]:'
 # Light brown working directory
 PS1=$PS1'\[\e[32m\]\w'
 # Brown git prompt
 PS1=$PS1'\[\e[35m\]$(__git_ps1 " %s" &)'
-# Faded dollar, just like a comment
-PS1=$PS1'\[\e[90m\]\$'
+# Faded dollar
+PS1=$PS1'\[\e[37m\]\$'
 # Reset colours and finish with a space
 PS1=$PS1'\[\e[0m\] '
