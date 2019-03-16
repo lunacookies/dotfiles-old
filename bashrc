@@ -48,6 +48,16 @@ doc() {
 alias ec="cd ~/.vim && nvim vimrc && cd - > /dev/null"
 alias sc="nvim $HOME/.bashrc"
 
+# For some reason git branch doesn't show any output unless I grep for nothing?
+fixedgit() {
+  if [ "$1" = "branch" ] || [ "$1" = "br" ]; then
+    git "$@" --color=always | grep ''
+  else
+    git "$@"
+  fi
+}
+alias git="fixedgit"
+
 #
 # Environment variables
 #
