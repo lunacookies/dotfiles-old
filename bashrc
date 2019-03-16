@@ -296,18 +296,5 @@ source /usr/local/opt/git/etc/bash_completion.d/git-prompt.sh
 # to three
 PROMPT_DIRTRIM=3
 
-# Clear out old prompt apart from a newline
-PS1='\n'
-
-# Light brown working directory
-PS1=$PS1'\[\e[32m\]\w'
-# Dark brown git prompt
-PS1=$PS1'\[\e[31m\]$(__git_ps1 " %s" &)'
-# Newline
-PS1=$PS1'\n'
-# Brown hostname
-PS1=$PS1'\[\e[35m\]\h'
-# Faded dollar
-PS1=$PS1'\[\e[37m\]\$'
-# Reset colours and finish with a space
-PS1=$PS1'\[\e[0m\] '
+# Set prompt
+PS1='\[\e[37m\][\h:\w\[\e[35m\]$(__git_ps1 " %s" &)\[\e[37m\]]\[\e[0m\] '
