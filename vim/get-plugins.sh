@@ -32,13 +32,13 @@ tpope/vim-fugitive
 
 NLKNguyen/c-syntax.vim
 hail2u/vim-css3-syntax
-kchmck/vim-coffee-script
 lifepillar/vim-colortemplate
 othree/html5.vim
 pangloss/vim-javascript
 rust-lang/rust.vim
 tpope/vim-git
 tpope/vim-haml
+vim-python/python-syntax
 
 arzg/vim-oldbook8
 
