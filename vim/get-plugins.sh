@@ -40,6 +40,7 @@ tpope/vim-git
 tpope/vim-haml
 vim-python/python-syntax
 
+arzg/vim-mayanfog
 arzg/vim-oldbook8
 
 )
