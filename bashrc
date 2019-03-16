@@ -178,6 +178,9 @@ HISTFILE=$HOME/.bash_history
 HISTSIZE=10000
 SAVEHIST=1000000
 
+# Ssve history after every prompt
+PROMPT_COMMAND="$PROMPT_COMMAND; history -a"
+
 # Words are separated using space
 WORDCHARS=''
 
@@ -275,10 +278,10 @@ regularwindowtitle () {
 # Call the appropriate window title function before every prompt
 case "$TERM" in
   tmux*)
-    PROMPT_COMMAND='tmuxwindowtitle'
+    PROMPT_COMMAND="$PROMPT_COMMAND; tmuxwindowtitle"
     ;;
   xterm*)
-    PROMPT_COMMAND='regularwindowtitle'
+    PROMPT_COMMAND="$PROMPT_COMMAND; regularwindowtitle"
     ;;
 esac
 
