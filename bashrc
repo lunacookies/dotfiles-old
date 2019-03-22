@@ -200,9 +200,6 @@ shopt -s autocd
 shopt -s cdspell
 shopt -s dirspell
 
-# Expands e.g. environment variables in directory/file tab completion
-shopt -s direxpand
-
 # More globbing options!
 shopt -s extglob
 shopt -s globstar
