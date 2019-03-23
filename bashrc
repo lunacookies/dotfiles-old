@@ -232,9 +232,9 @@ shopt -s no_empty_cmd_completion
 # Immediately add a trailing slash when autocompleting symlinks to directories
 bind "set mark-symlinked-directories on"
 
-# Enable git and brew completion (not bash-completion)
-source /usr/local/etc/bash_completion.d/brew
-source /usr/local/opt/git/etc/bash_completion.d/git-completion.bash
+# Enable bash-completion
+[[ -f /usr/local/share/bash-completion/bash_completion ]] && \
+  . /usr/local/share/bash-completion/bash_completion
 
 #
 # Window title
