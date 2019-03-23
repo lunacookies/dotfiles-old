@@ -10,7 +10,7 @@ tap "homebrew/services"
 
 brew "asciinema"
 brew "bash"
-brew "bash-completion"
+brew "bash-completion@2"
 brew "ctags"
 brew "diff-so-fancy"
 brew "duti"
