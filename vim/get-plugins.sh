@@ -13,6 +13,7 @@ shopt -s extglob
 plugins=(
 
 AndrewRadev/splitjoin.vim
+PeterRincker/vim-searchlight
 alvan/vim-closetag
 jiangmiao/auto-pairs
 machakann/vim-highlightedyank
