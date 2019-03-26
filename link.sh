@@ -11,7 +11,7 @@ rmifexists() {
 # Remove ~/.config because the only program that I use that keeps its config in
 # there is Nvim, and its config is only a symlink that is generated later
 # anyway.
-rmifexists $HOME/.config
+rmifexists "$HOME/.config"
 
 # Define a function that links a given file to a given location and
 # automatically removes the target file if it exists
@@ -23,7 +23,7 @@ linkrc() {
   # -s: Make symbolic link
   # -h: Do not follow a symlink that may be present at the target
   # -F: Overwrite target
-  ln -shF $PWD/$1 $rcpath
+  ln -shF "$PWD/$1" "$rcpath"
 }
 
 # Link every file that needs to be in $HOME to $HOME
