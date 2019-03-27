@@ -315,4 +315,4 @@ source /usr/local/opt/git/etc/bash_completion.d/git-prompt.sh
 PROMPT_DIRTRIM=3
 
 # Set prompt
-PS1='\[\e[37m\][\h:\w\[\e[35m\]$(__git_ps1 " %s" &)\[\e[37m\]]\[\e[0m\] '
+PS1='\[\e[97m\][\h:\w\[\e[92m\]$(__git_ps1 " %s" &)\[\e[97m\]]\[\e[0m\] '
