@@ -158,14 +158,25 @@ unset rgexpopts
 # Options
 #
 
-# Coloured man
-export LESS_TERMCAP_mb=$(printf "\033[01;31m")
-export LESS_TERMCAP_md=$(printf "\033[01;31m")
-export LESS_TERMCAP_me=$(printf "\033[0m")
-export LESS_TERMCAP_se=$(printf "\033[0m")
-export LESS_TERMCAP_so=$(printf "\033[01;31;33m")
-export LESS_TERMCAP_ue=$(printf "\033[0m")
-export LESS_TERMCAP_us=$(printf "\033[01;32m")
+# History
+
+# Save a lot of history
+HISTFILE=$HOME/.bash_history
+HISTSIZE=10000
+SAVEHIST=1000000
+
+# Ignore duplicates in history
+HISTCONTROL="erasedups:ignoreboth"
+
+# Words are separated using space
+WORDCHARS=''
+
+# Ssve history after every prompt
+if [ -z "$PROMPT_COMMAND" ]; then
+  PROMPT_COMMAND="history -a"
+else
+  PROMPT_COMMAND="$PROMPT_COMMAND; history -a"
+fi
 
 # Use arrows to navigate history
 bind '"\e[A": history-search-backward'
@@ -173,25 +184,16 @@ bind '"\e[B": history-search-forward'
 bind '"\e[C": forward-char'
 bind '"\e[D": backward-char'
 
-# Save a lot of history
-HISTFILE=$HOME/.bash_history
-HISTSIZE=10000
-SAVEHIST=1000000
-
-# Ssve history after every prompt
-PROMPT_COMMAND="$PROMPT_COMMAND; history -a"
-
-# Words are separated using space
-WORDCHARS=''
-
-# See https://asciinema.org/a/5T5vODhu3TRnNzvghYprpA3xf
-export CDPATH=.:$HOME:$HOME/code:$HOME/School/2019:..
+# Save multi-line commands as one command
+shopt -s cmdhist
 
 # Do not overwrite history file
 shopt -s histappend
 
-# Save multi-line commands as one command
-shopt -s cmdhist
+# Moving around
+
+# See https://asciinema.org/a/5T5vODhu3TRnNzvghYprpA3xf
+export CDPATH=.:$HOME:$HOME/code:$HOME/School/2019:..
 
 # Automatically add  cd  when entering a path by itself
 shopt -s autocd
@@ -207,34 +209,53 @@ shopt -s globstar
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 
-# Update window size after every command
-shopt -s checkwinsize
+# Completion
 
-# Ignore duplicates in history
-HISTCONTROL="erasedups:ignoreboth"
+# Enable bash-completion
+[[ -f /usr/local/share/bash-completion/bash_completion ]] && \
+  . /usr/local/share/bash-completion/bash_completion
 
-# Perform file completion in a case insensitive fashion
+# Ignore case
 bind "set completion-ignore-case on"
 
 # Treat hyphens and underscores as equivalent
 bind "set completion-map-case on"
 
-# Don't assume a word with a @ in it is a hostname
-shopt -u hostcomplete
-
 # Complete prefix first, then press tab again for list of options
 bind "set show-all-if-unmodified on"
-bind 'set menu-complete-display-prefix on'
+
+# Replace the common prefix of a set of completions with ...
+bind "set completion-prefix-display-length 2"
+
+# use <C-j> and <C-k> to cycle through completion options
+bind "Control-j: menu-complete"
+bind "Control-k: menu-complete-backward"
+
+# Immediately add a trailing slash when completing symlinks to directories
+bind "set mark-symlinked-directories on"
+
+# Don't assume a word with a @ in it is a hostname
+shopt -u hostcomplete
 
 # Don't complete when tab is pressed on an empty line
 shopt -s no_empty_cmd_completion
 
-# Immediately add a trailing slash when autocompleting symlinks to directories
-bind "set mark-symlinked-directories on"
+# Misc
 
-# Enable bash-completion
-[[ -f /usr/local/share/bash-completion/bash_completion ]] && \
-  . /usr/local/share/bash-completion/bash_completion
+# Coloured man
+export LESS_TERMCAP_mb=$(printf "\033[01;31m")
+export LESS_TERMCAP_md=$(printf "\033[01;31m")
+export LESS_TERMCAP_me=$(printf "\033[0m")
+export LESS_TERMCAP_se=$(printf "\033[0m")
+export LESS_TERMCAP_so=$(printf "\033[01;31;33m")
+export LESS_TERMCAP_ue=$(printf "\033[0m")
+export LESS_TERMCAP_us=$(printf "\033[01;32m")
+
+# Hide control characters like ^C and ^Z
+bind "set echo-control-characters off"
+
+# Update window size after every command
+shopt -s checkwinsize
 
 #
 # Window title
