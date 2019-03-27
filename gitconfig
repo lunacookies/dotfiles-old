@@ -54,13 +54,14 @@
 # Diff colours
 [color "diff-highlight"]
   oldNormal = red
-  oldHighlight = red 8
+  oldHighlight = black red
   newNormal = green
-  newHighlight = green 8
+  newHighlight = black green
 [color "diff"]
-  meta = white
-  frag = white
-  commit = magenta
+  meta = 8
+  frag = 10
+  func = blue
+  commit = white
   old = red
   new = green
   whitespace = red reverse
