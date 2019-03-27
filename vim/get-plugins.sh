@@ -41,7 +41,6 @@ rust-lang/rust.vim
 tpope/vim-git
 tpope/vim-haml
 
-arzg/vim-mayanfog
 arzg/vim-oldbook8
 
 )
