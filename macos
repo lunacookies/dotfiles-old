@@ -154,7 +154,7 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 defaults write com.apple.screencapture type -string "png"
 
 # Enable shadow in screenshots
-defaults write com.apple.screencapture disable-shadow -bool true
+defaults write com.apple.screencapture disable-shadow -bool false
 
 # Use medium font smoothing and reenable subpixel antialiasing
 defaults write NSGlobalDomain AppleFontSmoothing -int 2
