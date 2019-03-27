@@ -66,6 +66,6 @@
   new = green
   whitespace = red reverse
 
-# Show + and - at start of lines
+# Make ruler around each file name smaller
 [diff-so-fancy]
-  stripLeadingSymbols = false
+	rulerWidth = 8
