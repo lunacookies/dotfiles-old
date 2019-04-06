@@ -214,8 +214,8 @@ shopt -s nocaseglob
 # Enable bash-completion v2 and point it towards all the legacy completions that
 # Homebrew automatically installs.
 if [[ -e "/usr/local/share/bash-completion/bash_completion" ]]; then
-	export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
-	source "/usr/local/share/bash-completion/bash_completion"
+  export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
+  source "/usr/local/share/bash-completion/bash_completion"
 fi
 
 # Ignore case
