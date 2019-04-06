@@ -230,9 +230,13 @@ bind "set show-all-if-unmodified on"
 # Replace the common prefix of a set of completions with ...
 bind "set completion-prefix-display-length 2"
 
-# use <C-j> and <C-k> to cycle through completion options
+# Use <C-j> and <C-k> to cycle through completion options
 bind "Control-j: menu-complete"
 bind "Control-k: menu-complete-backward"
+
+# Show some symbols (the ones used in ls -F) after filenames during completion
+# for extra information
+bind "set visible-stats on"
 
 # Immediately add a trailing slash when completing symlinks to directories
 bind "set mark-symlinked-directories on"
@@ -318,7 +322,7 @@ esac
 #
 
 # Source git prompt provided by Homebrew
-source /usr/local/opt/git/etc/bash_completion.d/git-prompt.sh
+source "/usr/local/opt/git/etc/bash_completion.d/git-prompt.sh"
 
 # Limit the number of segments displayed of the working directory in the prompt
 # to three
