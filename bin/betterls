@@ -22,18 +22,22 @@ shift $(expr $OPTIND - 1 )
 
 # Return all default arguments
 #
-# * --git shows the git status of each file, if applicable
-# * --group-directories-first does what it says on the tin
+# * -G enables coloured output
+# * -h uses human-friendly values for sizes
+# * -F shows extra characters for info, e.g. / after directories
 args=(
-'--git'
-'--group-directories-first'
+'-G'
+'-h'
+'-F'
 )
 
 # Process long option
-[ "$iflong" = true ] && args+=('--long')
+# We use -o instead of -l because it omits the group id of the owner of the file
+[ "$iflong" = true ] && args+=('-o')
 
 # Process show hidden files option
-[ "$ifall" = true ] && args+=('--all')
+# We use -A instead of -a because it hides . and .. from the output
+[ "$ifall" = true ] && args+=('-A')
 
 # Return any other flags that may have been passed
 if [ ! -z "$extraopt" ]; then
@@ -51,10 +55,9 @@ done
 )"
 
 # Create a variable storing the command to be executed
-cmd="exa ${args[@]} -- $file"
+cmd="ls ${args[@]} -- $file"
 
 # Now actually call the command
 command $cmd
 
 # Reset the argument index
-OPTIND=1
