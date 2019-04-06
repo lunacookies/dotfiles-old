@@ -32,10 +32,9 @@ augroup END
 " Basic
 set clipboard=unnamed
 set hidden
-set laststatus=1
+set laststatus=2
 set noshowcmd
 set path& | let &path .= "**"
-set rulerformat=%l\:%c
 set wildignorecase
 set wildmenu
 
