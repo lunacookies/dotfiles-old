@@ -257,6 +257,10 @@ export HOMEBREW_CASK_OPTS="--appdir=$HOME/Applications"
 # Hide control characters like ^C and ^Z
 bind "set echo-control-characters off"
 
+# Toggle backgrounding with <C-z>
+stty susp undef
+bind '"\C-z":"fg > /dev/null\015"'
+
 # Update window size after every command
 shopt -s checkwinsize
 
