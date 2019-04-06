@@ -1,18 +1,6 @@
 #!/usr/bin/env bash
 
 #
-# Greeting
-#
-
-echo
-echo "This is arzg's macOS configuration script."
-echo "Proceeding with changes."
-echo "This may take a few seconds."
-echo
-
-echo "Please provide password:"
-
-#
 # Security
 #
 
@@ -38,18 +26,8 @@ sudo defaults write /Library/Preferences/com.apple.mDNSResponder.plist \
 # System
 #
 
-# Set computer (host) name
-echo "What would you like to set your computer name to?"
-read computername
-sudo scutil --set ComputerName "$computername"
-sudo scutil --set HostName "$computername"
-sudo scutil --set LocalHostName "$computername"
-sudo defaults write \
-  /Library/Preferences/SystemConfiguration/com.apple.smb.server \
-  NetBIOSName -string "$computername"
-
 # Enable remote login
-sudo systemsetup -setremotelogin On
+sudo systemsetup -setremotelogin On > /dev/null
 
 # Play charging sound on power connect
 defaults write com.apple.PowerChime ChimeOnAllHardware -bool true; \
@@ -93,14 +71,8 @@ launchctl unload -w \
   /dev/null 2>&1
 
 # Hide Notification Center icon
-sudo rm /System/Library/CoreServices/SystemUIServer.app/Contents/Resources/menuitemNormal.pdf
-
-# Hide Spotlight icon
-spotlightpath=/System/Library/CoreServices/Spotlight.app/Contents/MacOS
-sudo cp $spotlightpath/Spotlight $spotlightpath/Spotlight.bak
-sudo perl -pi -e 's|(\x00\x00\x00\x00\x00\x00\x47\x40\x00\x00\x00\x00\x00\x00)\x42\x40(\x00\x00\x80\x3f\x00\x00\x70\x42)|$1\x00\x00$2|sg' $spotlightpath/Spotlight
-sudo codesign -f -s - $spotlightpath/Spotlight
-sudo killall Spotlight
+notifcetr="/System/Library/CoreServices/SystemUIServer.app/Contents/Resources/menuitemNormal.pdf"
+[ -e "$notifcetr" ] && sudo rm "$notifcetr"
 
 #
 # Input
@@ -202,6 +174,9 @@ defaults write com.apple.finder QLEnableTextSelection -bool true
 
 # Display full POSIX path as Finder window title
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+# Use column view in all Finder windows by default
+defaults write com.apple.finder FXPreferredViewStyle -string "Clmv"
 
 # Enable spring loading for directories
 defaults write NSGlobalDomain com.apple.springing.enabled -bool true
@@ -316,39 +291,34 @@ defaults write com.apple.dock wvous-br-corner -int 5
 defaults write com.apple.dock wvous-br-modifier -int 0
 
 #
-# Finder views
+# Third-party software
 #
 
-# Restart Finder to apply changes
-killall Finder
+# Duti
 
-# Quit Finder so no .DS_Store files are created while we remove them
-osascript -e 'tell application "Finder" to quit'
+# Get bundle identifier (app name format that duti uses) with:
+#   $ osascript -e 'id of app "<AppName>"'
+#
+# Get UTI (Mac filetype name) with:
+#  $ mdls <file> | grep -i "contenttype " | sed 's/^.*= "//' | sed 's/"//g'
 
-# Remove all .DS_Store files
+# Make Preview the default application for PDFs (because Adobe Acrobat DC
+# changes this)
+duti -s com.apple.Preview pdf all
 
-echo 'Removing all .DS_Store files. This may take some time, so please be
-patient. Thank you.'
-sudo find / -name ".DS_Store" -depth -exec rm {} \;
+# Open markdown files in iA Writer
+duti -s pro.writer.mac net.daringfireball.markdown all
 
-# Use column view in all Finder windows by default
-defaults write com.apple.finder FXPreferredViewStyle -string "Clmv"
+# Self Control
 
-# Open Finder again
-open -a 'Finder.app'
+# Optimise Self Control for Pomodoro timers
+defaults write org.eyebeam.SelfControl MaxBlockLength -int 120
+defaults write org.eyebeam.SelfControl BlockLengthInterval -int 5
 
 #
 # Restart to apply
 #
 
+killall Finder &> /dev/null
 killall Dock &> /dev/null
 killall "Activity Monitor" &> /dev/null
-
-#
-# Epilogue
-#
-
-echo
-echo "Done!"
-echo "Restart to apply all changes"
-echo "Exiting script..."
