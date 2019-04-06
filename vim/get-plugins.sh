@@ -15,6 +15,7 @@ plugins=(
 AndrewRadev/splitjoin.vim
 PeterRincker/vim-searchlight
 alvan/vim-closetag
+christoomey/vim-tmux-navigator
 jiangmiao/auto-pairs
 machakann/vim-highlightedyank
 romainl/vim-cool
