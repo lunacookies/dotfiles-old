@@ -171,7 +171,7 @@ HISTCONTROL="erasedups:ignoreboth"
 # Words are separated using space
 WORDCHARS=''
 
-# Ssve history after every prompt
+# Save history after every prompt
 if [ -z "$PROMPT_COMMAND" ]; then
   PROMPT_COMMAND="history -a"
 else
@@ -251,6 +251,9 @@ export LESS_TERMCAP_so=$(printf "\033[01;31;33m")
 export LESS_TERMCAP_ue=$(printf "\033[0m")
 export LESS_TERMCAP_us=$(printf "\033[01;32m")
 
+# Always install homebrew casks into ~/Applications
+export HOMEBREW_CASK_OPTS="--appdir=$HOME/Applications"
+
 # Hide control characters like ^C and ^Z
 bind "set echo-control-characters off"
 
@@ -264,7 +267,7 @@ shopt -s checkwinsize
 # Set the window title to match the present working directory -- whether in
 # tmux or in a regular terminal. The tmux function also sets the current
 # window's name to ~ if in $HOME, or to the tail of the PWD
-tmuxwindowtitle () {
+tmuxwindowtitle() {
   if [ "$TERM_PROGRAM" = "Apple_Terminal" ]; then
     local SEARCH=' '
     local REPLACE='%20'
@@ -278,7 +281,7 @@ tmuxwindowtitle () {
   fi
 }
 
-regularwindowtitle () {
+regularwindowtitle() {
   if [ "$TERM_PROGRAM" = "Apple_Terminal" ]; then
     local SEARCH=' '
     local REPLACE='%20'
