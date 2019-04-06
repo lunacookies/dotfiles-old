@@ -323,6 +323,17 @@ let g:mucomplete#completion_delay       = 100
 " referring to keywords that match &complete
 set complete=.,w,b
 
+" tmux-navigator
+
+let g:tmux_navigator_no_mappings = 1
+
+" Use alt and hjkl to navigate splits
+nnoremap <silent> <M-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <M-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <M-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <M-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <M-\> :TmuxNavigatePrevious<cr>
+
 "
 " Colours
 "
