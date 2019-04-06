@@ -88,15 +88,5 @@ printf "\r\e[0K"
 
 # Generate helptags
 
-# If the user is using Homebrew Vim by default then this will make sure helptags
-# are also generated for system Vim
-[ -e /usr/bin/vim ] && /usr/bin/vim +'silent! helptags ALL | quit!'
-[ -e /usr/local/bin/vim ] && /usr/local/bin/vim +'silent! helptags ALL | quit!'
-# For MacVim users
-[ -e /Applications/MacVim.app/Contents/bin/vim ] && /Applications/MacVim.app/Contents/bin/vim +'silent! helptags ALL | quit!'
-# Just in case Vim is located at a path we haven't run yet
-vim +'silent! helptags ALL | quit!'
-# Neovim does not have the problem of multiple versions being installed at once,
-# so we can just run 'nvim'. Neovim also supports running headless, which is an
-# advantage in this situation.
+# I tend to use Nvim exclusively so we generate helptags only for it.
 nvim --headless +'silent! helptags ALL | quit!'
