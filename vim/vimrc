@@ -299,7 +299,7 @@ nmap ga <Plug>(EasyAlign)
 " µcomplete
 
 " Required for µcomplete:
-set completeopt=menuone,noselect,preview
+set completeopt=menuone,noselect
 
 " This variable stores which completion methods µcomplete will try to use first.
 "
