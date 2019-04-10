@@ -104,56 +104,6 @@ export FZF_DEFAULT_OPTS='
 [[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.bash" 2> /dev/null
 source "/usr/local/opt/fzf/shell/key-bindings.bash"
 
-# ag & rg
-#
-# Search by column
-agopts=(
---column
-)
-rgopts=(
---column
-)
-#
-# Use the same colour highlighting in both programs, and make it match the way
-# Apprentice in Vim does highlighting
-agopts+=(
-"--color-line-number='0;37;40'"
-"--color-match='0;7;93'"
-"--color-path='0;96'"
-)
-rgopts+=(
-"--colors='column:none'"
-"--colors='column:bg:black'"
-"--colors='column:fg:white'"
-"--colors='line:none'"
-"--colors='line:bg:black'"
-"--colors='line:fg:white'"
-"--colors='match:none'"
-"--colors='match:bg:229'"
-"--colors='match:fg:black'"
-"--colors='path:none'"
-"--colors='path:fg:cyan'"
-"--colors='path:style:intense'"
-)
-#
-# Process options
-agexpopts=$(for i in "${agopts[@]}" ; do
-printf "%s" " $i"
-done)
-rgexpopts=$(for i in "${rgopts[@]}" ; do
-printf "%s" " $i"
-done)
-#
-# Load all custom options
-alias ag="ag$agexpopts --"
-alias rg="rg$rgexpopts --"
-#
-# Remove leftover variables
-unset agopts
-unset agexpopts
-unset rgopts
-unset rgexpopts
-
 #
 # Options
 #
