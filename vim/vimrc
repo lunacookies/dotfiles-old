@@ -133,6 +133,12 @@ nnoremap <expr> j      v:count == 0 ? 'gj' : 'j'
 nnoremap <expr> <Up>   v:count == 0 ? 'gk' : 'k'
 nnoremap <expr> <Down> v:count == 0 ? 'gj' : 'j'
 
+" Scroll one line at a time when using the scroll wheel
+nnoremap <ScrollWheelUp>   <C-y>
+nnoremap <ScrollWheelDown> <C-e>
+xnoremap <ScrollWheelUp>   <C-y>
+xnoremap <ScrollWheelDown> <C-e>
+
 " Reselect visual selection after modifying its indentation
 xnoremap > >gv
 xnoremap < <gv
