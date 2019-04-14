@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Nicer colours that play well with Old Book
+export LSCOLORS=gxdxcxcxbxegedabagacad
+
 # Process options using getopts
 while getopts ":la" arg
 do
@@ -18,7 +21,7 @@ done
 
 # Shift the argument index so that we have access to the operands, also known
 # as the mass arguments (those that are not specific to any argument)
-shift $(expr $OPTIND - 1 )
+shift $(expr $OPTIND - 1)
 
 # Return all default arguments
 #
