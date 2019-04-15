@@ -53,17 +53,17 @@
 
 # Diff colours
 [color "diff-highlight"]
-  oldNormal = red
+  oldNormal = black
   oldHighlight = black red
-  newNormal = green
+  newNormal = black
   newHighlight = black green
 [color "diff"]
   meta = 8
   frag = 10
   func = blue
   commit = white
-  old = red
-  new = green
+  old = black red
+  new = black green
   whitespace = red reverse
 
 # Make ruler around each file name smaller
