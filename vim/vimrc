@@ -320,11 +320,6 @@ let g:mucomplete#chains = {
       \ 'default':  [ 'path', 'c-p', 'omni' ],
       \ }
 
-" Automatically open the popup menu with completions when typing, but only show
-" after a 100 millisecond pause to prevent flickering.
-let g:mucomplete#enable_auto_at_startup = 1
-let g:mucomplete#completion_delay       = 100
-
 " NOTE: When I refer to 'previous words' in the above paragraph I am actually
 " referring to keywords that match &complete
 set complete=.,w,b
