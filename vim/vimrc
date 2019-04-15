@@ -359,6 +359,9 @@ let g:go_highlight_variable_declarations  = 1
 " any trailing whitespace is stripped by editorconfig anyway.
 let g:go_highlight_trailing_whitespace_error = 0
 
+" Run goimports on save
+let g:go_fmt_command = "goimports"
+
 "
 " Colours
 "
