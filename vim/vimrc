@@ -355,6 +355,10 @@ let g:go_highlight_types                  = 1
 let g:go_highlight_variable_assignments   = 1
 let g:go_highlight_variable_declarations  = 1
 
+" Disable the trailing whitespace error as it's distracting during typing and
+" any trailing whitespace is stripped by editorconfig anyway.
+let g:go_highlight_trailing_whitespace_error = 0
+
 "
 " Colours
 "
