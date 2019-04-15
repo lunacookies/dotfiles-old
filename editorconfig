@@ -63,3 +63,7 @@ indent_style = tab
 indent_size = 4
 indent_style = spaces
 max_line_length = 100
+
+[*.c]
+indent_size = 8
+indent_style = tab
