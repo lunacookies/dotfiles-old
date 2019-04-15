@@ -33,12 +33,12 @@ lifepillar/vim-mucomplete
 tpope/vim-fugitive
 
 NLKNguyen/c-syntax.vim
+fatih/vim-go
 hail2u/vim-css3-syntax
 kh3phr3n/python-syntax
 lifepillar/vim-colortemplate
 othree/html5.vim
 pangloss/vim-javascript
-rust-lang/rust.vim
 tpope/vim-git
 tpope/vim-haml
 
